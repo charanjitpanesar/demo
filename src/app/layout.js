@@ -1,12 +1,26 @@
+import 'bootstrap/dist/css/bootstrap.min.css';
+import 'bootstrap-icons/font/bootstrap-icons.css';
 import { Poppins } from "next/font/google";
 import '../../public/sass/base/base.scss';
 import '../../public/sass/base/helper.scss';
 import '../../public/sass/base/reset.scss';
+import Header from "./components/Header";
+import { Bricolage_Grotesque} from "next/font/google";
+import Footer from './components/Footer';
+
+
 
 
 const poppins = Poppins({
   subsets: ["latin"],
   weight:["100","200","300","400","500","600","700","800","900"],
+  preload: true,
+  display:"swap"
+});
+
+const bricologe = Bricolage_Grotesque({
+  subsets: ["latin"],
+  weight:["400","500","600","700","800"],
   preload: true,
   display:"swap"
 });
@@ -22,7 +36,9 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body className={`${poppins.className}`}>
+        <Header/>
         {children}
+        <Footer/>
       </body>
     </html>
   );
