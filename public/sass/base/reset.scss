@@ -121,9 +121,22 @@ input[type=number]::-webkit-outer-spin-button {
 	}
 }
 
-@media (min-width: 1280px) and (max-width: 1399px) {
+/* 1300 desktop only */
+@media (min-width: 1300px) and (max-width: 1399px){
+    .container {
+		max-width: 1330px;
+	}
+}
+// @media (width >= 1200px){
+// 	.container {
+// 		max-width: 1330px;
+// 	}
+// }
+
+
+@media (min-width: 1200px) and (max-width: 1299px) {
 	.container {
-		max-width: 1170px;
+		max-width: 100%;
 	}
 }
 

@@ -1,4 +1,5 @@
-import React from 'react'
+'use client'
+import React, { useState } from 'react'
 import { Col, Container, Row } from 'react-bootstrap';
 import logoImg from '../../../public/images/logo.png';
 import '../../../public/sass/pages/header.scss';
@@ -38,6 +39,11 @@ const Header = () => {
         }
     ]
 
+    const [isResponsiveHeaderVisible, setIsResponsiveHeaderVisible] = useState(false);
+
+    const toggleResponsiveHeader = () => {
+        setIsResponsiveHeaderVisible(!isResponsiveHeaderVisible);
+    };
     return (
         <>
             <section className='header_section'>
@@ -49,8 +55,8 @@ const Header = () => {
                                     <Image src={logoImg} alt="..." title="..." priority/>
                                 </div>
                                 <div className='list_area'>
-                                    <ul>
-                                    {
+                                   <ul>
+                                    { 
                                         navLinks.map((element , index)=>{
                                         return <li key={index} className={index === 0 ? 'active' : ''}>
                                             <Link href={element.href}>{element.text}</Link>
@@ -59,10 +65,24 @@ const Header = () => {
                                     }
                                     </ul>
                                 </div>
+                                <div className='menu_area d-block d-lg-none' onClick={toggleResponsiveHeader} >
+                                    <i className="bi bi-list"></i>
+                                </div>
                             </div>
                         </Col>
                     </Row>
                 </Container>
+                <div className={`responsive_header ${isResponsiveHeaderVisible ? 'show' : ''}`}>
+                <ul>
+                    { 
+                        navLinks.map((element , index)=>{
+                        return <li key={index} className={index === 0 ? 'active' : ''}>
+                            <Link href={element.href}>{element.text}</Link>
+                        </li>
+                        })
+                    }
+                    </ul>
+                </div>
             </section>
         </>
     )
