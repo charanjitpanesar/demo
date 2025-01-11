@@ -3,6 +3,7 @@ import 'bootstrap-icons/font/bootstrap-icons.css';
 import { Poppins } from "next/font/google";
 import Header from "./components/Header";
 import { Bricolage_Grotesque } from "next/font/google";
+import { Saira } from "next/font/google";
 import Footer from './components/Footer';
 import '../../public/sass/base/base.scss';
 import '../../public/sass/base/helper.scss';
@@ -12,6 +13,14 @@ const poppins = Poppins({
     subsets: ["latin"],
     weight: ["100", "200", "300", "400", "500", "600", "700", "800", "900"],
     preload: true,
+    display: "swap"
+});
+
+const saira = Saira({
+    subsets: ["latin"],
+    weight: ["100", "200", "300", "400", "500", "600", "700", "800", "900"],
+    preload: true,
+    variable: '--font-bricologe',
     display: "swap"
 });
 
@@ -31,7 +40,7 @@ export const metadata = {
 export default function RootLayout({ children }) {
     return (
         <html lang="en">
-            <body id='pb_scroll' className={`${poppins.className} ${bricologe.variable}`}>
+            <body id='pb_scroll' className={`${poppins.className} ${bricologe.variable} ${saira.variable}`}>
                 <Header />
                 {children}
                 <Footer />
