@@ -68,7 +68,7 @@ const Footer = () => {
                                             <div className='text'>SAYNT AI</div>
                                         </div>
                                         <div className='top_arrow'>
-                                            <i class="bi bi-arrow-up"></i>
+                                            <i className="bi bi-arrow-up"></i>
                                         </div>
                                     </div>
                                 </Col>
