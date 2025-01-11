@@ -47,7 +47,7 @@ const Footer = () => {
                     <Col xxl={12} xl={12} lg={12} md={12} sm={12} xm={12}>
                         <div className='parent_area'>
                             <Row>
-                                <Col xxl={8} xl={7} lg={9} md={12} sm={6} xm={12}>
+                                <Col xxl={8} xl={7} lg={9} md={12} sm={12} xm={12}>
                                     <div className='left_area'>
                                         <div className='text_area'>Catalog</div>
                                         <div className='list_area'>
@@ -72,7 +72,7 @@ const Footer = () => {
                                         </div>
                                     </div>
                                 </Col>
-                                <Col xxl={4} xl={5} lg={3} md={12} sm={6} xm={12}>
+                                <Col xxl={4} xl={5} lg={3} md={12} sm={12} xm={12}>
                                     <div className='right_area'>
                                         <div className='upper_area'>
                                             <div className='detail_area'>

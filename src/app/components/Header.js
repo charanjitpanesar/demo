@@ -1,5 +1,5 @@
 'use client'
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { Col, Container, Row } from 'react-bootstrap';
 import logoImg from '../../../public/images/logo.png';
 import '../../../public/sass/pages/header.scss';
@@ -44,6 +44,17 @@ const Header = () => {
     const toggleResponsiveHeader = () => {
         setIsResponsiveHeaderVisible(!isResponsiveHeaderVisible);
     };
+
+    useEffect(() => {
+        if (isResponsiveHeaderVisible) {
+            document.body.classList.add('scroll_off');
+        } else {
+            document.body.classList.remove('scroll_off');
+        }
+         
+        return () => document.body.classList.remove('scroll_off');
+    }, [isResponsiveHeaderVisible]);
+
     return (
         <>
             <section className='header_section'>
