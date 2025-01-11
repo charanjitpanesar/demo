@@ -66,14 +66,14 @@ const Solution_banner = () => {
                         <Col xxl={12} xl={12} lg={12} md={12} sm={12} xs={12}>
                             <div className="parent_area">
                                 <div className="title">
-                                    <motion.h1 initial={{ opacity: 0 }} animate={{ opacity: 1 }}>See how we <span className='d-block'>handle projects</span> <span className='d-block'>with a strategic</span> edge</motion.h1>
-                                    <motion.p initial={{ opacity: 0 }} animate={{ opacity: 1 }}>See how SAYNT AI streamlines your business with advanced solutions</motion.p>
+                                    <motion.h1 initial={{ opacity: 0 }} whileInView={{ opacity: 1 }}>See how we <span className='d-block'>handle projects</span> <span className='d-block'>with a strategic</span> edge</motion.h1>
+                                    <motion.p initial={{ opacity: 0 }} whileInView={{ opacity: 1 }}>See how SAYNT AI streamlines your business with advanced solutions</motion.p>
                                 </div>
                                 <div className="button_group">
                                     <motion.div
                                         className="button_area"
                                         initial={{ x: -100, opacity: 0 }}
-                                        animate={{ x: 0, opacity: 1, transition: { duration: 1, ease: 'anticipate' } }}
+                                        whileInView={{ x: 0, opacity: 1, transition: { duration: 1, ease: 'anticipate' } }}
 
                                     >
                                         <Link href={'/'} className='btn-primary btn-white'>See Our Work</Link>
@@ -81,7 +81,7 @@ const Solution_banner = () => {
                                     <motion.div
                                         className="button_area"
                                         initial={{ x: 100, opacity: 0 }}
-                                        animate={{ x: 0, opacity: 1, transition: { duration: 1, ease: 'anticipate' } }}
+                                        whileInView={{ x: 0, opacity: 1, transition: { duration: 1, ease: 'anticipate' } }}
                                     >
                                         <Link href={'/'} className='btn-primary btn-dark'>Request a Demo</Link>
                                     </motion.div>
@@ -96,7 +96,7 @@ const Solution_banner = () => {
                                                         x: -50,
                                                         opacity: 0
                                                     }}
-                                                    animate={{
+                                                    whileInView={{
                                                         y: 0,
                                                         x: 0,
                                                         opacity: 1,
@@ -115,7 +115,7 @@ const Solution_banner = () => {
                                                         x: -50,
                                                         opacity: 0
                                                     }}
-                                                    animate={{
+                                                    whileInView={{
                                                         y: 0,
                                                         x: 0,
                                                         opacity: 1,
@@ -135,7 +135,7 @@ const Solution_banner = () => {
                                                         x: -50,
                                                         opacity: 0
                                                     }}
-                                                    animate={{
+                                                    whileInView={{
                                                         y: 0,
                                                         x: 0,
                                                         opacity: 1,
@@ -158,7 +158,7 @@ const Solution_banner = () => {
                                                     y: 100,
                                                     opacity: 0
                                                 }}
-                                                animate={{
+                                                whileInView={{
                                                     y: 0,
                                                     opacity: 1,
                                                     transition: { duration: 2, ease: 'anticipate' }
@@ -178,7 +178,7 @@ const Solution_banner = () => {
                                                         x: 50,
                                                         opacity: 0
                                                     }}
-                                                    animate={{
+                                                    whileInView={{
                                                         y: 0,
                                                         x: 0,
                                                         opacity: 1
@@ -197,7 +197,7 @@ const Solution_banner = () => {
                                                         x: 50,
                                                         opacity: 0
                                                     }}
-                                                    animate={{
+                                                    whileInView={{
                                                         y: 0,
                                                         x: 0,
                                                         opacity: 1,
@@ -217,7 +217,7 @@ const Solution_banner = () => {
                                                         x: 50,
                                                         opacity: 0
                                                     }}
-                                                    animate={{
+                                                    whileInView={{
                                                         y: 0,
                                                         x: 0,
                                                         opacity: 1,
@@ -235,28 +235,28 @@ const Solution_banner = () => {
                                         </Col>
                                     </Row>
                                 </div>
-                                <motion.div className="img_wrapper" initial={list_right.hidden} animate={list_right.visible}>
+                                <motion.div className="img_wrapper" initial={list_right.hidden} whileInView={list_right.visible}>
                                     <Image src={rec8} alt='...' title='...' fetchPriority='low' priority={false} />
                                     <div className="icon">
                                         <Image src={icon11} alt='...' title='...' fetchPriority='low' priority={false} />
                                     </div>
                                 </motion.div>
-                                <motion.div className="img_wrapper wrapper2" initial={list_left.hidden} animate={list_left.visible}>
+                                <motion.div className="img_wrapper wrapper2" initial={list_left.hidden} whileInView={list_left.visible}>
                                     <Image src={rec9} alt='...' title='...' fetchPriority='low' priority={false} />
                                     <div className="icon">
                                         <Image src={icon12} alt='...' title='...' fetchPriority='low' priority={false} />
                                     </div>
                                 </motion.div>
-                                <motion.div className="img_wrapper empty_card" initial={list_right.hidden} animate={list_right.visible}>
+                                <motion.div className="img_wrapper empty_card" initial={list_right.hidden} whileInView={list_right.visible}>
                                     <Image src={rec10} alt='...' title='...' fetchPriority='low' priority={false} />
                                 </motion.div>
-                                <motion.div className="img_wrapper empty_card2" initial={list_left.hidden} animate={list_left.visible}>
+                                <motion.div className="img_wrapper empty_card2" initial={list_left.hidden} whileInView={list_left.visible}>
                                     <Image src={rec11} alt='...' title='...' fetchPriority='low' priority={false} />
                                 </motion.div>
-                                <motion.div className="img_wrapper empty_card3"initial={list_right.hidden} animate={list_right.visible}>
+                                <motion.div className="img_wrapper empty_card3"initial={list_right.hidden} whileInView={list_right.visible}>
                                     <Image src={rec12} alt='...' title='...' fetchPriority='low' priority={false} />
                                 </motion.div>
-                                <motion.div className="img_wrapper empty_card4" initial={list_left.hidden} animate={list_left.visible}>
+                                <motion.div className="img_wrapper empty_card4" initial={list_left.hidden} whileInView={list_left.visible}>
                                     <Image src={rec13} alt='...' title='...' fetchPriority='low' priority={false} />
                                 </motion.div>
                             </div>
