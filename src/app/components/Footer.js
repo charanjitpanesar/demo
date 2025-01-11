@@ -1,9 +1,12 @@
+'use client'
 import React from 'react'
 import { Col, Container, Row } from 'react-bootstrap'
 import '../../../public/sass/pages/footer.scss';
 import Link from 'next/link';
 import logoImg from '../../../public/images/white_logo.png';
 import Image from 'next/image';
+import { usePathname } from 'next/navigation';
+
 
 
 
@@ -15,30 +18,33 @@ const Footer = () => {
             text:"Home"
         },
         {
-            href: "/",
+            href: "/solutions",
             text:"Solutions"
         },
         {
-            href: "/",
+            href: "/about_us",
             text:"About Us"
         },
         {
-            href: "/",
+            href: "/resources",
             text:"Resources"
         },
         {
-            href: "/",
+            href: "/pricing",
             text:"Pricing"
         },
         {
-            href: "/",
+            href: "/contact",
             text:"Contact"
         },
         {
-            href: "/",
+            href: "/customer_portal",
             text:"Customer Portal"
         }
     ]
+
+    const pathname = usePathname();
+    
 
     return (
          <section className='footer_section'>
@@ -54,7 +60,7 @@ const Footer = () => {
                                             <ul>
                                             {
                                                 navLinks.map((element , index)=>{
-                                                return <li key={index} className={index === 0 ? 'active' : ''}>
+                                                return <li key={index} className={pathname === element.href ? 'active' : ''}>
                                                     <Link href={element.href}>{element.text}</Link>
                                                 </li>
                                                 })

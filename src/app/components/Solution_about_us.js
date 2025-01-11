@@ -12,12 +12,12 @@ const Solution_about_us = () => {
                         <Col xxl={12} xl={12} lg={12} md={12} sm={12} xm={12}>
                             <div className='parent_area'>
                                 <Row className='align-items-center'>
-                                    <Col xxl={8} xl={8} lg={8} md={6} sm={6} xm={12}>
+                                    <Col xxl={8} xl={8} lg={7} md={6} sm={6} xm={12}>
                                         <div className='left_area'>
                                             <h3>Specialized <span className='blue'>Solutions</span> <span className='green'>Tailored</span> to your unique needs</h3>
                                         </div>
                                     </Col>
-                                    <Col xxl={4} xl={4} lg={4} md={6} sm={6} xm={12}>
+                                    <Col xxl={4} xl={4} lg={5} md={6} sm={6} xm={12}>
                                         <div className='right_area'>
                                             <h3>About Us</h3>
                                             <p>
