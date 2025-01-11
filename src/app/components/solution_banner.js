@@ -88,7 +88,7 @@ const Solution_banner = () => {
                                 </div>
                                 <div className="cards_area">
                                     <Row className='align-items-end'>
-                                        <Col xxl={5} xl={5} lg={5} md={4} sm={5} xs={5}>
+                                        <Col xxl={5} xl={5} lg={5} md={4} sm={4} xs={4}>
                                             < ul className="cards">
                                                 <motion.li
                                                     initial={{
@@ -151,7 +151,7 @@ const Solution_banner = () => {
                                                 </motion.li>
                                             </ul>
                                         </Col>
-                                        <Col xxl={2} xl={2} lg={2} md={4} sm={2} xs={2}>
+                                        <Col xxl={2} xl={2} lg={2} md={4} sm={4} xs={4}>
                                             <motion.div
                                                 className="logo_box"
                                                 initial={{
@@ -170,7 +170,7 @@ const Solution_banner = () => {
                                                 </div>
                                             </motion.div>
                                         </Col>
-                                        <Col xxl={5} xl={5} lg={5} md={4} sm={5} xs={5}>
+                                        <Col xxl={5} xl={5} lg={5} md={4} sm={4} xs={4}>
                                             <ul className="cards">
                                                 <motion.li
                                                     initial={{
