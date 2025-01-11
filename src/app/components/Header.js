@@ -5,6 +5,7 @@ import logoImg from '../../../public/images/logo.png';
 import '../../../public/sass/pages/header.scss';
 import Image from 'next/image';
 import Link from 'next/link';
+import { usePathname } from 'next/navigation';
 
 const Header = () => {
 
@@ -18,26 +19,28 @@ const Header = () => {
             text:"Solutions"
         },
         {
-            href: "/",
+            href: "/about_us",
             text:"About Us"
         },
         {
-            href: "/",
+            href: "/resources",
             text:"Resources"
         },
         {
-            href: "/",
+            href: "/pricing",
             text:"Pricing"
         },
         {
-            href: "/",
+            href: "/contact",
             text:"Contact"
         },
         {
-            href: "/",
+            href: "/customer_portal",
             text:"Customer Portal"
         }
     ]
+
+    const pathname = usePathname();
 
     const [isResponsiveHeaderVisible, setIsResponsiveHeaderVisible] = useState(false);
 
@@ -69,7 +72,7 @@ const Header = () => {
                                    <ul>
                                     { 
                                         navLinks.map((element , index)=>{
-                                        return <li key={index} className={index === 0 ? 'active' : ''}>
+                                        return <li key={index} className={pathname === element.href ? 'active' : ''}>
                                             <Link href={element.href}>{element.text}</Link>
                                         </li>
                                         })

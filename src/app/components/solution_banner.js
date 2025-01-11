@@ -8,6 +8,12 @@ import banner1 from '../../../public/images/banner1.png';
 import rec5 from '../../../public/images/rec5.svg';
 import rec6 from '../../../public/images/rec6.svg';
 import rec7 from '../../../public/images/rec7.svg';
+import rec8 from '../../../public/images/rec8.svg';
+import rec9 from '../../../public/images/rec9.svg';
+import rec10 from '../../../public/images/rec10.svg';
+import rec11 from '../../../public/images/rec11.svg';
+import rec12 from '../../../public/images/rec12.svg';
+import rec13 from '../../../public/images/rec13.svg';
 import rec2 from '../../../public/images/rec2.svg';
 import rec3 from '../../../public/images/rec3.svg';
 import rec4 from '../../../public/images/rec4.svg';
@@ -17,11 +23,41 @@ import icon7 from '../../../public/images/icon7.png';
 import icon8 from '../../../public/images/icon8.png';
 import icon9 from '../../../public/images/icon9.png';
 import icon10 from '../../../public/images/icon10.png';
+import icon11 from '../../../public/images/icon11.png';
+import icon12 from '../../../public/images/icon12.png';
 import rec1 from '../../../public/images/rec1.svg';
 import logo from '../../../public/images/white_logo.png';
 import '../../../public/sass/pages/solution_banner.scss';
 
 const Solution_banner = () => {
+    const list_right =    {
+        visible: {
+            x: 0,
+            opacity: 1,
+            transition: {
+                ease: 'anticipate',
+                duration: 0.5
+            }
+        },
+        hidden: {
+            x: -50,
+            opacity: 0
+        }
+    }
+    const list_left =    {
+        visible: {
+            x: 0,
+            opacity: 1,
+            transition: {
+                ease: 'anticipate',
+                duration: 0.5
+            }
+        },
+        hidden: {
+            x: 50,
+            opacity: 0
+        }
+    }
     return (
         <>
             <section className="banner">
@@ -30,8 +66,8 @@ const Solution_banner = () => {
                         <Col xxl={12} xl={12} lg={12} md={12} sm={12} xs={12}>
                             <div className="parent_area">
                                 <div className="title">
-                                    <motion.h1 initial={{opacity: 0}} animate={{opacity: 1}}>See how we handle projects with a strategic edge</motion.h1>
-                                    <motion.p initial={{opacity: 0}} animate={{opacity: 1}}>See how SAYNT AI streamlines your business with advanced solutions</motion.p>
+                                    <motion.h1 initial={{ opacity: 0 }} animate={{ opacity: 1 }}>See how we handle projects with a strategic edge</motion.h1>
+                                    <motion.p initial={{ opacity: 0 }} animate={{ opacity: 1 }}>See how SAYNT AI streamlines your business with advanced solutions</motion.p>
                                 </div>
                                 <div className="button_group">
                                     <motion.div
@@ -199,6 +235,30 @@ const Solution_banner = () => {
                                         </Col>
                                     </Row>
                                 </div>
+                                <motion.div className="img_wrapper" initial={list_right.hidden} animate={list_right.visible}>
+                                    <Image src={rec8} alt='...' title='...' fetchPriority='low' priority={false} />
+                                    <div className="icon">
+                                        <Image src={icon11} alt='...' title='...' fetchPriority='low' priority={false} />
+                                    </div>
+                                </motion.div>
+                                <motion.div className="img_wrapper wrapper2" initial={list_left.hidden} animate={list_left.visible}>
+                                    <Image src={rec9} alt='...' title='...' fetchPriority='low' priority={false} />
+                                    <div className="icon">
+                                        <Image src={icon12} alt='...' title='...' fetchPriority='low' priority={false} />
+                                    </div>
+                                </motion.div>
+                                <motion.div className="img_wrapper empty_card" initial={list_right.hidden} animate={list_right.visible}>
+                                    <Image src={rec10} alt='...' title='...' fetchPriority='low' priority={false} />
+                                </motion.div>
+                                <motion.div className="img_wrapper empty_card2" initial={list_left.hidden} animate={list_left.visible}>
+                                    <Image src={rec11} alt='...' title='...' fetchPriority='low' priority={false} />
+                                </motion.div>
+                                <motion.div className="img_wrapper empty_card3"initial={list_right.hidden} animate={list_right.visible}>
+                                    <Image src={rec12} alt='...' title='...' fetchPriority='low' priority={false} />
+                                </motion.div>
+                                <motion.div className="img_wrapper empty_card4" initial={list_left.hidden} animate={list_left.visible}>
+                                    <Image src={rec13} alt='...' title='...' fetchPriority='low' priority={false} />
+                                </motion.div>
                             </div>
                         </Col>
                     </Row>
