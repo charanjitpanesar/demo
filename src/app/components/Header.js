@@ -48,6 +48,10 @@ const Header = () => {
         setIsResponsiveHeaderVisible(!isResponsiveHeaderVisible);
     };
 
+    const handleHeader = () =>{
+        setIsResponsiveHeaderVisible(false)
+    }
+
     useEffect(() => {
         if (isResponsiveHeaderVisible) {
             document.body.classList.add('scroll_off');
@@ -90,8 +94,8 @@ const Header = () => {
                 <ul>
                     { 
                         navLinks.map((element , index)=>{
-                        return <li key={index} className={index === 0 ? 'active' : ''}>
-                            <Link href={element.href}>{element.text}</Link>
+                        return <li key={index} className={pathname === element.href ? 'active' : ''} >
+                            <Link href={element.href} onClick={handleHeader}>{element.text}</Link>
                         </li>
                         })
                     }
