@@ -5,7 +5,7 @@ import Solution_about_us from '../components/Solution_about_us'
 const Solutions = () => {
   return (
     <>
-        {/* <Solution_banner /> */}
+        <Solution_banner />
         <Solution_about_us/>
     </>
   )
