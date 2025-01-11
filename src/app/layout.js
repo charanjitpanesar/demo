@@ -1,12 +1,12 @@
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap-icons/font/bootstrap-icons.css';
 import { Poppins } from "next/font/google";
-import '../../public/sass/base/base.scss';
-import '../../public/sass/base/helper.scss';
-import '../../public/sass/base/reset.scss';
 import Header from "./components/Header";
 import { Bricolage_Grotesque } from "next/font/google";
 import Footer from './components/Footer';
+import '../../public/sass/base/base.scss';
+import '../../public/sass/base/helper.scss';
+import '../../public/sass/base/reset.scss';
 
 const poppins = Poppins({
     subsets: ["latin"],

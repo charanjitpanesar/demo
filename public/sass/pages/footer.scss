@@ -8,6 +8,8 @@
     padding-bottom: 20px;
     .parent_area{
         .left_area{
+            height: 100%;
+            position: relative;
             .text_area{
                 font-family: variable.$bricologe;
                 color: variable.$white;
@@ -85,7 +87,8 @@
                 display: flex;
                 align-items: center;
                 justify-content: center;
-                margin-top: 60px;
+                position: absolute;
+                bottom: 0;
                 i{
                     color: variable.$arrow_color;
                     font-size: 16px;
@@ -179,22 +182,204 @@
 
 /* 1300 desktop only */
 @media (min-width: 1300px) and (max-width: 1399px){
-    
+    .footer_section{
+        .parent_area{
+            .left_area{
+                .text_area{
+                    font-size: 45px;
+                }
+                .list_area{
+                    ul{
+                        gap: 25px;
+                        li{
+                            &::after{
+                                @include  mixins.translate(12px);
+                            }
+                        }
+                    }
+                }
+                .logo_text_area{
+                    padding-top: 60px;
+                    .logo_area{
+                        width: 110px;
+                        height: 101px;
+                    }
+                }
+            }
+            .right_area{
+                .upper_area{
+                    gap: 30px;
+                }
+                .copyright_area{
+                    padding-top: 40px;
+                }
+            }
+        }
+    }
 }
 
 /* 1200 desktop only */
 @media (min-width: 1200px) and (max-width: 1299px){
-    
+    .footer_section{
+        .parent_area{
+            .left_area{
+                .text_area{
+                    font-size: 45px;
+                }
+                .list_area{
+                    ul{
+                        gap: 25px;
+                        li{
+                            &::after{
+                                @include  mixins.translate(12px);
+                            }
+                        }
+                    }
+                }
+                .logo_text_area{
+                    padding-top: 60px;
+                    .logo_area{
+                        width: 110px;
+                        height: 101px;
+                    }
+                }
+            }
+            .right_area{
+                .upper_area{
+                    gap: 30px;
+                }
+                .copyright_area{
+                    padding-top: 40px;
+                }
+            }
+        }
+    }
 }
 
 /* Landscape tablets and medium desktops */
 @media (min-width: 992px) and (max-width: 1199px) {
-	
+	.footer_section{
+        padding-top: 40px;
+        .parent_area{
+            .left_area{
+                .text_area{
+                    font-size: 45px;
+                }
+                .list_area{
+                    ul{
+                        gap: 25px;
+                        li{
+                            &::after{
+                                @include  mixins.translate(12px);
+                            }
+                            a{
+                                font-size: 15px;
+                            }
+                        }
+                    }
+                }
+                .logo_text_area{
+                    padding-top: 60px;
+                    .logo_area{
+                        width: 95px;
+                        height: 87px;
+                    }
+                    .text{
+                        font-size: 25px;
+                    }
+                }
+            }
+            .right_area{
+                .upper_area{
+                    gap: 20px;
+                    .detail_area{
+                        h3{
+                            font-size: 15px;
+                        }
+                        a{
+                            font-size: 15px;
+                        }
+                    }
+                }
+                .copyright_area{
+                    padding-top: 40px;
+                }
+            }
+            .banner_area{
+                padding: 40px 25px;
+            }
+        }
+    }
 }
 
 /* Landscape tablets and ipad */
 @media (min-width: 768px) and (max-width: 991px) {
-	
+	.footer_section{
+        padding-top: 40px;
+        .parent_area{
+            .row{
+                position: relative;
+            }
+            .left_area{
+                position: unset;
+                .text_area{
+                    z-index: 2;
+                    font-size: 38px;
+                }
+                .list_area{
+                    position: relative;
+                    z-index: 2;
+                    ul{
+                        gap: 25px;
+                        li{
+                            &::after{
+                                @include  mixins.translate(12px);
+                            }
+                            a{
+                                font-size: 15px;
+                            }
+                        }
+                    }
+                }
+                .logo_text_area{
+                    padding-top: 0;
+                    position: absolute;
+                    bottom: 0;
+                    top: 0;
+                    bottom: 0;
+                    margin-bottom: auto;
+                    .logo_area{
+                        width: 85px;
+                        height: 78px;
+                    }
+                    .text{
+                        font-size: 22px;
+                    }
+                }
+            }
+            .right_area{
+                padding-top: 20px;
+                .upper_area{
+                    gap: 20px;
+                    .detail_area{
+                        h3{
+                            font-size: 15px;
+                        }
+                        a{
+                            font-size: 15px;
+                        }
+                    }
+                }
+                .copyright_area{
+                    padding-top: 40px;
+                    text-align: end;
+                }
+            }
+            .banner_area{
+                padding: 40px 25px;
+            }
+        }
+    }
 }
 
 /* Landscape phones and portrait tablets */

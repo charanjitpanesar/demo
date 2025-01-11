@@ -7,6 +7,7 @@ body{
 	font-size: 14px;
 	line-height: inherit;
     background: variable.$secondary_color;
+    padding-bottom: 800px;
 }
 
 
@@ -62,6 +63,16 @@ h1,h2,h3,h4,h5,h6{
 
 /* Extra large desktops and mac laptops*/
 @media (min-width: 1400px) and (max-width: 1599px) {
+}
+
+/* 1300 desktop only */
+@media (min-width: 1300px) and (max-width: 1399px){
+    
+}
+
+/* 1200 desktop only */
+@media (min-width: 1200px) and (max-width: 1299px){
+    
 }
 
 /* Landscape tablets and medium desktops */
