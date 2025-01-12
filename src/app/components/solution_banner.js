@@ -1,9 +1,9 @@
 'use client'
-import React from 'react';
+import React, { useEffect } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import { Col, Container, Row } from 'react-bootstrap';
-import { motion } from "motion/react"
+import { motion, useAnimation } from "motion/react"
 import banner1 from '../../../public/images/banner1.png';
 import rec5 from '../../../public/images/rec5.svg';
 import rec6 from '../../../public/images/rec6.svg';
@@ -30,7 +30,7 @@ import logo from '../../../public/images/white_logo.png';
 import '../../../public/sass/pages/solution_banner.scss';
 
 const Solution_banner = () => {
-    const list_right =    {
+    const list_right = {
         visible: {
             x: 0,
             opacity: 1,
@@ -44,20 +44,63 @@ const Solution_banner = () => {
             opacity: 0
         }
     }
-    const list_left =    {
-        visible: {
-            x: 0,
-            opacity: 1,
-            transition: {
-                ease: 'anticipate',
-                duration: 0.5
-            }
-        },
+    const list_left = {
         hidden: {
             x: 50,
             opacity: 0
         }
     }
+    const variants = {
+        hidden: {
+            y: 100,
+            x: -50,
+            opacity: 0,
+        },
+        hidden2: {
+            y: 100,
+            x: 50,
+            opacity: 0
+        },
+        visible: {
+            y: 0,
+            x: 0,
+            opacity: 1,
+        }
+    }
+    const controls = useAnimation();
+    const controls2 = useAnimation();
+    const startAnimation = async () => {
+        await controls.start(
+            variants.visible
+        )
+        await controls.start({
+            y: [0, 5, 0],
+            transition: {
+                duration: 2,
+                repeat: Infinity,
+                repeatType: 'reverse',
+                ease: 'linear'
+            }
+        })
+    }
+    const startAnimation2 = async () => {
+        await controls2.start(
+            list_right.visible
+        )
+        await controls2.start({
+            scale: [0.9, 1, 0.9],
+            transition: {
+                duration: 2,
+                repeat: Infinity,
+                repeatType: 'reverse',
+                ease: 'linear'
+            }
+        })
+    }
+    useEffect(() => {
+        startAnimation2()
+        startAnimation()
+    }, [controls])
     return (
         <>
             <section className="banner">
@@ -89,17 +132,12 @@ const Solution_banner = () => {
                                 <div className="cards_area">
                                     <Row className='align-items-end'>
                                         <Col xxl={5} xl={5} lg={5} md={4} sm={4} xs={4}>
-                                            < ul className="cards">
+                                            <ul className="cards">
                                                 <motion.li
-                                                    initial={{
-                                                        y: 100,
-                                                        x: -50,
-                                                        opacity: 0
-                                                    }}
-                                                    whileInView={{
-                                                        y: 0,
-                                                        x: 0,
-                                                        opacity: 1,
+                                                    initial={variants.hidden}
+                                                    animate={controls}
+                                                    transition={{
+                                                        duration: 0.6,
                                                     }}
                                                 >
                                                     <div className="box">
@@ -110,16 +148,11 @@ const Solution_banner = () => {
                                                     </div>
                                                 </motion.li>
                                                 <motion.li
-                                                    initial={{
-                                                        y: 100,
-                                                        x: -50,
-                                                        opacity: 0
-                                                    }}
-                                                    whileInView={{
-                                                        y: 0,
-                                                        x: 0,
-                                                        opacity: 1,
-                                                        transition: { delay: 0.2 }
+                                                    initial={variants.hidden}
+                                                    animate={controls}
+                                                    transition={{
+                                                        duration: 0.6,
+                                                        delay: 0.2
                                                     }}
                                                 >
                                                     <div className="box box2">
@@ -130,16 +163,11 @@ const Solution_banner = () => {
                                                     </div>
                                                 </motion.li>
                                                 <motion.li
-                                                    initial={{
-                                                        y: 100,
-                                                        x: -50,
-                                                        opacity: 0
-                                                    }}
-                                                    whileInView={{
-                                                        y: 0,
-                                                        x: 0,
-                                                        opacity: 1,
-                                                        transition: { delay: 0.4 }
+                                                    initial={variants.hidden}
+                                                    animate={controls}
+                                                    transition={{
+                                                        duration: 0.6,
+                                                        delay: 0.4
                                                     }}
                                                 >
                                                     <div className="box box3">
@@ -158,11 +186,8 @@ const Solution_banner = () => {
                                                     y: 100,
                                                     opacity: 0
                                                 }}
-                                                whileInView={{
-                                                    y: 0,
-                                                    opacity: 1,
-                                                    transition: { duration: 2, ease: 'anticipate' }
-                                                }}
+                                                animate={controls}
+                                                transition={{ duration: 2, ease: 'anticipate' }}
                                             >
                                                 <Image src={rec1} alt='...' title='...' fetchPriority='low' priority={false} width={204} height={236} />
                                                 <div className="logo">
@@ -173,16 +198,9 @@ const Solution_banner = () => {
                                         <Col xxl={5} xl={5} lg={5} md={4} sm={4} xs={4}>
                                             <ul className="cards">
                                                 <motion.li
-                                                    initial={{
-                                                        y: 100,
-                                                        x: 50,
-                                                        opacity: 0
-                                                    }}
-                                                    whileInView={{
-                                                        y: 0,
-                                                        x: 0,
-                                                        opacity: 1
-                                                    }}
+                                                    initial={variants.hidden2}
+                                                    animate={controls}
+                                                    transition={{ duration: 0.6 }}
                                                 >
                                                     <div className=" box box4">
                                                         <Image src={rec2} alt='...' title='...' priority={false} fetchPriority='low' />
@@ -192,17 +210,9 @@ const Solution_banner = () => {
                                                     </div>
                                                 </motion.li>
                                                 <motion.li
-                                                    initial={{
-                                                        y: 100,
-                                                        x: 50,
-                                                        opacity: 0
-                                                    }}
-                                                    whileInView={{
-                                                        y: 0,
-                                                        x: 0,
-                                                        opacity: 1,
-                                                        transition: { delay: 0.2 }
-                                                    }}
+                                                    initial={variants.hidden2}
+                                                    animate={controls}
+                                                    transition={{ delay: 0.2, duration: 0.6 }}
                                                 >
                                                     <div className="box box5">
                                                         <Image src={rec3} alt='...' title='...' priority={false} fetchPriority='low' />
@@ -212,17 +222,9 @@ const Solution_banner = () => {
                                                     </div>
                                                 </motion.li>
                                                 <motion.li
-                                                    initial={{
-                                                        y: 100,
-                                                        x: 50,
-                                                        opacity: 0
-                                                    }}
-                                                    whileInView={{
-                                                        y: 0,
-                                                        x: 0,
-                                                        opacity: 1,
-                                                        transition: { delay: 0.4 }
-                                                    }}
+                                                    initial={variants.hidden2}
+                                                    animate={controls}
+                                                    transition={{ delay: 0.4, duration: 0.6 }}
                                                 >
                                                     <div className="box box6">
                                                         <Image src={rec4} alt='...' title='...' priority={false} fetchPriority='low' />
@@ -235,28 +237,28 @@ const Solution_banner = () => {
                                         </Col>
                                     </Row>
                                 </div>
-                                <motion.div className="img_wrapper" initial={list_right.hidden} whileInView={list_right.visible}>
+                                <motion.div className="img_wrapper" initial={list_right.hidden} animate={controls}>
                                     <Image src={rec8} alt='...' title='...' fetchPriority='low' priority={false} />
                                     <div className="icon">
                                         <Image src={icon11} alt='...' title='...' fetchPriority='low' priority={false} />
                                     </div>
                                 </motion.div>
-                                <motion.div className="img_wrapper wrapper2" initial={list_left.hidden} whileInView={list_left.visible}>
+                                <motion.div className="img_wrapper wrapper2" initial={list_left.hidden} animate={controls}>
                                     <Image src={rec9} alt='...' title='...' fetchPriority='low' priority={false} />
                                     <div className="icon">
                                         <Image src={icon12} alt='...' title='...' fetchPriority='low' priority={false} />
                                     </div>
                                 </motion.div>
-                                <motion.div className="img_wrapper empty_card" initial={list_right.hidden} whileInView={list_right.visible}>
+                                <motion.div className="img_wrapper empty_card" initial={list_right.hidden} animate={controls2}>
                                     <Image src={rec10} alt='...' title='...' fetchPriority='low' priority={false} />
                                 </motion.div>
-                                <motion.div className="img_wrapper empty_card2" initial={list_left.hidden} whileInView={list_left.visible}>
+                                <motion.div className="img_wrapper empty_card2" initial={list_left.hidden} animate={controls2}>
                                     <Image src={rec11} alt='...' title='...' fetchPriority='low' priority={false} />
                                 </motion.div>
-                                <motion.div className="img_wrapper empty_card3"initial={list_right.hidden} whileInView={list_right.visible}>
+                                <motion.div className="img_wrapper empty_card3" initial={list_right.hidden} animate={controls2}>
                                     <Image src={rec12} alt='...' title='...' fetchPriority='low' priority={false} />
                                 </motion.div>
-                                <motion.div className="img_wrapper empty_card4" initial={list_left.hidden} whileInView={list_left.visible}>
+                                <motion.div className="img_wrapper empty_card4" initial={list_left.hidden} animate={controls2}>
                                     <Image src={rec13} alt='...' title='...' fetchPriority='low' priority={false} />
                                 </motion.div>
                             </div>
