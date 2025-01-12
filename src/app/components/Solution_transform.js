@@ -1,16 +1,20 @@
+'use client'
 import Link from 'next/link'
-import React from 'react'
+import React, { useState } from 'react'
 import { Col, Container, Row } from 'react-bootstrap';
-import '../../../public/sass/pages/solution_transform.scss';
+import Image from 'next/image';
+import { motion } from "motion/react"
 import uiCard from '../../../public/images/ui_card.png';
 import webCard from '../../../public/images/web_card.png';
 import recShape1 from '../../../public/images/small_rec_shape.png';
 import recShape2 from '../../../public/images/big_rec_shape.png';
 import bgImg from '../../../public/images/logistics_bg.png';
-import Image from 'next/image';
+import '../../../public/sass/pages/solution_transform.scss';
+import { delay } from 'motion';
 
 const Solution_transform = () => {
 
+    const [show, setShow] = useState(false);
     const contentList = [
         {
             title: 'Wholesale & Retail',
@@ -26,6 +30,28 @@ const Solution_transform = () => {
             text: 'Ensure secure payments and robust risk management with SAYNT AI, paving the way for the future of finance'
         },
     ]
+    const variants = {
+        initial_top: {
+            y: -500
+        },
+        initial_bottom: {
+            y: 500
+        },
+        initial_left: {
+            x: -500
+        },
+        initial_right: {
+            x: 500
+        },
+        visible: {
+            y: 0,
+            x: 0,
+            transition: {
+                ease: 'anticipate',
+                duration: 1.5,
+            }
+        }
+    }
 
     return (
         <>
@@ -36,19 +62,35 @@ const Solution_transform = () => {
                             <div className='parent_area'>
                                 <Row>
                                     <Col xxl={6} xl={6} lg={6} md={12} sm={12} xm={12}>
-                                        <div className='left_area'>
-                                            <div className='shape_img1'>
+                                        <motion.div className='left_area' whileInView={() => setShow(true)}>
+                                            <motion.div
+                                                className='shape_img1'
+                                                initial={variants.initial_top}
+                                                animate={show? variants.visible: ''}
+                                            >
                                                 <Image src={recShape1} alt='...' title='...' priority></Image>
-                                            </div>
-                                            <div className='shape_img2'>
+                                            </motion.div>
+                                            <motion.div
+                                                className='shape_img2'
+                                                initial={variants.initial_right}
+                                                animate={show? variants.visible: ''}
+                                            >
                                                 <Image src={recShape2} alt='...' title='...' priority></Image>
-                                            </div>
-                                            <div className='web_img'>
+                                            </motion.div>
+                                            <motion.div
+                                                className='web_img'
+                                                initial={variants.initial_left}
+                                                animate={show? variants.visible: ''}
+                                            >
                                                 <Image src={webCard} alt='...' title='...' priority></Image>
-                                            </div>
-                                            <div className='ui_img'>
+                                            </motion.div>
+                                            <motion.div
+                                                className='ui_img'
+                                                initial={variants.initial_bottom}
+                                                animate={show? variants.visible: ''}
+                                            >
                                                 <Image src={uiCard} alt='...' title='...' priority></Image>
-                                            </div>
+                                            </motion.div>
                                             <div className='content_area'>
                                                 <h3>
                                                     Transform Your Business with Real-World Solutions
@@ -60,18 +102,18 @@ const Solution_transform = () => {
                                                     <Link href="#" className='btn-primary btn-white'>Case-Studies</Link>
                                                 </div>
                                             </div>
-                                        </div>
+                                        </motion.div>
                                     </Col>
                                     <Col xxl={6} xl={6} lg={6} md={12} sm={12} xm={12}>
                                         <div className='right_area'>
                                             {
-                                                contentList && contentList.length>0 && contentList.map((element , index)=>{
+                                                contentList && contentList.length > 0 && contentList.map((element, index) => {
                                                     return <div key={index} className='content_area'>
                                                         {
                                                             element.image && (
-                                                            <div className="bg_img">
-                                                                <Image src={element.image} alt="..." title="..." priority />
-                                                            </div>
+                                                                <div className="bg_img">
+                                                                    <Image src={element.image} alt="..." title="..." priority />
+                                                                </div>
                                                             )
                                                         }
                                                         <h3>{element.title}</h3>
