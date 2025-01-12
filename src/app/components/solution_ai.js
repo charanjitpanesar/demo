@@ -6,10 +6,10 @@ import '../../../public/sass/pages/solution_ai.scss';
 
 
 const Solution_ai = () => {
-    const text = ['Protecting', 'Shielding', 'Optimizing', 'Enhancing', 'Ensuring',];
-    const classes = ['gallery_1', 'gallery_2', 'gallery_3', 'gallery_4', 'gallery_5'];
+    const text = ['Protecting', 'Shielding', 'Optimizing', 'Enhancing','Optimizing', 'Enhancing', 'Ensuring',];
+    const classes = ['gallery_1', 'gallery_2', 'gallery_3', 'gallery_4', 'gallery_5','gallery_6', 'gallery_7'];
     const slidesRef = useRef([]);
-    let interval = 2500
+    let interval = 1500
 
     useEffect(() => {
         const updateClasses = () => {

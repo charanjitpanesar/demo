@@ -59,6 +59,7 @@
                     flex-direction: column;
                     position: relative;
                     height:  525px;
+                    overflow-y: clip;
                     &::after{
                         content: '';
                         position: absolute;
@@ -80,24 +81,32 @@
                         height: fit-content;
                         padding: 5px 18px;
                         position: absolute;
+                        border-radius: 50px;
                         @include mixins.transition(all 0.4s ease-in-out);
                         &.gallery_1{
-                            top: 0%;
+                            top: -20%;
+                            opacity: 0;
                         }
                         &.gallery_2{
-                            top: 20%;
+                            top: 0%;
                         }
                         &.gallery_3{
-                            background: linear-gradient(283.77deg, rgba(255, 128, 0, 0) 27.47%, rgba(0, 221, 255, 0.19) 101.11%);
-                            color: variable.$sea_green;
-                            border-radius: 50px;
-                            top: 40%;
+                            top: 20%;
                         }
                         &.gallery_4{
-                            top: 60%;
+                            background: linear-gradient(283.77deg, rgba(255, 128, 0, 0) 27.47%, rgba(0, 221, 255, 0.19) 101.11%);
+                            color: variable.$sea_green;
+                            top: 40%;
                         }
                         &.gallery_5{
+                            top: 60%;
+                        }
+                        &.gallery_6{
                             top: 80%;
+                        }
+                        &.gallery_7{
+                            top: 100%;
+                            opacity: 0;
                         }
                     }
                 }
