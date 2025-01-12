@@ -5,6 +5,7 @@ import Header from "./components/Header";
 import { Bricolage_Grotesque } from "next/font/google";
 import { Saira } from "next/font/google";
 import Footer from './components/Footer';
+import 'swiper/css'
 import '../../public/sass/base/base.scss';
 import '../../public/sass/base/helper.scss';
 import '../../public/sass/base/reset.scss';

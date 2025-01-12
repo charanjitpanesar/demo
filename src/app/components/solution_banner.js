@@ -103,7 +103,7 @@ const Solution_banner = () => {
     }, [controls])
     return (
         <>
-            <section className="banner">
+            <section className="banner_section">
                 <Container>
                     <Row>
                         <Col xxl={12} xl={12} lg={12} md={12} sm={12} xs={12}>

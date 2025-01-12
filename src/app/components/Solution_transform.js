@@ -15,6 +15,7 @@ import { delay } from 'motion';
 const Solution_transform = () => {
 
     const [show, setShow] = useState(false);
+    const [hover, sethover] = useState(false);
     const contentList = [
         {
             title: 'Wholesale & Retail',
@@ -62,11 +63,12 @@ const Solution_transform = () => {
                             <div className='parent_area'>
                                 <Row>
                                     <Col xxl={6} xl={6} lg={6} md={12} sm={12} xm={12}>
-                                        <motion.div className='left_area' whileInView={() => setShow(true)}>
+                                        <motion.div className='left_area' whileInView={() => setShow(true)} whileHover={() => sethover(true)}>
                                             <motion.div
                                                 className='shape_img1'
                                                 initial={variants.initial_top}
                                                 animate={show? variants.visible: ''}
+                                                whileHover={hover? {scale: 1.03}:''}
                                             >
                                                 <Image src={recShape1} alt='...' title='...' priority></Image>
                                             </motion.div>
@@ -74,6 +76,7 @@ const Solution_transform = () => {
                                                 className='shape_img2'
                                                 initial={variants.initial_right}
                                                 animate={show? variants.visible: ''}
+                                                whileHover={hover? {scale: 1.03}:''}
                                             >
                                                 <Image src={recShape2} alt='...' title='...' priority></Image>
                                             </motion.div>
@@ -81,6 +84,7 @@ const Solution_transform = () => {
                                                 className='web_img'
                                                 initial={variants.initial_left}
                                                 animate={show? variants.visible: ''}
+                                                whileHover={hover? {scale: 1.03}:''}
                                             >
                                                 <Image src={webCard} alt='...' title='...' priority></Image>
                                             </motion.div>
@@ -88,6 +92,7 @@ const Solution_transform = () => {
                                                 className='ui_img'
                                                 initial={variants.initial_bottom}
                                                 animate={show? variants.visible: ''}
+                                                whileHover={hover? {scale: 1.03}:''}
                                             >
                                                 <Image src={uiCard} alt='...' title='...' priority></Image>
                                             </motion.div>
