@@ -49,13 +49,17 @@
             .cards {
                 li {
                     margin-top: -65px;
-
+                    will-change: transform;
+                    position: relative;
+                    z-index: 2;
                     &:first-child {
                         margin-top: 0;
+                        z-index: 3;
                     }
 
                     &:last-child {
                         margin-top: -48px;
+                        z-index: 1;
                     }
 
                     .box {
