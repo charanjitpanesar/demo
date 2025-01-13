@@ -13,7 +13,7 @@ const About_banner = () => {
                     <Col xxl={12} xl={12} lg={12} md={12} sm={12} xm={12} className='h-100'>
                         <div className='parent_area'>
                             <div className='button_area'>
-                                <Link href="#">
+                                <Link href="/">
                                     <div className='logo_area'>
                                         <Image
                                             src={logo}
@@ -30,7 +30,7 @@ const About_banner = () => {
                             It is what we do</h3>
                             <p>Cost-efficient, compliant, and tailored AI tools for your business.</p>
                             <div className='intro_btn'>
-                                <Link href="#">
+                                <Link href="/">
                                     <span>About Us</span>
                                     <div className='icon_area'>
                                         <i className="bi bi-play-fill"></i>
