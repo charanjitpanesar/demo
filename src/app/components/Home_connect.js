@@ -15,7 +15,10 @@ const Home_connect = () => {
                                         <h3>
                                             Connect. Merge. Work
                                         </h3>
-                                        <div className=''></div>
+                                        <div className='button_area'>
+                                            <Link>
+                                            </Link>
+                                        </div>
                                         <p>Join the Network Where Innovation Meets Opportunity – Your Journey with Saynt Starts Here</p>
                                     </div>
                                 </Col>
