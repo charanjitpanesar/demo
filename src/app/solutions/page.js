@@ -21,6 +21,7 @@ const Solutions = () => {
         <Solution_calender />
       </div>
       <Scroll_star />
+        {/* <Solution_calender /> */}
     </>
   )
 }
