@@ -16,7 +16,7 @@ const Solutions = () => {
         <Solution_ai/>
         <Solution_projects/>
         <Solution_action />
-        <Solution_calender />
+        {/* <Solution_calender /> */}
     </>
   )
 }
