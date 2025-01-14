@@ -11,6 +11,28 @@
     text-align: center;
 }
 
+.btn-green{
+    display: inline-block;
+    background-color: variable.$primary_color;
+    border-radius: 60px;
+    color: variable.$black;
+    font-size: 14px;
+    &:hover{
+        background-color: variable.$dark_primary;
+    }
+}
+
+.btn-light{
+    display: inline-block;
+    background-color: variable.$white;
+    border-radius: 60px;
+    color: variable.$black;
+    font-size: 14px;
+    &:hover{
+        background-color: variable.$text_color;
+    }
+}
+
 .btn-white {
     background-color: variable.$white;
     box-shadow: 0px -6px 10px 0px #0000004D inset;
@@ -62,6 +84,17 @@
         font-size: 16px;
         line-height: 18px;
     }
+    .btn-green{
+        border-radius: 60px;
+        font-size: 14px;
+
+    }
+    .btn-light{
+        border-radius: 60px;
+        font-size: 14px;
+
+    }
+    
 }
 
 /* Landscape phones and portrait tablets */
@@ -72,6 +105,18 @@
         font-size: 14px;
         line-height: 16px;
     }
+
+    .btn-green{
+        border-radius: 60px;
+        font-size: 14px;
+
+    }
+    .btn-light{
+        border-radius: 60px;
+        font-size: 14px;
+
+    }
+
 }
 
 /* Smaller phones */
@@ -81,6 +126,15 @@
         border-radius: 6px;
         font-size: 12px;
         line-height: 16px;
+    }
+    .btn-green{
+        border-radius: 60px;
+        font-size: 14px;
+
+    }
+    .btn-light{
+        border-radius: 60px;
+        font-size: 14px;
     }
 }
 
