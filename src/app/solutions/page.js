@@ -19,9 +19,9 @@ const Solutions = () => {
         <Solution_projects />
         <Solution_action />
         <Solution_calender />
+        {/* <Solution_calender /> */}
       </div>
       <Scroll_star />
-        {/* <Solution_calender /> */}
     </>
   )
 }
