@@ -84,6 +84,50 @@
     }
 }
 
+@keyframes moveBackground {
+    from {
+        background-position: 100% center;
+    }
+    to {
+        background-position: 0% center; 
+    }
+}
+.home_service_banner_section{
+    margin-top: 90px;
+    background-color: variable.$primary_color;
+    padding: 40px 0;
+    &.book_call_section{
+        position: relative;
+        z-index: 2;
+        background-color: unset;
+        &::after{
+            z-index: -1;
+            content: '';
+            animation: moveBackground 10s linear infinite;
+        
+            position: absolute;
+            inset: 0;
+            background: url('../../images/book_call_bg.png') no-repeat center/ 120% 100%;
+        }
+        .parent_area{
+            text-align: center;
+        }
+    }
+    .parent_area{
+        h3{
+            font-size: 49.2px;
+            font-weight: 500;
+            text-align: center;
+            color: transparent;
+            background: linear-gradient(90.22deg, #000000 0.19%, #666666 99.87%);
+            background-size: 300% 300%; 
+            background-clip: text;
+            -webkit-background-clip: text; 
+            animation: gradient-move 3s infinite linear; 
+        }
+    }
+}
+
 
 /* Above 1920 desktop */
 @media (min-width: 1920px){
@@ -118,6 +162,10 @@
             }
         }
     } 
+
+    .home_service_banner_section{
+        margin-top: 70px;
+    }
 }
 
 /* 1200 desktop only */
@@ -133,6 +181,10 @@
             }
         }
     } 
+
+    .home_service_banner_section{
+        margin-top: 70px;
+    }
 }
 
 /* Landscape tablets and medium desktops */
@@ -160,6 +212,16 @@
             }
         }
     } 
+
+    .home_service_banner_section{
+        margin-top: 50px;
+        .parent_area{
+            h3{
+                font-size: 40px;
+            } 
+        }
+    }
+
 }
 
 /* Landscape tablets and ipad */
@@ -195,6 +257,16 @@
             }
         }
     } 
+
+    .home_service_banner_section{
+        margin-top: 40px;
+        padding: 30px 0;
+        .parent_area{
+            h3{
+                font-size: 35px;
+            } 
+        }
+    }
 }
 
 /* Landscape phones and portrait tablets */
@@ -230,6 +302,16 @@
             }
         }
     } 
+
+    .home_service_banner_section{
+        margin-top: 30px;
+        padding: 25px 0;
+        .parent_area{
+            h3{
+                font-size: 25px;
+            } 
+        }
+    }
 }
 
 /* Landscape phones and portrait tablets */
@@ -268,6 +350,16 @@
             }
         }
     } 
+
+    .home_service_banner_section{
+        margin-top: 25px;
+        padding: 20px 0;
+        .parent_area{
+            h3{
+                font-size: 22px;
+            } 
+        }
+    }
 }
 
 /* Smaller phones */
@@ -306,6 +398,16 @@
             }
         }
     } 
+
+    .home_service_banner_section{
+        margin-top: 25px;
+        padding: 20px 0;
+        .parent_area{
+            h3{
+                font-size: 22px;
+            } 
+        }
+    }
 }
 
 /* Smaller phones */
