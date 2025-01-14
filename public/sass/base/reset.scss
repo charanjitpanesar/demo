@@ -89,7 +89,28 @@ input[type=number]::-webkit-outer-spin-button {
 }
 
 
-
+button {
+	all: unset;
+	display: inline-block;
+	cursor: pointer;
+	text-align: center;
+	border: none;
+	background: none;
+	font: inherit;
+	color: inherit;
+	line-height: inherit;
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
+	&:focus {
+	  outline: none;
+	}
+	transition: background-color 0.2s ease, color 0.2s ease;
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	appearance: none;
+	user-select: none;
+  }
 
 
 

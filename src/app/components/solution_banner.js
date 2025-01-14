@@ -109,14 +109,14 @@ const Solution_banner = () => {
                         <Col xxl={12} xl={12} lg={12} md={12} sm={12} xs={12}>
                             <div className="parent_area">
                                 <div className="title">
-                                    <motion.h1 initial={{ opacity: 0 }} whileInView={{ opacity: 1 }}>See how we <span className='d-block'>handle projects</span> <span className='d-block'>with a strategic</span> edge</motion.h1>
-                                    <motion.p initial={{ opacity: 0 }} whileInView={{ opacity: 1 }}>See how SAYNT AI streamlines your business with advanced solutions</motion.p>
+                                    <motion.h1 initial={{ opacity: 0 }} animate={{ opacity: 1 }}>See how we <span className='d-block'>handle projects</span> <span className='d-block'>with a strategic</span> edge</motion.h1>
+                                    <motion.p initial={{ opacity: 0 }} animate={{ opacity: 1 }}>See how SAYNT AI streamlines your business with advanced solutions</motion.p>
                                 </div>
                                 <div className="button_group">
                                     <motion.div
                                         className="button_area"
                                         initial={{ x: -100, opacity: 0 }}
-                                        whileInView={{ x: 0, opacity: 1, transition: { duration: 1, ease: 'anticipate' } }}
+                                        animate={{ x: 0, opacity: 1, transition: { duration: 1, ease: 'anticipate' } }}
 
                                     >
                                         <Link href={'/'} className='btn-primary btn-white'>See Our Work</Link>
@@ -124,7 +124,7 @@ const Solution_banner = () => {
                                     <motion.div
                                         className="button_area"
                                         initial={{ x: 100, opacity: 0 }}
-                                        whileInView={{ x: 0, opacity: 1, transition: { duration: 1, ease: 'anticipate' } }}
+                                        animate={{ x: 0, opacity: 1, transition: { duration: 1, ease: 'anticipate' } }}
                                     >
                                         <Link href={'/'} className='btn-primary btn-dark'>Request a Demo</Link>
                                     </motion.div>
