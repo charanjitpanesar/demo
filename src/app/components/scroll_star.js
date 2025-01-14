@@ -12,7 +12,7 @@ const Scroll_star = () => {
         let count = sectionContainer.childElementCount;
         setAllSections(count)
         const options = {
-            threshold: 0.2
+            threshold: 0.7
         }
         const observer = new IntersectionObserver((enteries) => {
             enteries.forEach((entery) => {
