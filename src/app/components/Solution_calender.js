@@ -8,7 +8,7 @@ import Image from 'next/image';
 import dynamic from 'next/dynamic';
 const Calendar = dynamic(() => import('react-calendar'), {
     ssr: false,
-    loading: () => <p>Calender is Loading...</p>
+    loading: () => <p style={{ color: 'black', fontSize: 18, fontWeight: 600 }}>Calender is Loading...</p>
 })
 
 const Solution_calender = () => {
@@ -70,14 +70,19 @@ const Solution_calender = () => {
                                         </div>
                                     </Col>
                                     <Col xxl={6} xl={6} lg={6} md={6} sm={6} xs={6}>
-                                        <div className="center">
+                                        <div className="center left">
                                             <Calendar
                                                 className={'cal'}
                                                 tileClassName={'tile'}
+
                                             />
                                         </div>
                                     </Col>
-                                    <Col xxl={3} xl={3} lg={3} md={3} sm={3} xs={3}></Col>
+                                    <Col xxl={3} xl={3} lg={3} md={3} sm={3} xs={3}>
+                                        <div className="right left">
+
+                                        </div>
+                                    </Col>
                                 </Row>
                             </div>
                         </div>
