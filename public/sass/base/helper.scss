@@ -22,6 +22,14 @@
     }
 }
 
+.btn-black{
+    display: inline-block;
+    background-color: variable.$black;
+    border-radius: 600px;
+    color: variable.$white;
+    box-shadow: 0px 0px 1349.46px 0px #05FFEE;
+    font-size: 18px;
+}
 .btn-light{
     display: inline-block;
     background-color: variable.$white;
