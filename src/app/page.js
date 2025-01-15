@@ -9,6 +9,7 @@ import Home_industry from './components/Home_industry';
 import Home_service_banner from './components/Home_service_banner';
 import Home_trust from './components/Home_trust';
 import Scroll_star from './components/scroll_star';
+import Solution_calender from './components/Solution_calender';
 export default function Home() {
   return (
     <>
@@ -22,6 +23,7 @@ export default function Home() {
           <Home_choose/>
           <Home_industry/>
           <Home_connect/>
+          <Solution_calender/>
         </div>
         <Scroll_star />
     </>
