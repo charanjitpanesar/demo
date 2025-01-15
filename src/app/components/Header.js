@@ -111,7 +111,7 @@ export default Header
 {/* <section className='header_section'>
     <Container>
         <Row>
-            <Col xxl={12} xl={12} lg={12} md={12} sm={12} xm={12}>
+            <Col xxl={12} xl={12} lg={12} md={12} sm={12} xs={12}>
                 <div className='parent_area'></div>
             </Col>
         </Row>
