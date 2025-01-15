@@ -1,5 +1,6 @@
 import '../../public/sass/pages/home.scss';
 import Home_book_call from './components/Home_book_call';
+import Home_choose from './components/Home_choose';
 import Home_connect from './components/Home_connect';
 import Home_hero from './components/Home_hero';
 import Home_service_banner from './components/Home_service_banner';
@@ -14,6 +15,7 @@ export default function Home() {
           <Home_service_banner/>
           <Home_book_call/>
           <Home_trust/>
+          <Home_choose/>
         </div>
         <Scroll_star />
     </>
