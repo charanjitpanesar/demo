@@ -3,7 +3,7 @@ import React, { useEffect } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import { Col, Container, Row } from 'react-bootstrap';
-import { motion, useAnimation } from "motion/react"
+import { motion, useAnimation } from "framer-motion"
 import banner1 from '../../../public/images/banner1.png';
 import rec5 from '../../../public/images/rec5.svg';
 import rec6 from '../../../public/images/rec6.svg';
@@ -30,77 +30,55 @@ import logo from '../../../public/images/white_logo.png';
 import '../../../public/sass/pages/solution_banner.scss';
 
 const Solution_banner = () => {
-    const list_right = {
-        visible: {
-            x: 0,
-            opacity: 1,
-            transition: {
-                ease: 'anticipate',
-                duration: 0.5
-            }
-        },
-        hidden: {
-            x: -50,
-            opacity: 0
-        }
-    }
-    const list_left = {
-        hidden: {
-            x: 50,
-            opacity: 0
-        }
-    }
-    const variants = {
-        hidden: {
-            y: 100,
-            x: -50,
-            opacity: 0,
-        },
-        hidden2: {
-            y: 100,
-            x: 50,
-            opacity: 0
-        },
-        visible: {
-            y: 0,
-            x: 0,
-            opacity: 1,
-        }
-    }
     const controls = useAnimation();
     const controls2 = useAnimation();
-    const startAnimation = async () => {
-        await controls.start(
-            variants.visible
-        )
-        await controls.start({
-            y: [0, 5, 0],
-            transition: {
-                duration: 2,
-                repeat: Infinity,
-                repeatType: 'reverse',
-                ease: 'linear'
-            }
-        })
+
+    const listVariants = {
+        animate: { x: 0, opacity: 1, transition: { ease: 'anticipate', duration: 0.5 } },
+        left: { x: -50, opacity: 0 }, right: { x: 50, opacity: 0 }
     }
-    const startAnimation2 = async () => {
-        await controls2.start(
-            list_right.visible
-        )
-        await controls2.start({
-            scale: [0.9, 1, 0.9],
-            transition: {
-                duration: 2,
-                repeat: Infinity,
-                repeatType: 'reverse',
-                ease: 'linear'
-            }
-        })
+
+    const variants = {
+        hidden: { y: 100, x: -50, opacity: 0, },
+        hidden2: { y: 100, x: 50, opacity: 0 },
+        top: { y: 100, opacity: 0 },
+        visible: { y: 0, x: 0, opacity: 1, }
     }
+
     useEffect(() => {
-        startAnimation2()
-        startAnimation()
-    }, [controls])
+        const startAnimation = async () => {
+            await controls.start('visible')
+            await controls.start({
+                y: [0, 5, 0],
+                transition: {
+                    duration: 2,
+                    repeat: Infinity,
+                    repeatType: 'reverse',
+                    ease: 'linear'
+                }
+            })
+        }
+        const startAnimation2 = async () => {
+            await controls2.start('animate')
+            await controls2.start({
+                scale: [0.9, 1, 0.9],
+                transition: {
+                    duration: 2,
+                    repeat: Infinity,
+                    repeatType: 'reverse',
+                    ease: 'linear'
+                }
+            })
+        }
+
+        startAnimation2();
+        startAnimation();
+
+        return () => {
+            controls.stop();
+            controls2.stop();
+        }
+    }, [controls, controls2])
     return (
         <>
             <section className="banner_section">
@@ -134,7 +112,8 @@ const Solution_banner = () => {
                                         <Col xxl={5} xl={5} lg={5} md={4} sm={4} xs={4}>
                                             <ul className="cards">
                                                 <motion.li
-                                                    initial={variants.hidden}
+                                                    initial='hidden'
+                                                    variants={variants}
                                                     animate={controls}
                                                     transition={{
                                                         duration: 0.6,
@@ -148,7 +127,8 @@ const Solution_banner = () => {
                                                     </div>
                                                 </motion.li>
                                                 <motion.li
-                                                    initial={variants.hidden}
+                                                    initial='hidden'
+                                                    variants={variants}
                                                     animate={controls}
                                                     transition={{
                                                         duration: 0.6,
@@ -163,7 +143,8 @@ const Solution_banner = () => {
                                                     </div>
                                                 </motion.li>
                                                 <motion.li
-                                                    initial={variants.hidden}
+                                                    initial='hidden'
+                                                    variants={variants}
                                                     animate={controls}
                                                     transition={{
                                                         duration: 0.6,
@@ -182,10 +163,8 @@ const Solution_banner = () => {
                                         <Col xxl={2} xl={2} lg={2} md={4} sm={4} xs={4}>
                                             <motion.div
                                                 className="logo_box"
-                                                initial={{
-                                                    y: 100,
-                                                    opacity: 0
-                                                }}
+                                                initial='top'
+                                                variants={variants}
                                                 animate={controls}
                                                 transition={{ duration: 2, ease: 'anticipate' }}
                                             >
@@ -198,7 +177,8 @@ const Solution_banner = () => {
                                         <Col xxl={5} xl={5} lg={5} md={4} sm={4} xs={4}>
                                             <ul className="cards">
                                                 <motion.li
-                                                    initial={variants.hidden2}
+                                                    initial='hidden2'
+                                                    variants={variants}
                                                     animate={controls}
                                                     transition={{ duration: 0.6 }}
                                                 >
@@ -210,7 +190,8 @@ const Solution_banner = () => {
                                                     </div>
                                                 </motion.li>
                                                 <motion.li
-                                                    initial={variants.hidden2}
+                                                    initial='hidden2'
+                                                    variants={variants}
                                                     animate={controls}
                                                     transition={{ delay: 0.2, duration: 0.6 }}
                                                 >
@@ -222,7 +203,8 @@ const Solution_banner = () => {
                                                     </div>
                                                 </motion.li>
                                                 <motion.li
-                                                    initial={variants.hidden2}
+                                                    initial='hidden2'
+                                                    variants={variants}
                                                     animate={controls}
                                                     transition={{ delay: 0.4, duration: 0.6 }}
                                                 >
@@ -237,28 +219,28 @@ const Solution_banner = () => {
                                         </Col>
                                     </Row>
                                 </div>
-                                <motion.div className="img_wrapper" initial={list_right.hidden} animate={controls}>
+                                <motion.div className="img_wrapper" variants={listVariants} initial='left' animate={controls2}>
                                     <Image src={rec8} alt='...' title='...' fetchPriority='low' priority={false} />
                                     <div className="icon">
                                         <Image src={icon11} alt='...' title='...' fetchPriority='low' priority={false} />
                                     </div>
                                 </motion.div>
-                                <motion.div className="img_wrapper wrapper2" initial={list_left.hidden} animate={controls}>
+                                <motion.div className="img_wrapper wrapper2" variants={listVariants} initial='right' animate={controls2}>
                                     <Image src={rec9} alt='...' title='...' fetchPriority='low' priority={false} />
                                     <div className="icon">
                                         <Image src={icon12} alt='...' title='...' fetchPriority='low' priority={false} />
                                     </div>
                                 </motion.div>
-                                <motion.div className="img_wrapper empty_card" initial={list_right.hidden} animate={controls2}>
+                                <motion.div className="img_wrapper empty_card" variants={listVariants} initial='left' animate={controls2}>
                                     <Image src={rec10} alt='...' title='...' fetchPriority='low' priority={false} />
                                 </motion.div>
-                                <motion.div className="img_wrapper empty_card2" initial={list_left.hidden} animate={controls2}>
+                                <motion.div className="img_wrapper empty_card2" variants={listVariants} initial='right' animate={controls2}>
                                     <Image src={rec11} alt='...' title='...' fetchPriority='low' priority={false} />
                                 </motion.div>
-                                <motion.div className="img_wrapper empty_card3" initial={list_right.hidden} animate={controls2}>
+                                <motion.div className="img_wrapper empty_card3" variants={listVariants} initial='left' animate={controls2}>
                                     <Image src={rec12} alt='...' title='...' fetchPriority='low' priority={false} />
                                 </motion.div>
-                                <motion.div className="img_wrapper empty_card4" initial={list_left.hidden} animate={controls2}>
+                                <motion.div className="img_wrapper empty_card4" variants={listVariants} initial='right' animate={controls2}>
                                     <Image src={rec13} alt='...' title='...' fetchPriority='low' priority={false} />
                                 </motion.div>
                             </div>
