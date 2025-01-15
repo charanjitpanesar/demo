@@ -46,6 +46,7 @@
                 font-size: 81.59px;
                 font-weight: 700;
                 color: variable.$white;
+                cursor: vertical-text;
                 @include mixins.rotate(90deg);
             }
             .image_area{
