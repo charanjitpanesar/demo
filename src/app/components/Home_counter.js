@@ -3,6 +3,7 @@ import logo from '../../../public/images/logo.png'
 import Image from 'next/image';
 import '../../../public/sass/home_scss/home_counter.scss'
 import { Col, Container, Row } from 'react-bootstrap';
+import Counter from './counter';
 
 const Home_counter = () => {
     return (
@@ -25,19 +26,19 @@ const Home_counter = () => {
                                 <Row>
                                     <Col xxl={4} xl={4} lg={4} md={4} sm={4} xs={12}>
                                         <div className='counter_area'>
-                                            <h3>5+</h3>
+                                            <Counter start={0} end={5} duration={5} />
                                             <p>Years Experience</p>
                                         </div>
                                     </Col>
                                     <Col xxl={4} xl={4} lg={4} md={4} sm={4} xs={12}>
                                         <div className='counter_area'>
-                                            <h3>30+</h3>
+                                            <Counter start={0} end={30} duration={5} />
                                             <p>Clients Aquired</p>
                                         </div>
                                     </Col>
                                     <Col xxl={4} xl={4} lg={4} md={4} sm={4} xs={12}>
                                         <div className='counter_area border-0'>
-                                            <h3>200+</h3>
+                                            <Counter start={0} end={200} duration={5} />
                                             <p>Projects Delivered</p>
                                         </div>
                                     </Col>
