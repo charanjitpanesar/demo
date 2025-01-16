@@ -6,6 +6,16 @@
 .home_cards_section{
     padding-top: 90px;
     .parent_area{
+        h3{
+            font-size: 48.33px;
+            font-weight: 500;   
+            color: variable.$white;
+            text-align: center;
+            padding-bottom: 60px;
+            span{
+                color: variable.$primary_color;
+            }
+        }
         .row{
             row-gap: 20px;
         }
@@ -119,6 +129,10 @@
 	.home_cards_section{
         padding-top: 50px;
         .parent_area{
+            h3{
+                font-size: 40px;
+                padding-bottom: 30px;
+            }
             .card_inner{
                 padding: 30px 20px;
             }
@@ -132,6 +146,10 @@
 	.home_cards_section{
         padding-top: 40px;
         .parent_area{
+            h3{
+                font-size: 35px;
+                padding-bottom: 30px;
+            }
             .card_inner{
                 padding: 30px 20px;
                 h3{
@@ -148,6 +166,10 @@
 	.home_cards_section{
         padding-top: 30px;
         .parent_area{
+            h3{
+                font-size: 30px;
+                padding-bottom: 30px;
+            }
             .card_inner{
                 padding: 30px 20px;
                 border-radius: 10px;
@@ -180,6 +202,10 @@
 	.home_cards_section{
         padding-top: 25px;
         .parent_area{
+            h3{
+                font-size: 25px;
+                padding-bottom: 20px;
+            }
             .card_inner{
                 padding: 30px 20px;
                 border-radius: 10px;
@@ -212,6 +238,10 @@
 	.home_cards_section{
         padding-top: 25px;
         .parent_area{
+            h3{
+                font-size: 25px;
+                padding-bottom: 20px;
+            }
             .card_inner{
                 padding: 30px 20px;
                 border-radius: 10px;
