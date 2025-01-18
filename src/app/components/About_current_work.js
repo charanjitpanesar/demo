@@ -20,8 +20,8 @@ const About_current_work = () => {
                     <Row>
                         <Col xxl={12} xl={12} lg={12} md={12} sm={12} xs={12}>
                             <div className="parent_area">
-                                <Row className='row-gap-4'>
-                                    <Col xxl={7} xl={7} lg={7} md={7} sm={7} xs={7} className='h-100'>
+                                <Row className='row-gap-3 row-gap-md-4 align-items-lg-start align-items-end'>
+                                    <Col xxl={7} xl={7} lg={7} md={7} sm={12} xs={12} className='h-100'>
                                         <div className="left">
                                             <div className="top">
                                                 <div className="title">
@@ -40,11 +40,25 @@ const About_current_work = () => {
                                                     <Swiper
                                                         onSwiper={setThumbsSwiper}
                                                         spaceBetween={10}
-                                                        slidesPerView={4}
+                                                        slidesPerView={1}
                                                         freeMode={true}
                                                         watchSlidesProgress={true}
                                                         modules={[FreeMode, Navigation, Thumbs]}
                                                         className="mySwiper"
+                                                        breakpoints={{
+                                                            0: {
+                                                                slidesPerView: 2
+                                                            },
+                                                            576:{
+                                                                slidesPerView: 4
+                                                            },
+                                                            768:{
+                                                                slidesPerView: 3
+                                                            },
+                                                            1024: {
+                                                                slidesPerView: 4
+                                                            }
+                                                        }}
                                                     >
                                                         {
                                                             [...Array(4)].map((item, i) => (
@@ -64,7 +78,7 @@ const About_current_work = () => {
                                             </div>
                                         </div>
                                     </Col>
-                                    <Col xxl={5} xl={5} lg={5} md={5} sm={5} xs={5} className='h-100'>
+                                    <Col xxl={5} xl={5} lg={5} md={5} sm={12} xs={12} className='h-100'>
                                         <div className="right">
                                             <div className="slider">
                                                 <Swiper
