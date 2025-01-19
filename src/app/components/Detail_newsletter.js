@@ -1,6 +1,6 @@
 import React from 'react'
 import '../../../public/sass/blog_detail_scss/blog_detail.scss'
-import newsletterImg from '../../../public/images/newsletter_bg.png'
+import newsletterImg from '../../../public/images/em.svg'
 import logo from '../../../public/images/big_logo.png'
 import Image from 'next/image'
 
