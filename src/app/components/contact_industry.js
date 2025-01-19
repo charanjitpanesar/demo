@@ -1,0 +1,87 @@
+'use client'
+import React, { useEffect, useRef } from 'react'
+import { Col, Container, Row } from 'react-bootstrap'
+import { Swiper, SwiperSlide } from 'swiper/react'
+import '../../../public/sass/contact_scss/industry.scss';
+import { Autoplay, Pagination } from 'swiper/modules';
+import 'swiper/css/pagination'
+import 'swiper/css/autoplay';
+import Image from 'next/image';
+import round from '../../../public/images/round.svg';
+
+const Contact_industry = () => {
+    const data = [
+        { title: 'Finance', desc: 'Track market trends and analyze data with our intuitive, user-friendly interface' },
+        { title: 'Healthcare', desc: 'Track market trends and analyze data with our intuitive, user-friendly interface' },
+        { title: 'Healthcare', desc: 'Track market trends and analyze data with our intuitive, user-friendly interface' },
+        { title: 'Healthcare', desc: 'Track market trends and analyze data with our intuitive, user-friendly interface' },
+        { title: 'Education', desc: 'Track market trends and analyze data with our intuitive, user-friendly interface' }
+    ]
+    const classArr = ['top_right','prev','active', 'next','bottom_right' ]
+    const slidesRef = useRef([])
+   let interval = 1500
+   
+       useEffect(() => {
+           const updateClasses = () => {
+               slidesRef.current.forEach((slide, index) => {
+                   if (slide) {
+                       slide.classList.remove(...classArr);
+                       const currentClass = classArr[(index + Math.floor(Date.now() / interval)) % classArr.length];
+                       slide.classList.add(currentClass);
+                   }
+               });
+           };
+   
+           const intervalId = setInterval(updateClasses, interval);
+   
+           return () => clearInterval(intervalId);
+       }, [classArr, interval]);
+    return (
+        <>
+            <section className="industry">
+                <Container>
+                    <Row>
+                        <Col xxl={12} xl={12} lg={12} md={12} sm={12} xs={12}>
+                            <div className="parent_area">
+                                <Row>
+                                    <Col xxl={5} xl={5} lg={5} md={5} sm={5} xs={12}>
+                                        <div className="left">
+                                            <div className="title">
+                                                <h3>Industry-Specific Expertise</h3>
+                                                <h4>Solving Real Problems Across
+                                                    Diverse Industries</h4>
+                                                <p> Turning Industry Challenges into Success Stories with Smart, Tailored Solutions</p>
+                                            </div>
+                                        </div>
+                                    </Col>
+                                    <Col xxl={7} xl={7} lg={7} md={7} sm={7} xs={12}>
+                                        <div className="right">
+                                            <div className="slider_area">
+                                                <div className="img_area">
+                                                    <Image src={round} alt='...' title='...' fetchPriority='low' priority={false} />
+                                                </div>
+                                                {
+                                                    data &&
+                                                    data.map((item, i) => (
+                                                        <div className='slide' key={i} ref={(el) => slidesRef.current[i] = el}>
+                                                            <div className="chip">
+                                                                <div className="title">{item.title}</div>
+                                                                <div className="desc">{item.desc}</div>
+                                                            </div>
+                                                        </div>
+                                                    ))
+                                                }
+                                            </div>
+                                        </div>
+                                    </Col>
+                                </Row>
+                            </div>
+                        </Col>
+                    </Row>
+                </Container>
+            </section>
+        </>
+    )
+}
+
+export default Contact_industry
