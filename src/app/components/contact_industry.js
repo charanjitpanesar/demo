@@ -19,7 +19,7 @@ const Contact_industry = () => {
     ]
     const classArr = ['top_right','prev','active', 'next','bottom_right' ]
     const slidesRef = useRef([])
-   let interval = 1500
+   let interval = 2500
    
        useEffect(() => {
            const updateClasses = () => {
@@ -43,8 +43,8 @@ const Contact_industry = () => {
                     <Row>
                         <Col xxl={12} xl={12} lg={12} md={12} sm={12} xs={12}>
                             <div className="parent_area">
-                                <Row>
-                                    <Col xxl={5} xl={5} lg={5} md={5} sm={5} xs={12}>
+                                <Row className='row-gap-3'>
+                                    <Col xxl={5} xl={5} lg={5} md={12} sm={12} xs={12}>
                                         <div className="left">
                                             <div className="title">
                                                 <h3>Industry-Specific Expertise</h3>
@@ -54,7 +54,7 @@ const Contact_industry = () => {
                                             </div>
                                         </div>
                                     </Col>
-                                    <Col xxl={7} xl={7} lg={7} md={7} sm={7} xs={12}>
+                                    <Col xxl={7} xl={7} lg={7} md={12} sm={12} xs={12}>
                                         <div className="right">
                                             <div className="slider_area">
                                                 <div className="img_area">
