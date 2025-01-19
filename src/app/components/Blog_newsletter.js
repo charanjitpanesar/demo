@@ -2,7 +2,7 @@ import React from 'react'
 import { Col, Container, Row } from 'react-bootstrap'
 
 import '../../../public/sass/blog_scss/blog_newsletter.scss'
-import newsletterImg from '../../../public/images/newsletter_bg.png'
+import newsletterImg from '../../../public/images/em.svg'
 import Image from 'next/image'
 
 const Blog_newsletter = () => {
