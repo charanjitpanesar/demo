@@ -21,11 +21,15 @@
             .swiper{
                 overflow-y: visible;
                 overflow-x: clip;
+                .swiper-slide{
+                    @include mixins.transition(all 400ms ease);
+                }
             }
             .swiper-slide-active{
                 transform: scale(1.2);
                 z-index: 2;
                 .slide_inner{
+                    @include mixins.transition(all 400ms ease);
                     background-color: variable.$blue;
                     .logo_area{
                         display: block;
