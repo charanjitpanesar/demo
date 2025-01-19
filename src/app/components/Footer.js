@@ -17,29 +17,29 @@ const Footer = () => {
             href: "/",
             text:"Home"
         },
-        {
-            href: "/solutions",
-            text:"Solutions"
-        },
+        // {
+        //     href: "/solutions",
+        //     text:"Solutions"
+        // },
         {
             href: "/about_us",
             text:"About Us"
         },
         {
-            href: "/resources",
-            text:"Resources"
+            href: "/blogs",
+            text:"Blogs"
         },
-        {
-            href: "/pricing",
-            text:"Pricing"
-        },
+        // {
+        //     href: "/pricing",
+        //     text:"Pricing"
+        // },
         {
             href: "/contact",
-            text:"Contact"
+            text:"Contact Us"
         },
         {
             href: "/customer_portal",
-            text:"Customer Portal"
+            text:"Careers"
         }
     ]
 
