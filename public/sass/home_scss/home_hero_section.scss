@@ -34,24 +34,7 @@
         .right_area{
             position: relative;
             .logo_area{
-                position: absolute;
-                top: 0;
-                right: 0;
-                top: 24%;
-                right: 19%;
-                height: 236px;
-                img{
-                    height: 100%;
-                    width: 100%;
-                    object-fit: cover;
-                }
-            }
-            .circles_img{
-                width: 70%;
-                margin-left: auto;
-                border-radius: 50%;
-                overflow: hidden;
-                // animation: rotate 20s linear infinite;
+                height: auto;
                 img{
                     height: 100%;
                     width: 100%;
@@ -154,13 +137,13 @@
     .home_hero_section{
         margin-top: 132px;
         padding-top: 70px;
-        .parent_area{
-            .right_area{
-                .logo_area{
-                    height: 200px;
-                } 
-            }
-        }
+        // .parent_area{
+        //     .right_area{
+        //         .logo_area{
+        //             height: 200px;
+        //         } 
+        //     }
+        // }
     } 
 
     .home_service_banner_section{
@@ -173,13 +156,13 @@
     .home_hero_section{
         margin-top: 132px;
         padding-top: 70px;
-        .parent_area{
-            .right_area{
-                .logo_area{
-                    height: 200px;
-                } 
-            }
-        }
+        // .parent_area{
+        //     .right_area{
+        //         .logo_area{
+        //             height: 200px;
+        //         } 
+        //     }
+        // }
     } 
 
     .home_service_banner_section{
@@ -202,14 +185,14 @@
                     font-size: 16px;
                 }
             }
-            .right_area{
-                .circles_img{
-                    width: 340px;
-                }
-                .logo_area{
-                    height: 150px;
-                } 
-            }
+            // .right_area{
+            //     .circles_img{
+            //         width: 340px;
+            //     }
+            //     .logo_area{
+            //         height: 150px;
+            //     } 
+            // }
         }
     } 
 
@@ -245,16 +228,16 @@
                     }
                 }
             }
-            .right_area{
-                .circles_img{
-                    width: 100%;
-                }
-                .logo_area{
-                    height: 150px;
-                    top: 25%;
-                    right: 29%;
-                } 
-            }
+            // .right_area{
+            //     .circles_img{
+            //         width: 100%;
+            //     }
+            //     .logo_area{
+            //         height: 150px;
+            //         top: 25%;
+            //         right: 29%;
+            //     } 
+            // }
         }
     } 
 
@@ -290,16 +273,16 @@
                     }
                 }
             }
-            .right_area{
-                .circles_img{
-                    width: 100%;
-                }
-                .logo_area{
-                    height: 130px;
-                    top: 25%;
-                    right: 28%;
-                } 
-            }
+            // .right_area{
+            //     .circles_img{
+            //         width: 100%;
+            //     }
+            //     .logo_area{
+            //         height: 130px;
+            //         top: 25%;
+            //         right: 28%;
+            //     } 
+            // }
         }
     } 
 
@@ -321,6 +304,7 @@
         padding-top: 25px;
         .parent_area{
             .left_area{
+                padding-bottom: 20px;
                 h3{
                     width: 100%;
                     text-align: center;
@@ -337,17 +321,17 @@
                     }
                 }
             }
-            .right_area{
-                padding-top: 20px;
-                .circles_img{
-                    width: 100%;
-                }
-                .logo_area{
-                    height: 150px;
-                    top: 28%;
-                    right: 28%;
-                } 
-            }
+            // .right_area{
+            //     padding-top: 20px;
+            //     .circles_img{
+            //         width: 100%;
+            //     }
+            //     .logo_area{
+            //         height: 150px;
+            //         top: 28%;
+            //         right: 28%;
+            //     } 
+            // }
         }
     } 
 
@@ -369,6 +353,7 @@
         padding-top: 25px;
         .parent_area{
             .left_area{
+                padding-bottom: 20px;
                 h3{
                     width: 100%;
                     text-align: center;
@@ -385,17 +370,17 @@
                     }
                 }
             }
-            .right_area{
-                padding-top: 20px;
-                .circles_img{
-                    width: 100%;
-                }
-                .logo_area{
-                    height: 150px;
-                    top: 28%;
-                    right: 28%;
-                } 
-            }
+            // .right_area{
+            //     padding-top: 20px;
+            //     .circles_img{
+            //         width: 100%;
+            //     }
+            //     .logo_area{
+            //         height: 150px;
+            //         top: 28%;
+            //         right: 28%;
+            //     } 
+            // }
         }
     } 
 
