@@ -2,8 +2,8 @@ import React from 'react'
 import '../../../public/sass/home_scss/home_hero_section.scss';
 import { Col, Container, Row } from 'react-bootstrap';
 import Link from 'next/link';
-import circleImg from '../../../public/images/circle_img.png'
-import logo from '../../../public/images/big_logo.png'
+// import circleImg from '../../../public/images/circle_img.png'
+import logo from '../../../public/images/home_banner_logo.svg'
 import Image from 'next/image';
 
 
@@ -30,14 +30,14 @@ const Home_hero = () => {
                                     </Col>
                                     <Col xxl={6} xl={6} lg={6} md={6} sm={6} xm={12}>
                                         <div className='right_area'>
-                                            <div className='circles_img'>
+                                            {/* <div className='circles_img'>
                                                 <Image
                                                     src={circleImg}
                                                     alt="..."
                                                     title="..."
                                                     priority
                                                 />
-                                            </div>
+                                            </div> */}
                                             <div className='logo_area'>
                                                 <Image
                                                     src={logo}
