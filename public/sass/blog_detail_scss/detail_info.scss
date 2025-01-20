@@ -17,7 +17,7 @@
             border-right: 1px solid variable.$border_color3;
 
             .intro_area {
-                padding-top: 60px;
+                padding-block: 60px;
                 padding-right: 40px;
 
                 h3 {
@@ -37,7 +37,6 @@
 
             .main_content {
                 border-top: 1px solid variable.$border_color3;
-                border-bottom: 1px solid variable.$border_color3;
                 padding: 60px 0;
                 padding-right: 40px;
 
@@ -243,6 +242,7 @@
 
                 .main_content {
                     padding: 30px 0;
+                    border-bottom: 1px solid variable.$border_color3;
                 }
             }
 
@@ -287,6 +287,7 @@
 
                 .main_content {
                     padding: 20px 0;
+                    border-bottom: 1px solid variable.$border_color3;
 
                     h3 {
                         font-size: 18px;
@@ -363,6 +364,7 @@
 
                 .main_content {
                     padding: 20px 0;
+                    border-bottom: 1px solid variable.$border_color3;
 
                     h3 {
                         font-size: 16px;
@@ -442,6 +444,7 @@
 
                 .main_content {
                     padding: 20px 0;
+                    border-bottom: 1px solid variable.$border_color3;
 
                     h3 {
                         font-size: 16px;
