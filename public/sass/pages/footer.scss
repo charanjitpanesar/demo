@@ -80,6 +80,7 @@
                 }
             }
             .top_arrow{
+                cursor: pointer;
                 height: 44px;
                 width: 44px;
                 border-radius: 50%;
@@ -89,9 +90,12 @@
                 justify-content: center;
                 position: absolute;
                 bottom: 0;
-                i{
-                    color: variable.$arrow_color;
-                    font-size: 16px;
+                color: variable.$arrow_color;
+                font-size: 16px;
+                @include mixins.transition(all 0.3s ease);
+                &:hover{
+                    background-color: variable.$primary_color;
+                    color: variable.$black;
                 }
             }
         }

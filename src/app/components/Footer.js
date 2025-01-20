@@ -73,7 +73,7 @@ const Footer = () => {
                                             </div>
                                             <div className='text'>SAYNT AI</div>
                                         </div>
-                                        <div className='top_arrow'>
+                                        <div className='top_arrow' onClick={() => document.documentElement.scrollTo({top: 0})}>
                                             <i className="bi bi-arrow-up"></i>
                                         </div>
                                     </div>
