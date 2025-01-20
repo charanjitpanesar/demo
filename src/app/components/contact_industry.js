@@ -17,25 +17,61 @@ const Contact_industry = () => {
         { title: 'Healthcare', desc: 'Track market trends and analyze data with our intuitive, user-friendly interface' },
         { title: 'Education', desc: 'Track market trends and analyze data with our intuitive, user-friendly interface' }
     ]
-    const classArr = ['top_right','prev','active', 'next','bottom_right' ]
+    const classArr = ['top_right', 'prev', 'active', 'next', 'bottom_right']
     const slidesRef = useRef([])
-   let interval = 2500
-   
-       useEffect(() => {
-           const updateClasses = () => {
-               slidesRef.current.forEach((slide, index) => {
-                   if (slide) {
-                       slide.classList.remove(...classArr);
-                       const currentClass = classArr[(index + Math.floor(Date.now() / interval)) % classArr.length];
-                       slide.classList.add(currentClass);
-                   }
-               });
-           };
-   
-           const intervalId = setInterval(updateClasses, interval);
-   
-           return () => clearInterval(intervalId);
-       }, [classArr, interval]);
+    let interval = 2500
+
+    const resizeObservers = useRef([]);
+
+    useEffect(() => {
+        const updateClasses = () => {
+            slidesRef.current.forEach((slide, index) => {
+                if (slide) {
+                    slide.classList.remove(...classArr);
+                    const currentClass = classArr[(index + Math.floor(Date.now() / interval)) % classArr.length];
+                    slide.classList.add(currentClass);
+
+                    if (currentClass === 'active') {
+                        let chip = slide.querySelector('.chip');
+                        let desc = chip?.querySelector('.desc');
+
+                        if (chip && desc) {
+                            const adjustChipHeight = () => {
+                                const slideHeight = Number(window.getComputedStyle(slide).height.replace('px', ''));
+                                const descHeight = Number(window.getComputedStyle(desc).height.replace('px', ''));
+                                chip.style.height = `${descHeight + slideHeight}px`;
+                            };
+
+                            adjustChipHeight();
+
+                            const observer = new ResizeObserver(() => {
+                                adjustChipHeight();
+                            });
+                            observer.observe(desc);
+
+                            resizeObservers.current.forEach((obs) => obs.disconnect());
+                            resizeObservers.current = [observer]; 
+                        }
+                    } else {
+                        let chip = slide.querySelector('.chip');
+                        if (chip) {
+                            chip.style.height = ''; 
+                        }
+                    }
+                }
+            });
+        };
+
+        const intervalId = setInterval(updateClasses, interval);
+
+        return () => {
+            clearInterval(intervalId); 
+
+            resizeObservers.current.forEach((observer) => observer.disconnect());
+            resizeObservers.current = []; 
+        };
+    }, [classArr, interval]);
+
     return (
         <>
             <section className="industry">

@@ -17,16 +17,20 @@ const Similar_news = () => {
                                     <div className="button_area">
                                         <Link href={'/'} className='view_all'>
                                             View All News
-                                           <span> <i className="bi bi-arrow-up-right"></i></span>
+                                            <span> <i className="bi bi-arrow-up-right"></i></span>
                                         </Link>
                                     </div>
                                 </div>
                                 <div className="cards">
-                                    {
-                                        [...Array(3)].map((_, i) => (
-                                            <Blog_card key={i} />
-                                        ))
-                                    }
+                                    <Row className='row-gap-3'>
+                                        {
+                                            [...Array(3)].map((_, i) => (
+                                                <Col xxl={4} xl={4} lg={4} md={6} sm={6} xs={12} key={i}>
+                                                    <Blog_card />
+                                                </Col>
+                                            ))
+                                        }
+                                    </Row>
                                 </div>
                             </div>
                         </Col>
