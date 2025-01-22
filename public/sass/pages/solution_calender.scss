@@ -105,12 +105,6 @@
                     }
                 }
             }
-
-            .button_area {
-                position: absolute;
-                right: 25%;
-                bottom: 10%;
-            }
         }
 
         .calender_area {
@@ -420,74 +414,113 @@
                 background: linear-gradient(180deg, #45FFD1 0%, #0E5649 100%);
                 border-radius: 11px;
                 height: 100%;
+                display: flex;
+                justify-content: space-between;
+                flex-direction: column;
+                row-gap: 15px;
 
-                .top {
-                    display: flex;
-                    align-items: center;
-                    justify-content: space-between;
-                    margin-bottom: 15px;
+                .inner_right {
+                    .top {
+                        display: flex;
+                        align-items: center;
+                        justify-content: space-between;
+                        margin-bottom: 15px;
 
-                    .left_clock {
-                        font-size: 20px;
-                        color: variable.$black;
-                        font-weight: 500;
-                        line-height: 29px;
-                        letter-spacing: 0.4px;
+                        .left_clock {
+                            font-size: 20px;
+                            color: variable.$black;
+                            font-weight: 500;
+                            line-height: 29px;
+                            letter-spacing: 0.4px;
 
-                        span {
-                            color: variable.$grey_text6;
+                            span {
+                                color: variable.$grey_text6;
+                            }
                         }
-                    }
 
-                    .right_clock {
-                        .format {
-                            background-color: variable.$off_white2;
-                            border-radius: 3px;
-                            padding: 5px 10px;
-                            display: flex;
-                            align-items: center;
-                            justify-content: center;
-                            gap: 5px;
-
-                            .box {
-                                flex-grow: 1;
-                                flex-shrink: 0;
+                        .right_clock {
+                            .format {
+                                background-color: variable.$off_white2;
                                 border-radius: 3px;
-                                width: 50px;
-                                height: 40px;
+                                padding: 5px 10px;
                                 display: flex;
                                 align-items: center;
                                 justify-content: center;
-                                font-size: 12px;
-                                font-weight: 500;
-                                line-height: 20px;
-                                letter-spacing: 0.3px;
-                                color: variable.$black;
-                                cursor: pointer;
-                                @include mixins.transition(all 0.3s ease);
+                                gap: 5px;
 
-                                &.active {
-                                    background-color: variable.$black;
-                                    color: variable.$white;
+                                .box {
+                                    flex-grow: 1;
+                                    flex-shrink: 0;
+                                    border-radius: 3px;
+                                    width: 50px;
+                                    height: 40px;
+                                    display: flex;
+                                    align-items: center;
+                                    justify-content: center;
+                                    font-size: 12px;
+                                    font-weight: 500;
+                                    line-height: 20px;
+                                    letter-spacing: 0.3px;
+                                    color: variable.$black;
+                                    cursor: pointer;
+                                    @include mixins.transition(all 0.3s ease);
+
+                                    &.active {
+                                        background-color: variable.$black;
+                                        color: variable.$white;
+                                    }
+                                }
+                            }
+                        }
+                    }
+
+                    .time {
+                        font-size: 14px;
+                        font-weight: 500;
+                        line-height: 20px;
+                        letter-spacing: 0.3px;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        border: 1px solid variable.$black;
+                        color: variable.$black;
+                        padding: 10px;
+                        border-radius: 5px;
+                        user-select: none;
+
+                        .react-time-picker {
+                            flex-grow: 1;
+
+                            .react-time-picker__wrapper {
+                                .react-time-picker__inputGroup {
+                                    display: flex;
+                                    align-items: center;
+                                    gap: 10px;
+
+                                    .react-time-picker__inputGroup__input {
+                                        flex-grow: 1;
+                                        flex-shrink: 0;
+                                        border: none;
+                                        padding: 6px;
+                                        text-align: center;
+                                        border-radius: 3px;
+                                        background-color: variable.$off_white2;
+                                        font-size: 16px;
+                                        font-weight: 400;
+                                        color: variable.$black;
+                                        outline: none;
+                                    }
+                                }
+                                button{
+                                    display: none;
                                 }
                             }
                         }
                     }
                 }
 
-                .time {
-                    font-size: 14px;
-                    font-weight: 500;
-                    line-height: 20px;
-                    letter-spacing: 0.3px;
-                    display: flex;
-                    align-items: center;
-                    justify-content: center;
-                    border: 1px solid variable.$black;
-                    color: variable.$black;
-                    padding: 10px 0;
-                    border-radius: 5px;
-                    user-select: none;
+                .button_area {
+                    text-align: center;
                 }
             }
         }
@@ -616,10 +649,6 @@
                         }
                     }
                 }
-
-                .button_area {
-                    right: 10%;
-                }
             }
 
             .calender_area {
@@ -682,10 +711,6 @@
                             padding-top: 7px;
                         }
                     }
-                }
-
-                .button_area {
-                    right: 10%;
                 }
             }
 
@@ -758,14 +783,6 @@
                         }
                     }
                 }
-
-                .button_area {
-                    right: 7%;
-
-                    .btn-primary {
-                        font-size: 14px;
-                    }
-                }
             }
 
             .calender_area {
@@ -779,6 +796,13 @@
                 .right {
                     padding: 15px;
                     border-radius: 6px;
+
+                    .button_area {
+                        .btn-primary {
+                            font-size: 14px;
+                            padding: 12px 0;
+                        }
+                    }
                 }
 
                 .center {
@@ -818,10 +842,14 @@
                                     }
                                 }
 
-                                .react-calendar__year-view__months,.react-calendar__decade-view__years,.react-calendar__century-view__decades {
+                                .react-calendar__year-view__months,
+                                .react-calendar__decade-view__years,
+                                .react-calendar__century-view__decades {
                                     row-gap: 15px;
+
                                     .tile {
                                         font-size: 16px;
+
                                         abbr {
                                             font-size: 16px;
                                         }
@@ -894,16 +922,6 @@
                         }
                     }
                 }
-
-                .button_area {
-                    position: static;
-                    
-                    .btn-primary {
-                        font-size: 14px;
-                        display: block;
-                        padding: 15px 0;
-                    }
-                }
             }
 
             .calender_area {
@@ -912,11 +930,13 @@
                 .left {
                     padding: 15px;
                     border-radius: 6px;
-                    .top{
-                        .user_name{
+
+                    .top {
+                        .user_name {
                             margin-bottom: 5px;
                         }
-                        .meet{
+
+                        .meet {
                             font-size: 16px;
                         }
                     }
@@ -925,10 +945,18 @@
                 .right {
                     padding: 15px;
                     border-radius: 6px;
-                    .top{
-                        .left_clock{
-                            font-size: 16px;
+
+                    .inner_right {
+                        .top {
+                            .left_clock {
+                                font-size: 16px;
+                            }
                         }
+                    }
+
+                    .btn-primary {
+                        font-size: 14px;
+                        padding: 12px 0;
                     }
                 }
 
@@ -969,10 +997,14 @@
                                     }
                                 }
 
-                                .react-calendar__year-view__months,.react-calendar__decade-view__years,.react-calendar__century-view__decades {
+                                .react-calendar__year-view__months,
+                                .react-calendar__decade-view__years,
+                                .react-calendar__century-view__decades {
                                     row-gap: 15px;
+
                                     .tile {
                                         font-size: 14px;
+
                                         abbr {
                                             font-size: 14px;
                                         }
@@ -1045,16 +1077,6 @@
                         }
                     }
                 }
-
-                .button_area {
-                    position: static;
-                    
-                    .btn-primary {
-                        font-size: 14px;
-                        display: block;
-                        padding: 15px 0;
-                    }
-                }
             }
 
             .calender_area {
@@ -1063,11 +1085,13 @@
                 .left {
                     padding: 15px;
                     border-radius: 6px;
-                    .top{
-                        .user_name{
+
+                    .top {
+                        .user_name {
                             margin-bottom: 5px;
                         }
-                        .meet{
+
+                        .meet {
                             font-size: 16px;
                         }
                     }
@@ -1076,10 +1100,18 @@
                 .right {
                     padding: 15px;
                     border-radius: 6px;
-                    .top{
-                        .left_clock{
-                            font-size: 16px;
+
+                    .inner_right {
+                        .top {
+                            .left_clock {
+                                font-size: 16px;
+                            }
                         }
+                    }
+
+                    .btn-primary {
+                        font-size: 14px;
+                        padding: 10px 0;
                     }
                 }
 
@@ -1120,10 +1152,14 @@
                                     }
                                 }
 
-                                .react-calendar__year-view__months,.react-calendar__decade-view__years,.react-calendar__century-view__decades {
+                                .react-calendar__year-view__months,
+                                .react-calendar__decade-view__years,
+                                .react-calendar__century-view__decades {
                                     row-gap: 15px;
+
                                     .tile {
                                         font-size: 14px;
+
                                         abbr {
                                             font-size: 14px;
                                         }
