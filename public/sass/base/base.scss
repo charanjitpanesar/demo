@@ -46,6 +46,53 @@ h1,h2,h3,h4,h5,h6{
 
 
 
+.form_group{
+    padding-bottom: 20px;
+    label{
+        font-size: 14px;
+        font-weight: 400;
+        color: variable.$white;
+        margin-bottom: 8px;
+    }
+    .text{
+        font-size: 14px;
+        font-weight: 400;
+        color: variable.$white;
+        margin-bottom: 8px;
+
+    }
+    textarea{
+        resize: none;
+    }
+    .form-control{
+        font-size: 14px;
+        font-weight: 400;
+        color: variable.$white;
+        background: transparent;
+        padding: 12px 15px;
+        border-radius: 15px;
+        border: 1px solid variable.$text_opacity;
+        &::placeholder{
+            color: variable.$text_opacity;
+            font-weight: inherit;
+            font-size: inherit;
+        }
+        &:focus{
+            box-shadow: unset;
+        }
+    }
+    .form-check-input:checked{
+        background-color: variable.$dark_primary2;
+        border-color: variable.$dark_primary2;
+        &:focus{
+            box-shadow: unset;
+            border-color: unset;
+        }
+    }
+}
+
+
+
 
 
 /* Extra Huge large desktops */

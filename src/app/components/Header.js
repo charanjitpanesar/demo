@@ -14,10 +14,10 @@ const Header = () => {
             href: "/",
             text:"Home"
         },
-        // {
-        //     href: "/solutions",
-        //     text:"Solutions"
-        // },
+        {
+            href: "/solutions",
+            text:"Solutions"
+        },
         {
             href: "/about_us",
             text:"About Us"
@@ -35,7 +35,7 @@ const Header = () => {
             text:"Contact Us"
         },
         {
-            href: "/customer_portal",
+            href: "/careers",
             text:"Careers"
         }
     ]

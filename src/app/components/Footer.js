@@ -17,10 +17,10 @@ const Footer = () => {
             href: "/",
             text:"Home"
         },
-        // {
-        //     href: "/solutions",
-        //     text:"Solutions"
-        // },
+        {
+            href: "/solutions",
+            text:"Solutions"
+        },
         {
             href: "/about_us",
             text:"About Us"
@@ -38,7 +38,7 @@ const Footer = () => {
             text:"Contact Us"
         },
         {
-            href: "/customer_portal",
+            href: "/careers",
             text:"Careers"
         }
     ]
