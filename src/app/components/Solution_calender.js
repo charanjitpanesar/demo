@@ -10,7 +10,6 @@ import meeting from '../../../public/images/meet.png';
 import user from '../../../public/images/user.png';
 import Image from 'next/image';
 import dynamic from 'next/dynamic';
-import Link from 'next/link';
 const Calendar = dynamic(() => import('react-calendar'), {
     ssr: false,
     loading: () => <p style={{ color: 'black', fontSize: 14, fontWeight: 400 }}>Calender is Loading...</p>
@@ -176,7 +175,7 @@ const Solution_calender = () => {
                                                     </div>
                                                 </div>
                                                 <div className="button_area">
-                                                    <Link href={'/'} className='btn-primary btn-black'>GET STARTED</Link>
+                                                    <button  className=' btn-primary btn-black'>GET STARTED</button>
                                                 </div>
                                             </div>
                                         </Col>
