@@ -1,8 +1,8 @@
 import dbConnect from "@/backend/config/db";
 import bcrypt from 'bcrypt';
+import crypto from 'crypto';
 
 export async function POST(req, res) {
-    console.log(req.method)
   if (req.method === "POST") {
     const { email, password } = await req.json();
     
@@ -14,24 +14,26 @@ export async function POST(req, res) {
         }, 
         {
           status: 400,
-        })
+        }
+      )
     }
     
     try {
-      const db = await dbConnect();
-      const collection = db.collection('admins');
-      let admin = await collection.findOne({email: email});
-      const match = await bcrypt.compare(password, admin.password);
+      let admin = await checkLogin(email, password);
 
-      if(match) {
+      if(admin) {
+        let updatedAdmin = await makeSession(admin);
+
         return Response.json(
           {
             status: true,
             message: "Logged In Successfully",
+            data: updatedAdmin,
           }, 
           {
             status: 200,
-          })
+          }
+        )
       } else {
         return Response.json(
           {
@@ -44,12 +46,58 @@ export async function POST(req, res) {
       }
     } catch (error) {
       console.log(error)
-      // return res.status(500).json({ message: "Server error", error });
     }
 
     return Response.json({status: true})
 
   } else {
-    res.status(405).json({ message: "Method Not Allowed" });
+    return Response.json(
+      {
+        status: false,
+        message: "Method Not Allowed!!!",
+      }, 
+      {
+        status: 405,
+      })
   }
+}
+
+
+const checkLogin = async (email, password) => {
+  const db = await dbConnect();
+  const collection = db.collection('admins');
+  let admin = await collection.findOne({email: email});
+
+  if(admin) {
+    const match = await bcrypt.compare(password, admin.password);
+  
+    if(match) {
+      return admin;
+    } else {
+      return false;
+    }
+  } else {
+    return false;
+  }
+}
+
+const makeSession = async (admin) => {
+  const db = await dbConnect();
+  const collection = db.collection('admins');
+
+  const currentDate = new Date();
+  currentDate.setDate(currentDate.getDate() + 1)
+
+  let adminWhere = {_id: admin._id};
+  let updateData = {
+    token: generateToken(),
+    expires_at: currentDate.toISOString(),
+  }
+  
+  let updated = await collection.findOneAndUpdate(adminWhere, { $set: updateData }, { returnDocument: "after", upsert: false });  
+  return updated;
+}
+
+const generateToken = (bytes = 16) => {
+  return crypto.randomBytes(bytes).toString('hex');
 }

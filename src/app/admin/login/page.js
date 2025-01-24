@@ -1,8 +1,10 @@
 "use client";
 
+import { checkLogin, postApi } from "@/backend/helpers";
+import Cookies from "js-cookie";
+import { redirect } from "next/navigation";
 import { useState } from "react";
 import { Button, Form } from "react-bootstrap";
-
 
 const page = () => {
     const [loginData, setLoginData] = useState({
@@ -13,13 +15,19 @@ const page = () => {
   const handleLoginSubmit = async (e) => {
     e.preventDefault();
 
-    const res = await fetch("/api/auth/login", {
-        method: "POST",
-        headers: {
-            "Content-Type": "application/json",
-        },
-        body: JSON.stringify(loginData),
-    });
+    let res = await postApi("/api/auth/login", loginData);
+
+    if(res.status)
+    {
+      let admin = res.data;
+
+      Cookies.set('au_to', admin.token);
+      redirect("/admin/dashboard")
+    }
+    else
+    {
+
+    }
   }
     
   return (
