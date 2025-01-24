@@ -13,7 +13,7 @@ const page = () => {
                         <Col xxl={12} xl={12} lg={12} md={12} sm={12} xs={12}>
                             <div className='parent_area'>
                                 <Row className='align-items-center'>
-                                    <Col xxl={9} xl={9} lg={9} md={8} sm={6} xs={12}>
+                                    <Col xxl={9} xl={9} lg={9} md={12} sm={12} xs={12}>
                                         <div className='left_area'>
                                             <h3>Welcome jobseeker</h3>
                                             <p>Please enter your details</p>
