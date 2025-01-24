@@ -5,9 +5,9 @@ import '../../../public/sass/home_scss/home_trust.scss'
 import Image from 'next/image'
 import skullImg from '../../../public/images/skull_img.png'
 
-const Home_trust = () => {
+const Home_trust = ({id}) => {
     return (
-        <section className='home_trust_section'>
+        <section className='home_trust_section' id={id}>
             <Container>
                 <Row>
                     <Col xxl={12} xl={12} lg={12} md={12} sm={12} xm={12}>

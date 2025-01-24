@@ -9,15 +9,13 @@ import Solution_calender from '../components/Solution_calender'
 
 const Solutions = () => {
     const comp = [
-        <Solution_banner />, <Solution_about_us />, <Solution_transform />, <Solution_ai />, <Solution_projects />, <Solution_action />, <Solution_calender />
+        Solution_banner, Solution_about_us, Solution_transform, Solution_ai, Solution_projects, Solution_action, Solution_calender
     ]
     return (
         <>
             {
-                comp && comp.map((section, index) => (
-                    <div key={index} id={`section_${index + 1}`}>
-                        {section}
-                    </div>
+                comp && comp.map((Section, index) => (
+                    <Section key={index} id={`section_${index + 1}`} />
                 ))
             }
         </>

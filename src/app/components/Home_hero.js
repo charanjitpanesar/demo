@@ -7,10 +7,10 @@ import logo from '../../../public/images/home_banner_logo.svg'
 import Image from 'next/image';
 
 
-const Home_hero = () => {
+const Home_hero = ({id}) => {
     return (
         <>
-             <section className='home_hero_section'>
+             <section className='home_hero_section' id={id}>
                 <Container>
                     <Row>
                         <Col xxl={12} xl={12} lg={12} md={12} sm={12} xm={12}>

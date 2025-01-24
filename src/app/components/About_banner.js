@@ -5,9 +5,9 @@ import logo from'../../../public/images/logo.png';
 import Image from 'next/image';
 import Link from 'next/link';
 
-const About_banner = () => {
+const About_banner = ({id}) => {
     return (
-        <section className='about_banner_section'>
+        <section className='about_banner_section' id={id}>
             <Container className='h-100'>
                 <Row className='h-100'>
                     <Col xxl={12} xl={12} lg={12} md={12} sm={12} xm={12} className='h-100'>

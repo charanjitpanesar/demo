@@ -3,9 +3,9 @@ import '../../../public/sass/home_scss/home_hero_section.scss';
 import { Col, Container, Row } from 'react-bootstrap';
 import Link from 'next/link';
 
-const Home_book_call = () => {
+const Home_book_call = ({id}) => {
     return (
-        <section className='home_service_banner_section  book_call_section'>
+        <section className='home_service_banner_section  book_call_section' id={id}>
             <Container>
                 <Row>
                     <Col xxl={12} xl={12} lg={12} md={12} sm={12} xm={12}>

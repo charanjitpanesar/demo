@@ -4,10 +4,10 @@ import { Col, Container, Row } from 'react-bootstrap'
 import Blog_card from './blog_card'
 import '../../../public/sass/blog_detail_scss/similar.scss';
 
-const Similar_news = () => {
+const Similar_news = ({id}) => {
     return (
         <>
-            <section className="news">
+            <section className="news" id={id}>
                 <Container>
                     <Row>
                         <Col xxl={12} xl={12} lg={12} md={12} sm={12} xs={12}>

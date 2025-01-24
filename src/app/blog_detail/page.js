@@ -5,12 +5,14 @@ import Similar_news from '../components/similar_news'
 import Detail_info from '../components/Detail_info'
 
 const page = () => {
+    const comp = [Detail_banner, Detail_info, Similar_news, Detail_newsletter]
     return (
         <>
-            <Detail_banner />
-            <Detail_info />
-            <Similar_news />
-            <Detail_newsletter />
+            {
+                comp && comp.map((Section, index) => (
+                    <Section key={index} id={`section_${index + 1}`} />
+                ))
+            }
         </>
     )
 }

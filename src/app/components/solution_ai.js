@@ -5,7 +5,7 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import '../../../public/sass/pages/solution_ai.scss';
 
 
-const Solution_ai = () => {
+const Solution_ai = ({id}) => {
     const text = ['Protecting', 'Shielding', 'Optimizing', 'Enhancing', 'Optimizing', 'Enhancing', 'Ensuring',];
     const classes = ['gallery_1', 'gallery_2', 'gallery_3', 'gallery_4', 'gallery_5', 'gallery_6', 'gallery_7'];
     const slidesRef = useRef([]);
@@ -30,7 +30,7 @@ const Solution_ai = () => {
 
     return (
         <>
-            <section className="integration_section" id='one'>
+            <section className="integration_section" id={id}>
                 <Container>
                     <Row>
                         <Col xxl={12} xl={12} lg={12} md={12} sm={12} xs={12}>

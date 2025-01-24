@@ -12,10 +12,10 @@ import 'swiper/css';
 import Link from 'next/link';
 import Image from 'next/image';
 
-const Contact_expertise = () => {
+const Contact_expertise = ({id}) => {
     return (
         <>
-            <section className='contact_expertise_section'>
+            <section className='contact_expertise_section' id={id}>
                 <Container>
                     <Row>
                         <Col xxl={12} xl={12} lg={12} md={12} sm={12} xs={12}>

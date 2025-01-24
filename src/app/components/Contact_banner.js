@@ -3,9 +3,9 @@ import { Col, Container, Row } from 'react-bootstrap'
 import '../../../public/sass/contact_scss/contact_banner.scss'
 import Link from 'next/link'
 
-const Contact_banner = () => {
+const Contact_banner = ({id}) => {
     return (
-        <section className='contact_banner_section'>
+        <section className='contact_banner_section' id={id}>
             <Container>
                 <Row>
                     <Col xxl={12} xl={12} lg={12} md={12} sm={12} xs={12}>

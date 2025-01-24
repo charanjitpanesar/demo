@@ -1,15 +1,11 @@
 'use client'
 import React, { useEffect, useRef } from 'react'
 import { Col, Container, Row } from 'react-bootstrap'
-import { Swiper, SwiperSlide } from 'swiper/react'
 import '../../../public/sass/contact_scss/industry.scss';
-import { Autoplay, Pagination } from 'swiper/modules';
-import 'swiper/css/pagination'
-import 'swiper/css/autoplay';
 import Image from 'next/image';
 import round from '../../../public/images/round.svg';
 
-const Contact_industry = () => {
+const Contact_industry = ({id}) => {
     const data = [
         { title: 'Finance', desc: 'Track market trends and analyze data with our intuitive, user-friendly interface' },
         { title: 'Healthcare', desc: 'Track market trends and analyze data with our intuitive, user-friendly interface' },
@@ -74,7 +70,7 @@ const Contact_industry = () => {
 
     return (
         <>
-            <section className="industry">
+            <section className="industry" id={id}>
                 <Container>
                     <Row>
                         <Col xxl={12} xl={12} lg={12} md={12} sm={12} xs={12}>

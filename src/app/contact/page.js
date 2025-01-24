@@ -7,14 +7,15 @@ import Contact_faq from '../components/Contact_faq'
 import Contact_industry from '../components/contact_industry'
 
 const page = () => {
+    
+    const comp = [ Contact_banner,Contact_expertise,Contact_industry,Contact_deliver, Contact_faq, Solution_calender]
     return (
         <>
-            <Contact_banner />
-            <Contact_expertise />
-            <Contact_industry />
-            <Contact_deliver />
-            <Contact_faq />
-            <Solution_calender />
+            {
+                comp && comp.map((Section,index)=>(
+                    <Section id={`section_${index + 1}`} key={index}/>
+                ))
+            }
         </>
     )
 }

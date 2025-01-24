@@ -3,7 +3,7 @@ import { Col, Container, Row } from 'react-bootstrap'
 import '../../../public/sass/home_scss/home_choose.scss'
 import Link from 'next/link';
 
-const Home_choose = () => {
+const Home_choose = ({id}) => {
 
     const cardData = [
         {
@@ -21,7 +21,7 @@ const Home_choose = () => {
     ];
     return (
         <>
-            <section className='home_choose_section'>
+            <section className='home_choose_section' id={id}>
                 <Container>
                     <Row>
                         <Col xxl={12} xl={12} lg={12} md={12} sm={12} xm={12}>

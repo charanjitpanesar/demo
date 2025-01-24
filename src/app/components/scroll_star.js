@@ -37,16 +37,18 @@ const Scroll_star = () => {
     }, [allSections, navRef, pathname])
     return (
         <>
-            <div className="page_nav_main">
-                <div className="page_nav">
-                    {
-                        allSections > 0 &&
-                        [...Array(allSections)].map((_, index) => (
-                            <Link href={`#section_${index + 1}`} className={`nav_item ${active === index ? 'active' : ''}`} key={index} ref={(ele) => navRef.current[index] = ele}></Link>
-                        ))
-                    }
+            {
+                allSections > 1 &&
+                <div className="page_nav_main">
+                    <div className="page_nav">
+                        {
+                            [...Array(allSections)].map((_, index) => (
+                                <Link href={`#section_${index + 1}`} className={`nav_item ${active === index ? 'active' : ''}`} key={index} ref={(ele) => navRef.current[index] = ele}></Link>
+                            ))
+                        }
+                    </div>
                 </div>
-            </div>
+            }
         </>
     )
 }

@@ -3,10 +3,10 @@ import { Col, Container, Row } from 'react-bootstrap';
 import '../../../public/sass/pages/solution_about_us.scss';
 import Link from 'next/link';
 
-const Solution_about_us = () => {
+const Solution_about_us = ({id}) => {
     return (
         <>
-            <section className='solution_about_section'>
+            <section className='solution_about_section' id={id}>
                 <Container>
                     <Row>
                         <Col xxl={12} xl={12} lg={12} md={12} sm={12} xm={12}>

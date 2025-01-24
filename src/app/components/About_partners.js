@@ -11,9 +11,9 @@ import logo2 from '../../../public/images/slider_logo2.png'
 import logo3 from '../../../public/images/slider_logo3.png'
 import logo4 from '../../../public/images/slider_logo4.png'
 
-const AboutPartners = () => {
+const AboutPartners = ({id}) => {
     return (
-        <section className='about_partner_section'>
+        <section className='about_partner_section' id={id}>
             <div className='parent_area'>
                 <h3>Our Trusted Partners</h3>
                 <p>We collaborate with top companies and hold industry certifications</p>

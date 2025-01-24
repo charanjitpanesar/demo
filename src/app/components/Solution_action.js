@@ -8,9 +8,9 @@ import recImg2 from '../../../public/images/action_sec_rec2.png'
 import recImg3 from '../../../public/images/action_sec_rec3.png'
 import Image from 'next/image';
 
-const Solution_action = () => {
+const Solution_action = ({id}) => {
     return (
-        <section className='solution_action_section'>
+        <section className='solution_action_section' id={id}>
             <div className='rec_img1'>
                 <Image 
                     src={recImg1}

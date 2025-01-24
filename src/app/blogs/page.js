@@ -5,12 +5,14 @@ import Blog_category from '../components/Blog_category'
 import Blog_banner from '../components/Blog_banner'
 
 const page = () => {
+    const comp = [Blog_banner, Blog_category, Blogs_headline, Blog_newsletter]
     return (
         <>
-            <Blog_banner />
-            <Blog_category />
-            <Blogs_headline />
-            <Blog_newsletter />
+            {
+                comp && comp.map((Section, index) => (
+                    <Section key={index} id={`section_${index + 1}`} />
+                ))
+            }
         </>
     )
 }

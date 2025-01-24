@@ -4,11 +4,11 @@ import '../../../public/sass/about_scss/about_work_together.scss'
 import Image from 'next/image'
 import starImg from '../../../public/images/star_icon.png'
 
-const About_work_together = () => {
+const About_work_together = ({id}) => {
     const repeatCount = 26;
     return (
         <>
-            <section className='about_work_together_section'>
+            <section className='about_work_together_section' id={id}>
                 <div className='parent_area'>
                     <div className='button_area'>
                         <Link href="/" className='btn-primary btn-green'>

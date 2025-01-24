@@ -19,7 +19,7 @@ const TimePicker = dynamic(() => import('react-time-picker'), {
     loading: () => <p style={{ color: 'black', fontSize: 14, fontWeight: 400 }}>Time is Loading...</p>
 })
 
-const Solution_calender = () => {
+const Solution_calender = ({id}) => {
     const [active, setActive] = useState(0);
     const [val, setVal] = useState('');
 
@@ -51,6 +51,7 @@ const Solution_calender = () => {
         setVal(e.target.innerText)
         setActive(i)
     }
+
     useEffect(() => {
         const inputGroup = document.querySelector('.react-time-picker__inputGroup');
         if (!inputGroup) return;
@@ -72,8 +73,9 @@ const Solution_calender = () => {
             }
         };
     }, [val]);
+    
     return (
-        <section className='solution_calender_section'>
+        <section className='solution_calender_section' id={id}>
             <Container>
                 <Row>
                     <Col xxl={12} xl={12} lg={12} md={12} sm={12} xs={12}>

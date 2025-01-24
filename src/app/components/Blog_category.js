@@ -4,10 +4,10 @@ import { Col, Container, Row } from 'react-bootstrap'
 import Image from 'next/image'
 import footerBg from '../../../public/images/footer_banner_bg.png';
 
-const Blog_category = () => {
+const Blog_category = ({ id }) => {
     return (
         <>
-            <section className='blog_category_section'>
+            <section className='blog_category_section' id={id}>
                 <Container>
                     <Row>
                         <Col xxl={12} xl={12} lg={12} md={12} sm={12} xs={12}>
@@ -30,7 +30,7 @@ const Blog_category = () => {
                                                 </div>
                                                 <div className='heading'>How AI Is Revolutionizing the Logistics Industry</div>
                                                 <p>
-                                                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
                                                 </p>
                                                 <div className='footer_area'>
                                                     <div className='left'>

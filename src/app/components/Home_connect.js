@@ -6,9 +6,9 @@ import connectBg from '../../../public/images/connect_bg.png'
 import Image from 'next/image';
 
 
-const Home_connect = () => {
+const Home_connect = ({id}) => {
     return (
-        <section className='home_connect_section'>
+        <section className='home_connect_section' id={id}>
             <Container>
                 <Row>
                     <Col xxl={12} xl={12} lg={12} md={12} sm={12} xm={12}>

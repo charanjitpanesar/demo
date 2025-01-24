@@ -22,12 +22,12 @@ import logo from '../../../public/images/logo.png'
 import Image from 'next/image';
 import Link from 'next/link';
 
-const About_meet_team = () => {
+const About_meet_team = ({id}) => {
     const [thumbsSwiper, setThumbsSwiper] = useState(null);
 
     const [controlledSwiper, setControlledSwiper] = useState(null);
     return (
-        <section className='about_meet_team_section'>
+        <section className='about_meet_team_section' id={id}>
             <Container>
                 <Row>
                     <Col xxl={12} xl={12} lg={12} md={12} sm={12} xs={12}>

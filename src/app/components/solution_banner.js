@@ -29,7 +29,7 @@ import rec1 from '../../../public/images/rec1.svg';
 import logo from '../../../public/images/white_logo.png';
 import '../../../public/sass/pages/solution_banner.scss';
 
-const Solution_banner = () => {
+const Solution_banner = ({id}) => {
     const controls = useAnimation();
     const controls2 = useAnimation();
 
@@ -79,9 +79,10 @@ const Solution_banner = () => {
             controls2.stop();
         }
     }, [controls, controls2])
+
     return (
         <>
-            <section className="banner_section">
+            <section className="banner_section" id={id}>
                 <Container>
                     <Row>
                         <Col xxl={12} xl={12} lg={12} md={12} sm={12} xs={12}>
