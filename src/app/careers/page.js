@@ -19,24 +19,24 @@ const page = () => {
                                             <p>Please enter your details</p>
                                             <Form>
                                                 <Row>
-                                                    <Col xxl={6} xl={6} lg={9} md={6} sm={6} xs={12}>
-                                                        <div className='form_group'>
+                                                    <Col xxl={6} xl={6} lg={6} md={6} sm={6} xs={12}>
+                                                        <div className='form-group'>
                                                             <Form.Label>First name</Form.Label>
                                                             <Form.Control type="text" placeholder="Enter first name" />
                                                         </div>
-                                                        <div className='form_group'>
+                                                        <div className='form-group'>
                                                             <Form.Label>Last name</Form.Label>
                                                             <Form.Control type="text" placeholder="Enter last name" />
                                                         </div>
-                                                        <div className='form_group'>
+                                                        <div className='form-group'>
                                                             <Form.Label>Country of Origin</Form.Label>
                                                             <Form.Control type="text" placeholder="Enter country" />
                                                         </div>
-                                                        <div className='form_group'>
+                                                        <div className='form-group'>
                                                             <Form.Label>State</Form.Label>
                                                             <Form.Control type="text" placeholder="Enter State" />
                                                         </div>
-                                                        <div className='form_group'>
+                                                        <div className='form-group'>
                                                             <div className='text'>Are you WIlling to relocate?</div>
                                                             <Form.Check 
                                                                 type="radio" 
@@ -52,18 +52,18 @@ const page = () => {
                                                             />
                                                         </div>
                                                     </Col>
-                                                    <Col xxl={6} xl={6} lg={9} md={6} sm={6} xs={12}>
-                                                        <div className='form_group'>
+                                                    <Col xxl={6} xl={6} lg={6} md={6} sm={6} xs={12}>
+                                                        <div className='form-group'>
                                                             <Form.Label>Specific Employment Status</Form.Label>
                                                             <Form.Control type="text" placeholder="--- ---" />
                                                         </div>
-                                                        <div className='form_group file_area'>
+                                                        <div className='form-group file_area'>
                                                             <Form.Label>Specific Employment Status</Form.Label>
                                                             <div className='btn-primary btn-green'>Upload</div>
                                                             <div className='border_input'>.</div>
                                                             <Form.Control type="file" placeholder="--- ---" className='file_upload'/>
                                                         </div>
-                                                        <div className='form_group'>
+                                                        <div className='form-group'>
                                                             <Form.Label>Comments</Form.Label>
                                                             <Form.Control as="textarea" rows={6} placeholder='Enter your comment'/>
                                                         </div>

@@ -23,7 +23,7 @@
             }
             form{
                 padding-top: 40px;
-                .form_group{
+                .form-group{
                     &.file_area{
                         position: relative;
                         &:after{
@@ -111,17 +111,42 @@
 
 /* 1300 desktop only */
 @media (min-width: 1300px) and (max-width: 1399px){
-    
+    .career_section{
+        padding-top: 180px;
+        padding-bottom: 90px;
+    }
 }
 
 /* 1200 desktop only */
 @media (min-width: 1200px) and (max-width: 1299px){
-    
+    .career_section{
+        padding-top: 180px;
+        padding-bottom: 90px;
+    }
 }
 
 /* Landscape tablets and medium desktops */
 @media (min-width: 992px) and (max-width: 1199px) {
-	
+	.career_section{
+        padding-top: 140px;
+        padding-bottom: 50px;
+        .parent_area{
+            .left_area{
+                h3{
+                    font-size: 35px;
+                } 
+                form{
+                    .form-group{
+                        &.file_area{
+                            .btn-green{
+                                padding: 12px 60px;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
 }
 
 /* Landscape tablets and ipad */
