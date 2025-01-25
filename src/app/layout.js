@@ -10,6 +10,7 @@ import '../../public/sass/base/base.scss';
 import '../../public/sass/base/helper.scss';
 import '../../public/sass/base/reset.scss';
 import Scroll_star from './components/scroll_star';
+import { ToastContainer } from 'react-toastify';
 
 const poppins = Poppins({
     subsets: ["latin"],
@@ -43,6 +44,7 @@ export default function RootLayout({ children }) {
     return (
         <html lang="en">
             <body id='pb_scroll' className={`${poppins.className} ${bricologe.variable} ${saira.variable}`}>
+                <ToastContainer />
                 <Header />
                 <div className="section" id='section'>
                     {children}

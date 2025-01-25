@@ -1,7 +1,7 @@
 'use client'
 import React, { useEffect, useState } from 'react'
 import '../../../public/sass/pages/solution_calender.scss';
-import { Col, Container, Form, Row } from 'react-bootstrap';
+import { Button, Col, Container, Form, Modal, Row, Spinner } from 'react-bootstrap';
 import arrowDown1 from '../../../public/images/arrow_down.png';
 import arrowDown2 from '../../../public/images/arrow_down2.png';
 import world_clock from '../../../public/images/world_clock.png';
@@ -10,6 +10,8 @@ import meeting from '../../../public/images/meet.png';
 import user from '../../../public/images/user.png';
 import Image from 'next/image';
 import dynamic from 'next/dynamic';
+import { toast } from 'react-toastify';
+import { formatDate, postApi } from '@/frontend/helpers';
 const Calendar = dynamic(() => import('react-calendar'), {
     ssr: false,
     loading: () => <p style={{ color: 'black', fontSize: 14, fontWeight: 400 }}>Calender is Loading...</p>
@@ -22,6 +24,11 @@ const TimePicker = dynamic(() => import('react-time-picker'), {
 const Solution_calender = ({id}) => {
     const [active, setActive] = useState(0);
     const [val, setVal] = useState('');
+    const [modalShow, setModalShow] = useState(false);
+    
+    const todayDate = new Date();
+    
+    const [appointment, setAppointment] = useState(todayDate);
 
     const cardData = [
         {
@@ -50,6 +57,32 @@ const Solution_calender = ({id}) => {
     function handleActive(i, e) {
         setVal(e.target.innerText)
         setActive(i)
+    }
+
+    const handleCalendarChange = (value) => {
+        let newDate = new Date(value);
+        newDate.setHours(appointment.getHours(), appointment.getMinutes(), appointment.getSeconds());
+        setAppointment(newDate);
+    }
+
+    const handleTimeChange = (value) => {
+        let timeArr = value.split(":");
+        let newDate = new Date(appointment);
+        newDate.setHours(timeArr[0], timeArr[1], 0);
+        setAppointment(newDate);
+    }
+
+    const handleStartedClick = (e) => {
+        e.preventDefault();
+        let todayDate = new Date();
+        if(todayDate >= appointment)
+        {
+            toast.error("Please select an upcoming time!")
+        }
+        else
+        {
+            setModalShow(true);
+        }
     }
 
     useEffect(() => {
@@ -141,7 +174,9 @@ const Solution_calender = ({id}) => {
                                                 <Calendar
                                                     className={'cal'}
                                                     tileClassName={'tile'}
-
+                                                    onChange={handleCalendarChange}
+                                                    minDate={todayDate}
+                                                    value={appointment}
                                                 />
                                             </div>
                                         </Col>
@@ -171,13 +206,14 @@ const Solution_calender = ({id}) => {
                                                         <TimePicker
                                                             disableClock={true}
                                                             autoFocus={false}
-                                                            value={new Date(2025, 0, 0, 10, 50)}
+                                                            value={appointment}
                                                             format={val == '24h'? 'H-m-a': 'h-m-a'}
+                                                            onChange={handleTimeChange}
                                                         />
                                                     </div>
                                                 </div>
                                                 <div className="button_area">
-                                                    <button  className=' btn-primary btn-black'>GET STARTED</button>
+                                                    <button  className=' btn-primary btn-black' onClick={handleStartedClick}>GET STARTED</button>
                                                 </div>
                                             </div>
                                         </Col>
@@ -188,8 +224,124 @@ const Solution_calender = ({id}) => {
                     </Col>
                 </Row>
             </Container>
+
+            {/* <MyVerticallyCenteredModal
+                show={modalShow}
+                onHide={() => setModalShow(false)}
+                appointment={appointment}
+            /> */}
         </section>
     )
 }
+
+// function MyVerticallyCenteredModal(props) {
+//         const [formData, setFormData] = useState({
+//             appointment: formatDate(props.appointment)
+//         });
+//         const [mailSent, setMailSent] = useState(false);
+//         const [formErrors, setFormErrors] = useState({
+//             phonenumber: null
+//         });
+//         const [formSubmitted, setFormSubmitted] = useState(false);
+    
+//         const handleInputChange = (e) => {
+//             setFormData({
+//                 ...formData,
+//                 [e.target.name]: e.target.value,
+//             });
+            
+//             if(e.target.value != "")
+//             {
+//                 setFormErrors({
+//                     ...formErrors,
+//                     [e.target.name]: null,
+//                 });
+//             }
+//         }
+    
+//         const handleFormSubmit = async (e) => {
+//             e.preventDefault()
+//             setFormSubmitted(true);
+    
+//             if(typeof formData.phonenumber == "undefined" || formData.phonenumber == "")
+//             {
+//                 setFormErrors({...formErrors, phonenumber: "Please Provide Phone Number"});
+//                 setFormSubmitted(false);
+//                 return false;
+//             }
+    
+//             let resp = await postApi("/api/send-mail?type=bookAppointment", formData);
+//             if(resp.status)
+//             {
+//                 toast.success("Our Expert Will Contact You Shortly!")
+//                 setMailSent(true);
+//                 setTimeout(() => {
+//                     props.onHide()
+//                     setTimeout(() => {
+//                         setMailSent(false)
+//                         setFormSubmitted(false);
+//                     }, 500)
+//                 }, 2000)
+//             }
+//             else
+//             {
+//                 toast.error("Something's Went Wrong!!")
+//             }
+//         }
+    
+//         return (
+//           <Modal
+//             {...props}
+//             size="lg"
+//             aria-labelledby="contained-modal-title-vcenter"
+//             centered
+//           >
+//             <Modal.Header closeButton>
+//               <Modal.Title id="contained-modal-title-vcenter">
+//                 Book a Call
+//               </Modal.Title>
+//             </Modal.Header>
+    
+//             {!mailSent ? (
+//                 <>
+//                     <Modal.Body>
+//                         <Form onSubmit={handleFormSubmit}>
+//                             <p>Appointment: {formatDate(props.appointment)}</p>
+//                             <Form.Group className="mb-3">
+//                                 <Form.Label>Full Name</Form.Label>
+//                                 <Form.Control type="text" name='fullname' onChange={handleInputChange} placeholder="Enter Full Name" />
+//                             </Form.Group>
+//                             <Form.Group className="mb-3">
+//                                 <Form.Label>Phone Number</Form.Label>
+//                                 <Form.Control type="number" name='phonenumber' onChange={handleInputChange} placeholder="Enter Phonenumber" isInvalid={formErrors.phonenumber ? "isInvalid" : ""}/>
+//                                 <Form.Control.Feedback type="invalid">
+//                                     {formErrors.phonenumber}
+//                                 </Form.Control.Feedback>
+//                             </Form.Group>
+    
+//                             {
+//                                 formSubmitted ? (
+//                                     <Button type="submit" className='btn-primary btn-green' disabled={formSubmitted}>
+//                                         <Spinner size='sm' animation="border" role="status">
+//                                             <span className="visually-hidden">Loading...</span>
+//                                         </Spinner>
+//                                     </Button>
+//                                 ) : (
+//                                     <Button type="submit" className='btn-primary btn-green'>Book</Button>
+//                                 )
+//                             }
+//                         </Form>
+//                     </Modal.Body>
+//                 </>
+//             ) : (
+//                 <>
+//                     <Modal.Body>
+//                         <p className='text-center'>Thanks for getting in touch! One of our experts will connect with you soon</p>
+//                     </Modal.Body>
+//                 </>
+//             )}
+//           </Modal>
+//         );
+//       }
 
 export default Solution_calender

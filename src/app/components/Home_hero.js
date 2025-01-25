@@ -23,7 +23,7 @@ const Home_hero = ({id}) => {
                                             </h3>
                                             <p>your trusted Ally for Market domination</p>
                                             <div className='buttons_area'>
-                                                <Link href='#' className='btn-primary btn-green'>Request a Demo</Link>
+                                                <Link href='https://wa.me/9199999999' target='_blank' className='btn-primary btn-green'>Request a Demo</Link>
                                                 <Link href='#' className='btn-primary btn-light'>Learn More</Link>
                                             </div>
                                         </div>
