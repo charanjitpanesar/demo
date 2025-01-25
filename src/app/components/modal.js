@@ -18,7 +18,7 @@ const Main_modal = ({ show, setShow }) => {
                             <Form.Control type='email' placeholder='Enter your Email' name='email' aria-label='email' autoComplete='email' />
                         </Form.Group>
                         <Form.Group controlId='phonenumber' className='form-group'>
-                            <Form.Label>Email</Form.Label>
+                            <Form.Label>Mobile No.</Form.Label>
                             <Form.Control type='tel' placeholder='Enter your Mobile No.' name='phonenumber' aria-label='phonenumber' autoComplete='tel' />
                         </Form.Group>
                     </Form>
