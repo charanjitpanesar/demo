@@ -20,7 +20,7 @@ const Home_connect = ({id}) => {
                                             Connect. Merge. Work
                                         </h3>
                                         <div className='button_area'>
-                                            <Link href="/" className='btn-primary btn-green'> 
+                                            <Link href="/careers" className='btn-primary btn-green'> 
                                                 Get Hired
                                             </Link>
                                         </div>

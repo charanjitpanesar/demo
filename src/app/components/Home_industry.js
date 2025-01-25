@@ -39,7 +39,7 @@ const Home_industry = ({id}) => {
                                     <p>
                                         Blogs of Industry affairs, in which decision makers are interested
                                     </p>
-                                    <Link href="/" className='btn-primary btn-light'>View all Blogs <i className="bi bi-arrow-right"></i></Link>
+                                    <Link href="/blogs" className='btn-primary btn-light'>View all Blogs <i className="bi bi-arrow-right"></i></Link>
                                 </div>
                             </div>
                             <div className='cards_area'>

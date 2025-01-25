@@ -43,9 +43,9 @@ const Home_choose = ({id}) => {
                                         ))}
                                     </Row>
                                 </div>
-                                <div className='button_area'>
+                                {/* <div className='button_area'>
                                     <Link href="/" className="btn-primary btn-green">More Projects <i className="bi bi-arrow-return-right"></i></Link>
-                                </div>
+                                </div> */}
                             </div>
                         </Col>
                     </Row>

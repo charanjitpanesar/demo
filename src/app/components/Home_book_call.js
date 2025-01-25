@@ -1,30 +1,33 @@
 'use client'
-
-import React, { useEffect, useState } from 'react'
+import React, { useState } from 'react'
 import '../../../public/sass/home_scss/home_hero_section.scss';
-import { Button, Col, Container, Form, Modal, Row } from 'react-bootstrap';
-import { postApi } from '@/frontend/helpers';
-import { toast } from 'react-toastify';
+import { Col, Container, Row } from 'react-bootstrap';
+import Link from 'next/link';
+import Main_modal from './modal';
 
-const Home_book_call = ({id}) => {
-    const [modalShow, setModalShow] = useState(false);
+const Home_book_call = ({ id }) => {
+
+    const [show, setShow] = useState(false);
+
+    function handleshow() {
+        setShow(true)
+    }
 
     return (
-        <section className='home_service_banner_section  book_call_section' id={id}>
-            <Container>
-                <Row>
-                    <Col xxl={12} xl={12} lg={12} md={12} sm={12} xm={12}>
-                        <div className='parent_area'>
-                            <button className='btn-primary btn-black' onClick={() => setModalShow(true)}>Book a Call</button>
-                        </div>
-                    </Col>
-                </Row>
-            </Container>
-            {/* <MyVerticallyCenteredModal
-                show={modalShow}
-                onHide={() => setModalShow(false)}
-            /> */}
-        </section>
+        <>
+            <section className='home_service_banner_section  book_call_section' id={id}>
+                <Container>
+                    <Row>
+                        <Col xxl={12} xl={12} lg={12} md={12} sm={12} xm={12}>
+                            <div className='parent_area'>
+                                <button className='btn-primary btn-black' onClick={handleshow}>Book a Call</button>
+                            </div>
+                        </Col>
+                    </Row>
+                </Container>
+            </section>
+            <Main_modal show={show} setShow={setShow} />
+        </>
     )
 }
 

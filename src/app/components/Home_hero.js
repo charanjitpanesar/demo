@@ -3,14 +3,16 @@ import '../../../public/sass/home_scss/home_hero_section.scss';
 import { Col, Container, Row } from 'react-bootstrap';
 import Link from 'next/link';
 // import circleImg from '../../../public/images/circle_img.png'
+// import logo from '../../../public/images/logo.svg'
 import logo from '../../../public/images/home_banner_logo.svg'
+// import dotted from '../../../public/images/dotted.svg'
 import Image from 'next/image';
 
 
-const Home_hero = ({id}) => {
+const Home_hero = ({ id }) => {
     return (
         <>
-             <section className='home_hero_section' id={id}>
+            <section className='home_hero_section' id={id}>
                 <Container>
                     <Row>
                         <Col xxl={12} xl={12} lg={12} md={12} sm={12} xm={12}>
@@ -23,8 +25,8 @@ const Home_hero = ({id}) => {
                                             </h3>
                                             <p>your trusted Ally for Market domination</p>
                                             <div className='buttons_area'>
-                                                <Link href='https://wa.me/9199999999' target='_blank' className='btn-primary btn-green'>Request a Demo</Link>
-                                                <Link href='#' className='btn-primary btn-light'>Learn More</Link>
+                                                <Link href='https://wa.me/9199999999' className='btn-primary btn-green'>Request a Demo</Link>
+                                                <Link href='/solutions' className='btn-primary btn-light'>Learn More</Link>
                                             </div>
                                         </div>
                                     </Col>
@@ -38,14 +40,19 @@ const Home_hero = ({id}) => {
                                                     priority
                                                 />
                                             </div> */}
-                                            <div className='logo_area'>
-                                                <Image
-                                                    src={logo}
-                                                    alt="..."
+                                            {/* <div className="dotted">
+                                                <Image src={dotted} alt="..."
                                                     title="..."
-                                                    priority
-                                                />
-                                            </div>
+                                                    priority /> */}
+                                                <div className='logo_area'>
+                                                    <Image
+                                                        src={logo}
+                                                        alt="..."
+                                                        title="..."
+                                                        priority
+                                                    />
+                                                </div>
+                                            {/* </div> */}
                                         </div>
                                     </Col>
                                 </Row>

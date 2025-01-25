@@ -3,11 +3,13 @@ import React from 'react'
 import { Button, Col, Container, Form, Row } from 'react-bootstrap'
 import logo from '../../../public/images/clear_logo.svg'
 import '../../../public/sass/carees_scss/careers.scss'
+import Coming_soon from '../components/Coming_soon'
 
 const page = () => {
     return (
         <>
-            <section className='career_section'>
+        <Coming_soon/>
+            {/* <section className='career_section'>
                 <Container>
                     <Row>
                         <Col xxl={12} xl={12} lg={12} md={12} sm={12} xs={12}>
@@ -94,7 +96,7 @@ const page = () => {
                         </Col>
                     </Row>
                 </Container>
-            </section>
+            </section> */}
         </>
     )
 }
