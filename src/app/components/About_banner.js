@@ -29,14 +29,14 @@ const About_banner = ({id}) => {
                             <h3>OutSpace Competition with breakthrough Technology 
                             It is what we do</h3>
                             <p>Cost-efficient, compliant, and tailored AI tools for your business.</p>
-                            <div className='intro_btn'>
+                            {/* <div className='intro_btn'>
                                 <Link href="/">
                                     <span>About Us</span>
                                     <div className='icon_area'>
                                         <i className="bi bi-play-fill"></i>
                                     </div>
                                 </Link>
-                            </div>
+                            </div> */}
                         </div>
                     </Col>
                 </Row>

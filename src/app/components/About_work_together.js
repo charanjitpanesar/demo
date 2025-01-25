@@ -10,14 +10,14 @@ const About_work_together = ({id}) => {
         <>
             <section className='about_work_together_section' id={id}>
                 <div className='parent_area'>
-                    <div className='button_area'>
+                    {/* <div className='button_area'>
                         <Link href="/" className='btn-primary btn-green'>
                             Intro
                         </Link>
                     </div>
                     <h3>
                         VIDEO OF tHE WHOLE TEAM
-                    </h3>
+                    </h3> */}
                     <div className="text_area_wrapper">
                         {Array.from({ length: repeatCount }).map((_, index) => (
                             <div key={index} className={`text_area block-${index + 1}`}>
