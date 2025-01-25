@@ -21,7 +21,7 @@ const Home_trust = ({id}) => {
                                              Who we are — passionate, forward-thinking, and dedicated to making a difference in a data-driven world.
                                         </p>
                                         <div className='button_area'>
-                                            <Link href="/" className="btn-primary btn-green">Check Our More <i className="bi bi-arrow-return-right"></i></Link>
+                                            <Link href="/solutions" className="btn-primary btn-green">Check Our More <i className="bi bi-arrow-return-right"></i></Link>
                                         </div>
                                     </div>
                                 </Col>

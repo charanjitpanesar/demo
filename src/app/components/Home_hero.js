@@ -24,7 +24,7 @@ const Home_hero = ({id}) => {
                                             <p>your trusted Ally for Market domination</p>
                                             <div className='buttons_area'>
                                                 <Link href='#' className='btn-primary btn-green'>Request a Demo</Link>
-                                                <Link href='#' className='btn-primary btn-light'>Learn More</Link>
+                                                <Link href='/solutions' className='btn-primary btn-light'>Learn More</Link>
                                             </div>
                                         </div>
                                     </Col>

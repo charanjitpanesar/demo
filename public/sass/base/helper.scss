@@ -1,6 +1,25 @@
 @use "../base/variable.scss";
 @use "../base/mixins.scss";
 
+
+.coming_soon_section{
+    height: 100vh;
+    align-content: center;
+    h3{
+        text-align: center;
+        color: variable.$primary_color;
+        animation: blink-animation 2.5s infinite; 
+    }
+}
+@keyframes blink-animation {
+    0%, 100% {
+        opacity: 1; 
+    }
+    50% {
+        opacity: 0.2; 
+    }
+}
+
 .btn-primary {
     min-width: 133px;
     padding: 12px 25px;
