@@ -4,7 +4,8 @@
 .modal {
     .modal-dialog {
         .modal-content {
-            background-color: variable.$modal_color;
+            // background-color: variable.$modal_color;
+            background: radial-gradient(48.96% 68.85% at 50% 65.38%, #009687 0%, #010015 100%);
             border-radius: 10px;
             .modal-header {
                 padding: 12px 15px;
@@ -27,6 +28,9 @@
             .modal-footer {
                 border: none;
                 justify-content: center;
+                .btn{
+                    border: none;
+                }
             }
         }
     }
