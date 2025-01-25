@@ -45,6 +45,15 @@ export async function POST(req, res) {
 
         } catch(error) {
             console.log(error)
+            return Response.json(
+                {
+                    status: false,
+                    message: "Something's Went Wrong",
+                }, 
+                {
+                    status: 400,
+                }
+            )
         }
     } else {
         return Response.json(

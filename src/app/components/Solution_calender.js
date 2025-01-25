@@ -11,7 +11,7 @@ import user from '../../../public/images/user.png';
 import Image from 'next/image';
 import dynamic from 'next/dynamic';
 import { toast } from 'react-toastify';
-import { formatDate, postApi } from '@/frontend/helpers';
+import { formatDate } from '@/frontend/helpers';
 import Main_modal from './modal';
 const Calendar = dynamic(() => import('react-calendar'), {
     ssr: false,
@@ -83,12 +83,8 @@ const Solution_calender = ({ id }) => {
         }
         else
         {
-            setModalShow(true);
+            setShow(true);
         }
-    }
-
-    function handleshow(){
-        setShow(true)
     }
 
     useEffect(() => {
@@ -215,13 +211,14 @@ const Solution_calender = ({ id }) => {
                                                             <TimePicker
                                                                 disableClock={true}
                                                                 autoFocus={false}
-                                                                value={new Date(2025, 0, 0, 10, 50)}
+                                                                value={appointment}
                                                                 format={val == '24h' ? 'H-m-a' : 'h-m-a'}
+                                                                onChange={handleTimeChange}
                                                             />
                                                         </div>
                                                     </div>
                                                     <div className="button_area">
-                                                        <button className='btn-primary btn-black' onClick={handleshow}>GET STARTED</button>
+                                                        <button className='btn-primary btn-black' onClick={handleStartedClick}>GET STARTED</button>
                                                     </div>
                                                 </div>
                                             </Col>
@@ -233,124 +230,9 @@ const Solution_calender = ({ id }) => {
                     </Row>
                 </Container>
             </section>
-            <Main_modal show={show} setShow={setShow}/>
-            {/* <MyVerticallyCenteredModal
-                show={modalShow}
-                onHide={() => setModalShow(false)}
-                appointment={appointment}
-            /> */}
+            <Main_modal show={show} setShow={setShow} type="bookAppointment" appointment={formatDate(appointment)}/>
         </>
     )
 }
-
-// function MyVerticallyCenteredModal(props) {
-//         const [formData, setFormData] = useState({
-//             appointment: formatDate(props.appointment)
-//         });
-//         const [mailSent, setMailSent] = useState(false);
-//         const [formErrors, setFormErrors] = useState({
-//             phonenumber: null
-//         });
-//         const [formSubmitted, setFormSubmitted] = useState(false);
-    
-//         const handleInputChange = (e) => {
-//             setFormData({
-//                 ...formData,
-//                 [e.target.name]: e.target.value,
-//             });
-            
-//             if(e.target.value != "")
-//             {
-//                 setFormErrors({
-//                     ...formErrors,
-//                     [e.target.name]: null,
-//                 });
-//             }
-//         }
-    
-//         const handleFormSubmit = async (e) => {
-//             e.preventDefault()
-//             setFormSubmitted(true);
-    
-//             if(typeof formData.phonenumber == "undefined" || formData.phonenumber == "")
-//             {
-//                 setFormErrors({...formErrors, phonenumber: "Please Provide Phone Number"});
-//                 setFormSubmitted(false);
-//                 return false;
-//             }
-    
-//             let resp = await postApi("/api/send-mail?type=bookAppointment", formData);
-//             if(resp.status)
-//             {
-//                 toast.success("Our Expert Will Contact You Shortly!")
-//                 setMailSent(true);
-//                 setTimeout(() => {
-//                     props.onHide()
-//                     setTimeout(() => {
-//                         setMailSent(false)
-//                         setFormSubmitted(false);
-//                     }, 500)
-//                 }, 2000)
-//             }
-//             else
-//             {
-//                 toast.error("Something's Went Wrong!!")
-//             }
-//         }
-    
-//         return (
-//           <Modal
-//             {...props}
-//             size="lg"
-//             aria-labelledby="contained-modal-title-vcenter"
-//             centered
-//           >
-//             <Modal.Header closeButton>
-//               <Modal.Title id="contained-modal-title-vcenter">
-//                 Book a Call
-//               </Modal.Title>
-//             </Modal.Header>
-    
-//             {!mailSent ? (
-//                 <>
-//                     <Modal.Body>
-//                         <Form onSubmit={handleFormSubmit}>
-//                             <p>Appointment: {formatDate(props.appointment)}</p>
-//                             <Form.Group className="mb-3">
-//                                 <Form.Label>Full Name</Form.Label>
-//                                 <Form.Control type="text" name='fullname' onChange={handleInputChange} placeholder="Enter Full Name" />
-//                             </Form.Group>
-//                             <Form.Group className="mb-3">
-//                                 <Form.Label>Phone Number</Form.Label>
-//                                 <Form.Control type="number" name='phonenumber' onChange={handleInputChange} placeholder="Enter Phonenumber" isInvalid={formErrors.phonenumber ? "isInvalid" : ""}/>
-//                                 <Form.Control.Feedback type="invalid">
-//                                     {formErrors.phonenumber}
-//                                 </Form.Control.Feedback>
-//                             </Form.Group>
-    
-//                             {
-//                                 formSubmitted ? (
-//                                     <Button type="submit" className='btn-primary btn-green' disabled={formSubmitted}>
-//                                         <Spinner size='sm' animation="border" role="status">
-//                                             <span className="visually-hidden">Loading...</span>
-//                                         </Spinner>
-//                                     </Button>
-//                                 ) : (
-//                                     <Button type="submit" className='btn-primary btn-green'>Book</Button>
-//                                 )
-//                             }
-//                         </Form>
-//                     </Modal.Body>
-//                 </>
-//             ) : (
-//                 <>
-//                     <Modal.Body>
-//                         <p className='text-center'>Thanks for getting in touch! One of our experts will connect with you soon</p>
-//                     </Modal.Body>
-//                 </>
-//             )}
-//           </Modal>
-//         );
-//       }
 
 export default Solution_calender
