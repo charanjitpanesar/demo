@@ -31,6 +31,7 @@ const Main_modal = ({ show, setShow, type, appointment }) => {
 
     const handleFormSubmit = async (e) => {
         e.preventDefault()
+        return true;
         setFormSubmitted(true);
         
         if(typeof formData.phonenumber == "undefined" || formData.phonenumber == "")
