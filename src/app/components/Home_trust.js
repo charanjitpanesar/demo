@@ -5,9 +5,9 @@ import '../../../public/sass/home_scss/home_trust.scss'
 import Image from 'next/image'
 import skullImg from '../../../public/images/skull_img.png'
 
-const Home_trust = () => {
+const Home_trust = ({id}) => {
     return (
-        <section className='home_trust_section'>
+        <section className='home_trust_section' id={id}>
             <Container>
                 <Row>
                     <Col xxl={12} xl={12} lg={12} md={12} sm={12} xm={12}>
@@ -21,7 +21,7 @@ const Home_trust = () => {
                                              Who we are — passionate, forward-thinking, and dedicated to making a difference in a data-driven world.
                                         </p>
                                         <div className='button_area'>
-                                            <Link href="/" className="btn-primary btn-green">Check Our More <i className="bi bi-arrow-return-right"></i></Link>
+                                            <Link href="/solutions" className="btn-primary btn-green">Check Our More <i className="bi bi-arrow-return-right"></i></Link>
                                         </div>
                                     </div>
                                 </Col>

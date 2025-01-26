@@ -5,7 +5,7 @@ import Image from 'next/image';
 import footerBg from '../../../public/images/footer_banner_bg.png';
 import Link from 'next/link';
 
-const Solution_projects = () => {
+const Solution_projects = ({id}) => {
 
     const cardData = [
         {
@@ -26,7 +26,7 @@ const Solution_projects = () => {
     ];
     
     return (
-        <section className='solution_projects_section'>
+        <section className='solution_projects_section' id={id}>
             <Container>
                 <Row>
                     <Col xxl={12} xl={12} lg={12} md={12} sm={12} xm={12}>

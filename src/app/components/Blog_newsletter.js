@@ -5,10 +5,10 @@ import '../../../public/sass/blog_scss/blog_newsletter.scss'
 import newsletterImg from '../../../public/images/em.svg'
 import Image from 'next/image'
 
-const Blog_newsletter = () => {
+const Blog_newsletter = ({id}) => {
     return (
         <>
-            <section className='blog_newsletter_section'>
+            <section className='blog_newsletter_section' id={id}>
                 <Container>
                     <Row>
                         <Col xxl={12} xl={12} lg={12} md={12} sm={12} xs={12}>

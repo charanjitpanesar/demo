@@ -6,10 +6,10 @@ import Image from 'next/image'
 
 
 
-const Detail_newsletter = () => {
+const Detail_newsletter = ({id}) => {
     return (
         <>
-            <section className='detail_newsletter_section'>
+            <section className='detail_newsletter_section' id={id}>
                 <div className='parent_area'>
                     <div className='upper_area'>
                         <div className='logo_area'>

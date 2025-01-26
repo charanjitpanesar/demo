@@ -12,7 +12,7 @@ import bgImg from '../../../public/images/logistics_bg.png';
 import '../../../public/sass/pages/solution_transform.scss';
 import { delay } from 'motion';
 
-const Solution_transform = () => {
+const Solution_transform = ({id}) => {
 
     const [show, setShow] = useState(false);
     const [hover, sethover] = useState(false);
@@ -56,7 +56,7 @@ const Solution_transform = () => {
 
     return (
         <>
-            <section className='transform_solution_section'>
+            <section className='transform_solution_section' id={id}>
                 <Container>
                     <Row>
                         <Col xxl={12} xl={12} lg={12} md={12} sm={12} xm={12}>

@@ -3,10 +3,10 @@ import '../../../public/sass/contact_scss/contact_expertise.scss'
 import { Col, Container, Row } from 'react-bootstrap'
 import Link from 'next/link'
 
-const Contact_faq = () => {
+const Contact_faq = ({id}) => {
     return (
         <>
-            <section className='contact_faq_section'>
+            <section className='contact_faq_section' id={id}>
                 <Container>
                     <Row>
                         <Col xxl={12} xl={12} lg={12} md={12} sm={12} xs={12}>

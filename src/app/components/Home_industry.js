@@ -5,7 +5,7 @@ import '../../../public/sass/home_scss/home_industry.scss'
 import footerImg from '../../../public/images/footer_banner_bg.png'
 import Image from 'next/image'
 
-const Home_industry = () => {
+const Home_industry = ({id}) => {
     const cardsData = [
         {
             image: footerImg, 
@@ -28,7 +28,7 @@ const Home_industry = () => {
     ];
 
     return (
-        <section className='home_industry_section'>
+        <section className='home_industry_section' id={id}>
             <Container>
                 <Row>
                     <Col xxl={12} xl={12} lg={12} md={12} sm={12} xs={12}>
@@ -39,7 +39,7 @@ const Home_industry = () => {
                                     <p>
                                         Blogs of Industry affairs, in which decision makers are interested
                                     </p>
-                                    <Link href="/" className='btn-primary btn-light'>View all Blogs <i className="bi bi-arrow-right"></i></Link>
+                                    <Link href="/blogs" className='btn-primary btn-light'>View all Blogs <i className="bi bi-arrow-right"></i></Link>
                                 </div>
                             </div>
                             <div className='cards_area'>

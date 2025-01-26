@@ -5,15 +5,16 @@
 .page_nav_main {
     position: fixed;
     z-index: 10;
-    pointer-events: none;
-    inset: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
     display: flex;
     align-items: center;
     height: 100vh;
     mix-blend-mode: difference;
 
     .page_nav {
-        width: 100%;
+        width: fit-content;
         height: 100%;
         margin-right: 5px;
         display: flex;
@@ -83,8 +84,6 @@
 @media (min-width: 992px) and (max-width: 1199px) {
     .page_nav_main {
         .page_nav {
-            margin-right: 50px;
-
             .nav_item {
                 width: 15px;
                 &.active {
@@ -99,8 +98,6 @@
 @media (min-width: 768px) and (max-width: 991px) {
     .page_nav_main {
         .page_nav {
-            margin-right: 50px;
-
             .nav_item {
                 width: 15px;
                 &.active {
@@ -116,8 +113,6 @@
     .page_nav_main {
         display: none;
         .page_nav {
-            margin-right: 50px;
-
             .nav_item {
                 width: 15px;
                 &.active {
@@ -133,8 +128,6 @@
     .page_nav_main {
         display: none;
         .page_nav {
-            margin-right: 50px;
-
             .nav_item {
                 width: 15px;
                 &.active {
@@ -150,8 +143,6 @@
     .page_nav_main {
         display: none;
         .page_nav {
-            margin-right: 50px;
-
             .nav_item {
                 width: 15px;
                 &.active {

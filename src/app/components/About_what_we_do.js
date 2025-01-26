@@ -4,7 +4,7 @@ import Card from './Card';
 import '../../../public/sass/home_scss/home_cards_section.scss'
 
 
-const About_what_we_do = () => {
+const About_what_we_do = ({id}) => {
 
     const cardData = [
         {
@@ -34,7 +34,7 @@ const About_what_we_do = () => {
     ];
     return (
         <>
-            <section className='home_cards_section'>
+            <section className='home_cards_section' id={id}>
                 <Container>
                     <Row>
                         <Col xxl={12} xl={12} lg={12} md={12} sm={12} xs={12}>

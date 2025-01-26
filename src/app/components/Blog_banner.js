@@ -5,11 +5,11 @@ import Link from 'next/link'
 import linesImg from '../../../public/images/lines.png'
 import papersIcon from '../../../public/images/papers_icon.png'
 import Image from 'next/image'
- 
-const Blog_banner = () => {
+
+const Blog_banner = ({ id }) => {
     return (
         <>
-            <section className='blog_banner_section'>
+            <section className='blog_banner_section' id={id}>
                 <Container>
                     <Row>
                         <Col xxl={12} xl={12} lg={12} md={12} sm={12} xs={12}>
@@ -40,7 +40,7 @@ const Blog_banner = () => {
                                                     </div>
                                                     <div className='title'>
                                                         <i className="bi bi-dot"></i>
-                                                            Signup
+                                                        Signup
                                                     </div>
                                                     <div className='circles'>
                                                         <div className='circle circle1'>
@@ -51,7 +51,7 @@ const Blog_banner = () => {
                                                             </div>
                                                         </div>
                                                     </div>
-                                                </div>  
+                                                </div>
                                             </div>
                                             <div className='lower_area'>
                                                 <div className='button_area'>
@@ -62,12 +62,12 @@ const Blog_banner = () => {
                                                         <Form.Control type="email" placeholder="Your Email" />
                                                         <div className='button_area'>
                                                             <Link href='/' className='btn-primary btn-green'>Subscribe</Link>
-                                                        </div> 
+                                                        </div>
                                                     </div>
                                                 </Form>
                                                 <div className='line'></div>
                                                 <div className='text'>
-                                                Not your usual feeds filled with trash, But content we send are content you need!
+                                                    Not your usual feeds filled with trash, But content we send are content you need!
                                                 </div>
                                             </div>
                                         </div>
@@ -85,12 +85,12 @@ const Blog_banner = () => {
                                                     SAYNT AI Expands Into Global Markets
                                                 </p>
                                                 <div className='img_area'>
-                                                    
+
                                                 </div>
                                             </div>
                                             <div className='box2'>
                                                 <div className='image_area'>
-                                                    <Image 
+                                                    <Image
                                                         src={papersIcon}
                                                         alt='...'
                                                         title='...'
@@ -99,8 +99,8 @@ const Blog_banner = () => {
                                                 </div>
                                                 <div className='content_area'>
                                                     <h3>Whitepapers</h3>
-                                                    <p>Indepth Research On Targeted 
-                                                    industries </p>
+                                                    <p>Indepth Research On Targeted
+                                                        industries </p>
                                                 </div>
                                             </div>
                                         </div>

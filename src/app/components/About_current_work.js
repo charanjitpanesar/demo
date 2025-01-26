@@ -11,11 +11,11 @@ import '../../../public/sass/about_scss/current_work.scss';
 import Image from 'next/image';
 import img1 from '../../../public/images/logistics_bg.png';
 
-const About_current_work = () => {
+const About_current_work = ({id}) => {
     const [thumbsSwiper, setThumbsSwiper] = useState(null);
     return (
         <>
-            <section className="current_work">
+            <section className="current_work" id={id}>
                 <Container>
                     <Row>
                         <Col xxl={12} xl={12} lg={12} md={12} sm={12} xs={12}>

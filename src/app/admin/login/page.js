@@ -1,6 +1,7 @@
 "use client";
 
-import { checkLogin, postApi } from "@/backend/helpers";
+import { postApi } from "@/frontend/helpers";
+// import { checkLogin, postApi } from "@/backend/helpers";
 import Cookies from "js-cookie";
 import { redirect } from "next/navigation";
 import { useState } from "react";

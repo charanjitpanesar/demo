@@ -2,7 +2,7 @@ import React from 'react'
 import { Col, Container, Row } from 'react-bootstrap'
 import '../../../public/sass/blog_detail_scss/detail_info.scss'
 
-const Detail_info = () => {
+const Detail_info = ({id}) => {
     const data = [
         { name: 'Publication Date', value: 'October 15, 2023' },
         { name: 'Category', value: 'Healthcare' },
@@ -11,7 +11,7 @@ const Detail_info = () => {
     ]
     const list = ['Introduction','AI in Diagnostic Imaging','Predictive Analytics and Disease Prevention','Personalized Treatment Plans','Drug Discovery and Research','AI in Telemedicine','Ethical Considerations','The Future of AI in Healthcare','Conclusion']
     return (
-        <section className='detail_info_section'>
+        <section className='detail_info_section' id={id}>
             <Container>
                 <Row>
                     <Col xxl={12} xl={12} lg={12} md={12} sm={12} xs={12}>

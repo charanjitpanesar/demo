@@ -1,40 +1,54 @@
-import Cookies from "js-cookie";
+import { emailTemplates } from "@/data/templates";
+import nodemailer from 'nodemailer';
 
-export const postApi = async (url, data) => {
-    let token = Cookies.get("au_to");
+export const sendMailTemplate = async (toEmail, type, codes) => {
+    const template = emailTemplates[type];
 
-    let res = await fetch(url, {
-        method: "POST",
-        headers: {
-            "Content-Type": "application/json",
-            "Authorization": `Bearer ${token}`
-        },
-        body: JSON.stringify(data),
-    });
+    if(template)
+    {
+        let subject = template.subject;
+        let message = template.message;
 
-    return await res.json();
-}
-
-export const getApi = async (url) => {
-    let token = Cookies.get("au_to");
-
-    let res = await fetch(url, {
-        method: "GET",
-        headers: {
-            "Content-Type": "application/json",
-            "Authorization": `Bearer ${token}`
+        for (const key in codes) {
+            message = message.replaceAll(key, codes[key]);
         }
+
+        return sendMail(toEmail, subject, message);
+    }
+    else
+    {
+        return false;
+    }
+
+} 
+
+export const sendMail = async (to, subject, message) => { 
+    const transporter = nodemailer.createTransport({
+        service: 'gmail',
+        auth: {
+            user: process.env.SMTP_USER,
+            pass: process.env.SMTP_PASS,
+        },
     });
 
-    return await res.json();
-}
+    const mailOptions = {
+        from: process.env.SMTP_EMAIL,
+        to: to,
+        subject: subject,
+        text: message,
+    };
 
-export const checkLogin = async () => {
-    let res = await getApi("/api/auth/check-login");
-    
-    if(res.status) {
-        return true;
-    } else {
+    let mailSent = await transporter.sendMail(mailOptions);
+    if(mailSent)
+    {
+        return mailSent;
+    }
+    else
+    {
         return false;
     }
 }
+
+export const checkVar = (data) => {
+    return typeof data != "undefined" && data != null;
+} 

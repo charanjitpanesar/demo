@@ -3,7 +3,7 @@ import { Col, Container, Row } from 'react-bootstrap'
 import Card from './Card'
 import '../../../public/sass/home_scss/home_cards_section.scss'
 
-const Home_cards_section = () => {
+const Home_cards_section = ({id}) => {
 
     const cardData = [
         {
@@ -33,7 +33,7 @@ const Home_cards_section = () => {
     ];
     return (
         
-        <section className='home_cards_section'>
+        <section className='home_cards_section' id={id}>
             <Container>
                 <Row>
                     <Col xxl={12} xl={12} lg={12} md={12} sm={12} xs={12}>
