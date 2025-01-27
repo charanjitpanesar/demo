@@ -1,6 +1,7 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
     env: {
+        BASE_URL: "http://localhost:3000",
         MONGO_URI: 'mongodb://localhost:27017/demo',
         SALT_ROUNDS: '10',
         SALT_SECRET: 'saynt',

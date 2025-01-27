@@ -1,58 +1,3 @@
-// "use client";
-
-// import { postApi } from "@/frontend/helpers";
-// // import { checkLogin, postApi } from "@/backend/helpers";
-// import Cookies from "js-cookie";
-// import { redirect } from "next/navigation";
-// import { useState } from "react";
-// import { Button, Form } from "react-bootstrap";
-
-// const page = () => {
-//     const [loginData, setLoginData] = useState({
-//         email: "",
-//         password: "",
-//     });
-
-//   const handleLoginSubmit = async (e) => {
-//     e.preventDefault();
-
-//     let res = await postApi("/api/auth/login", loginData);
-
-//     if(res.status)
-//     {
-//       let admin = res.data;
-
-//       Cookies.set('au_to', admin.token);
-//       redirect("/admin/dashboard")
-//     }
-//     else
-//     {
-
-//     }
-//   }
-    
-//   return (
-//     <>
-//       <Form className="p-5 bg-white" onSubmit={handleLoginSubmit}>
-//         <Form.Group className="mb-3">
-//           <Form.Label>Email address</Form.Label>
-//           <Form.Control type="text" placeholder="Enter Email" onChange={(e) => setLoginData({ ...loginData, "email": e.target.value })} />
-//         </Form.Group>
-//         <Form.Group className="mb-3">
-//           <Form.Label>Password</Form.Label>
-//           <Form.Control type="password" placeholder="Enter Password" onChange={(e) => setLoginData({ ...loginData, "password": e.target.value })} />
-//         </Form.Group>
-//         <Button variant="primary" size="md" type="submit">
-//           Submit
-//         </Button>
-//       </Form>
-//     </>
-//   );
-// };
-
-// export default page;
-
-
 "use client";
 import React, { useState } from 'react';
 import { Button, Card, Form, InputGroup } from 'react-bootstrap';
@@ -60,9 +5,34 @@ import '../../../../public/admin/sass/pages/auth.scss';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faEye, faEyeSlash } from '@fortawesome/free-solid-svg-icons';
 import Link from 'next/link';
+import { checkLogin, handleInputChange, postApi } from '@/frontend/helpers';
+import { toast } from 'react-toastify';
+import Cookies from 'js-cookie';
+import { redirect } from 'next/navigation';
+
+if(await checkLogin())
+{
+    redirect("/admin/dashboard");
+}
 
 const Login = () => {
+    const [loginData, setLoginData] = useState({
+        email: "",
+        password: "",
+    });
     const [showPass, setShowPass] = useState(false);
+
+    const handleLoginSubmit = async (e) => {
+        e.preventDefault();
+        let res = await postApi("/api/auth/login", loginData);
+        if(res.status) {
+            let admin = res.data;
+            Cookies.set('au_to', admin.token);
+            redirect("/admin/dashboard")
+        } else {
+            toast.error(res.message || "Something's went wrong!");
+        }
+    }
 
     return (
         <div className='auth_page'>
@@ -73,13 +43,15 @@ const Login = () => {
                 <div className='card-body'>
                     <h5>Sign In</h5>
                     <div className='desc'>Please sign-in to your account and start the adventure</div>
-                    <Form>
+                    <Form onSubmit={handleLoginSubmit}>
                         <Form.Group className='form-group'>
                             <Form.Label>Email</Form.Label>
                             <Form.Control
                                 required
                                 type="text"
                                 placeholder="Enter Your Email"
+                                name='email'
+                                onChange={(e) => handleInputChange(e, loginData, setLoginData)}
                             />
                         </Form.Group>
                         <Form.Group className='form-group'>
@@ -92,6 +64,8 @@ const Login = () => {
                                     required
                                     type={showPass ? "text" : "password"}
                                     placeholder="Enter Your Password"
+                                    name='password'
+                                    onChange={(e) => handleInputChange(e, loginData, setLoginData)}
                                 />
                                 <InputGroup.Text onClick={() => setShowPass(!showPass)} id="inputGroupPrepend">
                                     <FontAwesomeIcon icon={showPass ? faEye : faEyeSlash} />

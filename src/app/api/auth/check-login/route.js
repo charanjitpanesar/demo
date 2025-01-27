@@ -7,9 +7,13 @@ export async function GET(req, res) {
             const collection = db.collection('admins');
 
             let token = getBearerToken(req);
-
-            let admin = await collection.findOne({token: token});
-            
+            let currentTime = new Date().toISOString();
+            let admin = await collection.findOne({
+                token: token, 
+                expires_at: {
+                    "$gte": currentTime,
+                }
+            });
             if(admin) {
                 return Response.json(
                     {

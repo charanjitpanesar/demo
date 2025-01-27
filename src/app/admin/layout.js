@@ -5,6 +5,7 @@ import '../../../public/admin/sass/helper/reset.scss';
 import '../../../public/admin/sass/helper/base.scss';
 import '../../../public/admin/sass/helper/helper.scss';
 import "../../../public/admin/sass/globals.scss";
+import { ToastContainer } from "react-toastify";
 
 
 const public_sans = Public_Sans({
@@ -26,6 +27,7 @@ export default function RootLayout({ children }) {
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.13.0/css/all.css" />
       </head>
       <body id="pb_scroll" className={`${public_sans.variable}`}>
+        <ToastContainer />
         {children}
       </body>
     </html>

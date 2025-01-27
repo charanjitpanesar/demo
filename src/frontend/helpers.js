@@ -19,7 +19,7 @@ export const formatDate = (date) => {
 export const postApi = async (url, data) => {
   let token = Cookies.get("au_to");
 
-  let res = await fetch(url, {
+  let res = await fetch(getUrl(url), {
       method: "POST",
       headers: {
           "Content-Type": "application/json",
@@ -34,14 +34,14 @@ export const postApi = async (url, data) => {
 export const getApi = async (url) => {
   let token = Cookies.get("au_to");
 
-  let res = await fetch(url, {
+  let res = await fetch(getUrl(url), {
       method: "GET",
       headers: {
           "Content-Type": "application/json",
-          "Authorization": `Bearer ${token}`
+          "Authorization": `Bearer ${token ?? ""}`
       }
   });
-
+  
   return await res.json();
 }
 
@@ -53,4 +53,19 @@ export const checkLogin = async () => {
   } else {
       return false;
   }
+}
+
+export const handleInputChange = (e, state, stateFunction) => {
+  stateFunction({
+    ...state,
+    [e.target.name]: e.target.value,
+  });
+}
+
+export const getUrl = (url) => {
+  return process.env.BASE_URL+url;
+}
+
+export const updateAdminToken = async () => {
+  await getApi("/api/auth/update-admin-token");
 }

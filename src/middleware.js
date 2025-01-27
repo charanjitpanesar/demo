@@ -1,23 +1,23 @@
 import { NextResponse } from 'next/server'
+import { getApi } from './frontend/helpers';
  
 export function middleware(request) {
   const response = NextResponse.next();
   response.headers.set('X-Current-URL', request.url);
-
-
+  // checkAdminAuth(request);
   return response;
 }
 
-// function checkAdminAuth(request) {
-//   const token = request.cookies.get('adminAuthToken');
-//   return token && token === 'validAdminToken'; // Replace with your actual validation logic
+// async function checkAdminAuth(request) {
+  // if(request.url.includes("admin")) {
+    // let res = await getApi("/api/auth/check-login");
+    // console.log(res)
+  // }
 // }
-
-
 
 export const config = {
     matcher: [
-      '/', // Match the root path
-      '/((?!api|_next|static|favicon.ico).*)', // Exclude /api, /_next, /static, and /favicon.ico
+      '/',
+      '/((?!_next|static|favicon.ico).*)',
     ],
 };  
