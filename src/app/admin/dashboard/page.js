@@ -1,10 +1,10 @@
-// 'use client'
-// import { checkLogin } from "@/frontend/helpers";
+'use client'
+import { checkLogin } from "@/frontend/helpers";
 
-// async function updateLogin() {
-//   await checkLogin()
-// }
-// updateLogin()
+async function updateLogin() {
+  await checkLogin()
+}
+updateLogin()
 
 const page = () => {
 

@@ -6,7 +6,6 @@ export async function GET(req, res) {
             const db = await dbConnect();
             const collection = db.collection('admins');
             let token = getBearerToken(req);
-            console.log('token')
             
             if(token)
             {

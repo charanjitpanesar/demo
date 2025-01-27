@@ -5,6 +5,7 @@ export function middleware(request) {
   const response = NextResponse.next();
   response.headers.set('X-Current-URL', request.url);
   // checkAdminAuth(request);
+  updateAdminToken(request);
   return response;
 }
 
@@ -14,6 +15,12 @@ export function middleware(request) {
     // console.log(res)
   // }
 // }
+
+async function updateAdminToken(request) {
+  if(request.url.includes("api")) {
+    await getApi("/api/auth/update-admin-token");
+  }
+}
 
 export const config = {
     matcher: [
