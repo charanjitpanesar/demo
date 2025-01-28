@@ -2,25 +2,27 @@ import Link from 'next/link'
 import React from 'react'
 import { Col, Container, Row } from 'react-bootstrap'
 import '../../../public/sass/home_scss/home_industry.scss'
-import footerImg from '../../../public/images/footer_banner_bg.png'
+import img1 from '../../../public/images/home_blog1.jpg'
+import img2 from '../../../public/images/home_blog2.jpg'
+import img3 from '../../../public/images/home_blog3.jpg'
 import Image from 'next/image'
 
 const Home_industry = ({id}) => {
     const cardsData = [
         {
-            image: footerImg, 
+            image: img1, 
             tag: "SEO",
             time: "5 min. read",
             title: "How AI Is Revolutionizing the Logistics Industry",
         },
         {
-            image: footerImg, 
+            image: img2, 
             tag: "PPC",
             time: "5 min. read",
             title: "5 AI Innovations Shaping the Next Decade",
         },
         {
-            image: footerImg, 
+            image: img3, 
             tag: "Tips & trick",
             time: "5 min. read",
             title: "Creating engaging content that converts: Best practices for 2024",

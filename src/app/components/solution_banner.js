@@ -105,7 +105,7 @@ const Solution_banner = ({id}) => {
                                         initial={{ x: 100, opacity: 0 }}
                                         animate={{ x: 0, opacity: 1, transition: { duration: 1, ease: 'anticipate' } }}
                                     >
-                                        <Link href={'/'} className='btn-primary btn-dark'>Request a Demo</Link>
+                                        <Link href='https://wa.me/923299346077' className='btn-primary btn-dark'>Request a Demo</Link>
                                     </motion.div>
                                 </div>
                                 <div className="cards_area">
