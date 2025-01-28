@@ -2,10 +2,12 @@ import React from 'react'
 import '../../../public/sass/home_scss/home_hero_section.scss';
 import { Col, Container, Row } from 'react-bootstrap';
 import Link from 'next/link';
-// import circleImg from '../../../public/images/circle_img.png'
-// import logo from '../../../public/images/logo.svg'
-import logo from '../../../public/images/home_banner_logo.svg'
-// import dotted from '../../../public/images/dotted.svg'
+import circleImg from '../../../public/images/circle_img.png'
+import logo from '../../../public/images/logo.svg'
+// import logo from '../../../public/images/home_banner_logo.svg'
+import dotted from '../../../public/images/dotted.svg'
+import container from '../../../public/images/container.png'
+import layer from '../../../public/images/layer.png'
 import Image from 'next/image';
 
 
@@ -40,19 +42,27 @@ const Home_hero = ({ id }) => {
                                                     priority
                                                 />
                                             </div> */}
-                                            {/* <div className="dotted">
-                                                <Image src={dotted} alt="..."
-                                                    title="..."
-                                                    priority /> */}
-                                                <div className='logo_area'>
-                                                    <Image
-                                                        src={logo}
-                                                        alt="..."
-                                                        title="..."
-                                                        priority
-                                                    />
+                                            <div className="outer_circle">
+                                                <div className="rotate_img first">
+                                                    <Image src={container} alt='...' title='...' fetchPriority='low' priority={false} />
                                                 </div>
-                                            {/* </div> */}
+                                                <div className="rotate_img layer">
+                                                    <Image src={layer} alt='...' title='...' fetchPriority='low' priority={false} />
+                                                </div>
+                                                <div className="dotted">
+                                                    <Image src={dotted} alt="..."
+                                                        title="..."
+                                                        priority />
+                                                    <div className='logo_area'>
+                                                        <Image
+                                                            src={logo}
+                                                            alt="..."
+                                                            title="..."
+                                                            priority
+                                                        />
+                                                    </div>
+                                                </div>
+                                            </div>
                                         </div>
                                     </Col>
                                 </Row>
