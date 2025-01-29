@@ -1,6 +1,7 @@
 import Cookies from "js-cookie";
 
 export const formatDate = (date) => {
+  date = new Date(date);
   const months = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
 
   const month = months[date.getMonth()];
@@ -63,7 +64,16 @@ export const handleInputChange = (e, state, stateFunction) => {
 }
 
 export const getUrl = (url) => {
-  return process.env.BASE_URL+url;
+  try {
+    const parsedUrl = new URL(url);
+    if(!!parsedUrl.hostname) {
+      return url;
+    } else {
+      return process.env.BASE_URL+url;
+    }
+  } catch (e) {
+    return process.env.BASE_URL+url;
+  }
 }
 
 export const updateAdminToken = async () => {

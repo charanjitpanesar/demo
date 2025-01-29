@@ -2,7 +2,6 @@ import React from 'react'
 import '../../../../public/sass/home_scss/home_hero_section.scss';
 import { Col, Container, Row } from 'react-bootstrap';
 import Link from 'next/link';
-import logo from '../../../../public/images/home_banner_logo.svg'
 import logo from '../../../../public/images/logo.svg'
 import dotted from '../../../../public/images/dotted.svg'
 import container from '../../../../public/images/container.png'
