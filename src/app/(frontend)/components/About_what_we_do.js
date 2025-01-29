@@ -8,28 +8,28 @@ const About_what_we_do = ({id}) => {
 
     const cardData = [
         {
+            heading: 'Market Insights',
+            description: 'Providing updates on market trends and changes to keep businesses ahead of the curve',
+        },
+        {
+            heading: 'Technology Research',
+            description: 'Conducting in-depth research on technological advancements impacting industries',
+        },
+        {
+            heading: 'Consultancy Services',
+            description: 'Offering free marketing and technological consultancy to empower businesses with actionable advice.',
+        },
+        {
+            heading: 'Tailored Solutions',
+            description: 'Delivering innovative tech solutions designed for the unique needs of relevant industries',
+        },
+        {
             heading: 'Custom Software Development',
-            description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor.',
+            description: 'Building scalable, efficient, and user-focused software solutions',
         },
         {
-            heading: 'AI Solution and Automation',
-            description: 'Transform your business with AI-driven insights and predictive analytics.',
-        },
-        {
-            heading: 'Mobile App Development',
-            description: 'Seamlessly integrate cloud solutions to enhance scalability and efficiency.',
-        },
-        {
-            heading: 'Marketing and Branding',
-            description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor.',
-        },
-        {
-            heading: 'Free Tech Consultancy',
-            description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor.',
-        },
-        {
-            heading: 'Free Marketing Consultancy',
-            description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor.',
+            heading: 'AI Solutions',
+            description: 'Integrating artificial intelligence to streamline processes and enhance decision-making',
         },
     ];
     return (

@@ -18,7 +18,7 @@ const Contact_banner = ({id}) => {
                                 <Link href='/solutions' className='btn-primary btn_1'>
                                     Explore Solutions
                                 </Link>
-                                <Link href='/solutions' className='btn-primary btn_2'>
+                                <Link href='https://wa.me/923299346077'  className='btn-primary btn_2'>
                                     Talk to an Expert
                                 </Link>
                             </div>
