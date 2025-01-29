@@ -1,5 +1,5 @@
 "use client";
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Button, Card, Form, InputGroup } from 'react-bootstrap';
 import '../../../../public/admin/sass/pages/auth.scss';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -10,9 +10,11 @@ import { toast } from 'react-toastify';
 import Cookies from 'js-cookie';
 import { redirect } from 'next/navigation';
 
-if(await checkLogin())
-{
-    redirect("/admin/dashboard");
+const isLogin = async () => {
+    if(await checkLogin())
+    {
+        redirect("/admin/dashboard");
+    } 
 }
 
 const Login = () => {
@@ -20,6 +22,7 @@ const Login = () => {
         email: "",
         password: "",
     });
+
     const [showPass, setShowPass] = useState(false);
 
     const handleLoginSubmit = async (e) => {
@@ -33,6 +36,10 @@ const Login = () => {
             toast.error(res.message || "Something's went wrong!");
         }
     }
+
+    useEffect(() => {
+        isLogin();
+    }, [])
 
     return (
         <div className='auth_page'>

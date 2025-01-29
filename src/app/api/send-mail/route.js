@@ -1,3 +1,4 @@
+import dbConnect from "@/backend/config/db";
 import { checkVar, sendMailTemplate } from "@/backend/helpers";
 
 export async function POST(req, res) {
@@ -16,19 +17,46 @@ export async function POST(req, res) {
                 "{email}": checkVar(data.email) ? data.email : "",
             };
 
-            const mailSent = await sendMailTemplate(toEmail, type, codes);
-            
-            if(mailSent)
+            let contactData = {
+                fullname: data.fullname,
+                phonenumber: data.phonenumber,
+                email: data.email,
+                type: type,
+                appointment: data.appointment,
+                created_at: new Date(),
+                updated_at: new Date(),
+            };
+
+            let contactAdded = addContact(contactData);
+
+            if(contactAdded)
             {
-                return Response.json(
-                    {
-                        status: true,
-                        message: "Mail Send Successfully!",
-                    }, 
-                    {
-                        status: 200,
-                    }
-                ) 
+                const mailSent = await sendMailTemplate(toEmail, type, codes);
+
+                if(mailSent)
+                {
+                    return Response.json(
+                        {
+                            status: true,
+                            message: "Mail Send Successfully!",
+                        }, 
+                        {
+                            status: 200,
+                        }
+                    ) 
+                }
+                else
+                {
+                    return Response.json(
+                        {
+                            status: true,
+                            message: "Something's Went Wrong",
+                        }, 
+                        {
+                            status: 400,
+                        }
+                    )
+                }
             }
             else
             {
@@ -66,4 +94,10 @@ export async function POST(req, res) {
             }
         )
     }
+}
+
+const addContact = async (data) => {
+    const db = await dbConnect();
+    const collection = db.collection('contacts');
+    return await collection.insertOne(data);  
 }

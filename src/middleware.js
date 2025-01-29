@@ -5,7 +5,7 @@ export function middleware(request) {
   const response = NextResponse.next();
   response.headers.set('X-Current-URL', request.url);
   // checkAdminAuth(request);
-  updateAdminToken(request);
+  // updateAdminToken(request);
   return response;
 }
 

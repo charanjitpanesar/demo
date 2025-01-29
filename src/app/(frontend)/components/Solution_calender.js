@@ -230,7 +230,7 @@ const Solution_calender = ({ id }) => {
                     </Row>
                 </Container>
             </section>
-            <Main_modal show={show} setShow={setShow} type="bookAppointment" appointment={formatDate(appointment)}/>
+            <Main_modal show={show} setShow={setShow} type="bookAppointment" appointment={appointment}/>
         </>
     )
 }
