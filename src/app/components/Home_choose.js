@@ -27,9 +27,8 @@ const Home_choose = ({id}) => {
                         <Col xxl={12} xl={12} lg={12} md={12} sm={12} xm={12}>
                             <div className='parent_area'>
                                 <div className='upper_area'>
-                                    <h6>Why Choose</h6>
-                                    <h3>What’s that
-                                    made us different</h3>
+                                    {/* <h6>Why Choose</h6> */}
+                                    <h3>What is it that makes us different?</h3>
                                 </div>
                                 <div className='cards_area'>
                                     <Row>
