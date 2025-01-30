@@ -17,7 +17,7 @@ import { FreeMode, Navigation, Thumbs , Controller} from 'swiper/modules';
 
 import img1 from '../../../public/images/footer_banner_bg.png'
 import img2 from '../../../public/images/connect_bg.png'
-import img3 from '../../../public/images/user.png'
+import img3 from '../../../public/images/user.jpg'
 import logo from '../../../public/images/logo.png'
 import Image from 'next/image';
 import Link from 'next/link';

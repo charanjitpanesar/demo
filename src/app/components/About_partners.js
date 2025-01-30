@@ -15,7 +15,7 @@ const AboutPartners = ({id}) => {
     return (
         <section className='about_partner_section' id={id}>
             <div className='parent_area'>
-                <h3>Our Trusted Partners</h3>
+                <h3>What we do to come there</h3>
                 <p>We collaborate with top companies and hold industry certifications</p>
                 <div className='slider_area'>
                     <Swiper
