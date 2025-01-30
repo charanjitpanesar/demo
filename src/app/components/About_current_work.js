@@ -29,7 +29,7 @@ const About_current_work = ({id}) => {
                                                     <p>Few Of Many Solutions Listed here,<span> Don&apos;t Worry</span> if your solution isn&apos;t listed, Just reach us out and we will get you the solution you need.</p>
                                                 </div>
                                                 <div className="button_area">
-                                                    <Link href={'/'} className='btn btn_blue'>
+                                                    <Link href={'/solutions'} className='btn btn_blue'>
                                                         <span> Custom Solution</span>
                                                         <i className="bi bi-arrow-right right_arr"></i>
                                                     </Link>
