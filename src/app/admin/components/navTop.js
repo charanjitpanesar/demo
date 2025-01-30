@@ -10,12 +10,6 @@ import { faAngleLeft, faBars, faCog, faFilter, faSignOutAlt, faTimesCircle, faUs
 
 
 const NavTop = (props) => {
-    const {
-        toggleSidebar,
-    } = props;
-    const [show, setShow] = useState(false);
-
-
     return (
         <div className='nav_area'>
             {/* <Row>
@@ -23,8 +17,8 @@ const NavTop = (props) => {
                     <div className='inner_area'>
 
                         <div className='nav_top'>
-                            <div className='bar_icon d-xl-none d-block' onClick={() => toggleSidebar()}>
-                                <FontAwesomeIcon icon={faBars} />
+                            <div className='bar_icon'>
+                                {/* <FontAwesomeIcon icon={faBars} /> */}
                             </div>
                             <Dropdown>
                                 <Dropdown.Toggle id="dropdown-basic">
@@ -72,102 +66,20 @@ const NavTop = (props) => {
                         <div className='nav_btm'>
                             <div className='left'>
                                 <div className='title'>
-                                    Manage Users
+                                    Manage {props.title}
                                 </div>
                             </div>
                             <div className='right'>
-                                <div className='btn_area'>
-                                    <div className='back_btn'>
-                                        <span><FontAwesomeIcon icon={faAngleLeft} /></span>  Back
-                                    </div>
-                                </div>
-                                <Dropdown show={show}>
-                                    <Dropdown.Toggle id="dropdown-basic">
+                                {
+                                    props.backUrl ? (
                                         <div className='btn_area'>
-                                            <div className='back_btn' onClick={() => setShow(true)}>
-                                                <span className='filter_icon'><FontAwesomeIcon icon={faFilter} /></span>  Filter
+                                            <div className='back_btn'>
+                                                <span><FontAwesomeIcon icon={faAngleLeft} /></span>  Back
                                             </div>
                                         </div>
-                                    </Dropdown.Toggle>
-                                    <Dropdown.Menu>
-                                        <div className='cross_icon' onClick={() => setShow(false)}>
-                                            <FontAwesomeIcon icon={faTimesCircle} />
-                                        </div>
-                                        <Dropdown.Item as={'div'}>
-                                            <div className='date_area'>
-                                                <div className='left_side'>
-                                                    <Form.Group className='form-group'>
-                                                        <Form.Label>Created On</Form.Label>
-                                                        <Form.Control
-                                                            required
-                                                            type="date"
-                                                            placeholder="Select Date of birth"
-                                                        />
-                                                    </Form.Group>
-                                                </div>
-                                                <div className='right_side'>
-                                                    <Form.Group className='form-group'>
-                                                        <Form.Control
-                                                            required
-                                                            type="date"
-                                                            placeholder="Select Date of birth"
-                                                        />
-                                                    </Form.Group>
-                                                </div>
-                                            </div>
-                                        </Dropdown.Item>
-                                        <Dropdown.Item as={'div'}>
-                                            <div className='date_area'>
-                                                <div className='left_side'>
-                                                    <Form.Group className='form-group'>
-                                                        <Form.Label>Last Login</Form.Label>
-                                                        <Form.Control
-                                                            required
-                                                            type="date"
-                                                            placeholder="Select Date of birth"
-                                                        />
-                                                    </Form.Group>
-                                                </div>
-                                                <div className='right_side'>
-                                                    <Form.Group className='form-group'>
-                                                        <Form.Control
-                                                            required
-                                                            type="date"
-                                                            placeholder="Select Date of birth"
-                                                        />
-                                                    </Form.Group>
-                                                </div>
-                                            </div>
-                                        </Dropdown.Item>
-                                        <Dropdown.Item as={'div'}>
-                                            <div className='select_area'>
-                                                <Form.Check
-                                                    type={'radio'}
-                                                    label="All"
-                                                    name='status'
-                                                />
-                                                <Form.Check
-                                                    type={'radio'}
-                                                    label="Publish"
-                                                    name='status'
-                                                />
-                                                <Form.Check
-                                                    type={'radio'}
-                                                    label="UnPublish"
-                                                    name='status'
-                                                />
-                                            </div>
-                                        </Dropdown.Item>
-                                        <div className='btn_main'>
-                                            <div className='btn_area'>
-                                                <div className='btn btn-primary reset_btn'>Reset</div>
-                                            </div>
-                                            <div className='btn_area' onClick={() => setShow(false)}>
-                                                <div className='btn btn-primary'>Submit</div>
-                                            </div>
-                                        </div>
-                                    </Dropdown.Menu>
-                                </Dropdown>
+                                    ) : ""
+                                }
+                                {props.children}
                             </div>
                         </div>
                     </div>

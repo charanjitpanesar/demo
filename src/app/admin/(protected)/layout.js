@@ -1,9 +1,11 @@
 "use client";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import "../../../../public/admin/sass/globals.scss";
 import "../../../../public/admin/sass/pages/adminLayout.scss";
 import NavTop from "../components/navTop";
 import SideBar from "../components/sideBar";
 import { useState } from "react";
+import { faBars } from "@fortawesome/free-solid-svg-icons";
 
 
 export default function DashboardLayout({ children }) {
@@ -24,7 +26,9 @@ export default function DashboardLayout({ children }) {
                 />
             </div>
             <div className='right_main'>
-                <NavTop toggleSidebar={toggleSidebar} />
+                <div className='bar_icon d-xl-none d-block' onClick={() => toggleSidebar()}>
+                    <FontAwesomeIcon icon={faBars} />
+                </div>
                 {children}
             </div>
         </div>
