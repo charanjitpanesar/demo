@@ -179,6 +179,18 @@ const About_meet_team = ({id}) => {
                                                         </div>
                                                     </div>
                                                 </SwiperSlide>
+                                                <SwiperSlide>
+                                                    <div className='slide_inner'>
+                                                        <div className='image_area'>
+                                                            <Image 
+                                                                src={img1}
+                                                                alt='...'
+                                                                title='...'
+                                                                priority
+                                                            />
+                                                        </div>
+                                                    </div>
+                                                </SwiperSlide>
                                             </Swiper>
                                             <div className="custom-navigation">
                                                 <div className="prev-btn">
