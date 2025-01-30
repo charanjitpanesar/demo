@@ -61,14 +61,14 @@ const About_current_work = ({id}) => {
                                                         }}
                                                     >
                                                         {
-                                                            [...Array(4)].map((item, i) => (
+                                                            ["Assistant", "Manager", "Designer", "Developer"].map((item, i) => (
                                                                 <SwiperSlide key={i}>
                                                                     <div className="card_item">
                                                                         <div className="img_area">
                                                                             <Image src={img1} alt='...' title='...' fetchPriority='low' priority={false} />
                                                                         </div>
-                                                                        <div className="txt">Assistant</div>
-                                                                        <div className="icon"><i className="bi bi-heart"></i></div>
+                                                                        <div className="txt">{item}</div>
+                                                                        {/* <div className="icon"><i className="bi bi-heart"></i></div> */}
                                                                     </div>
                                                                 </SwiperSlide>
                                                             ))
@@ -101,7 +101,7 @@ const About_current_work = ({id}) => {
                                                                         <Image src={img1} alt='...' title='...' fetchPriority='low' priority={false} />
                                                                     </div>
                                                                     <div className="txt">Find Information Quickly and Easily </div>
-                                                                    <div className="icon"><i className="bi bi-heart"></i></div>
+                                                                    {/* <div className="icon"><i className="bi bi-heart"></i></div> */}
                                                                 </div>
                                                             </SwiperSlide>
                                                         ))
