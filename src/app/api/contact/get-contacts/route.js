@@ -5,7 +5,7 @@ export async function GET(req, res) {
         try {
             let where = addFilters(req);
 
-            let contacts = await getContacts(where);
+            let contacts = await getContacts(req, where);
 
             if(contacts) {
                 return Response.json(
@@ -55,10 +55,25 @@ export async function GET(req, res) {
     }
 }
 
-const getContacts = async (where = {}) => {
+const getContacts = async (req, where = {}) => {
     const db = await dbConnect();
     const collection = db.collection('contacts');
-    return await collection.find(where).toArray();  
+
+    let { searchParams } = new URL(req.url);
+    let limit = parseInt(searchParams.get('limit') || 14);
+    let page = parseInt(searchParams.get('page') || 1);
+
+    let skip = (page - 1) * limit;
+
+    let listing = await collection.find(where).skip(skip).limit(limit).toArray();
+    let count = await collection.countDocuments(where);
+
+    return {
+        data: listing,
+        count: count,
+        page: page,
+        totalPages: Math.ceil(count / limit),
+    };
 }
 
 const addFilters = (req) => {

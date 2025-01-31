@@ -2,8 +2,8 @@ const { default: dbConnect } = require("./config/db");
 import { ObjectId } from "mongodb";
 
 const formatId = (id) => {
-    if (id instanceof ObjectId) return id; // If already ObjectId, return as is
-    return ObjectId.createFromHexString(id); // Convert if string
+    if (id instanceof ObjectId) return id;
+    return ObjectId.createFromHexString(id);
 };
 
 export const add = async (dbCollection, data) => {
@@ -12,13 +12,13 @@ export const add = async (dbCollection, data) => {
     return await collection.insertOne(data);
 }
 
-export const updateOne = async (dbCollection, id, data) => {
+export const modifyOne = async (dbCollection, id, data) => {
     const db = await dbConnect();
     const collection = db.collection(dbCollection);
     return await collection.updateOne({ _id: formatId(id) }, { $set: data });
 }
 
-export const deleteOne = async (dbCollection, id) => {
+export const removeOne = async (dbCollection, id) => {
     const db = await dbConnect();
     const collection = db.collection(dbCollection);
     return await collection.deleteOne({ _id: formatId(id) });
@@ -36,11 +36,17 @@ export const getAllWhere = async (dbCollection, condition) => {
     return await collection.find(condition).toArray();
 };
 
-export const updateAllWhere = async (dbCollection, condition, data) => {
+export const modifyAllWhere = async (dbCollection, condition, data) => {
     const db = await dbConnect();
     const collection = db.collection(dbCollection);
     return await collection.updateMany(
         condition, 
         { $set: data }
     );
+};
+
+export const removeAllWhere = async (dbCollection, condition) => {
+    const db = await dbConnect();
+    const collection = db.collection(dbCollection);
+    return await collection.deleteMany(condition);
 };

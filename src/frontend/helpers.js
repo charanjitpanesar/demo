@@ -32,18 +32,27 @@ export const postApi = async (url, data) => {
   return await res.json();
 }
 
-export const getApi = async (url) => {
+export const getApi = async (url, options = {}) => {
   let token = Cookies.get("au_to");
 
-  let res = await fetch(getUrl(url), {
-      method: "GET",
-      headers: {
-          "Content-Type": "application/json",
-          "Authorization": `Bearer ${token ?? ""}`
+  try{
+    let res = await fetch(getUrl(url), {
+        method: "GET",
+        headers: {
+            "Content-Type": "application/json",
+            "Authorization": `Bearer ${token ?? ""}`
+        },
+        ...options,
+    });
+    
+    return await res.json();
+  } catch(error) {
+    if (error.name !== "AbortError") {
+      return {
+        status: false,
       }
-  });
-  
-  return await res.json();
+    }
+  }
 }
 
 export const checkLogin = async () => {

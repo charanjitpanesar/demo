@@ -1,8 +1,8 @@
 "use client";
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import TableCom from "../../components/table";
 import { formatDate, getApi, getUrl, postApi } from "@/frontend/helpers";
-import { Dropdown, Form, InputGroup, Table } from "react-bootstrap";
+import { Dropdown, Form, InputGroup, Spinner, Table } from "react-bootstrap";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faEdit,
@@ -27,18 +27,22 @@ const page = () => {
   };
 
   const path = usePathname();
+  const searchParams = useSearchParams();
   const defaultFilters = {
-    search: "",
-    createdAtFrom: [],
-    createdAtTo: [],
-    status: "",
+    search: searchParams.get("search") || "",
+    createdAtFrom: searchParams.get("createdAtFrom") || "",
+    createdAtTo: searchParams.get("createdAtTo") || "",
+    status: searchParams.get("status") || "",
   };
 
-  const searchParams = useSearchParams();
   const [filters, setFilters] = useState(defaultFilters);
   const [listing, setListing] = useState([]);
   const [show, setShow] = useState(false);
   const [selectedIds, setSelectedIds] = useState([]);
+  const [page, setPage] = useState(1);
+  const [loading, setLoading] = useState(false);
+  const [hasMore, setHasMore] = useState(true);
+  const abortControllerRef = useRef(null);
 
   const handleSelect = (e, id, type = null) => {
     if(type == "all") {
@@ -60,7 +64,11 @@ const page = () => {
   const getListing = async () => {
     let url = new URL(getUrl(module.api));
     let frontendUrl = new URL(path, window.location.origin);
-
+    
+    if (abortControllerRef.current) {
+      abortControllerRef.current.abort();
+    }
+    
     for (let key in filters) {
       if (filters[key] != "") {
         url.searchParams.set(key, filters[key]);
@@ -68,19 +76,30 @@ const page = () => {
       }
     }
 
+    url.searchParams.set("page", page);
+    
     history.pushState({}, "", frontendUrl);
 
-    const data = await getApi(url);
-    setListing(data.status ? data.data : []);
-  };
+    setLoading(true);
 
-  const setUrl = () => {
-    for (let key in filters) {
-      setFilters({
-        ...filters,
-        [key]: searchParams.get(key) ? searchParams.get(key) : "",
-      });
+    abortControllerRef.current = new AbortController();
+    const { signal } = abortControllerRef.current;
+    const res = await getApi(url, { signal });
+    if(res) {
+      if (res.data.data.length === 0) {
+        if(page == 1) {
+          setListing([]);
+        }
+        setHasMore(false);
+      } else {
+        if(page == 1) {
+          setListing(res.data.data);
+        } else {
+          setListing((prevItems) => [...prevItems, ...res.data.data]);
+        }
+      }
     }
+    setLoading(false);
   };
 
   const bulkAction = async (ids, type) => {
@@ -105,12 +124,31 @@ const page = () => {
   }
 
   useEffect(() => {
-    getListing();
-  }, [filters]);
+    if(hasMore) {
+      getListing();
+    }
+  }, [page, hasMore]);
 
   useEffect(() => {
-    setUrl();
+    const handleScroll = () => {
+        let reachBottom = window.innerHeight + window.scrollY >= document.body.offsetHeight - 10;
+        if (reachBottom && !loading && hasMore) {
+            setPage(prevPage => prevPage + 1);
+        }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
   }, []);
+
+  useEffect(() => {
+    if(page == 1) {
+      getListing()
+    } else {
+      setPage(1);
+    }
+    setHasMore(true);
+  }, [filters]);
 
   return (
     <>
@@ -310,6 +348,16 @@ const page = () => {
                   </tr>
                 );
               })}
+              {
+                loading ? 
+                (<tr align="center">
+                  <td colSpan={10}>
+                    <div className="text-center mt-2 w-25">
+                      <Spinner animation="border" variant="dark" size="sm"/>
+                    </div>
+                  </td>
+                </tr>) : ""
+              }
             </tbody>
           </Table>
         </TableBody>

@@ -1,4 +1,5 @@
 import dbConnect from "@/backend/config/db";
+import { modifyAllWhere, removeAllWhere } from "@/backend/queries";
 import { ObjectId } from "mongodb";
 
 export async function POST(req, res) {
@@ -50,10 +51,7 @@ const bulkActions = async (ids, type) => {
     const collection = db.collection('contacts');
 
     if(type == "delete") {
-        const result = await collection.deleteMany(
-            { _id: { $in: ids.map(id => ObjectId.createFromHexString(id)) } }
-        );
-
+        const result = await removeAllWhere('contacts', { _id: { $in: ids.map(id => ObjectId.createFromHexString(id)) } })
         return result;
     }
     
@@ -64,9 +62,6 @@ const bulkActions = async (ids, type) => {
         updateData = { status: 0 };
     }
     
-    const result = await collection.updateMany(
-        { _id: { $in: ids.map(id => ObjectId.createFromHexString(id)) } },
-        { $set: updateData }
-    );
+    const result = await modifyAllWhere('contacts', { _id: { $in: ids.map(id => ObjectId.createFromHexString(id)) } }, { $set: updateData });
     return result;
 }
