@@ -65,7 +65,7 @@ const About_meet_team = ({id}) => {
                                                         <h3>Hasan Abbas </h3>
                                                         <div className='text'>Directives of Visual</div>
                                                         <p>
-                                                        Muhammad Aqil, SAYNT’s Director of Visuals, crafts captivating designs and manages all aspects of visual content, from social media graphics to UI/UX. His expertise in video editing ensures every visual element aligns with the brand, creating a cohesive and engaging digital presence that stands out. Aqil’s direction brings creativity and precision, making SAYNT's content resonate with its audience.
+                                                        Hasan Abbas, as the Chief Research and Development Officer, drives innovation by leading research initiatives and technological advancements. He ensures the company stays ahead by developing new products, improving existing ones, and integrating emerging technologies. His role involves identifying market needs, fostering a culture of experimentation, and collaborating with technical teams to create cutting-edge solutions. Through continuous R&D efforts, he ensures the company remains a leader in its industry by adapting to evolving trends.
                                                         </p>
                                                     </div>
                                                 </SwiperSlide>
@@ -159,7 +159,7 @@ const About_meet_team = ({id}) => {
                                                     <div className='slide_inner'>
                                                         <div className='image_area'>
                                                             <Image 
-                                                                src={img3}
+                                                                src={img2}
                                                                 alt='...'
                                                                 title='...'
                                                                 priority
@@ -239,7 +239,7 @@ const About_meet_team = ({id}) => {
                                                         <div className='slide_inner'>
                                                             <div className='image_area'>
                                                                 <Image 
-                                                                    src={img3}
+                                                                    src={img2}
                                                                     alt='...'
                                                                     title='...'
                                                                     priority
