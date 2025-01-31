@@ -1,5 +1,6 @@
 import dbConnect from "@/backend/config/db";
 import { checkVar, sendMailTemplate } from "@/backend/helpers";
+import { updateOne } from "@/backend/queries";
 
 export async function POST(req, res) {
     if (req.method === "POST") {
@@ -27,14 +28,16 @@ export async function POST(req, res) {
                 updated_at: new Date(),
             };
 
-            let contactAdded = addContact(contactData);
+            let contactAdded = await addContact(contactData);
 
             if(contactAdded)
             {
-                const mailSent = await sendMailTemplate(toEmail, type, codes);
-
+                // const mailSent = await sendMailTemplate(toEmail, type, codes);
+                const mailSent = false;
                 if(mailSent)
                 {
+                    updateOne("contacts", contactAdded.insertedId, {mailSend: 1})
+                    
                     return Response.json(
                         {
                             status: true,
@@ -47,6 +50,7 @@ export async function POST(req, res) {
                 }
                 else
                 {
+                    updateOne("contacts", contactAdded.insertedId, {mailSend: 0})
                     return Response.json(
                         {
                             status: true,
@@ -99,5 +103,11 @@ export async function POST(req, res) {
 const addContact = async (data) => {
     const db = await dbConnect();
     const collection = db.collection('contacts');
-    return await collection.insertOne(data);  
+    return await collection.insertOne(data);
+}
+
+const updateContact = async () => {
+    const db = await dbConnect();
+    const collection = db.collection('contacts');
+    return await collection.updateOne(data);
 }

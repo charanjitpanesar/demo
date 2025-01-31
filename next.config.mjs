@@ -6,7 +6,7 @@ const nextConfig = {
         SALT_ROUNDS: '10',
         SALT_SECRET: 'saynt',
         SMTP_USER: "ak669212@gmail.com",
-        SMTP_PASS: "oqui gkqc aseu fezp",
+        SMTP_PASS: "oqui gkqc aseu ", //fezp
         SMTP_EMAIL: "ak669212@gmail.com",
     }
 };

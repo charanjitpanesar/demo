@@ -1,7 +1,7 @@
 "use client";
 import { useEffect, useState } from "react";
 import TableCom from "../../components/table";
-import { formatDate, getApi, getUrl } from "@/frontend/helpers";
+import { formatDate, getApi, getUrl, postApi } from "@/frontend/helpers";
 import { Dropdown, Form, InputGroup, Table } from "react-bootstrap";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
@@ -25,6 +25,7 @@ const page = () => {
     api: "/api/contact/get-contacts",
     title: "Contacts",
   };
+
   const path = usePathname();
   const defaultFilters = {
     search: "",
@@ -32,15 +33,29 @@ const page = () => {
     createdAtTo: [],
     status: "",
   };
+
   const searchParams = useSearchParams();
   const [filters, setFilters] = useState(defaultFilters);
   const [listing, setListing] = useState([]);
   const [show, setShow] = useState(false);
   const [selectedIds, setSelectedIds] = useState([]);
 
-  const handleSelect = (id) => {
-    setSelectedIds({...selectedIds, id});
-  }
+  const handleSelect = (e, id, type = null) => {
+    if(type == "all") {
+      const checkboxes = document.querySelectorAll(".listing_checks input[type='checkbox']");
+      let ids = [];
+      if(e.target.checked) {
+        checkboxes.forEach(item => {item.checked = true; ids.push(item.value)});
+      } else {
+        checkboxes.forEach(item => item.checked = false);
+      }
+      setSelectedIds(ids);
+      return true;
+    }
+    setSelectedIds(prevIds => 
+        prevIds.includes(id) ? prevIds.filter(i => i !== id) : [...prevIds, id]
+    );
+  };
 
   const getListing = async () => {
     let url = new URL(getUrl(module.api));
@@ -67,6 +82,27 @@ const page = () => {
       });
     }
   };
+
+  const bulkAction = async (ids, type) => {
+    return await postApi("/api/contact/bulk-action", {
+      ids: ids,
+      type: type
+    });
+  }
+  
+  const handleDelete = async (e, id) => {
+    let res = await bulkAction([id], 'delete');
+    if(res.status) {
+      e.target.closest("tr").remove()
+    }
+  }
+  
+  const handleBulkAction = async (type) => {
+    let res = await bulkAction(selectedIds, type);
+    if(res.status) {
+      window.location.reload()
+    }
+  }
 
   useEffect(() => {
     getListing();
@@ -161,9 +197,6 @@ const page = () => {
                   Reset
                 </div>
               </div>
-              {/* <div className="btn_area" onClick={() => setShow(false)}>
-                <div className="btn btn-primary">Submit</div>
-              </div> */}
             </div>
           </Dropdown.Menu>
         </Dropdown>
@@ -195,13 +228,13 @@ const page = () => {
                   <FontAwesomeIcon icon={faEllipsisV} />
                 </Dropdown.Toggle>
                 <Dropdown.Menu>
-                  <Dropdown.Item href="#">
+                  <Dropdown.Item href="#" onClick={() => confirm("Are You Sure?") && handleBulkAction("publish")}>
                     <span className="publish"></span> Publish
                   </Dropdown.Item>
-                  <Dropdown.Item href="#">
+                  <Dropdown.Item href="#" onClick={() => confirm("Are You Sure?") && handleBulkAction("unpublish")}>
                     <span className="publish unpublish"></span> UnPublish
                   </Dropdown.Item>
-                  <Dropdown.Item href="#">
+                  <Dropdown.Item href="#" onClick={() => confirm("Are You Sure?") && handleBulkAction("delete")}>
                     <span className="cross">
                       <FontAwesomeIcon icon={faTimes} />
                     </span>{" "}
@@ -217,7 +250,7 @@ const page = () => {
             <thead>
               <tr>
                 <th>
-                  <Form.Check/>
+                  <Form.Check onClick={(e) => handleSelect(e, 0, "all")}/>
                 </th>
                 <th>
                   ID <FontAwesomeIcon icon={faSort} />
@@ -239,7 +272,7 @@ const page = () => {
                 return (
                   <tr key={item._id}>
                     <td>
-                      <Form.Check onClick={() => handleSelect(item._id)}/>
+                      <Form.Check onClick={(e) => handleSelect(e, item._id)} className="listing_checks" value={item._id}/>
                     </td>
                     <td>
                       {item._id.slice(0, 4)}...{item._id.slice(-6)}
@@ -256,19 +289,19 @@ const page = () => {
                           <Dropdown.Item href="#">
                             <span className="edit">
                               <FontAwesomeIcon icon={faEdit} />
-                            </span>{" "}
+                            </span>
                             Edit
                           </Dropdown.Item>
                           <Dropdown.Item href="#">
                             <span className="view">
                               <FontAwesomeIcon icon={faEye} />
-                            </span>{" "}
+                            </span>
                             View
                           </Dropdown.Item>
-                          <Dropdown.Item href="#">
+                          <Dropdown.Item href="#" onClick={(e) => confirm("Are You Sure?") && handleDelete(e, item._id)}>
                             <span className="delete">
                               <FontAwesomeIcon icon={faTrashAlt} />
-                            </span>{" "}
+                            </span>
                             Delete
                           </Dropdown.Item>
                         </Dropdown.Menu>
