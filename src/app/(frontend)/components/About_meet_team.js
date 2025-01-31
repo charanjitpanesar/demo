@@ -17,7 +17,7 @@ import { FreeMode, Navigation, Thumbs , Controller} from 'swiper/modules';
 
 import img1 from '../../../../public/images/footer_banner_bg.png'
 import img2 from '../../../../public/images/connect_bg.png'
-import img3 from '../../../../public/images/user.png'
+import img3 from '../../../../public/images/user.jpg'
 import logo from '../../../../public/images/logo.png'
 import Image from 'next/image';
 import Link from 'next/link';
@@ -62,37 +62,53 @@ const About_meet_team = ({id}) => {
                                             >
                                                 <SwiperSlide>
                                                     <div className='slide_inner'>
-                                                        <h3>Saim Khan 1</h3>
-                                                        <div className='text'>CMO</div>
+                                                        <h3>Hasan Abbas </h3>
+                                                        <div className='text'>Directives of Visual</div>
                                                         <p>
-                                                            Siam Khan, the Chief Marketing Officer (CMO) of Saynt AI, is a strategic leader passionate about driving innovation in the AI industry. With a focus on creative marketing strategies and data-driven insights, Siam plays a pivotal role in shaping Saynt’s brand presence and outreach. His expertise in digital marketing, brand storytelling, and growth strategies helps position Saynt AI as a forward-thinking and customer-centric company.
+                                                        Muhammad Aqil, SAYNT’s Director of Visuals, crafts captivating designs and manages all aspects of visual content, from social media graphics to UI/UX. His expertise in video editing ensures every visual element aligns with the brand, creating a cohesive and engaging digital presence that stands out. Aqil’s direction brings creativity and precision, making SAYNT's content resonate with its audience.
                                                         </p>
                                                     </div>
                                                 </SwiperSlide>
                                                 <SwiperSlide>
                                                     <div className='slide_inner'>
-                                                        <h3>Saim Khan 2</h3>
-                                                        <div className='text'>CMO</div>
+                                                        <h3>Ali Hassan</h3>
+                                                        <div className='text'> Chief Executive Officer (CEO)
+                                                        </div>
                                                         <p>
-                                                            Siam Khan, the Chief Marketing Officer (CMO) of Saynt AI, is a strategic leader passionate about driving innovation in the AI industry. With a focus on creative marketing strategies and data-driven insights, Siam plays a pivotal role in shaping Saynt’s brand presence and outreach. His expertise in digital marketing, brand storytelling, and growth strategies helps position Saynt AI as a forward-thinking and customer-centric company.
+                                                        Ali Hassan, as the Chief Executive Officer, oversees the company’s vision, strategy, and overall direction. He ensures the organization remains innovative, competitive, and financially successful. His leadership drives decision-making across all departments, fostering collaboration and long-term growth. By identifying new business opportunities, forming strategic alliances, and maintaining investor relations, he ensures the company’s sustainability. His ability to manage risks and adapt to industry changes positions the company for continued success.
+
                                                         </p>
                                                     </div>
                                                 </SwiperSlide>
                                                 <SwiperSlide>
                                                     <div className='slide_inner'>
-                                                        <h3>Saim Khan 3</h3>
-                                                        <div className='text'>CMO</div>
+                                                        <h3>Mir Abdullah </h3>
+                                                        <div className='text'>Chief Operating Officer (COO)
+                                                        </div>
                                                         <p>
-                                                            Siam Khan, the Chief Marketing Officer (CMO) of Saynt AI, is a strategic leader passionate about driving innovation in the AI industry. With a focus on creative marketing strategies and data-driven insights, Siam plays a pivotal role in shaping Saynt’s brand presence and outreach. His expertise in digital marketing, brand storytelling, and growth strategies helps position Saynt AI as a forward-thinking and customer-centric company.
+                                                        Mir Abdullah, as the Chief Operating Officer, manages the company’s daily operations and ensures seamless execution of business strategies. He optimizes internal processes, enhances operational efficiency, and ensures alignment between departments. His focus on productivity, cost management, and workflow optimization keeps the organization running smoothly. He also oversees project implementation and resource allocation, ensuring deadlines are met without compromising quality. His ability to execute strategic plans strengthens the company’s overall performance.
                                                         </p>
                                                     </div>
                                                 </SwiperSlide>
                                                 <SwiperSlide>
                                                     <div className='slide_inner'>
-                                                        <h3>Saim Khan 4</h3>
-                                                        <div className='text'>CMO</div>
+                                                        <h3>Saaim Khan</h3>
+                                                        <div className='text'> Chief Creative Officer (CCO)
+                                                        </div>
                                                         <p>
-                                                            Siam Khan, the Chief Marketing Officer (CMO) of Saynt AI, is a strategic leader passionate about driving innovation in the AI industry. With a focus on creative marketing strategies and data-driven insights, Siam plays a pivotal role in shaping Saynt’s brand presence and outreach. His expertise in digital marketing, brand storytelling, and growth strategies helps position Saynt AI as a forward-thinking and customer-centric company.
+                                                        Saaim Khan, as the Chief Creative Officer, drives the company’s creative vision by blending innovation with strategic design. He oversees branding, content creation, and visual storytelling to ensure a compelling and cohesive brand identity. His leadership fosters a culture of creativity, inspiring teams to push boundaries in design and marketing. By integrating emerging trends and consumer psychology, he ensures the company’s brand remains engaging, modern, and influential in the industry.
+
+                                                        </p>
+                                                    </div>
+                                                </SwiperSlide>
+                                                <SwiperSlide>
+                                                    <div className='slide_inner'>
+                                                        <h3>Safi Hassan</h3>
+                                                        <div className='text'>Chief Marketing Officer (CMO)
+                                                        </div>
+                                                        <p>
+                                                        Safi Hassan, as the Chief Marketing Officer, leads the company’s marketing strategies, ensuring brand visibility and customer engagement. He develops and executes campaigns that enhance customer acquisition, retention, and loyalty. By leveraging data-driven insights, he optimizes marketing efforts across digital and traditional channels. His expertise in market trends, consumer behavior, and strategic partnerships enables the company to grow its audience, increase sales, and maintain a competitive edge in the market.
+
                                                         </p>
                                                     </div>
                                                 </SwiperSlide>
@@ -163,6 +179,18 @@ const About_meet_team = ({id}) => {
                                                         </div>
                                                     </div>
                                                 </SwiperSlide>
+                                                <SwiperSlide>
+                                                    <div className='slide_inner'>
+                                                        <div className='image_area'>
+                                                            <Image 
+                                                                src={img1}
+                                                                alt='...'
+                                                                title='...'
+                                                                priority
+                                                            />
+                                                        </div>
+                                                    </div>
+                                                </SwiperSlide>
                                             </Swiper>
                                             <div className="custom-navigation">
                                                 <div className="prev-btn">
@@ -212,6 +240,18 @@ const About_meet_team = ({id}) => {
                                                             <div className='image_area'>
                                                                 <Image 
                                                                     src={img3}
+                                                                    alt='...'
+                                                                    title='...'
+                                                                    priority
+                                                                />
+                                                            </div>
+                                                        </div>
+                                                    </SwiperSlide>
+                                                    <SwiperSlide>
+                                                        <div className='slide_inner'>
+                                                            <div className='image_area'>
+                                                                <Image 
+                                                                    src={img1}
                                                                     alt='...'
                                                                     title='...'
                                                                     priority

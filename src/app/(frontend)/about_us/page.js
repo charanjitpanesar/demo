@@ -7,7 +7,7 @@ import About_current_work from '../components/About_current_work'
 import About_meet_team from '../components/About_meet_team'
 
 const About_us = () => {
-    const comp = [About_banner, About_what_we_do, About_meet_team, About_work_together, About_current_work, About_partners]
+    const comp = [About_banner, About_what_we_do, About_meet_team, About_work_together]
     return (
         <>
             {

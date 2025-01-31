@@ -9,7 +9,7 @@ import Solution_calender from '../components/Solution_calender'
 
 const Solutions = () => {
     const comp = [
-        Solution_banner, Solution_about_us, Solution_transform, Solution_ai, Solution_projects, Solution_action, Solution_calender
+        Solution_banner, Solution_about_us, Solution_transform, Solution_ai, Solution_action, Solution_calender
     ]
     return (
         <>

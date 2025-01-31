@@ -87,11 +87,11 @@ const Footer = () => {
                                             </div>
                                             <div className='detail_area'>
                                                 <h3>Email</h3>
-                                                <Link href='#'>hello@randommail.com</Link>
+                                                <Link href='mailto:contact@saynt.org'>contact@saynt.org</Link>
                                             </div>
                                             <div className='detail_area'>
                                                 <h3>Contact Us</h3>
-                                                <Link href='#'>+1 891 989-11-91</Link>
+                                                <Link href='tel:923299346077'>+92 3299346077</Link>
                                             </div>
                                             <div className='detail_area'>
                                                 <h3>Mon—Fri</h3>

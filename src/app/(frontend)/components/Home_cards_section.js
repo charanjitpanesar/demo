@@ -19,15 +19,15 @@ const Home_cards_section = ({id}) => {
             description: 'Seamlessly integrate cloud solutions to enhance scalability and efficiency.',
         },
         {
-            heading: 'Marketing and Branding',
+            heading: 'Website Development',
+            description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor.',
+        },
+        {
+            heading: 'UI/UX Designing',
             description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor.',
         },
         {
             heading: 'Free Tech Consultancy',
-            description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor.',
-        },
-        {
-            heading: 'Free Marketing Consultancy',
             description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor.',
         },
     ];

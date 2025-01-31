@@ -47,7 +47,7 @@ const Home_industry = ({id}) => {
                             </div>
                             <div className='cards_area'>
                             {cardsData.map((card, index) => (
-                                <div key={index} className={`card_inner card-${index + 1}`}>
+                                <Link href="/solutions" key={index} className={`card_inner card-${index + 1}`}>
                                     <div className="image_area">
                                         <Image
                                             src={card.image}
@@ -61,7 +61,7 @@ const Home_industry = ({id}) => {
                                         <span>{card.time}</span>
                                     </div>
                                     <h3>{card.title}</h3>
-                                </div>
+                                </Link>
                             ))}
                             </div>
                         </div>
