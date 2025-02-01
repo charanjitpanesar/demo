@@ -16,27 +16,22 @@ const Contact_faq = ({id}) => {
                                 <div className='accordion_area'>
                                     <Accordion defaultActiveKey="0">
                                         <Accordion.Item eventKey="0">
-                                            <Accordion.Header>Accordion Item #1</Accordion.Header>
+                                            <Accordion.Header>What services does 
+                                            your company offer?</Accordion.Header>
                                             <Accordion.Body>
-                                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-                                            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
-                                            minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-                                            aliquip ex ea commodo consequat. Duis aute irure dolor in
-                                            reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-                                            pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
-                                            culpa qui officia deserunt mollit anim id est laborum.
+                                            We provide cutting-edge AI solutions, including data analysis, process automation, and personalized tech consulting tailored to various industries
                                             </Accordion.Body>
                                         </Accordion.Item>
                                         <Accordion.Item eventKey="1">
-                                            <Accordion.Header>Accordion Item #2</Accordion.Header>
+                                            <Accordion.Header>How do you ensure data privacy and security?</Accordion.Header>
                                             <Accordion.Body>
-                                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-                                            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
-                                            minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-                                            aliquip ex ea commodo consequat. Duis aute irure dolor in
-                                            reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-                                            pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
-                                            culpa qui officia deserunt mollit anim id est laborum.
+                                            We follow industry-leading security protocols, data encryption, and strict compliance measures to safeguard sensitive information
+                                            </Accordion.Body>
+                                        </Accordion.Item>
+                                        <Accordion.Item eventKey="2">
+                                            <Accordion.Header>Can you customize solutions for my business?</Accordion.Header>
+                                            <Accordion.Body>
+                                            Absolutely! We design personalized strategies that align with your specific business goals and industry challenges.
                                             </Accordion.Body>
                                         </Accordion.Item>
                                     </Accordion>
