@@ -1,6 +1,7 @@
+'use client'
 import React from 'react'
 import '../../../public/sass/contact_scss/contact_expertise.scss'
-import { Col, Container, Row } from 'react-bootstrap'
+import { Accordion, Col, Container, Row } from 'react-bootstrap'
 import Link from 'next/link'
 
 const Contact_faq = ({id}) => {
@@ -11,8 +12,36 @@ const Contact_faq = ({id}) => {
                     <Row>
                         <Col xxl={12} xl={12} lg={12} md={12} sm={12} xs={12}>
                             <div className='parent_area'>
-                                <div className='left_area'>
-                                    <h3>Frequently Asked <span>Questions</span></h3>
+                                <h3>Frequently Asked <span>Questions</span></h3>
+                                <div className='accordion_area'>
+                                    <Accordion defaultActiveKey="0">
+                                        <Accordion.Item eventKey="0">
+                                            <Accordion.Header>Accordion Item #1</Accordion.Header>
+                                            <Accordion.Body>
+                                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+                                            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
+                                            minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+                                            aliquip ex ea commodo consequat. Duis aute irure dolor in
+                                            reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
+                                            pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
+                                            culpa qui officia deserunt mollit anim id est laborum.
+                                            </Accordion.Body>
+                                        </Accordion.Item>
+                                        <Accordion.Item eventKey="1">
+                                            <Accordion.Header>Accordion Item #2</Accordion.Header>
+                                            <Accordion.Body>
+                                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+                                            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
+                                            minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+                                            aliquip ex ea commodo consequat. Duis aute irure dolor in
+                                            reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
+                                            pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
+                                            culpa qui officia deserunt mollit anim id est laborum.
+                                            </Accordion.Body>
+                                        </Accordion.Item>
+                                    </Accordion>
+                                </div>
+                                {/* <div className='left_area'>
                                     <p>
                                          We will provide answers to
                                         questions that are often asked
@@ -45,7 +74,7 @@ const Contact_faq = ({id}) => {
                                             </p>
                                         </li>
                                     </ul>
-                                </div>
+                                </div> */}
                             </div>
                         </Col>
                     </Row>
