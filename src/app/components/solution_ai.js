@@ -6,7 +6,7 @@ import '../../../public/sass/pages/solution_ai.scss';
 
 
 const Solution_ai = ({id}) => {
-    const text = ['Protecting', 'Shielding', 'Optimizing', 'Enhancing', 'Optimizing', 'Enhancing', 'Ensuring',];
+    const text = ['Protection', 'Optimization', 'Automation', 'Progression', 'Innovation', 'Transformation', 'Evolution',];
     const classes = ['gallery_1', 'gallery_2', 'gallery_3', 'gallery_4', 'gallery_5', 'gallery_6', 'gallery_7'];
     const slidesRef = useRef([]);
     let interval = 1500
@@ -45,7 +45,7 @@ const Solution_ai = ({id}) => {
                                     </Col>
                                     <Col xxl={6} xl={6} lg={6} md={6} sm={12} xs={12}>
                                         <div className="right">
-                                            <h3>Quick Tip!</h3>
+                                            {/* <h3>Quick Tip!</h3> */}
                                             <p>
                                                 We offer AI-driven solutions designed to optimize processes, enhance security, and drive growth across industries. Our tools streamline operations, making your business smarter and more efficient.
                                             </p>
