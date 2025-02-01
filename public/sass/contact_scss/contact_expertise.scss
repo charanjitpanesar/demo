@@ -194,76 +194,74 @@
 .contact_faq_section{
     padding-top: 90px;
     .parent_area{
-        display: flex;
-        justify-content: space-between;
-        .left_area{
-            width: 450px;
-            flex-shrink: 0;
-            max-width: 100%;
-            h3{
-                font-size: 54.37px;
-                font-weight: 250;
-                color: variable.$white;
-                span{
-                    color: variable.$primary_color;
-                    font-weight: 400;
-                }
-            }
-            p{
-                font-size: 18.13px;
-                font-weight: 300;
-                color: variable.$white;
-                padding-top: 20px;
-            }
-            .button_area{
-                padding-top: 30px;
-                .btn-primary{
-                    color: variable.$white;
-                    border:  1px solid variable.$teal;
-                    border-radius: 60px;
-                    display: inline-block;
-                    &:hover{
-                        background-color: variable.$teal;
-                    }
-                }
+        h3{
+            font-size: 54.37px;
+            font-weight: 250;
+            color: variable.$white;
+            span{
+                color: variable.$primary_color;
+                font-weight: 400;
             }
         }
-        .right_area{
-            background: linear-gradient(274.2deg, rgba(247, 247, 247, 0.1) -0.59%, rgba(79, 79, 79, 0.1) 100%);
-            border: 1px solid variable.$blue;
-            padding: 70px;
-            border-radius: 15px;
-            width: 450px;
-            max-width: 100%;
-            flex-shrink: 0;
-            ul{
-                li{
-                    padding-top: 15px;
-                    &:hover{
-                        h5{
-                            color: variable.$white;
-                        }
-                        p{
-                            color: variable.$white;
-                        }
-                    }
-                    &:first-child{
-                        padding-top: 0;
-                    }
-                    h5{
-                        font-size: 27.19px;
-                        font-weight: 600;
-                        color: variable.$text_opacity;
-                    }
-                    p{
-                        font-size: 18.13px;
-                        font-weight: 300;
-                        color: variable.$text_opacity;
-                        padding-top: 10px;
-                    }
-                }
-            }
-        }
+        // .left_area{
+        //     width: 450px;
+        //     flex-shrink: 0;
+        //     max-width: 100%;
+        //     p{
+        //         font-size: 18.13px;
+        //         font-weight: 300;
+        //         color: variable.$white;
+        //         padding-top: 20px;
+        //     }
+        //     .button_area{
+        //         padding-top: 30px;
+        //         .btn-primary{
+        //             color: variable.$white;
+        //             border:  1px solid variable.$teal;
+        //             border-radius: 60px;
+        //             display: inline-block;
+        //             &:hover{
+        //                 background-color: variable.$teal;
+        //             }
+        //         }
+        //     }
+        // }
+        // .right_area{
+        //     background: linear-gradient(274.2deg, rgba(247, 247, 247, 0.1) -0.59%, rgba(79, 79, 79, 0.1) 100%);
+        //     border: 1px solid variable.$blue;
+        //     padding: 70px;
+        //     border-radius: 15px;
+        //     width: 450px;
+        //     max-width: 100%;
+        //     flex-shrink: 0;
+        //     ul{
+        //         li{
+        //             padding-top: 15px;
+        //             &:hover{
+        //                 h5{
+        //                     color: variable.$white;
+        //                 }
+        //                 p{
+        //                     color: variable.$white;
+        //                 }
+        //             }
+        //             &:first-child{
+        //                 padding-top: 0;
+        //             }
+        //             h5{
+        //                 font-size: 27.19px;
+        //                 font-weight: 600;
+        //                 color: variable.$text_opacity;
+        //             }
+        //             p{
+        //                 font-size: 18.13px;
+        //                 font-weight: 300;
+        //                 color: variable.$text_opacity;
+        //                 padding-top: 10px;
+        //             }
+        //         }
+        //     }
+        // }
     }
 }
 
