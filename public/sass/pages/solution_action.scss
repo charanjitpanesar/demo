@@ -75,6 +75,19 @@
                 margin-top: 10%;
                 margin-right: 12%;
                 background-color: variable.$text_color;
+                border-radius: 12px;
+                overflow: hidden;
+                &::after{
+                    content: 'Coming Soon';
+                    position: absolute;
+                    top: 50%;
+                    left: 50%;
+                    transform: translate(-50%, -50%);
+                    font-size: 28px;
+                    font-weight: 500;
+                    line-height: 30px;
+                    color: variable.$secondary_color;
+                }
                 img{
                     height: 100%;
                     width: 100%;
