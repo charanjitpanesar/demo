@@ -87,7 +87,7 @@ const Footer = () => {
                                             </div>
                                             <div className='detail_area'>
                                                 <h3>Email</h3>
-                                                <Link href='mailto:contact@saynt.org'>contact@saynt.org</Link>
+                                                <Link href='mailto:contact@saynt.org'>sayntheadquarter@gmail.com</Link>
                                             </div>
                                             <div className='detail_area'>
                                                 <h3>Contact Us</h3>
