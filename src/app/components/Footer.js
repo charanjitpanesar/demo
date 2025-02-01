@@ -55,7 +55,7 @@ const Footer = () => {
                             <Row>
                                 <Col xxl={8} xl={7} lg={9} md={12} sm={12} xm={12}>
                                     <div className='left_area'>
-                                        <div className='text_area'>Catalog</div>
+                                        <div className='text_area'>THIS IS US</div>
                                         <div className='list_area'>
                                             <ul>
                                             {
@@ -87,7 +87,7 @@ const Footer = () => {
                                             </div>
                                             <div className='detail_area'>
                                                 <h3>Email</h3>
-                                                <Link href='mailto:contact@saynt.org'>contact@saynt.org</Link>
+                                                <Link href='mailto:contact@saynt.org'>sayntheadquarter@gmail.com</Link>
                                             </div>
                                             <div className='detail_area'>
                                                 <h3>Contact Us</h3>
