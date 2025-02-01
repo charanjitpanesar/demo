@@ -65,14 +65,18 @@ const getContacts = async (req, where = {}) => {
 
     let skip = (page - 1) * limit;
 
-    let listing = await collection.find(where).skip(skip).limit(limit).toArray();
-    let count = await collection.countDocuments(where);
+    let sort = searchParams.get('sort');
+    let direction = searchParams.get('direction');
+    sort = { [sort]: direction == "desc" ? -1 : 1 };
+
+    let listing = await collection.find(where).sort(sort).skip(skip).limit(limit).toArray();
+    // let count = await collection.countDocuments(where);
 
     return {
         data: listing,
-        count: count,
-        page: page,
-        totalPages: Math.ceil(count / limit),
+        // count: count,
+        // page: page,
+        // totalPages: Math.ceil(count / limit),
     };
 }
 
@@ -91,6 +95,12 @@ const addFilters = (req) => {
             },
             {
                 email: { 
+                    $regex: search, 
+                    $options: 'i' 
+                }
+            },
+            {
+                type: { 
                     $regex: search, 
                     $options: 'i' 
                 }
@@ -118,19 +128,18 @@ const addFilters = (req) => {
     }
 
     let createdAtFrom = searchParams.get('createdAtFrom');
-    if(createdAtFrom) {
-        createdAtFrom = new Date(`${createdAtFrom}T00:00:00Z`);
-        where.created_at = {
-            $gte: createdAtFrom,
-        };
-    }
-
     let createdAtTo = searchParams.get('createdAtTo');
-    if(createdAtTo) {
-        createdAtTo = new Date(`${createdAtTo}T23:59:59Z`);
-        where.created_at = {
-            $lte: createdAtTo,
-        };
+
+    if(createdAtFrom || createdAtTo) {
+        where.created_at = {};
+
+        if(createdAtFrom) {
+            where.created_at.$gte = new Date(`${createdAtFrom}T00:00:00Z`);
+        }
+        
+        if(createdAtTo) {
+            where.created_at.$lte = new Date(`${createdAtTo}T23:59:59Z`);
+        }
     }
 
     return where;

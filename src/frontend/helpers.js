@@ -85,6 +85,20 @@ export const getUrl = (url) => {
   }
 }
 
-export const updateAdminToken = async () => {
-  await getApi("/api/auth/update-admin-token");
-}
+export const handleBulkAction = async (url, selectedIds, type) => {
+  let res = await bulkAction(url, selectedIds, type);
+  if (res.status) {
+    window.location.reload();
+  }
+};
+
+export const bulkAction = async (url, ids, type) => {
+  return await postApi(url, {
+    ids: ids,
+    type: type,
+  });
+};
+
+// export const updateAdminToken = async () => {
+//   await getApi("/api/auth/update-admin-token");
+// }

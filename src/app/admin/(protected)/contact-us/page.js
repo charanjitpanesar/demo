@@ -1,7 +1,7 @@
 "use client";
 import { useEffect, useRef, useState } from "react";
 import TableCom from "../../components/table";
-import { formatDate, getApi, getUrl, postApi } from "@/frontend/helpers";
+import { formatDate, getApi, getUrl, handleBulkAction, postApi } from "@/frontend/helpers";
 import { Dropdown, Form, InputGroup, Spinner, Table } from "react-bootstrap";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
@@ -28,11 +28,22 @@ const page = () => {
 
   const path = usePathname();
   const searchParams = useSearchParams();
+  const emptyFilters = {
+    search: "",
+    createdAtFrom: "",
+    createdAtTo: "",
+    status: "",
+    sort: "created_at",
+    direction: "desc",
+  };
+
   const defaultFilters = {
     search: searchParams.get("search") || "",
     createdAtFrom: searchParams.get("createdAtFrom") || "",
     createdAtTo: searchParams.get("createdAtTo") || "",
     status: searchParams.get("status") || "",
+    sort: searchParams.get("sort") || "",
+    direction: searchParams.get("direction") || "",
   };
 
   const [filters, setFilters] = useState(defaultFilters);
@@ -45,30 +56,36 @@ const page = () => {
   const abortControllerRef = useRef(null);
 
   const handleSelect = (e, id, type = null) => {
-    if(type == "all") {
-      const checkboxes = document.querySelectorAll(".listing_checks input[type='checkbox']");
+    if (type == "all") {
+      const checkboxes = document.querySelectorAll(
+        ".listing_checks input[type='checkbox']"
+      );
       let ids = [];
-      if(e.target.checked) {
-        checkboxes.forEach(item => {item.checked = true; ids.push(item.value)});
+      if (e.target.checked) {
+        checkboxes.forEach((item) => {
+          item.checked = true;
+          ids.push(item.value);
+        });
       } else {
-        checkboxes.forEach(item => item.checked = false);
+        checkboxes.forEach((item) => (item.checked = false));
       }
       setSelectedIds(ids);
       return true;
     }
-    setSelectedIds(prevIds => 
-        prevIds.includes(id) ? prevIds.filter(i => i !== id) : [...prevIds, id]
+    setSelectedIds((prevIds) =>
+      prevIds.includes(id) ? prevIds.filter((i) => i !== id) : [...prevIds, id]
     );
   };
 
   const getListing = async () => {
+    setLoading(true);
     let url = new URL(getUrl(module.api));
     let frontendUrl = new URL(path, window.location.origin);
-    
+
     if (abortControllerRef.current) {
       abortControllerRef.current.abort();
     }
-    
+
     for (let key in filters) {
       if (filters[key] != "") {
         url.searchParams.set(key, filters[key]);
@@ -77,22 +94,21 @@ const page = () => {
     }
 
     url.searchParams.set("page", page);
-    
-    history.pushState({}, "", frontendUrl);
 
-    setLoading(true);
+    history.pushState({}, "", frontendUrl);
 
     abortControllerRef.current = new AbortController();
     const { signal } = abortControllerRef.current;
     const res = await getApi(url, { signal });
-    if(res) {
+
+    if (res) {
       if (res.data.data.length === 0) {
-        if(page == 1) {
+        if (page == 1) {
           setListing([]);
         }
         setHasMore(false);
       } else {
-        if(page == 1) {
+        if (page == 1) {
           setListing(res.data.data);
         } else {
           setListing((prevItems) => [...prevItems, ...res.data.data]);
@@ -102,39 +118,41 @@ const page = () => {
     setLoading(false);
   };
 
-  const bulkAction = async (ids, type) => {
-    return await postApi("/api/contact/bulk-action", {
-      ids: ids,
-      type: type
-    });
-  }
-  
   const handleDelete = async (e, id) => {
-    let res = await bulkAction([id], 'delete');
-    if(res.status) {
-      e.target.closest("tr").remove()
+    let res = await bulkAction([id], "delete");
+    if (res.status) {
+      e.target.closest("tr").remove();
     }
-  }
-  
-  const handleBulkAction = async (type) => {
-    let res = await bulkAction(selectedIds, type);
-    if(res.status) {
-      window.location.reload()
+  };
+
+  const handleSort = (type) => {
+    let tempFilters = { ...filters };
+    if (type == tempFilters.sort) {
+      tempFilters.direction = tempFilters.direction == "asc" ? "desc" : "asc";
+    } else {
+      tempFilters.direction = "desc";
+      tempFilters.sort = type;
     }
-  }
+    setFilters(tempFilters);
+  };
 
   useEffect(() => {
-    if(hasMore) {
+    if (hasMore) {
       getListing();
     }
   }, [page, hasMore]);
 
   useEffect(() => {
+    let timeout;
+
     const handleScroll = () => {
-        let reachBottom = window.innerHeight + window.scrollY >= document.body.offsetHeight - 10;
-        if (reachBottom && !loading && hasMore) {
-            setPage(prevPage => prevPage + 1);
-        }
+      clearTimeout(timeout)
+      timeout = setTimeout(() => {
+          let reachBottom = window.innerHeight + window.scrollY >= document.body.offsetHeight - 10;
+          if (reachBottom && !loading && hasMore) {
+            setPage((prevPage) => prevPage + 1);
+          }
+      }, 200)
     };
 
     window.addEventListener("scroll", handleScroll);
@@ -142,8 +160,8 @@ const page = () => {
   }, []);
 
   useEffect(() => {
-    if(page == 1) {
-      getListing()
+    if (page == 1) {
+      getListing();
     } else {
       setPage(1);
     }
@@ -212,7 +230,9 @@ const page = () => {
                   type={"radio"}
                   label="Publish"
                   name="status"
-                  onChange={(e) => setFilters({ ...filters, status: "publish" })}
+                  onChange={(e) =>
+                    setFilters({ ...filters, status: "publish" })
+                  }
                   checked={filters.status == "publish"}
                 />
                 <Form.Check
@@ -230,7 +250,7 @@ const page = () => {
               <div className="btn_area">
                 <div
                   className="btn btn-primary reset_btn"
-                  onClick={() => setFilters(defaultFilters)}
+                  onClick={() => setFilters(emptyFilters)}
                 >
                   Reset
                 </div>
@@ -266,13 +286,28 @@ const page = () => {
                   <FontAwesomeIcon icon={faEllipsisV} />
                 </Dropdown.Toggle>
                 <Dropdown.Menu>
-                  <Dropdown.Item href="#" onClick={() => confirm("Are You Sure?") && handleBulkAction("publish")}>
+                  {/* <Dropdown.Item
+                    href="#"
+                    onClick={() =>
+                      confirm("Are You Sure?") && handleBulkAction("/api/contact/bulk-action", selectedIds, "publish")
+                    }
+                  >
                     <span className="publish"></span> Publish
                   </Dropdown.Item>
-                  <Dropdown.Item href="#" onClick={() => confirm("Are You Sure?") && handleBulkAction("unpublish")}>
+                  <Dropdown.Item
+                    href="#"
+                    onClick={() =>
+                      confirm("Are You Sure?") && handleBulkAction("/api/contact/bulk-action", selectedIds, "unpublish")
+                    }
+                  >
                     <span className="publish unpublish"></span> UnPublish
-                  </Dropdown.Item>
-                  <Dropdown.Item href="#" onClick={() => confirm("Are You Sure?") && handleBulkAction("delete")}>
+                  </Dropdown.Item> */}
+                  <Dropdown.Item
+                    href="#"
+                    onClick={() =>
+                      confirm("Are You Sure?") && handleBulkAction("/api/contact/bulk-action", selectedIds, "delete")
+                    }
+                  >
                     <span className="cross">
                       <FontAwesomeIcon icon={faTimes} />
                     </span>{" "}
@@ -288,18 +323,19 @@ const page = () => {
             <thead>
               <tr>
                 <th>
-                  <Form.Check onClick={(e) => handleSelect(e, 0, "all")}/>
+                  <Form.Check onClick={(e) => handleSelect(e, 0, "all")} />
                 </th>
-                <th>
-                  ID <FontAwesomeIcon icon={faSort} />
-                </th>
-                <th>
+                <th>ID</th>
+                <th role="button" onClick={() => handleSort("created_at")}>
                   Date <FontAwesomeIcon icon={faSort} />
                 </th>
-                <th>
+                <th role="button" onClick={() => handleSort("type")}>
+                  Type <FontAwesomeIcon icon={faSort} />
+                </th>
+                <th role="button" onClick={() => handleSort("fullname")}>
                   Fullname <FontAwesomeIcon icon={faSort} />
                 </th>
-                <th>
+                <th role="button" onClick={() => handleSort("email")}>
                   Email <FontAwesomeIcon icon={faSort} />
                 </th>
                 <th>Actions</th>
@@ -310,33 +346,44 @@ const page = () => {
                 return (
                   <tr key={item._id}>
                     <td>
-                      <Form.Check onClick={(e) => handleSelect(e, item._id)} className="listing_checks" value={item._id}/>
+                      <Form.Check
+                        onClick={(e) => handleSelect(e, item._id)}
+                        className="listing_checks"
+                        value={item._id}
+                      />
                     </td>
                     <td>
                       {item._id.slice(0, 4)}...{item._id.slice(-6)}
                     </td>
                     <td>{formatDate(item.created_at)}</td>
+                    <td>{item.type}</td>
                     <td>{item.fullname}</td>
-                    <td>{item.email}</td>
+                    <td>{item.email ?? "--"}</td>
                     <td>
                       <Dropdown>
                         <Dropdown.Toggle id="dropdown-basic">
                           <FontAwesomeIcon icon={faEllipsisV} />
                         </Dropdown.Toggle>
                         <Dropdown.Menu>
-                          <Dropdown.Item href="#">
+                          {/* <Dropdown.Item>
                             <span className="edit">
                               <FontAwesomeIcon icon={faEdit} />
                             </span>
                             Edit
-                          </Dropdown.Item>
-                          <Dropdown.Item href="#">
+                          </Dropdown.Item> */}
+                          <Dropdown.Item href={`/admin/contact-us/${item._id}`}>
                             <span className="view">
                               <FontAwesomeIcon icon={faEye} />
                             </span>
                             View
                           </Dropdown.Item>
-                          <Dropdown.Item href="#" onClick={(e) => confirm("Are You Sure?") && handleDelete(e, item._id)}>
+                          <Dropdown.Item
+                            href="#"
+                            onClick={(e) =>
+                              confirm("Are You Sure?") &&
+                              handleDelete(e, item._id)
+                            }
+                          >
                             <span className="delete">
                               <FontAwesomeIcon icon={faTrashAlt} />
                             </span>
@@ -348,16 +395,17 @@ const page = () => {
                   </tr>
                 );
               })}
-              {
-                loading ? 
-                (<tr align="center">
+              {loading ? (
+                <tr align="center">
                   <td colSpan={10}>
                     <div className="text-center mt-2 w-25">
-                      <Spinner animation="border" variant="dark" size="sm"/>
+                      <Spinner animation="border" variant="dark" size="sm" />
                     </div>
                   </td>
-                </tr>) : ""
-              }
+                </tr>
+              ) : (
+                ""
+              )}
             </tbody>
           </Table>
         </TableBody>

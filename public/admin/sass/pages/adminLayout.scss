@@ -35,6 +35,21 @@
 }
 
 
+.right_inner {
+    padding: 30px 20px;
+    @include mixins.clearfix();
+
+    .left_side {
+        float: left;
+        width: 60%;
+        padding-right: 20px;
+    }
+
+    .right_side {
+        float: right;
+        width: calc(100% - 60%);
+    }
+}
 
 /** Above 1920 desktop */
 @media (min-width: 1920px) {}

@@ -7,6 +7,7 @@ import '../../../../public/admin/sass/pages/navTop.scss';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { Col, Row, Dropdown, Form } from 'react-bootstrap';
 import { faAngleLeft, faBars, faCog, faFilter, faSignOutAlt, faTimesCircle, faUser } from '@fortawesome/free-solid-svg-icons';
+import Link from 'next/link';
 
 
 const NavTop = (props) => {
@@ -72,11 +73,11 @@ const NavTop = (props) => {
                             <div className='right'>
                                 {
                                     props.backUrl ? (
-                                        <div className='btn_area'>
+                                        <Link href={props.backUrl} className='btn_area'>
                                             <div className='back_btn'>
                                                 <span><FontAwesomeIcon icon={faAngleLeft} /></span>  Back
                                             </div>
-                                        </div>
+                                        </Link>
                                     ) : ""
                                 }
                                 {props.children}
