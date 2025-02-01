@@ -17,14 +17,14 @@
                 font-weight: 500;
                 position: relative;
                 display: inline-block;
-                &::after{
-                    content: '\F144';
-                    font-family: 'bootstrap-icons'; 
-                    position: absolute;
-                    top: 0;
-                    right: -20px;
-                    font-size: 16px;
-                }
+                // &::after{
+                //     content: '\F144';
+                //     font-family: 'bootstrap-icons'; 
+                //     position: absolute;
+                //     top: 0;
+                //     right: -20px;
+                //     font-size: 16px;
+                // }
             }
             .list_area{
                 padding-top: 20px;

@@ -8,7 +8,9 @@ import uiCard from '../../../public/images/ui_card.png';
 import webCard from '../../../public/images/web_card.png';
 import recShape1 from '../../../public/images/small_rec_shape.png';
 import recShape2 from '../../../public/images/big_rec_shape.png';
-import bgImg from '../../../public/images/logistics_bg.png';
+import bgImg from '../../../public/images/logistics_bg2.webp';
+import finance from '../../../public/images/finance.webp';
+import retail from '../../../public/images/retail.jpg';
 import '../../../public/sass/pages/solution_transform.scss';
 import { delay } from 'motion';
 
@@ -19,7 +21,8 @@ const Solution_transform = ({id}) => {
     const contentList = [
         {
             title: 'Wholesale & Retail',
-            text: 'Make operations smoother and payments simpler with AI solutions designed specifically for wholesale and retail businesses'
+            text: 'Make operations smoother and payments simpler with AI solutions designed specifically for wholesale and retail businesses',
+            image: retail,
         },
         {
             title: 'Logistics',
@@ -28,7 +31,8 @@ const Solution_transform = ({id}) => {
         },
         {
             title: 'FinTech',
-            text: 'Ensure secure payments and robust risk management with SAYNT AI, paving the way for the future of finance'
+            text: 'Ensure secure payments and robust risk management with SAYNT AI, paving the way for the future of finance',
+            image: finance,
         },
     ]
     const variants = {
@@ -103,9 +107,9 @@ const Solution_transform = ({id}) => {
                                                 <p>
                                                     Explore how SAYNT AI is driving success across industries with interactive demos, case studies, and proven results
                                                 </p>
-                                                <div className='button_area'>
+                                                {/* <div className='button_area'>
                                                     <Link href="#" className='btn-primary btn-white'>Case-Studies</Link>
-                                                </div>
+                                                </div> */}
                                             </div>
                                         </motion.div>
                                     </Col>

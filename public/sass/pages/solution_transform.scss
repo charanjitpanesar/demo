@@ -113,6 +113,13 @@
                 position: relative;
                 z-index: 1;
                 overflow: hidden;
+                &::after{
+                    position: absolute;
+                    inset: 0;
+                    background-color: variable.$primary_color;
+                    width: 100%;
+                    height: 100%;
+                }
                 .bg_img{
                     position: absolute;
                     inset: 0;

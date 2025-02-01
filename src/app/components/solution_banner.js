@@ -98,7 +98,7 @@ const Solution_banner = ({id}) => {
                                         animate={{ x: 0, opacity: 1, transition: { duration: 1, ease: 'anticipate' } }}
 
                                     >
-                                        <Link href={'/contact'} className='btn-primary btn-white'>Get in touch</Link>
+                                        <Link href={'/contact'} className='btn-primary btn-light'>Get in touch</Link>
                                     </motion.div>
                                     <motion.div
                                         className="button_area"

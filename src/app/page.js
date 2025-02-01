@@ -11,7 +11,7 @@ import Home_trust from './components/Home_trust';
 import Solution_calender from './components/Solution_calender';
 export default function Home() {
     const comp = [
-        Home_hero, Home_service_banner, Home_counter, Home_cards_section, Home_book_call, Home_trust,Home_choose,Home_industry,Home_connect, Solution_calender
+        Home_hero, Home_service_banner, Home_counter, Home_cards_section, Home_book_call, Home_trust, Home_choose, Home_industry, Home_connect, Solution_calender
     ]
     return (
         <>

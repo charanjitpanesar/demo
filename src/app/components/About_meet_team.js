@@ -15,9 +15,11 @@ import 'swiper/css/thumbs';
 import { FreeMode, Navigation, Thumbs , Controller} from 'swiper/modules';
 
 
-import img1 from '../../../public/images/footer_banner_bg.png'
-import img2 from '../../../public/images/connect_bg.png'
-import img3 from '../../../public/images/user.jpg'
+import img1 from '../../../public/images/hassan.jpeg'
+import img2 from '../../../public/images/talpur.jpeg'
+import img3 from '../../../public/images/safi2.jpeg'
+import img4 from '../../../public/images/khan.jpeg'
+import img5 from '../../../public/images/abbass.jpeg'
 import logo from '../../../public/images/logo.png'
 import Image from 'next/image';
 import Link from 'next/link';
@@ -37,7 +39,7 @@ const About_meet_team = ({id}) => {
                                     <div className='left_area'>
                                         <div className='upper_area'>
                                             <div className='button_area'>
-                                                <Link href='/' className='btn-primary'>
+                                                {/* <Link href='/' className='btn-primary'>
                                                         <div className='logo_area'>
                                                             <Image 
                                                                 src={logo}
@@ -47,7 +49,7 @@ const About_meet_team = ({id}) => {
                                                             />
                                                         </div>
                                                     <span>Saynt AI</span>
-                                                </Link>
+                                                </Link> */}
                                             </div>
                                             <h2>Meet The Team</h2>
                                         </div>
@@ -60,15 +62,6 @@ const About_meet_team = ({id}) => {
                                                 className="mySwiper2"
                                                 onSwiper={setControlledSwiper}
                                             >
-                                                <SwiperSlide>
-                                                    <div className='slide_inner'>
-                                                        <h3>Hasan Abbas </h3>
-                                                        <div className='text'>Directives of Visual</div>
-                                                        <p>
-                                                        Hasan Abbas, as the Chief Research and Development Officer, drives innovation by leading research initiatives and technological advancements. He ensures the company stays ahead by developing new products, improving existing ones, and integrating emerging technologies. His role involves identifying market needs, fostering a culture of experimentation, and collaborating with technical teams to create cutting-edge solutions. Through continuous R&D efforts, he ensures the company remains a leader in its industry by adapting to evolving trends.
-                                                        </p>
-                                                    </div>
-                                                </SwiperSlide>
                                                 <SwiperSlide>
                                                     <div className='slide_inner'>
                                                         <h3>Ali Hassan</h3>
@@ -92,6 +85,17 @@ const About_meet_team = ({id}) => {
                                                 </SwiperSlide>
                                                 <SwiperSlide>
                                                     <div className='slide_inner'>
+                                                        <h3>Safi Hassan</h3>
+                                                        <div className='text'>Chief Marketing Officer (CMO)
+                                                        </div>
+                                                        <p>
+                                                        Safi Hassan, as the Chief Marketing Officer, leads the company’s marketing strategies, ensuring brand visibility and customer engagement. He develops and executes campaigns that enhance customer acquisition, retention, and loyalty. By leveraging data-driven insights, he optimizes marketing efforts across digital and traditional channels. His expertise in market trends, consumer behavior, and strategic partnerships enables the company to grow its audience, increase sales, and maintain a competitive edge in the market.
+
+                                                        </p>
+                                                    </div>
+                                                </SwiperSlide>
+                                                <SwiperSlide>
+                                                    <div className='slide_inner'>
                                                         <h3>Saaim Khan</h3>
                                                         <div className='text'> Chief Creative Officer (CCO)
                                                         </div>
@@ -103,12 +107,10 @@ const About_meet_team = ({id}) => {
                                                 </SwiperSlide>
                                                 <SwiperSlide>
                                                     <div className='slide_inner'>
-                                                        <h3>Safi Hassan</h3>
-                                                        <div className='text'>Chief Marketing Officer (CMO)
-                                                        </div>
+                                                        <h3>Hasan Abbas </h3>
+                                                        <div className='text'>Chief Research Officer (CRO)</div>
                                                         <p>
-                                                        Safi Hassan, as the Chief Marketing Officer, leads the company’s marketing strategies, ensuring brand visibility and customer engagement. He develops and executes campaigns that enhance customer acquisition, retention, and loyalty. By leveraging data-driven insights, he optimizes marketing efforts across digital and traditional channels. His expertise in market trends, consumer behavior, and strategic partnerships enables the company to grow its audience, increase sales, and maintain a competitive edge in the market.
-
+                                                        Hasan Abbas, as the Chief Research and Development Officer, drives innovation by leading research initiatives and technological advancements. He ensures the company stays ahead by developing new products, improving existing ones, and integrating emerging technologies. His role involves identifying market needs, fostering a culture of experimentation, and collaborating with technical teams to create cutting-edge solutions. Through continuous R&D efforts, he ensures the company remains a leader in its industry by adapting to evolving trends.
                                                         </p>
                                                     </div>
                                                 </SwiperSlide>
@@ -159,7 +161,7 @@ const About_meet_team = ({id}) => {
                                                     <div className='slide_inner'>
                                                         <div className='image_area'>
                                                             <Image 
-                                                                src={img2}
+                                                                src={img3}
                                                                 alt='...'
                                                                 title='...'
                                                                 priority
@@ -171,7 +173,7 @@ const About_meet_team = ({id}) => {
                                                     <div className='slide_inner'>
                                                         <div className='image_area'>
                                                             <Image 
-                                                                src={img1}
+                                                                src={img4}
                                                                 alt='...'
                                                                 title='...'
                                                                 priority
@@ -183,7 +185,7 @@ const About_meet_team = ({id}) => {
                                                     <div className='slide_inner'>
                                                         <div className='image_area'>
                                                             <Image 
-                                                                src={img1}
+                                                                src={img5}
                                                                 alt='...'
                                                                 title='...'
                                                                 priority
@@ -239,7 +241,7 @@ const About_meet_team = ({id}) => {
                                                         <div className='slide_inner'>
                                                             <div className='image_area'>
                                                                 <Image 
-                                                                    src={img2}
+                                                                    src={img3}
                                                                     alt='...'
                                                                     title='...'
                                                                     priority
@@ -251,7 +253,7 @@ const About_meet_team = ({id}) => {
                                                         <div className='slide_inner'>
                                                             <div className='image_area'>
                                                                 <Image 
-                                                                    src={img1}
+                                                                    src={img4}
                                                                     alt='...'
                                                                     title='...'
                                                                     priority
@@ -263,7 +265,7 @@ const About_meet_team = ({id}) => {
                                                         <div className='slide_inner'>
                                                             <div className='image_area'>
                                                                 <Image 
-                                                                    src={img1}
+                                                                    src={img5}
                                                                     alt='...'
                                                                     title='...'
                                                                     priority

@@ -109,7 +109,7 @@ const Footer = () => {
                                     <h3>Explore our success</h3>
                                 </div>
                                 <div className='inner_right'>
-                                    <Link href="#"><i className="bi bi-arrow-up-right"></i></Link>
+                                    <Link href="/"><i className="bi bi-arrow-up-right"></i></Link>
                                 </div>
                             </div>
                         </div>

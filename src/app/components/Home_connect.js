@@ -2,7 +2,7 @@ import React from 'react'
 import '../../../public/sass/home_scss/home_connect.scss';
 import { Col, Container, Row } from 'react-bootstrap';
 import Link from 'next/link';
-import connectBg from '../../../public/images/connect_bg.png'
+import connectBg from '../../../public/images/screen.jpg'
 import Image from 'next/image';
 
 
