@@ -54,7 +54,7 @@ const Solution_ai = ({id}) => {
                                     <Col xxl={12} xl={12} lg={12} md={12} sm={12} xs={12}>
                                         <div className="center">
                                             <div className="text">
-                                                Solution <span>For</span>
+                                                Solutions <span>For</span>
                                                 <div className='slider'>
                                                     {
                                                         text &&

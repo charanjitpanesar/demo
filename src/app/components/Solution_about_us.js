@@ -23,9 +23,9 @@ const Solution_about_us = ({id}) => {
                                             <p>
                                                 We empower SMEs with the essential tools and transformations they need
                                                 to stay at the forefront of the current market and solutions that will 
-                                                make your business thrive in the current landscape [prone to additions]
+                                                make your business thrive in the current landscape (prone to additions)
                                             </p>
-                                            <Link href="#" className='btn-primary btn-light'>Get To Know Us</Link>
+                                            <Link href="/about_us" className='btn-primary btn-light'>Get To Know Us</Link>
                                         </div>
                                     </Col>
                                 </Row>

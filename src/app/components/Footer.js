@@ -107,6 +107,18 @@ const Footer = () => {
                             <div className='banner_area'>
                                 <div className='inner_left'>
                                     <h3>Explore our success</h3>
+                                    <ul>
+                                        <li>
+                                            <Link href="https://www.facebook.com/people/Saynt/61558681650933/">
+                                                <i className="bi bi-facebook"></i>  
+                                            </Link>
+                                        </li>
+                                        <li>
+                                            <Link href="https://www.instagram.com/saynt.ai/ ">
+                                            <i className="bi bi-instagram"></i> 
+                                            </Link>
+                                        </li>
+                                    </ul>
                                 </div>
                                 <div className='inner_right'>
                                     <Link href="/"><i className="bi bi-arrow-up-right"></i></Link>

@@ -23,7 +23,7 @@ const Home_hero = ({ id }) => {
                                     <Col xxl={6} xl={6} lg={6} md={6} sm={6} xm={12}>
                                         <div className='left_area'>
                                             <h3>
-                                                OutSpace, Outperform Outlast
+                                                OutSpace Outperform Outlast
                                             </h3>
                                             <p>your trusted Ally for Market domination</p>
                                             <div className='buttons_area'>
