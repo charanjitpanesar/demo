@@ -20,7 +20,7 @@ import TableBody from "../../components/tableBody";
 import { usePathname, useSearchParams } from "next/navigation";
 import NavTop from "../../components/navTop";
 
-const page = () => {
+const Page = () => {
   const module = {
     api: "/api/contact/get-contacts",
     title: "Contacts",
@@ -37,16 +37,7 @@ const page = () => {
     direction: "desc",
   };
 
-  const defaultFilters = {
-    search: searchParams.get("search") || "",
-    createdAtFrom: searchParams.get("createdAtFrom") || "",
-    createdAtTo: searchParams.get("createdAtTo") || "",
-    status: searchParams.get("status") || "",
-    sort: searchParams.get("sort") || "",
-    direction: searchParams.get("direction") || "",
-  };
-
-  const [filters, setFilters] = useState(defaultFilters);
+  const [filters, setFilters] = useState(emptyFilters);
   const [listing, setListing] = useState([]);
   const [show, setShow] = useState(false);
   const [selectedIds, setSelectedIds] = useState([]);
@@ -141,6 +132,18 @@ const page = () => {
       getListing();
     }
   }, [page, hasMore]);
+
+  useEffect(() => {
+    setFilters((prev) => ({
+      ...prev,
+      search: searchParams.get("search") || "",
+      createdAtFrom: searchParams.get("createdAtFrom") || "",
+      createdAtTo: searchParams.get("createdAtTo") || "",
+      status: searchParams.get("status") || "",
+      sort: searchParams.get("sort") || "",
+      direction: searchParams.get("direction") || "",
+    }));
+  }, [searchParams]);
 
   useEffect(() => {
     let timeout;
@@ -414,4 +417,4 @@ const page = () => {
   );
 };
 
-export default page;
+export default Page;

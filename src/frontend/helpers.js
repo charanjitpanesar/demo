@@ -1,6 +1,6 @@
 import Cookies from "js-cookie";
 
-export const formatDate = (date) => {
+const formatDate = (date) => {
   date = new Date(date);
   const months = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
 
@@ -17,7 +17,7 @@ export const formatDate = (date) => {
   return `${month} ${day}, ${year} ${hours}:${minutes} ${ampm}`;
 };
 
-export const postApi = async (url, data) => {
+const postApi = async (url, data) => {
   let token = Cookies.get("au_to");
 
   let res = await fetch(getUrl(url), {
@@ -32,7 +32,7 @@ export const postApi = async (url, data) => {
   return await res.json();
 }
 
-export const postFormApi = async (url, data) => {
+const postFormApi = async (url, data) => {
   let token = Cookies.get("au_to");
 
   let res = await fetch(getUrl(url), {
@@ -46,7 +46,7 @@ export const postFormApi = async (url, data) => {
   return await res.json();
 }
 
-export const getApi = async (url, options = {}) => {
+const getApi = async (url, options = {}) => {
   let token = Cookies.get("au_to");
 
   try{
@@ -69,7 +69,7 @@ export const getApi = async (url, options = {}) => {
   }
 }
 
-export const checkLogin = async () => {
+const checkLogin = async () => {
   let res = await getApi("/api/auth/check-login");
   
   if(res.status) {
@@ -79,7 +79,7 @@ export const checkLogin = async () => {
   }
 }
 
-export const handleInputChange = (e, state, stateFunction) => {
+const handleInputChange = (e, state, stateFunction) => {
   let value = e.target.value
   if(e.target.type == "checkbox") {
       value = e.target.checked
@@ -90,7 +90,7 @@ export const handleInputChange = (e, state, stateFunction) => {
   });
 }
 
-export const getUrl = (url) => {
+const getUrl = (url) => {
   try {
     const parsedUrl = new URL(url);
     if(!!parsedUrl.hostname) {
@@ -103,7 +103,7 @@ export const getUrl = (url) => {
   }
 }
 
-export const handleBulkAction = async (url, selectedIds, type, refresh = true) => {
+const handleBulkAction = async (url, selectedIds, type, refresh = true) => {
   let res = await bulkAction(url, selectedIds, type);
   if (res.status) {
     if(refresh) {
@@ -113,18 +113,18 @@ export const handleBulkAction = async (url, selectedIds, type, refresh = true) =
   return res;
 };
 
-export const bulkAction = async (url, ids, type) => {
+const bulkAction = async (url, ids, type) => {
   return await postApi(url, {
     ids: ids,
     type: type,
   });
 };
 
-export const handleStatusChange = async (url, id, status) => {
+const handleStatusChange = async (url, id, status) => {
   return await postApi(url, {id: id, status: status});
 }
 
-export const handleImageChange = (event, state, stateFunction) => {
+const handleImageChange = (event, state, stateFunction) => {
   const file = event.target.files[0];
 
   if (file) {
@@ -142,3 +142,17 @@ export const handleImageChange = (event, state, stateFunction) => {
 // export const updateAdminToken = async () => {
 //   await getApi("/api/auth/update-admin-token");
 // }
+
+export {
+  formatDate,
+  postApi,
+  postFormApi,
+  getApi,
+  checkLogin,
+  handleInputChange,
+  getUrl,
+  handleBulkAction,
+  bulkAction,
+  handleStatusChange,
+  handleImageChange,
+}

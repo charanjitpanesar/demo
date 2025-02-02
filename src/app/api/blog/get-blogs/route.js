@@ -88,19 +88,19 @@ const addFilters = (req) => {
     if(search) {
         where['$or'] = [
             {
-                fullname: { 
+                title: { 
                     $regex: search, 
                     $options: 'i' 
                 }
             },
             {
-                email: { 
+                description: { 
                     $regex: search, 
                     $options: 'i' 
                 }
             },
             {
-                type: { 
+                created_at: { 
                     $regex: search, 
                     $options: 'i' 
                 }

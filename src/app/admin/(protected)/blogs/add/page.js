@@ -1,10 +1,5 @@
 "use client";
-
-import FormCom from "@/app/admin/components/Form";
-import NavTop from "@/app/admin/components/navTop";
-import { Button, Card, Col, Form, InputGroup, Row } from 'react-bootstrap';
 import { useState } from "react";
-import { handleImageChange, handleInputChange, postApi, postFormApi } from "@/frontend/helpers";
 import React from 'react';
 import Editor from 'react-simple-wysiwyg';
 import { redirect } from "next/navigation";
@@ -12,7 +7,13 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faTimes } from "@fortawesome/free-solid-svg-icons";
 import Image from "next/image";
 
-const Dashboard = () => {
+import FormCom from "@/app/admin/components/Form";
+import NavTop from "@/app/admin/components/navTop";
+
+import { Button, Col, Form, Row } from 'react-bootstrap';
+import { handleImageChange, handleInputChange, postApi } from "@/frontend/helpers";
+
+const Page = () => {
     const [data, setData] = useState({
         title: "",
         description: "",
@@ -36,9 +37,10 @@ const Dashboard = () => {
             console.log(res)
         }
     }
-  return (
+    
+    return (
         <>
-            <NavTop title="Blog" backUrl="/admin/blogs"/>
+            <NavTop title="Blog" backUrl="/admin/blogs"></NavTop>
             <FormCom top_spacing="top_spacing" title="Blog">
                 <Form method="post" onSubmit={handleFormSubmit}>
                     <Row>
@@ -119,4 +121,4 @@ const Dashboard = () => {
     )
 }
 
-export default Dashboard;
+export default Page;

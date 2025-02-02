@@ -37,16 +37,7 @@ const page = () => {
     direction: "desc",
   };
 
-  const defaultFilters = {
-    search: searchParams.get("search") || "",
-    createdAtFrom: searchParams.get("createdAtFrom") || "",
-    createdAtTo: searchParams.get("createdAtTo") || "",
-    status: searchParams.get("status") || "",
-    sort: searchParams.get("sort") || "",
-    direction: searchParams.get("direction") || "",
-  };
-
-  const [filters, setFilters] = useState(defaultFilters);
+  const [filters, setFilters] = useState(emptyFilters);
   const [listing, setListing] = useState([]);
   const [show, setShow] = useState(false);
   const [selectedIds, setSelectedIds] = useState([]);
@@ -140,6 +131,18 @@ const page = () => {
       getListing();
     }
   }, [page, hasMore]);
+
+  useEffect(() => {
+    setFilters((prev) => ({
+      ...prev,
+      search: searchParams.get("search") || "",
+      createdAtFrom: searchParams.get("createdAtFrom") || "",
+      createdAtTo: searchParams.get("createdAtTo") || "",
+      status: searchParams.get("status") || "",
+      sort: searchParams.get("sort") || "created_at",
+      direction: searchParams.get("direction") || "desc",
+    }));
+  }, [searchParams]);
 
   useEffect(() => {
     let timeout;
