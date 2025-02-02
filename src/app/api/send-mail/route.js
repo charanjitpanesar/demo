@@ -1,7 +1,7 @@
 import { checkVar, sendMailTemplate } from "@/backend/helpers";
 import { add, modifyOne } from "@/backend/queries";
 
-export async function POST(req, res) {
+export async function POST(req) {
     if (req.method === "POST") {
         try {
             const { searchParams } = new URL(req.url);

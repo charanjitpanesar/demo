@@ -80,6 +80,15 @@ const NavTop = (props) => {
                                         </Link>
                                     ) : ""
                                 }
+                                {
+                                    props.addUrl ? (
+                                        <Link href={props.addUrl} className='btn_area'>
+                                            <div className='back_btn'>
+                                                New
+                                            </div>
+                                        </Link>
+                                    ) : ""
+                                }
                                 {props.children}
                             </div>
                         </div>

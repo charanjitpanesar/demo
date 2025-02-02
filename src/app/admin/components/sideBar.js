@@ -1,9 +1,8 @@
 "use client";
 import React, { useEffect, useRef, useState } from 'react';
 import '../../../../public/admin/sass/pages/sidebar.scss';
-import { faUsers, faAngleDown, faSignOutAlt, faFileAlt, faQuestionCircle, faAddressCard, faBars, faMapMarkerAlt, faAngleRight, faHomeAlt, faAngleLeft } from '@fortawesome/free-solid-svg-icons';
+import { faAddressCard, faAngleLeft, faBlog } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faProductHunt } from '@fortawesome/free-brands-svg-icons';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 
@@ -13,6 +12,12 @@ const sideBarLinks = [
         title: "Contact Us",
         link: "/admin/contact-us",
         icon: faAddressCard,
+    },
+    {
+        id: 2,
+        title: "Blogs",
+        link: "/admin/blogs",
+        icon: faBlog,
     }
 ];
 

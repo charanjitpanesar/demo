@@ -99,6 +99,10 @@ export const bulkAction = async (url, ids, type) => {
   });
 };
 
+export const handleStatusChange = async (url, id, status) => {
+  return await postApi(url, {id: id, status: status});
+}
+
 // export const updateAdminToken = async () => {
 //   await getApi("/api/auth/update-admin-token");
 // }
