@@ -118,6 +118,11 @@ const Footer = () => {
                                             <i className="bi bi-instagram"></i> 
                                             </Link>
                                         </li>
+                                        <li>
+                                            <Link href="https://www.linkedin.com/company/saynt-ai/?originalSubdomain=pk ">
+                                            <i className="bi bi-linkedin"></i>
+                                            </Link>
+                                        </li>
                                     </ul>
                                 </div>
                                 <div className='inner_right'>
