@@ -26,7 +26,7 @@
                 font-weight: 400;
                 padding-top: 60px;
                 color: variable.$arrow_color;
-                width: 40%;
+                // width: 40%;
             }
             .button_area{
                 padding-top: 30px;
@@ -39,7 +39,7 @@
         }
         .right_area{
             position: relative;
-            h3{
+            .ver_text{
                 position: absolute;
                 top: 45%;
                 right: 0;
@@ -50,7 +50,7 @@
                 @include mixins.rotate(90deg);
             }
             .image_area{
-                width: 80%;
+                width: 75%;
                 img{
                     height: 100%;
                     width: 100%;
@@ -98,8 +98,12 @@
                 }
             }
             .right_area{
-                h3{
+                .image_area{
+                    width: 95%;
+                }
+                .ver_text{
                     font-size: 65px;
+                    right: -100px;
                 }
             }
         }
@@ -120,8 +124,12 @@
                 }
             }
             .right_area{
-                h3{
+                .image_area{
+                    width: 95%;
+                }
+                .ver_text{
                     font-size: 65px;
+                    right: -100px;
                 }
             }
         }
@@ -146,9 +154,13 @@
                 }
             }
             .right_area{
-                h3{
+                .image_area{
+                    width: 85%;
+                }
+                .ver_text{
                     font-size: 55px;
                     top: 40%;
+                    right: -60px;
                 }
             }
         }
@@ -174,9 +186,13 @@
                 }
             }
             .right_area{
-                h3{
+                .image_area{
+                    width: 80%;
+                }
+                .ver_text{
                     font-size: 40px;
                     top: 40%;
+                    right: -60px;
                 }
             }
         }
@@ -212,7 +228,7 @@
                 }
             }
             .right_area{
-                h3{
+                .ver_text{
                     font-size: 28px;
                     top: 40%;
                 }
@@ -253,7 +269,7 @@
                 .image_area{
                     width: 100%;
                 }
-                h3{
+                .ver_text{
                     position: static;
                     font-size: 25px;
                    transform: none;
@@ -297,7 +313,7 @@
                 .image_area{
                     width: 100%;
                 }
-                h3{
+                .ver_text{
                     position: static;
                     font-size: 25px;
                    transform: none;

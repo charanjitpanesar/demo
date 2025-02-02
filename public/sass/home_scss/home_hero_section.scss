@@ -212,7 +212,7 @@
         &::after {
             z-index: -1;
             content: '';
-            animation: moveBackground 10s linear infinite;
+            animation: moveBackground 30s linear infinite;
             position: absolute;
             inset: 0;
             background: url('../../images/book_call_bg.png') ;

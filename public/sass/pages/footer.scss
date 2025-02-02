@@ -120,6 +120,7 @@
                         color: variable.$off_white;
                         display: inline-block;
                         padding-top: 8px;
+                        word-break: break-all;
                         &:hover{
                             opacity: .7;
                         }
