@@ -1,25 +1,27 @@
-import { add } from "@/backend/queries";
-import { ObjectId } from "mongodb";
+import { getOne, modifyOne } from "@/backend/queries";
 
-export async function POST(req) {
+export async function POST(req, { params }) {
     try {
+        params = await params;
+        let id = params.id;
+
         let data = await req.json();
         
         let blogData = {
             title: data.title,
             description: data.description,
-            created_at: new Date(),
             updated_at: new Date(),
             status: data.status,
         }
 
-        let added = await add("blogs", blogData);
+        let updated = await modifyOne('blogs', id, blogData);
 
-        if(added) {
+        if(updated) {
             return Response.json(
                 {
                     status: true,
-                    message: "Data Added Successfully!",
+                    data: data,
+                    message: "Data Fetched Successfully!",
                 }, 
                 {
                     status: 200,
@@ -49,21 +51,4 @@ export async function POST(req) {
             }
         )
     }
-}
-
-const bulkActions = async (ids, type) => {
-    if(type == "delete") {
-        const result = await removeAllWhere('contacts', { _id: { $in: ids.map(id => ObjectId.createFromHexString(id)) } })
-        return result;
-    }
-    
-    let updateData = {};
-    if(type == "publish") {
-        updateData = { status: 1 };
-    } else if (type == "unpublish") {
-        updateData = { status: 0 };
-    }
-    console.log(updateData)
-    const result = await modifyAllWhere('contacts', { _id: { $in: ids.map(id => ObjectId.createFromHexString(id)) } }, updateData);
-    return result;
 }

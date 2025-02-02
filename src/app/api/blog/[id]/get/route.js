@@ -5,13 +5,13 @@ export async function GET(req, { params }) {
         params = await params;
         let id = params.id;
 
-        let contact = await getOne('contacts', id);
+        let data = await getOne('blogs', id);
 
-        if(contact) {
+        if(data) {
             return Response.json(
                 {
                     status: true,
-                    data: contact,
+                    data: data,
                     message: "Data Fetched Successfully!",
                 }, 
                 {

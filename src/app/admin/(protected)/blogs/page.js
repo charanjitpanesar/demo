@@ -118,7 +118,7 @@ const page = () => {
   };
 
   const handleDelete = async (e, id) => {
-    let res = await bulkAction([id], "delete");
+    let res = await handleBulkAction("/api/blog/bulk-action", [id], "delete", false);
     if (res.status) {
       e.target.closest("tr").remove();
     }
@@ -364,13 +364,13 @@ const page = () => {
                           <FontAwesomeIcon icon={faEllipsisV} />
                         </Dropdown.Toggle>
                         <Dropdown.Menu>
-                          {/* <Dropdown.Item>
+                          <Dropdown.Item href={`/admin/blogs/${item._id}/edit`}>
                             <span className="edit">
                               <FontAwesomeIcon icon={faEdit} />
                             </span>
                             Edit
-                          </Dropdown.Item> */}
-                          <Dropdown.Item href={`/admin/contact-us/${item._id}`}>
+                          </Dropdown.Item>
+                          <Dropdown.Item href={`/admin/blogs/${item._id}/view`}>
                             <span className="view">
                               <FontAwesomeIcon icon={faEye} />
                             </span>

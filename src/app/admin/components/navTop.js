@@ -72,19 +72,28 @@ const NavTop = (props) => {
                             </div>
                             <div className='right'>
                                 {
-                                    props.backUrl ? (
-                                        <Link href={props.backUrl} className='btn_area'>
+                                    props.addUrl ? (
+                                        <Link href={props.addUrl} className='btn_area'>
                                             <div className='back_btn'>
-                                                <span><FontAwesomeIcon icon={faAngleLeft} /></span>  Back
+                                                New
                                             </div>
                                         </Link>
                                     ) : ""
                                 }
                                 {
-                                    props.addUrl ? (
-                                        <Link href={props.addUrl} className='btn_area'>
+                                    props.editUrl ? (
+                                        <Link href={props.editUrl} className='btn_area'>
                                             <div className='back_btn'>
-                                                New
+                                                Edit
+                                            </div>
+                                        </Link>
+                                    ) : ""
+                                }
+                                {
+                                    props.backUrl ? (
+                                        <Link href={props.backUrl} className='btn_area'>
+                                            <div className='back_btn'>
+                                                <span><FontAwesomeIcon icon={faAngleLeft} /></span>  Back
                                             </div>
                                         </Link>
                                     ) : ""

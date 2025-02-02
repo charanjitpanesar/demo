@@ -23,7 +23,7 @@ const Page = ({ params }) => {
 
     return (
         <>
-            <NavTop title={module.title} backUrl="/admin/contact-us"></NavTop>
+            <NavTop title="Contact" backUrl="/admin/contact-us"></NavTop>
             {
                 data ?
                 (<div className='right_inner top_spacing'>

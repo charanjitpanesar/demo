@@ -3,38 +3,48 @@
 import FormCom from "@/app/admin/components/Form";
 import NavTop from "@/app/admin/components/navTop";
 import { Button, Card, Col, Form, InputGroup, Row } from 'react-bootstrap';
-import useEditorJS from "@/app/admin/components/Editor";
 import { useState } from "react";
-import { handleInputChange, postApi } from "@/frontend/helpers";
+import { handleImageChange, handleInputChange, postApi, postFormApi } from "@/frontend/helpers";
+import React from 'react';
+import Editor from 'react-simple-wysiwyg';
+import { redirect } from "next/navigation";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faTimes } from "@fortawesome/free-solid-svg-icons";
+import Image from "next/image";
 
 const Dashboard = () => {
     const [data, setData] = useState({
         title: "",
-        description: {},
+        description: "",
+        status: 1,
+        image: null,
     });
-
-    const handleEditorChange = (value) => {
-        setData({
-            ...data,
-            description: value
-        })
-    }
-
+    
     const handleFormSubmit = async (e) => {
         e.preventDefault();
-        let res = await postApi("/api/blog/add");
+
+        // const formData = new FormData();
+        
+        // for(let key in data) {
+        //     formData.append(key, data[key])
+        // }
+        
+        let res = await postApi("/api/blog/add", data);
+        if(res.status) {
+            redirect("/admin/blogs");
+        } else {
+            console.log(res)
+        }
     }
-    
-    useEditorJS("editorjs-container", handleEditorChange);
   return (
         <>
-            <NavTop title="Blog" />
+            <NavTop title="Blog" backUrl="/admin/blogs"/>
             <FormCom top_spacing="top_spacing" title="Blog">
-                <Form onSubmit={handleFormSubmit}>
+                <Form method="post" onSubmit={handleFormSubmit}>
                     <Row>
                     <Col xxl={12} xl={12} lg={12} md={12} sm={12} xs={12}>
                         <Form.Group className='form-group'>
-                        <Form.Label>Title <span>*</span></Form.Label>
+                        <Form.Label>Title</Form.Label>
                         <Form.Control
                             required
                             type="text"
@@ -46,34 +56,57 @@ const Dashboard = () => {
                     </Col>
                     <Col xxl={12} xl={12} lg={12} md={12} sm={12} xs={12}>
                         <Form.Group className='form-group'>
-                        <Form.Label>Description <span>*</span></Form.Label>
-                        <div className="border">
-                            <div id="editorjs-container"></div>
-                        </div>
+                        <Form.Label>Description</Form.Label>
+                        <Editor 
+                            value={data.description}
+                            name="description"
+                            onChange={(e) => handleInputChange(e, data, setData)}
+                        />
                         </Form.Group>
                     </Col>
                     <Col xxl={6} xl={6} lg={6} md={6} sm={12} xs={12}>
                         <Form.Group className='form-group'>
-                        <Form.Label>Image <span>*</span></Form.Label>
+                        <Form.Label>Image</Form.Label>
                         <Form.Label htmlFor="file-upload" className='upload'>Upload Image</Form.Label>
                         <Form.Control
                             type="file"
                             id="file-upload"
                             placeholder="Upload Image"
+                            name="image"
+                            onChange={(e) => handleImageChange(e, data, setData)}
                         />
                         {/* after upload --------- */}
-                        {/* <div className='upload_img_area'>
-                            <div className='img_area'>
-                            <span className='cross_icon'>
-                                <FontAwesomeIcon icon={faTimes} />
-                            </span>
-                            <Image
-                                src={profileImg3}
-                                alt='...'
-                                priority="low"
-                            />
-                            </div>
-                        </div> */}
+                        {
+                            data.image ? (
+                                <div className='upload_img_area'>
+                                    <div className='img_area'>
+                                    <span className='cross_icon'>
+                                        <FontAwesomeIcon icon={faTimes} onClick={() => setData({...data, image: null})} />
+                                    </span>
+                                    <Image
+                                        src={URL.createObjectURL(data.image)}
+                                        alt='...'
+                                        priority="low"
+                                        width={100}
+                                        height={100}
+                                    />
+                                    </div>
+                                </div>
+                            ) : ""
+                        }
+                        </Form.Group>
+                    </Col>
+                    <Col xxl={12} xl={12} lg={12} md={12} sm={12} xs={12}>
+                        <Form.Group className='form-group'>
+                        <Form.Label>Publish</Form.Label>
+                        <Form.Group className='form-group'>
+                            <Form.Check 
+                                type="switch" 
+                                defaultChecked={data.status == 1} 
+                                name="status"
+                                onChange={(e) => handleInputChange(e, data, setData)
+                            } />
+                        </Form.Group>
                         </Form.Group>
                     </Col>
                     <div className='btn_area'>

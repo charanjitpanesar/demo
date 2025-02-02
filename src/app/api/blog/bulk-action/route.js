@@ -47,7 +47,7 @@ export async function POST(req, res) {
 
 const bulkActions = async (ids, type) => {
     if(type == "delete") {
-        const result = await removeAllWhere('contacts', { _id: { $in: ids.map(id => ObjectId.createFromHexString(id)) } })
+        const result = await removeAllWhere('blogs', { _id: { $in: ids.map(id => ObjectId.createFromHexString(id)) } })
         return result;
     }
     
@@ -57,7 +57,7 @@ const bulkActions = async (ids, type) => {
     } else if (type == "unpublish") {
         updateData = { status: 0 };
     }
-    console.log(updateData)
-    const result = await modifyAllWhere('contacts', { _id: { $in: ids.map(id => ObjectId.createFromHexString(id)) } }, updateData);
+    
+    const result = await modifyAllWhere('blogs', { _id: { $in: ids.map(id => ObjectId.createFromHexString(id)) } }, updateData);
     return result;
 }
