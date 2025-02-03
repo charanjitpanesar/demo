@@ -4,23 +4,14 @@ import React, { useState } from 'react'
 import { Col, Container, Row } from 'react-bootstrap';
 import Image from 'next/image';
 import { motion } from "motion/react"
-<<<<<<< HEAD:src/app/(frontend)/components/Solution_transform.js
 import uiCard from '../../../../public/images/ui_card.png';
 import webCard from '../../../../public/images/web_card.png';
 import recShape1 from '../../../../public/images/small_rec_shape.png';
 import recShape2 from '../../../../public/images/big_rec_shape.png';
-import bgImg from '../../../../public/images/logistics_bg.png';
+import bgImg from '../../../../public/images/logistics_bg2.webp';
+import finance from '../../../../public/images/finance.webp';
+import retail from '../../../../public/images/retail.jpg';
 import '../../../../public/sass/pages/solution_transform.scss';
-=======
-import uiCard from '../../../public/images/ui_card.png';
-import webCard from '../../../public/images/web_card.png';
-import recShape1 from '../../../public/images/small_rec_shape.png';
-import recShape2 from '../../../public/images/big_rec_shape.png';
-import bgImg from '../../../public/images/logistics_bg2.webp';
-import finance from '../../../public/images/finance.webp';
-import retail from '../../../public/images/retail.jpg';
-import '../../../public/sass/pages/solution_transform.scss';
->>>>>>> c18ec40749a446687bab2e19b235878e54b1f7fd:src/app/components/Solution_transform.js
 import { delay } from 'motion';
 
 const Solution_transform = ({id}) => {
