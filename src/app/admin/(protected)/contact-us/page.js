@@ -134,15 +134,19 @@ const Page = () => {
   }, [page, hasMore]);
 
   useEffect(() => {
-    setFilters((prev) => ({
-      ...prev,
+    const newFilters = {
       search: searchParams.get("search") || "",
       createdAtFrom: searchParams.get("createdAtFrom") || "",
       createdAtTo: searchParams.get("createdAtTo") || "",
       status: searchParams.get("status") || "",
-      sort: searchParams.get("sort") || "",
-      direction: searchParams.get("direction") || "",
-    }));
+      sort: searchParams.get("sort") || "created_at",
+      direction: searchParams.get("direction") || "desc",
+    };
+  
+    // Only update filters if the values have changed
+    if (JSON.stringify(newFilters) !== JSON.stringify(filters)) {
+      setFilters(newFilters);
+    }
   }, [searchParams]);
 
   useEffect(() => {

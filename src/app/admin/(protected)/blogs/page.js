@@ -19,6 +19,7 @@ import TableHeader from "../../components/tableHeader";
 import TableBody from "../../components/tableBody";
 import { usePathname, useSearchParams } from "next/navigation";
 import NavTop from "../../components/navTop";
+import { toast } from "react-toastify";
 
 const page = () => {
   const module = {
@@ -112,6 +113,7 @@ const page = () => {
     let res = await handleBulkAction("/api/blog/bulk-action", [id], "delete", false);
     if (res.status) {
       e.target.closest("tr").remove();
+      toast.success(res.message)
     }
   };
 
@@ -133,15 +135,19 @@ const page = () => {
   }, [page, hasMore]);
 
   useEffect(() => {
-    setFilters((prev) => ({
-      ...prev,
+    const newFilters = {
       search: searchParams.get("search") || "",
       createdAtFrom: searchParams.get("createdAtFrom") || "",
       createdAtTo: searchParams.get("createdAtTo") || "",
       status: searchParams.get("status") || "",
       sort: searchParams.get("sort") || "created_at",
       direction: searchParams.get("direction") || "desc",
-    }));
+    };
+  
+    // Only update filters if the values have changed
+    if (JSON.stringify(newFilters) !== JSON.stringify(filters)) {
+      setFilters(newFilters);
+    }
   }, [searchParams]);
 
   useEffect(() => {
@@ -162,12 +168,12 @@ const page = () => {
   }, []);
 
   useEffect(() => {
-    if (page == 1) {
-      getListing();
-    } else {
-      setPage(1);
-    }
     setHasMore(true);
+
+    setPage((prevPage) => {
+        if (prevPage !== 1) return 1; // Avoid unnecessary state updates
+        return prevPage;
+    });
   }, [filters]);
 
   return (
