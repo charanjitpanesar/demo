@@ -191,11 +191,11 @@
 
 @keyframes moveBackground {
     from {
-        background-position: 100% center;
+        background-position: 0% center;
     }
 
     to {
-        background-position: 0% center;
+        background-position: 100% center;
     }
 }
 
@@ -212,11 +212,14 @@
         &::after {
             z-index: -1;
             content: '';
-            animation: moveBackground 10s linear infinite;
-
+            animation: moveBackground 30s linear infinite;
             position: absolute;
             inset: 0;
-            background: url('../../images/book_call_bg.png') no-repeat center/ 120% 100%;
+            background: url('../../images/book_call_bg.png') ;
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
+
         }
 
         .parent_area {

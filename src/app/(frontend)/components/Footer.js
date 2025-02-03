@@ -55,7 +55,7 @@ const Footer = () => {
                             <Row>
                                 <Col xxl={8} xl={7} lg={9} md={12} sm={12} xm={12}>
                                     <div className='left_area'>
-                                        <div className='text_area'>Catalog</div>
+                                        <div className='text_area'>THIS IS US</div>
                                         <div className='list_area'>
                                             <ul>
                                             {
@@ -87,7 +87,7 @@ const Footer = () => {
                                             </div>
                                             <div className='detail_area'>
                                                 <h3>Email</h3>
-                                                <Link href='mailto:contact@saynt.org'>contact@saynt.org</Link>
+                                                <Link href='mailto:contact@saynt.org'>sayntheadquarter@gmail.com</Link>
                                             </div>
                                             <div className='detail_area'>
                                                 <h3>Contact Us</h3>
@@ -107,9 +107,26 @@ const Footer = () => {
                             <div className='banner_area'>
                                 <div className='inner_left'>
                                     <h3>Explore our success</h3>
+                                    <ul>
+                                        <li>
+                                            <Link href="https://www.facebook.com/people/Saynt/61558681650933/">
+                                                <i className="bi bi-facebook"></i>  
+                                            </Link>
+                                        </li>
+                                        <li>
+                                            <Link href="https://www.instagram.com/saynt.ai/ ">
+                                            <i className="bi bi-instagram"></i> 
+                                            </Link>
+                                        </li>
+                                        <li>
+                                            <Link href="https://www.linkedin.com/company/saynt-ai/?originalSubdomain=pk ">
+                                            <i className="bi bi-linkedin"></i>
+                                            </Link>
+                                        </li>
+                                    </ul>
                                 </div>
                                 <div className='inner_right'>
-                                    <Link href="#"><i className="bi bi-arrow-up-right"></i></Link>
+                                    <Link href="/"><i className="bi bi-arrow-up-right"></i></Link>
                                 </div>
                             </div>
                         </div>

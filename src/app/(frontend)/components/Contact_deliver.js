@@ -18,7 +18,7 @@ const Contact_deliver = ({id}) => {
                                 </div>
                                 <div className='cards_area'>
                                     <div className='card_inner '>
-                                        <div className='circle active'></div>
+                                        <div className='circle '></div>
                                         <h4>Consulting & Strategy</h4>
                                         <p>Understanding client needs</p>
                                     </div>

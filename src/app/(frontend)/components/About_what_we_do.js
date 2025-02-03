@@ -8,28 +8,28 @@ const About_what_we_do = ({id}) => {
 
     const cardData = [
         {
-            heading: 'Market Insights',
-            description: 'Providing updates on market trends and changes to keep businesses ahead of the curve',
+            heading: 'AI Solution and Automation',
+            description: 'Revolutionize your processes with cutting-edge AI solutions. Automate workflows for smarter, faster decision-making.',
         },
         {
-            heading: 'Technology Research',
-            description: 'Conducting in-depth research on technological advancements impacting industries',
-        },
-        {
-            heading: 'Consultancy Services',
-            description: 'Offering free marketing and technological consultancy to empower businesses with actionable advice.',
-        },
-        {
-            heading: 'Tailored Solutions',
-            description: 'Delivering innovative tech solutions designed for the unique needs of relevant industries',
+            heading: 'Mobile App Development',
+            description: 'Building intuitive mobile apps that enhance user experience. Stay connected with your audience anytime, anywhere.',
         },
         {
             heading: 'Custom Software Development',
-            description: 'Building scalable, efficient, and user-focused software solutions',
+            description: 'Tailored software solutions to meet your unique business needs. Empowering efficiency and growth with innovative applications.',
         },
         {
-            heading: 'AI Solutions',
-            description: 'Integrating artificial intelligence to streamline processes and enhance decision-making',
+            heading: 'Website Development',
+            description: 'Stunning, responsive websites designed to captivate and convert. Transform your online presence with cutting-edge web solutions.',
+        },
+        {
+            heading: 'UI/UX Designing',
+            description: 'Creating user-centric designs that blend aesthetics with functionality. Elevate user experience with seamless and engaging interfaces',
+        },
+        {
+            heading: 'Free Tech Consultancy',
+            description: 'Expert guidance to solve your tech challenges at no cost. Your partner in identifying the right technology solutions.',
         },
     ];
     return (

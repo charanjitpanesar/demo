@@ -7,28 +7,28 @@ const Home_cards_section = ({id}) => {
 
     const cardData = [
         {
-            heading: 'Custom Software Development',
-            description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor.',
-        },
-        {
             heading: 'AI Solution and Automation',
-            description: 'Transform your business with AI-driven insights and predictive analytics.',
+            description: 'Revolutionize your processes with cutting-edge AI solutions. Automate workflows for smarter, faster decision-making.',
         },
         {
             heading: 'Mobile App Development',
-            description: 'Seamlessly integrate cloud solutions to enhance scalability and efficiency.',
+            description: 'Building intuitive mobile apps that enhance user experience. Stay connected with your audience anytime, anywhere.',
+        },
+        {
+            heading: 'Custom Software Development',
+            description: 'Tailored software solutions to meet your unique business needs. Empowering efficiency and growth with innovative applications.',
         },
         {
             heading: 'Website Development',
-            description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor.',
+            description: 'Stunning, responsive websites designed to captivate and convert. Transform your online presence with cutting-edge web solutions.',
         },
         {
             heading: 'UI/UX Designing',
-            description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor.',
+            description: 'Creating user-centric designs that blend aesthetics with functionality. Elevate user experience with seamless and engaging interfaces',
         },
         {
             heading: 'Free Tech Consultancy',
-            description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor.',
+            description: 'Expert guidance to solve your tech challenges at no cost. Your partner in identifying the right technology solutions.',
         },
     ];
     return (

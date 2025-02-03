@@ -17,14 +17,14 @@
                 font-weight: 500;
                 position: relative;
                 display: inline-block;
-                &::after{
-                    content: '\F144';
-                    font-family: 'bootstrap-icons'; 
-                    position: absolute;
-                    top: 0;
-                    right: -20px;
-                    font-size: 16px;
-                }
+                // &::after{
+                //     content: '\F144';
+                //     font-family: 'bootstrap-icons'; 
+                //     position: absolute;
+                //     top: 0;
+                //     right: -20px;
+                //     font-size: 16px;
+                // }
             }
             .list_area{
                 padding-top: 20px;
@@ -104,7 +104,7 @@
                 display: flex;
                 flex-direction: column;
                 gap: 50px;
-                width: 200px;
+                width: 250px;
                 max-width: 100%;
                 margin-left: auto;
                 .detail_area{
@@ -120,6 +120,7 @@
                         color: variable.$off_white;
                         display: inline-block;
                         padding-top: 8px;
+                        word-break: break-all;
                         &:hover{
                             opacity: .7;
                         }
@@ -149,6 +150,20 @@
                     font-size: 20px;
                     font-weight: 500;
                     color: variable.$text_color;
+                }
+                ul{
+                    display: flex;
+                    gap: 30px;
+                    padding-top: 20px;
+                    li{
+                        a{
+                            font-size: 22px;
+                            color: variable.$white;
+                            &:hover{
+                                color: variable.$off_white;
+                            }
+                        }
+                    }
                 }
             }
             .inner_right{
@@ -510,7 +525,7 @@
                     padding-top: 0;
                     position: absolute;
                     bottom: 0;
-                    margin-bottom: 36%;
+                    margin-bottom: 50%;
                     .logo_area{
                         width: 65px;
                         height: 60px;
@@ -603,7 +618,7 @@
                     padding-top: 0;
                     position: absolute;
                     bottom: 0;
-                    margin-bottom: 36%;
+                    margin-bottom: 50%;
                     .logo_area{
                         width: 65px;
                         height: 60px;

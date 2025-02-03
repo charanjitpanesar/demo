@@ -15,10 +15,10 @@ const Contact_banner = ({id}) => {
                                 Leveraging deep industry knowledge, technical brilliance, and customer-focused strategies to deliver real results
                             </p>
                             <div className='buttons_area'>
-                                <Link href='/solutions' className='btn-primary btn_1'>
+                                <Link href='/solutions' className='btn-primary btn-green'>
                                     Explore Solutions
                                 </Link>
-                                <Link href='https://wa.me/923299346077'  className='btn-primary btn_2'>
+                                <Link href='https://wa.me/923299346077'  className='btn-primary btn-light'>
                                     Talk to an Expert
                                 </Link>
                             </div>

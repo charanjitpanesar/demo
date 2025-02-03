@@ -70,11 +70,25 @@
                 position: absolute;
                 width: 450px;
                 height: 300px;
+                border-radius: 15px;
+                overflow: hidden;
                 top: 0;
                 right: 0;
                 margin-top: 10%;
                 margin-right: 12%;
                 background-color: variable.$text_color;
+                border-radius: 12px;
+                overflow: hidden;
+                &::after{
+                    content: 'COMING SOON';
+                    position: absolute;
+                    inset: 0;
+                    height: fit-content;
+                    width: fit-content;
+                    margin: auto;
+                    font-size: 20px;
+                    font-weight: 600;
+                }
                 img{
                     height: 100%;
                     width: 100%;

@@ -13,7 +13,7 @@ const About_banner = ({id}) => {
                     <Col xxl={12} xl={12} lg={12} md={12} sm={12} xm={12} className='h-100'>
                         <div className='parent_area'>
                             <div className='button_area'>
-                                <Link href="/contact">
+                                {/* <Link href="/contact">
                                     <div className='logo_area'>
                                         <Image
                                             src={logo}
@@ -24,7 +24,7 @@ const About_banner = ({id}) => {
                                     </div>
                                     <span>Contact Us</span>
                                     <i className="bi bi-arrow-right"></i>
-                                </Link>
+                                </Link> */}
                             </div>
                             <h3>OutSpace Competition with breakthrough Technology 
                             It is what we do</h3>

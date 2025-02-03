@@ -1,6 +1,7 @@
+'use client'
 import React from 'react'
 import '../../../../public/sass/contact_scss/contact_expertise.scss'
-import { Col, Container, Row } from 'react-bootstrap'
+import { Accordion, Col, Container, Row } from 'react-bootstrap'
 import Link from 'next/link'
 
 const Contact_faq = ({id}) => {
@@ -11,8 +12,31 @@ const Contact_faq = ({id}) => {
                     <Row>
                         <Col xxl={12} xl={12} lg={12} md={12} sm={12} xs={12}>
                             <div className='parent_area'>
-                                <div className='left_area'>
-                                    <h3>Frequently Asked <span>Questions</span></h3>
+                                <h3>Frequently Asked <span>Questions</span></h3>
+                                <div className='accordion_area'>
+                                    <Accordion defaultActiveKey="0">
+                                        <Accordion.Item eventKey="0">
+                                            <Accordion.Header>What services does 
+                                            your company offer?</Accordion.Header>
+                                            <Accordion.Body>
+                                            We provide cutting-edge AI solutions, including data analysis, process automation, and personalized tech consulting tailored to various industries
+                                            </Accordion.Body>
+                                        </Accordion.Item>
+                                        <Accordion.Item eventKey="1">
+                                            <Accordion.Header>How do you ensure data privacy and security?</Accordion.Header>
+                                            <Accordion.Body>
+                                            We follow industry-leading security protocols, data encryption, and strict compliance measures to safeguard sensitive information
+                                            </Accordion.Body>
+                                        </Accordion.Item>
+                                        <Accordion.Item eventKey="2">
+                                            <Accordion.Header>Can you customize solutions for my business?</Accordion.Header>
+                                            <Accordion.Body>
+                                            Absolutely! We design personalized strategies that align with your specific business goals and industry challenges.
+                                            </Accordion.Body>
+                                        </Accordion.Item>
+                                    </Accordion>
+                                </div>
+                                {/* <div className='left_area'>
                                     <p>
                                          We will provide answers to
                                         questions that are often asked
@@ -45,7 +69,7 @@ const Contact_faq = ({id}) => {
                                             </p>
                                         </li>
                                     </ul>
-                                </div>
+                                </div> */}
                             </div>
                         </Col>
                     </Row>
