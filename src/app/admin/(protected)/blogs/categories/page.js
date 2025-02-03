@@ -1,6 +1,6 @@
 "use client";
 import { useEffect, useRef, useState } from "react";
-import TableCom from "../../components/table";
+import TableCom from "@/app/admin/components/table";
 import { formatDate, getApi, getUrl, handleBulkAction, handleStatusChange, postApi } from "@/frontend/helpers";
 import { Dropdown, Form, InputGroup, Spinner, Table } from "react-bootstrap";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -15,15 +15,15 @@ import {
   faTimesCircle,
   faTrashAlt,
 } from "@fortawesome/free-solid-svg-icons";
-import TableHeader from "../../components/tableHeader";
-import TableBody from "../../components/tableBody";
+import TableHeader from "@/app/admin/components/tableHeader";
+import TableBody from "@/app/admin/components/tableBody";
 import { usePathname, useSearchParams } from "next/navigation";
-import NavTop from "../../components/navTop";
+import NavTop from "@/app/admin/components/navTop";
 
 const page = () => {
-  const module = {
-    api: "/api/blog/get-blogs",
-    title: "Blogs",
+  const moduleInfo = {
+    api: "/api/blog/categories/get-all",
+    title: "Blogs Categories",
   };
 
   const path = usePathname();
@@ -70,7 +70,7 @@ const page = () => {
 
   const getListing = async () => {
     setLoading(true);
-    let url = new URL(getUrl(module.api));
+    let url = new URL(getUrl(moduleInfo.api));
     let frontendUrl = new URL(path, window.location.origin);
 
     if (abortControllerRef.current) {
@@ -109,7 +109,7 @@ const page = () => {
   };
 
   const handleDelete = async (e, id) => {
-    let res = await handleBulkAction("/api/blog/bulk-action", [id], "delete", false);
+    let res = await handleBulkAction("/api/blog/categories/bulk-action", [id], "delete", false);
     if (res.status) {
       e.target.closest("tr").remove();
     }
@@ -172,7 +172,7 @@ const page = () => {
 
   return (
     <>
-      <NavTop title={module.title} addUrl={"/admin/blogs/add"}>
+      <NavTop title={moduleInfo.title} addUrl={"/admin/blogs/categories/add"}>
         <Dropdown show={show}>
           <Dropdown.Toggle id="dropdown-basic">
             <div className="btn_area">
@@ -262,7 +262,7 @@ const page = () => {
         </Dropdown>
       </NavTop>
       <TableCom top_spacing="top_spacing">
-        <TableHeader title={module.title}>
+        <TableHeader title={moduleInfo.title}>
           <div className="actions">
             <div className="actions_left">
               <Form.Group className="form-group">
@@ -291,7 +291,7 @@ const page = () => {
                   <Dropdown.Item
                     href="#"
                     onClick={() =>
-                      confirm("Are You Sure?") && handleBulkAction("/api/blog/bulk-action", selectedIds, "publish")
+                      confirm("Are You Sure?") && handleBulkAction("/api/blog/categories/bulk-action", selectedIds, "publish")
                     }
                   >
                     <span className="publish"></span> Publish
@@ -299,7 +299,7 @@ const page = () => {
                   <Dropdown.Item
                     href="#"
                     onClick={() =>
-                      confirm("Are You Sure?") && handleBulkAction("/api/blog/bulk-action", selectedIds, "unpublish")
+                      confirm("Are You Sure?") && handleBulkAction("/api/blog/categories/bulk-action", selectedIds, "unpublish")
                     }
                   >
                     <span className="publish unpublish"></span> UnPublish
@@ -307,7 +307,7 @@ const page = () => {
                   <Dropdown.Item
                     href="#"
                     onClick={() =>
-                      confirm("Are You Sure?") && handleBulkAction("/api/blog/bulk-action", selectedIds, "delete")
+                      confirm("Are You Sure?") && handleBulkAction("/api/blog/categories/bulk-action", selectedIds, "delete")
                     }
                   >
                     <span className="cross">
@@ -330,9 +330,6 @@ const page = () => {
                 <th>ID</th>
                 <th role="button" onClick={() => handleSort("title")}>
                   Title <FontAwesomeIcon icon={faSort} />
-                </th>
-                <th role="button" onClick={() => handleSort("category")}>
-                  Category <FontAwesomeIcon icon={faSort} />
                 </th>
                 <th role="button" onClick={() => handleSort("status")}>
                   Status <FontAwesomeIcon icon={faSort} />
@@ -358,10 +355,9 @@ const page = () => {
                       {item._id.slice(0, 4)}...{item._id.slice(-6)}
                     </td>
                     <td>{item.title}</td>
-                    <td>{item.categoryTitle}</td>
                     <td>
                         <Form.Group className='form-group'>
-                            <Form.Check type="switch" defaultChecked={item.status == 1} onChange={(e) => handleStatusChange('/api/actions/change-status', item._id, e.target.checked, 'blogs')} />
+                            <Form.Check type="switch" defaultChecked={item.status == 1} onChange={(e) => handleStatusChange('/api/actions/change-status', item._id, e.target.checked, 'blogs-categories')} />
                         </Form.Group>
                     </td>
                     <td>{formatDate(item.created_at)}</td>
@@ -371,13 +367,13 @@ const page = () => {
                           <FontAwesomeIcon icon={faEllipsisV} />
                         </Dropdown.Toggle>
                         <Dropdown.Menu>
-                          <Dropdown.Item href={`/admin/blogs/${item._id}/edit`}>
+                          <Dropdown.Item href={`/admin/blogs/categories/${item._id}/edit`}>
                             <span className="edit">
                               <FontAwesomeIcon icon={faEdit} />
                             </span>
                             Edit
                           </Dropdown.Item>
-                          <Dropdown.Item href={`/admin/blogs/${item._id}/view`}>
+                          <Dropdown.Item href={`/admin/blogs/categories/${item._id}/view`}>
                             <span className="view">
                               <FontAwesomeIcon icon={faEye} />
                             </span>

@@ -22,7 +22,7 @@ const Page = ({ params }) => {
         let id = params.id;
         setId(id)
 
-        let res = await getApi(`/api/blog/${id}/get`);
+        let res = await getApi(`/api/blog/categories/${id}/get`);
         if(res.status) {
             setData(res.data)
         }
@@ -34,7 +34,7 @@ const Page = ({ params }) => {
 
   return (
     <>
-        <NavTop title="Blog" backUrl="/admin/blogs" editUrl={`/admin/blogs/${id}/edit`}></NavTop>
+        <NavTop title="Blog" backUrl="/admin/blogs/categories" editUrl={`/admin/blogs/${id}/edit`}></NavTop>
         {
             data ?
             (<div className='right_inner top_spacing'>
@@ -57,19 +57,11 @@ const Page = ({ params }) => {
                                     <div className='txt'>{ data.title }</div>
                                 </div>
                             </div>
-                            <div className='row_data'>
-                                <div className='left'>
-                                    <div className='txt'>Category</div>
-                                </div>
-                                <div className='right'>
-                                    <div className='txt'>{ data.categoryTitle }</div>
-                                </div>
-                            </div>
                         </div>
-                        <div className='card-footer'>
+                        {/* <div className='card-footer'>
                             <div className='sub_heading'>Description</div>
                             <div className='desc' dangerouslySetInnerHTML={{ "__html": data.description }}></div>
-                        </div>
+                        </div> */}
                     </ViewData>
                 </div>
                 <div className='right_side'>

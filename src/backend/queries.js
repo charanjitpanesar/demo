@@ -1,7 +1,7 @@
 const { default: dbConnect } = require("./config/db");
 import { ObjectId } from "mongodb";
 
-const formatId = (id) => {
+export const formatId = (id) => {
     if (id instanceof ObjectId) return id;
     return ObjectId.createFromHexString(id);
 };

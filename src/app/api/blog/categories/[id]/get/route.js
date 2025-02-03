@@ -1,23 +1,13 @@
-import { getOne, modifyOne } from "@/backend/queries";
+import { getOne } from "@/backend/queries";
 
-export async function POST(req, { params }) {
+export async function GET(req, { params }) {
     try {
         params = await params;
         let id = params.id;
 
-        let data = await req.json();
-        
-        let blogData = {
-            title: data.title,
-            description: data.description,
-            updated_at: new Date(),
-            status: data.status,
-            category: data.category,
-        }
+        let data = await getOne('blogs-categories', id);
 
-        let updated = await modifyOne('blogs', id, blogData);
-
-        if(updated) {
+        if(data) {
             return Response.json(
                 {
                     status: true,

@@ -1,26 +1,19 @@
-import { add, getOne } from "@/backend/queries";
+import { modifyAllWhere, removeAllWhere } from "@/backend/queries";
 import { ObjectId } from "mongodb";
 
-export async function POST(req) {
+export async function POST(req, res) {
     try {
         let data = await req.json();
-        
-        let blogData = {
-            title: data.title,
-            description: data.description,
-            created_at: new Date(),
-            updated_at: new Date(),
-            status: data.status,
-            category: data.category,
-        }
+        let ids = data.ids;
+        let type = data.type;
 
-        let added = await add("blogs", blogData);
+        let updated = await bulkActions(ids, type);
 
-        if(added) {
+        if(updated) {
             return Response.json(
                 {
                     status: true,
-                    message: "Data Added Successfully!",
+                    message: "Data Updated Successfully!",
                 }, 
                 {
                     status: 200,
@@ -54,7 +47,7 @@ export async function POST(req) {
 
 const bulkActions = async (ids, type) => {
     if(type == "delete") {
-        const result = await removeAllWhere('contacts', { _id: { $in: ids.map(id => ObjectId.createFromHexString(id)) } })
+        const result = await removeAllWhere('blogs-categories', { _id: { $in: ids.map(id => ObjectId.createFromHexString(id)) } })
         return result;
     }
     
@@ -64,7 +57,7 @@ const bulkActions = async (ids, type) => {
     } else if (type == "unpublish") {
         updateData = { status: 0 };
     }
-    console.log(updateData)
-    const result = await modifyAllWhere('contacts', { _id: { $in: ids.map(id => ObjectId.createFromHexString(id)) } }, updateData);
+    
+    const result = await modifyAllWhere('blogs-categories', { _id: { $in: ids.map(id => ObjectId.createFromHexString(id)) } }, updateData);
     return result;
 }

@@ -79,8 +79,16 @@ const checkLogin = async () => {
   }
 }
 
-const handleInputChange = (e, state, stateFunction) => {
-  let value = e.target.value
+const handleInputChange = (e, state, stateFunction, name = null, value = null) => {
+  if(name && value) {
+    stateFunction({
+      ...state,
+      [name]: value
+    })
+    return true;
+  }
+
+  value = e.target.value
   if(e.target.type == "checkbox") {
       value = e.target.checked
   }
@@ -120,8 +128,8 @@ const bulkAction = async (url, ids, type) => {
   });
 };
 
-const handleStatusChange = async (url, id, status) => {
-  return await postApi(url, {id: id, status: status});
+const handleStatusChange = async (url, id, status, collection) => {
+  return await postApi(url, {id: id, status: status, collection: collection});
 }
 
 const handleImageChange = (event, state, stateFunction) => {

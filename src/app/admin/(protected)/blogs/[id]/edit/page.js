@@ -12,8 +12,14 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faTimes } from "@fortawesome/free-solid-svg-icons";
 import Image from "next/image";
 
+import dynamic from 'next/dynamic';
+const Select = dynamic(() => import('react-select'), {
+    ssr: false,
+});
+
 const Page = ({ params }) => {
     const [data, setData] = useState(null);
+    const [categories, setCategories] = useState([]);
     
     const handleFormSubmit = async (e) => {
         params = await params;
@@ -33,6 +39,20 @@ const Page = ({ params }) => {
             console.log(res)
         }
     }
+    
+    const getCategories = async () => {
+        let res = await getApi("/api/blog/categories/get-all?status=publish");
+        if(res.status) {
+            let list = [];
+            res.data.data.forEach(item => {
+                list.push({
+                    value: item._id,
+                    label: item.title,
+                })
+            });
+            setCategories(list)
+        }
+    }
 
     const getData = async () => {
         params = await params;
@@ -46,6 +66,7 @@ const Page = ({ params }) => {
     
     useEffect(() => {
         getData();
+        getCategories();
     }, [])
 
   return (
@@ -70,8 +91,19 @@ const Page = ({ params }) => {
                                 />
                                 </Form.Group>
                             </Col>
+                            <Select
+                                className="select_main"
+                                classNamePrefix="select"
+                                placeholder="Select the value"
+                                isClearable={false}
+                                isMulti={false}
+                                name="category"
+                                onChange={(e) => handleInputChange(e, data, setData, "category", e.value)}
+                                options={categories}
+                                value={categories.find((option) => option.value === data.category) || null}
+                            />
                             <Col xxl={12} xl={12} lg={12} md={12} sm={12} xs={12}>
-                                <Form.Group className='form-group'>
+                                <Form.Group className='form-group mt-4'>
                                 <Form.Label>Description</Form.Label>
                                 <Editor 
                                     value={data.description}

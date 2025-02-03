@@ -1,17 +1,19 @@
-import { getOne } from "@/backend/queries";
+import dbConnect from "@/backend/config/db";
+import { formatId, getOne } from "@/backend/queries";
 
 export async function GET(req, { params }) {
     try {
         params = await params;
         let id = params.id;
 
-        let data = await getOne('blogs', id);
+        // let data = await getOne('blogs', id);
+        let data = await getBlog(id);
 
-        if(data) {
+        if(data && data.length > 0) {
             return Response.json(
                 {
                     status: true,
-                    data: data,
+                    data: data[0],
                     message: "Data Fetched Successfully!",
                 }, 
                 {
@@ -42,4 +44,35 @@ export async function GET(req, { params }) {
             }
         )
     }
+}
+
+
+const getBlog = async (id) => {
+    const db = await dbConnect();
+    const collection = db.collection('blogs');
+
+    let data = await collection.aggregate([
+        { $match: { _id: formatId(id) } }, // Convert `id` to ObjectId
+        {
+            $addFields: {
+                category: { $toObjectId: "$category" } // Convert category to ObjectId
+            }
+        },
+        {
+            $lookup: {
+                from: "blogs-categories",
+                localField: "category",
+                foreignField: "_id",
+                as: "categoryData"
+            }
+        },
+        {
+            $addFields: {
+                categoryTitle: { $arrayElemAt: ["$categoryData.title", 0] }
+            }
+        },
+        { $project: { categoryData: 0 } } // Remove categoryData array
+    ]).toArray();
+    
+    return data;
 }

@@ -5,7 +5,7 @@ export async function GET(req, res) {
         try {
             let where = addFilters(req);
 
-            let contacts = await getBlogs(req, where);
+            let contacts = await getData(req, where);
 
             if(contacts) {
                 return Response.json(
@@ -55,9 +55,9 @@ export async function GET(req, res) {
     }
 }
 
-const getBlogs = async (req, where = {}) => {
+const getData = async (req, where = {}) => {
     const db = await dbConnect();
-    const collection = db.collection('blogs');
+    const collection = db.collection('blogs-categories');
 
     let { searchParams } = new URL(req.url);
     let limit = parseInt(searchParams.get('limit') || 14);
@@ -69,35 +69,8 @@ const getBlogs = async (req, where = {}) => {
     let direction = searchParams.get('direction');
     sort = { [sort]: direction == "desc" ? -1 : 1 };
 
-    // let listing = await collection.find(where).sort(sort).skip(skip).limit(limit).toArray();
+    let listing = await collection.find(where).sort(sort).skip(skip).limit(limit).toArray();
     // let count = await collection.countDocuments(where);
-
-    let listing = await collection.aggregate([
-        { $match: where },
-        { $sort: sort },
-        { $skip: skip },
-        { $limit: limit },
-        {
-            $addFields: {
-                category: { $toObjectId: "$category" }
-            }
-        },
-        {
-            $lookup: {
-                from: "blogs-categories",
-                localField: "category",
-                foreignField: "_id",
-                as: "categoryData"
-            }
-        },
-        {
-            $addFields: {
-                categoryTitle: { $arrayElemAt: ["$categoryData.title", 0] }
-            }
-        },
-        { $project: { categoryData: 0, category: 0 } }
-    ]).toArray();
-
 
     return {
         data: listing,
@@ -145,11 +118,11 @@ const addFilters = (req) => {
     if(status) {
         if(status == "publish") {
             where.status = {
-                $eq: "1"
+                $eq: 1
             };
         } else if (status == "unpublish") {
             where.status = {
-                $eq: "0"
+                $eq: 0
             };
         }
     }

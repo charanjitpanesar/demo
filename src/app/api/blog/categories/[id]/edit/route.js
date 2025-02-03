@@ -9,13 +9,11 @@ export async function POST(req, { params }) {
         
         let blogData = {
             title: data.title,
-            description: data.description,
             updated_at: new Date(),
             status: data.status,
-            category: data.category,
         }
 
-        let updated = await modifyOne('blogs', id, blogData);
+        let updated = await modifyOne('blogs-categories', id, blogData);
 
         if(updated) {
             return Response.json(

@@ -5,8 +5,9 @@ export async function POST(req) {
         const data = await req.json();
         let id = data.id;
         let status = data.status;
+        let collection = data.collection;
 
-        let res = await modifyOne("blogs", id, {status: status ? 1 : 0});
+        let res = await modifyOne(collection, id, {status: status ? 1 : 0});
 
         if(res) {
             return Response.json(

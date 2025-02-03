@@ -1,5 +1,5 @@
 "use client";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import React from 'react';
 import Editor from 'react-simple-wysiwyg';
 import { redirect } from "next/navigation";
@@ -7,11 +7,17 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faTimes } from "@fortawesome/free-solid-svg-icons";
 import Image from "next/image";
 
+import dynamic from 'next/dynamic';
+const Select = dynamic(() => import('react-select'), {
+    ssr: false,
+});
+
 import FormCom from "@/app/admin/components/Form";
 import NavTop from "@/app/admin/components/navTop";
 
 import { Button, Col, Form, Row } from 'react-bootstrap';
-import { handleImageChange, handleInputChange, postApi } from "@/frontend/helpers";
+import { getApi, handleImageChange, handleInputChange, postApi } from "@/frontend/helpers";
+import MultiSelect from "@/app/admin/components/multiSelect";
 
 const Page = () => {
     const [data, setData] = useState({
@@ -20,6 +26,7 @@ const Page = () => {
         status: 1,
         image: null,
     });
+    const [categories, setCategories] = useState([]);
     
     const handleFormSubmit = async (e) => {
         e.preventDefault();
@@ -37,6 +44,24 @@ const Page = () => {
             console.log(res)
         }
     }
+
+    const getCategories = async () => {
+        let res = await getApi("/api/blog/categories/get-all?status=publish");
+        if(res.status) {
+            let list = [];
+            res.data.data.forEach(item => {
+                list.push({
+                    value: item._id,
+                    label: item.title,
+                })
+            });
+            setCategories(list)
+        }
+    }
+
+    useEffect(() => {
+        getCategories();
+    }, [])
     
     return (
         <>
@@ -56,8 +81,18 @@ const Page = () => {
                         />
                         </Form.Group>
                     </Col>
+                    <Select
+                        className="select_main"
+                        classNamePrefix="select"
+                        placeholder="Select the value"
+                        isClearable={false}
+                        isMulti={false}
+                        name="category"
+                        onChange={(e) => handleInputChange(e, data, setData, "category", e.value)}
+                        options={categories}
+                    />
                     <Col xxl={12} xl={12} lg={12} md={12} sm={12} xs={12}>
-                        <Form.Group className='form-group'>
+                        <Form.Group className='form-group mt-4'>
                         <Form.Label>Description</Form.Label>
                         <Editor 
                             value={data.description}
