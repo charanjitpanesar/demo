@@ -7,6 +7,7 @@ import {
     faAngleLeft,
     faAngleRight,
     faBlog,
+    faDashboard,
     faFileAlt
 } from '@fortawesome/free-solid-svg-icons';
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
@@ -14,6 +15,12 @@ import Link from 'next/link';
 import {usePathname} from 'next/navigation';
 
 const sideBarLinks = [
+    {
+        id: 0,
+        title: "Dashboard",
+        icon: faDashboard,
+        link: "/admin/dashboard",
+    },
     {
         id: 1,
         title: "Contact Us",

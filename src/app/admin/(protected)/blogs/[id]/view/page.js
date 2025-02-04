@@ -71,10 +71,15 @@ const Page = ({ params }) => {
                             <div className='desc' dangerouslySetInnerHTML={{ "__html": data.description }}></div>
                         </div>
                     </ViewData>
+                    <ViewData className="mt-2">
+                        <div className='card-body p-4'>
+                            <Image src={data.image} alt="blog-image" width={400} height={300}></Image>
+                        </div>
+                    </ViewData>
                 </div>
                 <div className='right_side'>
                     <ViewData>
-                        <div className="card-body">
+                        <div className="card-body p-3">
                             <div className='row_data'>
                                 <div className='left'>
                                     <div className='txt'>Created At</div>

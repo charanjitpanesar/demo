@@ -71,7 +71,7 @@ const getBlogs = async (req, where = {}) => {
 
     // let listing = await collection.find(where).sort(sort).skip(skip).limit(limit).toArray();
     // let count = await collection.countDocuments(where);
-
+    console.log(where)
     let listing = await collection.aggregate([
         { $match: where },
         { $sort: sort },
@@ -145,11 +145,11 @@ const addFilters = (req) => {
     if(status) {
         if(status == "publish") {
             where.status = {
-                $eq: "1"
+                $eq: 1
             };
         } else if (status == "unpublish") {
             where.status = {
-                $eq: "0"
+                $eq: 0
             };
         }
     }

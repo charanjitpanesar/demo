@@ -13,6 +13,7 @@ export async function POST(req, { params }) {
             updated_at: new Date(),
             status: data.status,
             category: data.category,
+            image: data.filePath ? data.filePath : data.image
         }
 
         let updated = await modifyOne('blogs', id, blogData);

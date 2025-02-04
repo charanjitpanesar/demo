@@ -5,7 +5,7 @@ import { Card } from 'react-bootstrap';
 const ViewData = (props) => {
 
     return (
-        <div className='view_data'>
+        <div className={`view_data ${props.className}`}>
             <Card>
                 <div className='card-header'>
                     {props.title} Information

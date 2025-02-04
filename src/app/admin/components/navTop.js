@@ -8,9 +8,19 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { Col, Row, Dropdown, Form } from 'react-bootstrap';
 import { faAngleLeft, faBars, faCog, faFilter, faSignOutAlt, faTimesCircle, faUser } from '@fortawesome/free-solid-svg-icons';
 import Link from 'next/link';
+import { getApi } from '@/frontend/helpers';
+import { redirect } from 'next/navigation';
 
 
 const NavTop = (props) => {
+
+    const handleLogout = async () => {
+        let res = await getApi("/api/auth/logout");
+        if(res.status) {
+            redirect("/admin/login")
+        }
+    }
+
     return (
         <div className='nav_area'>
             {/* <Row>
@@ -31,8 +41,8 @@ const NavTop = (props) => {
                                     </div>
                                 </Dropdown.Toggle>
 
-                                {/* <Dropdown.Menu>
-                                    <Dropdown.Item href="#">
+                                <Dropdown.Menu>
+                                    {/* <Dropdown.Item href="#">
                                         <div className='top'>
                                             <div className='profile_left'>
                                                 <div className='user_profile'>
@@ -55,13 +65,13 @@ const NavTop = (props) => {
                                     </Dropdown.Item>
                                     <Dropdown.Item href="#">
                                         <div className='mid'><span className='profile_icon'><FontAwesomeIcon icon={faCog} /></span> Setting</div>
-                                    </Dropdown.Item>
+                                    </Dropdown.Item> */}
                                     <Dropdown.Item href="#">
-                                        <div className='bottom'>
+                                        <div className='bottom' onClick={handleLogout}>
                                             <span className='profile_icon'><FontAwesomeIcon icon={faSignOutAlt} /></span> Log out
                                         </div>
                                     </Dropdown.Item>
-                                </Dropdown.Menu> */}
+                                </Dropdown.Menu>
                             </Dropdown>
                         </div>
                         <div className='nav_btm'>

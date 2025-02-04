@@ -12,6 +12,7 @@ export async function POST(req) {
             updated_at: new Date(),
             status: data.status,
             category: data.category,
+            image: data.filePath
         }
 
         let added = await add("blogs", blogData);

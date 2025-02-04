@@ -62,10 +62,10 @@ const Login = () => {
                             />
                         </Form.Group>
                         <Form.Group className='form-group'>
-                            <div className='row2'>
+                            {/* <div className='row2'>
                                 <Form.Label>Password</Form.Label>
                                 <Link href="./forgotPassword" className='forgot'>Forgot Password?</Link>
-                            </div>
+                            </div> */}
                             <InputGroup>
                                 <Form.Control
                                     required
@@ -79,7 +79,7 @@ const Login = () => {
                                 </InputGroup.Text>
                             </InputGroup>
                         </Form.Group>
-                        <Form.Check label="Remember Me" />
+                        {/* <Form.Check label="Remember Me" /> */}
                         <div className='btn_area'>
                             <Button type="submit">Sign in</Button>
                         </div>

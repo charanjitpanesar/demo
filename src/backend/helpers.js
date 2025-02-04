@@ -52,3 +52,16 @@ export const sendMail = async (to, subject, message) => {
 export const checkVar = (data) => {
     return typeof data != "undefined" && data != null;
 } 
+
+
+export const getBearerToken = (req) => {
+    let authorization = req.headers.get('authorization')
+    if(authorization) {
+        let tokenArr = authorization.split(" ");
+        let token = tokenArr[1];
+
+        return token;
+    } else {
+        return false;
+    }
+}

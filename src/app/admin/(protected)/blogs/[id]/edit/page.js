@@ -132,7 +132,7 @@ const Page = ({ params }) => {
                                                 <FontAwesomeIcon icon={faTimes} onClick={() => setData({...data, image: null})} />
                                             </span>
                                             <Image
-                                                src={URL.createObjectURL(data.image)}
+                                                src={data.filePath ? data.filePath : data.image}
                                                 alt='...'
                                                 priority="low"
                                                 width={100}

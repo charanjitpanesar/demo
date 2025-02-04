@@ -132,14 +132,20 @@ const handleStatusChange = async (url, id, status, collection) => {
   return await postApi(url, {id: id, status: status, collection: collection});
 }
 
-const handleImageChange = (event, state, stateFunction) => {
+const handleImageChange = async (event, state, stateFunction) => {
   const file = event.target.files[0];
 
   if (file) {
+    const formData = new FormData();
+    formData.append('file', file);
+
+    let res = await postFormApi("/api/actions/upload", formData)
+
     if(state && stateFunction) {
       stateFunction({
         ...state,
-        [event.target.name]: file
+        [event.target.name]: file,
+        filePath: res.filePath
       })
     } else {
       return file;
