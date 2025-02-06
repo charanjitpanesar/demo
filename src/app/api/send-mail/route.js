@@ -8,7 +8,7 @@ export async function POST(req, res) {
             const data = await req.json();
             const type = searchParams.get('type');
 
-            let toEmail = "ashu669212@gmail.com";
+            let toEmail = "ak669212@gmail.com";
             let codes = {
                 "{fullname}": data.fullname,
                 "{phonenumber}": data.phonenumber,
