@@ -189,7 +189,7 @@ const Solution_calender = ({ id }) => {
                                                 <div className="right ">
                                                     <div className='inner_right'>
                                                         <div className="top">
-                                                            <div className="left_clock">Wed <span>04</span></div>
+                                                            <div className="left_clock">{appointment.toLocaleDateString('en-US', { weekday: 'short', month: 'short'})} <span>{appointment.getDate()}</span></div>
                                                             <div className="right_clock">
                                                                 <div className="format">
                                                                     {

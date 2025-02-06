@@ -5,9 +5,7 @@ import { postApi } from '@/frontend/helpers';
 import { toast } from 'react-toastify';
 
 const Main_modal = ({ show, setShow, type, appointment }) => {
-    const [formData, setFormData] = useState({
-        appointment: appointment
-    });
+    const [formData, setFormData] = useState({});
     const [mailSent, setMailSent] = useState(false);
     const [formSubmitted, setFormSubmitted] = useState(false);
     const [formErrors, setFormErrors] = useState({
@@ -40,7 +38,8 @@ const Main_modal = ({ show, setShow, type, appointment }) => {
             setFormSubmitted(false);
             return false;
         }
-
+        formData.appointment = appointment;
+        
         let resp = await postApi(`/api/send-mail?type=${type}`, formData);
         if(resp.status)
         {

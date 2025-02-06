@@ -83,7 +83,7 @@ const Page = ({ params }) => {
                                         <div className='txt'>Appointment</div>
                                     </div>
                                     <div className='right'>
-                                        <div className='txt'>{ data.appointment }</div>
+                                        <div className='txt'>{ formatDate(data.appointment) }</div>
                                     </div>
                                 </div>
                             </div>
