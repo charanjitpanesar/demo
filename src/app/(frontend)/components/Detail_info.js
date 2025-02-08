@@ -2,10 +2,10 @@ import React from 'react'
 import { Col, Container, Row } from 'react-bootstrap'
 import '../../../../public/sass/blog_detail_scss/detail_info.scss'
 
-const Detail_info = ({id}) => {
+const Detail_info = ({id, description,created_at,categoryTitle}) => {
     const data = [
-        { name: 'Publication Date', value: 'October 15, 2023' },
-        { name: 'Category', value: 'Healthcare' },
+        { name: 'Publication Date', value: new Date(created_at).toDateString()},
+        { name: 'Category', value: categoryTitle },
         { name: 'Reading Time', value: '10 Min' },
         { name: 'Author Name', value: 'Dr. Emily Walker' }
     ]
@@ -21,15 +21,7 @@ const Detail_info = ({id}) => {
                                     <h3>Introduction</h3>
                                     <p>Artificial Intelligence (AI) has emerged as a transformative force in the healthcare industry, reshaping patient care, diagnostics, and research. In this blog post, we explore the profound impact of AI in healthcare, from revolutionizing diagnostic accuracy to enhancing patient outcomes.</p>
                                 </div>
-                                <div className='main_content'>
-                                    <h3>Artificial Intelligence (AI)</h3>
-                                    <p>Artificial Intelligence (AI) has permeated virtually every aspect of our lives, and healthcare is no exception. The integration of AI in healthcare is ushering in a new era of medical practice, where machines complement the capabilities of healthcare professionals, ultimately improving patient outcomes and the efficiency of the healthcare system. In this blog post, we will delve into the diverse applications of AI in healthcare, from diagnostic imaging to personalized treatment plans, and address the ethical considerations surrounding this revolutionary technology.</p>
-                                    <p>Artificial Intelligence (AI) has permeated virtually every aspect of our lives, and healthcare is no exception. The integration of AI in healthcare is ushering in a new era of medical practice, where machines complement the capabilities of healthcare professionals, ultimately improving patient outcomes and the efficiency of the healthcare system. In this blog post, we will delve into the diverse applications of AI in healthcare, from diagnostic imaging to personalized treatment plans, and address the ethical considerations surrounding this revolutionary technology.</p>
-                                    <h3>Predictive Analytics and Disease Prevention</h3>
-                                    <p>
-                                        One of the most prominent applications of AI in healthcare is in diagnostic imaging. AI algorithms have demonstrated remarkable proficiency in interpreting medical images such as X-rays, MRIs, and CT scans. They can identify anomalies and deviations that might be overlooked by the human eye. This is particularly valuable in early disease detection. For instance, AI can aid radiologists in detecting minute irregularities in mammograms or identifying critical findings in chest X-rays, potentially indicative of life-threatening conditions.
-                                    </p>
-                                </div>
+                                <div className='main_content' dangerouslySetInnerHTML={{__html: description}}/>
                             </div>
                             <div className='right_area'>
                                 <div className="social_area">
