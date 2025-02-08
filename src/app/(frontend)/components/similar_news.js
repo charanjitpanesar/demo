@@ -36,7 +36,7 @@ const Similar_news = ({ id, sec_title, btn_text }) => {
                                     {
                                         btn_text &&
                                         <div className="button_area">
-                                            <Link href={'/'} className='view_all'>
+                                            <Link href={'/blogs'} className='view_all'>
                                                 {btn_text}
                                                 <span> <i className="bi bi-arrow-up-right"></i></span>
                                             </Link>
