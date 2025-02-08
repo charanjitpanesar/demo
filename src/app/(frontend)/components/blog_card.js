@@ -11,7 +11,11 @@ const Blog_card = ({ title,id, c_title, src ,sec_title}) => {
             <div className="card_item">
                 <div className="top_area">
                     <div className="img_wrapper">
-                        <Image src={`${BASE_URL}${src}`} alt='...' title='...' fetchPriority='low' priority={false} width={200} height={150} />
+                        {
+                            src ? 
+                            <Image src={`${BASE_URL}/${src}`} alt='...' title='...' fetchPriority='low' priority={false} width={200} height={150} />
+                            : ""
+                        }
                     </div>
                 </div>
                 <div className="bottom_area">

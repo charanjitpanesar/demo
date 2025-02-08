@@ -14,7 +14,7 @@ const Similar_news = ({ id, sec_title, btn_text }) => {
     async function getBlogs() {
         try {
             let limitParam = pathname !== "/blogs" ? "&limit=3" : "";
-            const res = await getApi(`http://localhost:3000/api/blog/get-blogs?status=published&${limitParam}`)
+            const res = await getApi(`/api/blog/get-blogs?status=published&${limitParam}`)
             setBlogData(res?.data?.data)
         } catch (error) {
             console.error("Error fetching blogs:", error);

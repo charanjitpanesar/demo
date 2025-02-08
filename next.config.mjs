@@ -16,7 +16,8 @@ const nextConfig = {
                 hostname: new URL(process.env.BASE_URL).hostname,
                 pathname: '/uploads/**',
             },
-        ]
+        ],
+        domains: ['localhost'],
     }
 };
 
