@@ -2,6 +2,7 @@
 import NavTop from "@/app/admin/components/navTop";
 import ViewData from "@/app/admin/components/viewData";
 import { formatDate, getApi } from "@/frontend/helpers";
+import Link from "next/link";
 import { useEffect, useState } from "react";
 
 const Page = ({ params }) => {
@@ -83,14 +84,30 @@ const Page = ({ params }) => {
                                         <div className='txt'>Appointment</div>
                                     </div>
                                     <div className='right'>
-                                        <div className='txt'>{ formatDate(data.appointment) }</div>
+                                        <div className='txt'>{ data.appointment && formatDate(data.appointment) }</div>
                                     </div>
                                 </div>
                             </div>
-                            {/* <div className='card-footer'>
-                                <div className='sub_heading'>Description</div>
-                                <div className='desc'>jskldjljada</div>
-                            </div> */}
+                            {
+                                data.job_data ? 
+                                <div className='card-footer'>
+                                    <div className='sub_heading'>Job Data</div>
+                                    <div className='desc' style={{ fontSize: "16px" }}>
+                                        <b>First Name: </b> {data.job_data.first_name} <br /><br />
+                                        <b>Last Name: </b> {data.job_data.last_name} <br /><br />
+                                        <b>Country Origin: </b> {data.job_data.country_origin} <br /><br />
+                                        <b>State: </b> {data.job_data.state} <br /><br />
+                                        <b>Comments: </b> {data.job_data.comments} <br /><br />
+                                    </div>
+                                    <div className="sub_heading">
+                                        Download CV: <Link href={data.job_data.filePath} target="_blank" download={true} className='btn_area'>
+                                            <div className='back_btn'>
+                                                Download
+                                            </div>
+                                        </Link>
+                                    </div>
+                                </div> : ""
+                            }
                         </ViewData>
                     </div>
                     <div className='right_side'>

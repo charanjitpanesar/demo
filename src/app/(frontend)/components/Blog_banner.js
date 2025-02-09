@@ -53,7 +53,7 @@ const Blog_banner = ({ id }) => {
                                                     </div>
                                                 </div>
                                             </div>
-                                            <div className='lower_area'>
+                                            {/* <div className='lower_area'>
                                                 <div className='button_area'>
                                                     <Link href='/' className='btn-primary btn-black'>Explore Resources</Link>
                                                 </div>
@@ -69,7 +69,7 @@ const Blog_banner = ({ id }) => {
                                                 <div className='text'>
                                                     Not your usual feeds filled with trash, But content we send are content you need!
                                                 </div>
-                                            </div>
+                                            </div> */}
                                         </div>
                                     </Col>
                                     <Col xxl={4} xl={4} lg={12} md={12} sm={12} xs={12}>

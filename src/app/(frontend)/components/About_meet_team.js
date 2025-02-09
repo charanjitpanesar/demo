@@ -61,6 +61,7 @@ const About_meet_team = ({id}) => {
                                                 modules={[FreeMode,  Thumbs , Controller]}
                                                 className="mySwiper2"
                                                 onSwiper={setControlledSwiper}
+                                                allowTouchMove={false}
                                             >
                                                 <SwiperSlide>
                                                     <div className='slide_inner'>

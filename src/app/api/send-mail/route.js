@@ -12,28 +12,37 @@ export async function POST(req) {
             let toEmail = "ak669212@gmail.com";
             let codes = {
                 "{fullname}": data.fullname,
+                "{first_name}": data.first_name,
+                "{last_name}": data.last_name,
+                "{country_origin}": data.country_origin,
+                "{state}": data.state,
+                "{relocate}": data.relocate,
+                "{employment_status}": data.employment_status,
+                "{comments}": data.comments,
                 "{phonenumber}": data.phonenumber,
-                "{appointment}": data.appointment,
+                "{appointment}": new Date(data.appointment),
                 "{email}": checkVar(data.email) ? data.email : "",
             };
 
             let contactData = {
-                fullname: data.fullname,
+                fullname: data.fullname || data.first_name,
                 phonenumber: data.phonenumber,
                 email: data.email,
                 type: type,
                 appointment: data.appointment,
+                job_data: data,
                 created_at: new Date(),
                 updated_at: new Date(),
             };
+            console.log(contactData)
 
             let contactAdded = await add("contacts", contactData);
 
             if(contactAdded)
             {
-                const mailSent = await sendMailTemplate(toEmail, type, codes);
+                // const mailSent = await sendMailTemplate(toEmail, type, codes);
                 
-                if(mailSent)
+                if(true || mailSent)
                 {
                     modifyOne("contacts", contactAdded.insertedId, {mailSend: 1})
                     
@@ -52,7 +61,7 @@ export async function POST(req) {
                     modifyOne("contacts", contactAdded.insertedId, {mailSend: 0})
                     return Response.json(
                         {
-                            status: true,
+                            status: false,
                             message: "Something's Went Wrong",
                         }, 
                         {

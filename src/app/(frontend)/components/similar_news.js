@@ -14,7 +14,7 @@ const Similar_news = ({ id, sec_title, btn_text }) => {
     async function getBlogs() {
         try {
             let limitParam = pathname !== "/blogs" ? "&limit=3" : "";
-            const res = await getApi(`/api/blog/get-blogs?status=published&${limitParam}`)
+            const res = await getApi(`/api/blog/get-blogs?status=publish&${limitParam}`)
             setBlogData(res?.data?.data)
         } catch (error) {
             console.error("Error fetching blogs:", error);
@@ -26,6 +26,7 @@ const Similar_news = ({ id, sec_title, btn_text }) => {
     }, [])
     return (
         <>
+            { blogData && blogData.length ? 
             <section className="news" id={id}>
                 <Container>
                     <Row>
@@ -59,6 +60,8 @@ const Similar_news = ({ id, sec_title, btn_text }) => {
                     </Row>
                 </Container>
             </section>
+            : ""    
+            }
         </>
     )
 }

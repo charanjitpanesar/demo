@@ -18,9 +18,25 @@ const bookAppointment = {
       Phone Number: {phonenumber}
       Appointment Time: {appointment}
     `,
-  };
+};
+
+const career = {
+    subject: "New Job Application",
+    message: `
+      New Job Application!
+      
+      First Name: {first_name}
+      Last Name: {last_name}
+      Country Origin: {country_origin}
+      State: {state}
+      Willing to Relocate: {relocate}
+      Employment Status: {employment_status}
+      Comments: {comments}
+    `,
+};
 
 export const emailTemplates = {
     bookCall,
     bookAppointment,
+    career,
 }; 
