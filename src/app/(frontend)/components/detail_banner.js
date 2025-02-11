@@ -2,6 +2,7 @@ import React from 'react'
 import { Col, Container, Row } from 'react-bootstrap'
 import '../../../../public/sass/blog_detail_scss/blog_detail.scss'
 import Image from 'next/image'
+import { publicPath } from '@/frontend/helpers'
 
 const Detail_banner = ({ id, image, title }) => {
     const BASE_URL = process.env.BASE_URL
@@ -9,7 +10,7 @@ const Detail_banner = ({ id, image, title }) => {
         <>
             <section className='detail_banner_section' id={id}>
                 <div className="banner_img">
-                    {image ? <Image src={`${BASE_URL}${image}`} alt='...' title='....' fetchPriority='low' priority={false} width={500} height={500} />: null}
+                    {image ? <Image src={publicPath(image)} alt='...' title='....' fetchPriority='low' priority={false} width={500} height={500} />: null}
                 </div>
                 <Container>
                     <Row>

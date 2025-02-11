@@ -4,7 +4,7 @@ import FormCom from "@/app/admin/components/Form";
 import NavTop from "@/app/admin/components/navTop";
 import { Button, Card, Col, Form, InputGroup, Row } from 'react-bootstrap';
 import { useEffect, useState } from "react";
-import { getApi, handleImageChange, handleInputChange, postApi, postFormApi } from "@/frontend/helpers";
+import { getApi, handleImageChange, handleInputChange, postApi, postFormApi, publicPath } from "@/frontend/helpers";
 import React from 'react';
 import Editor from 'react-simple-wysiwyg';
 import { redirect } from "next/navigation";
@@ -131,8 +131,8 @@ const Page = ({ params }) => {
                                             <span className='cross_icon'>
                                                 <FontAwesomeIcon icon={faTimes} onClick={() => setData({...data, image: null})} />
                                             </span>
-                                            <Image
-                                                src={data.filePath ? data.filePath : data.image}
+                                            <img
+                                                src={data.filePath ? publicPath(data.filePath) : publicPath(data.image)}
                                                 alt='...'
                                                 priority="low"
                                                 width={100}

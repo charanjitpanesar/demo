@@ -1,9 +1,0 @@
-[{
-  "_id": {
-    "$oid": "6791179863b3d591295828f7"
-  },
-  "password": "$2b$10$5DPtDHcuiz3EvYWmUmFoMePiVNvvX/ALXhIdIGH4bsFpXgLjduUjq",
-  "email": "admin",
-  "expires_at": "2025-02-05T16:30:09.709Z",
-  "token": "33b62314b79fa9d789af93509b83494b"
-}]

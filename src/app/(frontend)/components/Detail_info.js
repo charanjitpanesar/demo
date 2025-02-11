@@ -21,7 +21,7 @@ const Detail_info = ({id, description,created_at,categoryTitle}) => {
                                     <h3>Introduction</h3>
                                     <p>Artificial Intelligence (AI) has emerged as a transformative force in the healthcare industry, reshaping patient care, diagnostics, and research. In this blog post, we explore the profound impact of AI in healthcare, from revolutionizing diagnostic accuracy to enhancing patient outcomes.</p>
                                 </div> */}
-                                <div className='main_content' dangerouslySetInnerHTML={{__html: description}}/>
+                                <div className='main_content text-white' dangerouslySetInnerHTML={{__html: description}}/>
                             </div>
                             <div className='right_area'>
                                 {/* <div className="social_area">

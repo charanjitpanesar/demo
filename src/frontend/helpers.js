@@ -157,6 +157,10 @@ const handleImageChange = async (event, state, stateFunction) => {
 //   await getApi("/api/auth/update-admin-token");
 // }
 
+const publicPath = (url) => {
+  return process.env.PUBLIC_PATH + url;
+}
+
 export {
   formatDate,
   postApi,
@@ -169,4 +173,5 @@ export {
   bulkAction,
   handleStatusChange,
   handleImageChange,
+  publicPath
 }

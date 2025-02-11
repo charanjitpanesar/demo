@@ -17,7 +17,7 @@ export async function POST(request) {
       return NextResponse.json({ error: 'No file uploaded' }, { status: 400 });
     }
 
-    const uploadsDir = path.join(process.cwd(), '/public/uploads');
+    const uploadsDir = path.join(process.cwd(), '/uploads');
     if (!fs.existsSync(uploadsDir)) {
       fs.mkdirSync(uploadsDir, { recursive: true });
     }
@@ -28,7 +28,7 @@ export async function POST(request) {
     const buffer = await file.arrayBuffer();
     fs.writeFileSync(filePath, Buffer.from(buffer));
 
-    return NextResponse.json({ success: true, filePath: `/uploads/${fileName}` });
+    return NextResponse.json({ success: true, filePath: `/${fileName}` });
   } catch (error) {
     console.error('Error uploading file:', error);
     return NextResponse.json({ error: 'Failed to upload file' }, { status: 500 });

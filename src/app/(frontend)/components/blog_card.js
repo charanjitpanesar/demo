@@ -2,6 +2,7 @@ import Image from 'next/image'
 import React from 'react'
 import Link from 'next/link'
 import '../../../../public/sass/pages/cards.scss';
+import { publicPath } from '@/frontend/helpers';
 
 const Blog_card = ({ title,id, c_title, src ,sec_title}) => {
     const social = [{ icon: <i className="bi bi-heart"></i>, val: '2.2k' }, { icon: <i className="bi bi-send"></i>, val: '60' }]
@@ -13,7 +14,7 @@ const Blog_card = ({ title,id, c_title, src ,sec_title}) => {
                     <div className="img_wrapper">
                         {
                             src ? 
-                            <Image src={`${BASE_URL}/${src}`} alt='...' title='...' fetchPriority='low' priority={false} width={200} height={150} />
+                            <Image src={publicPath(src)} alt='...' title='...' fetchPriority='low' priority={false} width={200} height={150} />
                             : ""
                         }
                     </div>
