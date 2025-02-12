@@ -36,7 +36,7 @@ const Page = ({ params }) => {
                                         <div className='txt'>Id</div>
                                     </div>
                                     <div className='right'>
-                                        <div className='txt'>{ data._id }</div>
+                                        <div className='txt'>{ data?._id }</div>
                                     </div>
                                 </div>
                                 <div className='row_data'>
@@ -44,7 +44,7 @@ const Page = ({ params }) => {
                                         <div className='txt'>Full Name</div>
                                     </div>
                                     <div className='right'>
-                                        <div className='txt'>{ data.fullname }</div>
+                                        <div className='txt'>{ data?.fullname }</div>
                                     </div>
                                 </div>
                                 <div className='row_data'>
@@ -52,7 +52,7 @@ const Page = ({ params }) => {
                                         <div className='txt'>Phone Number</div>
                                     </div>
                                     <div className='right'>
-                                        <div className='txt'>{ data.phonenumber }</div>
+                                        <div className='txt'>{ data?.phonenumber }</div>
                                     </div>
                                 </div>
                                 <div className='row_data'>
@@ -60,7 +60,7 @@ const Page = ({ params }) => {
                                         <div className='txt'>Email</div>
                                     </div>
                                     <div className='right'>
-                                        <div className='txt'>{ data.email }</div>
+                                        <div className='txt'>{ data?.email }</div>
                                     </div>
                                 </div>
                                 <div className='row_data'>
@@ -68,7 +68,7 @@ const Page = ({ params }) => {
                                         <div className='txt'>Type</div>
                                     </div>
                                     <div className='right'>
-                                        <div className='txt'>{ data.type }</div>
+                                        <div className='txt'>{ data?.type }</div>
                                     </div>
                                 </div>
                                 <div className='row_data'>
@@ -76,7 +76,7 @@ const Page = ({ params }) => {
                                         <div className='txt'>Mail Sent</div>
                                     </div>
                                     <div className='right'>
-                                        <div className='txt'>{ data.mailSent == 1 ? "Yes" : "No" }</div>
+                                        <div className='txt'>{ data?.mailSent == 1 ? "Yes" : "No" }</div>
                                     </div>
                                 </div>
                                 <div className='row_data'>
@@ -84,12 +84,12 @@ const Page = ({ params }) => {
                                         <div className='txt'>Appointment</div>
                                     </div>
                                     <div className='right'>
-                                        <div className='txt'>{ data.appointment && formatDate(data.appointment) }</div>
+                                        <div className='txt'>{ data?.appointment && formatDate(data?.appointment) }</div>
                                     </div>
                                 </div>
                             </div>
                             {
-                                data.job_data ? 
+                                data.job_data && data.job_data.first_name && data.job_data.last_name ? 
                                 <div className='card-footer'>
                                     <div className='sub_heading'>Job Data</div>
                                     <div className='desc' style={{ fontSize: "16px" }}>
@@ -99,13 +99,17 @@ const Page = ({ params }) => {
                                         <b>State: </b> {data.job_data.state} <br /><br />
                                         <b>Comments: </b> {data.job_data.comments} <br /><br />
                                     </div>
-                                    <div className="sub_heading">
-                                        Download CV: <Link href={data.job_data.filePath} target="_blank" download={true} className='btn_area'>
-                                            <div className='back_btn'>
-                                                Download
+                                    {
+                                        data?.job_data?.filePath ? 
+                                            <div className="sub_heading">
+                                                Download CV: <Link href={data.job_data.filePath} target="_blank" download={true} className='btn_area'>
+                                                    <div className='back_btn'>
+                                                        Download
+                                                    </div>
+                                                </Link>
                                             </div>
-                                        </Link>
-                                    </div>
+                                        : ""
+                                    }
                                 </div> : ""
                             }
                         </ViewData>

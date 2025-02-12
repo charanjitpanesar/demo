@@ -12,7 +12,7 @@ const page = () => {
     const [blogDetail, setBlogDetail] = useState({})
     const {id} = useParams()
     async function getBlogDetail() {
-        let res = await getApi(`http://localhost:3000/api/blog/${id}/get`)
+        let res = await getApi(`/api/blog/${id}/get`)
         setBlogDetail(res?.data)
     }
     useEffect(()=>{

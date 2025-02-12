@@ -17,9 +17,18 @@ const nextConfig = {
                 hostname: new URL(process.env.BASE_URL).hostname,
                 pathname: '/uploads/**',
             },
+            {
+                protocol: 'http',
+                hostname: 'localhost',
+                pathname: '/**',
+            },
+            {
+                protocol: 'https',
+                hostname: 'images.saynt.org',
+                pathname: '/**',
+            },
         ],
-        domains: ['localhost'],
-    }
+    },
 };
 
 export default nextConfig;

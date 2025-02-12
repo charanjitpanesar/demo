@@ -25,7 +25,7 @@ const Blog_card = ({ title,id, c_title, src ,sec_title}) => {
                         <p>{c_title}</p>
                     </div>
                     <div className="social">
-                        <div className="left">
+                        {/* <div className="left">
                             {
                                 social?.map((item, i) => (
                                     <div className="chip" key={i}>
@@ -34,7 +34,7 @@ const Blog_card = ({ title,id, c_title, src ,sec_title}) => {
                                     </div>
                                 ))
                             }
-                        </div>
+                        </div> */}
                         <div className="right">
                             <Link href={sec_title === 'Similar News'? id : `blog_detail/${id}`} className='read'>Read More <span><i className="bi bi-arrow-up-right"></i></span></Link>
                         </div>
