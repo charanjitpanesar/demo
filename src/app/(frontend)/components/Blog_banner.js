@@ -15,7 +15,7 @@ const Blog_banner = ({ id }) => {
                         <Col xxl={12} xl={12} lg={12} md={12} sm={12} xs={12}>
                             <div className='parent_area'>
                                 <Row>
-                                    <Col xxl={8} xl={8} lg={12} md={12} sm={12} xs={12}>
+                                    <Col xxl={12} xl={8} lg={12} md={12} sm={12} xs={12}>
                                         <div className='left_area'>
                                             <div className='upper_area'>
                                                 <h3>Explore Our Knowledge Hub</h3>

@@ -5,6 +5,8 @@
 .blog_banner_section{
     margin-top: 162px;
     padding-top: 90px;
+    height: calc(100dvh - 162px);
+    align-content: center;
     .parent_area{
         .left_area{
             .upper_area{
@@ -12,7 +14,7 @@
                 justify-content: space-between;
                 h3{
                     width: 50%;
-                    font-size: 80px;
+                    font-size: 100px;
                     font-weight: 500;
                     color: transparent;
                     background: linear-gradient(126.57deg, #FFFFFF, #00E0E0, #FFFFFF);
@@ -66,6 +68,7 @@
                     display: flex;
                     gap: 100px;
                     align-items: center;
+                    display: none;
                     .lines_img{
                         position: absolute;
                         right: 30px;
@@ -174,6 +177,7 @@
             flex-direction: column;
             justify-content: space-between;
             padding-left: 80px;
+            display: none;
             .box1{
                 margin-top: 80px;
                 padding: 25px 30px;
@@ -219,6 +223,7 @@
                 display: flex;
                 align-items: center;
                 gap: 40px;
+                display: none;
                 .image_area{
                     flex-shrink: 0;
                     width: 46px;
