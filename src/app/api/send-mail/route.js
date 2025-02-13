@@ -9,7 +9,7 @@ export async function POST(req) {
             const data = await req.json();
             const type = searchParams.get('type');
 
-            let toEmail = "ak669212@gmail.com";
+            let toEmail = process.env.TO_EMAIL;
             let codes = {
                 "{fullname}": data.fullname,
                 "{first_name}": data.first_name,
