@@ -1,11 +1,22 @@
-import React from 'react'
+'use client'
+import React, { useState } from 'react'
 import { Col, Container, Row } from 'react-bootstrap'
 
 import '../../../../public/sass/blog_scss/blog_newsletter.scss'
 import newsletterImg from '../../../../public/images/em.svg'
 import Image from 'next/image'
+import Link from 'next/link'
+import Main_modal from './modal'
 
 const Blog_newsletter = ({id}) => {
+        const [show, setShow] = useState(false);
+    
+
+     const handleStartedClick = (e) => {
+            e.preventDefault();
+            
+            setShow(true);
+        }
     return (
         <>
             <section className='blog_newsletter_section' id={id}>
@@ -17,6 +28,7 @@ const Blog_newsletter = ({id}) => {
                                 <h3> Starts Here!</h3>
                                 <p> subscribe to our newsletter</p>
                                 <div className='image_area'>
+                                    <Link href="#" className="link_area" onClick={handleStartedClick}></Link>
                                     <Image
                                         src={newsletterImg}
                                         alt='...'
@@ -29,6 +41,7 @@ const Blog_newsletter = ({id}) => {
                     </Row>
                 </Container>
             </section>
+            <Main_modal show={show} setShow={setShow} type="bookCall" appointment={true} newsletter={true}/>
         </>
     )
 }

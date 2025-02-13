@@ -4,7 +4,7 @@ import '../../../../public/sass/pages/modal.scss';
 import { postApi } from '@/frontend/helpers';
 import { toast } from 'react-toastify';
 
-const Main_modal = ({ show, setShow, type, appointment }) => {
+const Main_modal = ({ show, setShow, type, appointment , newsletter }) => {
     const [formData, setFormData] = useState({});
     const [mailSent, setMailSent] = useState(false);
     const [formSubmitted, setFormSubmitted] = useState(false);
@@ -71,10 +71,21 @@ const Main_modal = ({ show, setShow, type, appointment }) => {
                 </Modal.Header>
                 <Modal.Body>
                     <Form action=''>
-                        <Form.Group className='form-group'>
-                            <Form.Label>Full Name</Form.Label>
-                            <Form.Control onChange={handleInputChange} type='text' placeholder='Enter Full Name' name='fullname' aria-label='fullname' />
-                        </Form.Group>
+                        {
+                            !newsletter &&(
+                                <>
+                                    <Form.Group className='form-group'>
+                                        <Form.Label>Full Name</Form.Label>
+                                        <Form.Control onChange={handleInputChange} type='text' placeholder='Enter Full Name' name='fullname' aria-label='fullname' />
+                                    </Form.Group>
+                                    <Form.Group controlId='phonenumber' className='form-group'>
+                                        <Form.Label>Mobile No.</Form.Label>
+                                        <Form.Control onChange={handleInputChange} type='tel' placeholder='Enter your Mobile No.' name='phonenumber' aria-label='phonenumber' autoComplete='tel' />
+                                    </Form.Group>
+                                </>
+
+                            )
+                        }
                         {
                             appointment ? (
                                 <Form.Group controlId='email' className='form-group'>
@@ -83,10 +94,7 @@ const Main_modal = ({ show, setShow, type, appointment }) => {
                                 </Form.Group>
                             ) : ""
                         }
-                        <Form.Group controlId='phonenumber' className='form-group'>
-                            <Form.Label>Mobile No.</Form.Label>
-                            <Form.Control onChange={handleInputChange} type='tel' placeholder='Enter your Mobile No.' name='phonenumber' aria-label='phonenumber' autoComplete='tel' />
-                        </Form.Group>
+                        
                         <Modal.Footer>
                             {
                                 formSubmitted ? (
