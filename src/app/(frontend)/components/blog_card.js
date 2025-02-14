@@ -15,7 +15,7 @@ const Blog_card = ({ title,id, c_title, src ,sec_title}) => {
                     <div className="img_wrapper">
                         {
                             src ? 
-                            <Image src={publicPath(src)?  b3: publicPath(src)} alt='...' title='...' fetchPriority='low' priority={false} width={200} height={150} />
+                            <Image src={publicPath(src)} alt='...' title='...' fetchPriority='low' priority={false} width={200} height={150} />
                             : ""
                         }
                     </div>

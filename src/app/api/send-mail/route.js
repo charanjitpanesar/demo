@@ -34,15 +34,14 @@ export async function POST(req) {
                 created_at: new Date(),
                 updated_at: new Date(),
             };
-            console.log(contactData)
 
             let contactAdded = await add("contacts", contactData);
 
             if(contactAdded)
             {
-                // const mailSent = await sendMailTemplate(toEmail, type, codes);
+                const mailSent = await sendMailTemplate(toEmail, type, codes);
                 
-                if(true || mailSent)
+                if(mailSent)
                 {
                     modifyOne("contacts", contactAdded.insertedId, {mailSend: 1})
                     

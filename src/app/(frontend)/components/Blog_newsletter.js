@@ -41,7 +41,7 @@ const Blog_newsletter = ({id}) => {
                     </Row>
                 </Container>
             </section>
-            <Main_modal show={show} setShow={setShow} type="bookCall" appointment={true} newsletter={true}/>
+            <Main_modal show={show} setShow={setShow} type="newsletter" appointment={true} newsletter={true}/>
         </>
     )
 }

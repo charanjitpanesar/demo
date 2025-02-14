@@ -76,17 +76,21 @@ const Page = ({ params }) => {
                                         <div className='txt'>Mail Sent</div>
                                     </div>
                                     <div className='right'>
-                                        <div className='txt'>{ data?.mailSent == 1 ? "Yes" : "No" }</div>
+                                        <div className='txt'>{ data?.mailSend == "1" ? "Yes" : "No" }</div>
                                     </div>
                                 </div>
-                                <div className='row_data'>
-                                    <div className='left'>
-                                        <div className='txt'>Appointment</div>
-                                    </div>
-                                    <div className='right'>
-                                        <div className='txt'>{ data?.appointment && formatDate(data?.appointment) }</div>
-                                    </div>
-                                </div>
+                                {
+                                    data?.type == "bookAppointment" ? 
+                                        <div className='row_data'>
+                                            <div className='left'>
+                                                <div className='txt'>Appointment</div>
+                                            </div>
+                                            <div className='right'>
+                                                <div className='txt'>{ data?.appointment && formatDate(data?.appointment) }</div>
+                                            </div>
+                                        </div>
+                                    : ""
+                                }
                             </div>
                             {
                                 data.job_data && data.job_data.first_name && data.job_data.last_name ? 

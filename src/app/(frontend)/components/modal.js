@@ -32,7 +32,7 @@ const Main_modal = ({ show, setShow, type, appointment , newsletter }) => {
         // return true;
         setFormSubmitted(true);
         
-        if(typeof formData.phonenumber == "undefined" || formData.phonenumber == "")
+        if(type != "newsletter" && (typeof formData.phonenumber == "undefined" || formData.phonenumber == ""))
         {
             setFormErrors({...formErrors, phonenumber: "Please Provide Phone Number"});
             setFormSubmitted(false);

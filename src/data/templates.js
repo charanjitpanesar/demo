@@ -35,8 +35,18 @@ const career = {
     `,
 };
 
+const newsletter = {
+  subject: "New Newsletter Request",
+  message: `
+  New Newsletter Request Received!
+  
+  Email: {email}
+  `,
+};
+
 export const emailTemplates = {
     bookCall,
     bookAppointment,
     career,
+    newsletter,
 }; 
