@@ -83,7 +83,7 @@ const Footer = () => {
                                         <div className='upper_area'>
                                             <div className='detail_area'>
                                                 <h3>Location</h3>
-                                                <Link href='#'>DHA, Sehar Commercial, Phase 7, Karachi</Link>
+                                                <Link href='#'>23-C, Phase VI DHA, Sehar Commercial, Phase 7, Karachi</Link>
                                             </div>
                                             <div className='detail_area'>
                                                 <h3>Email</h3>
@@ -99,7 +99,7 @@ const Footer = () => {
                                             </div>
                                         </div>
                                         <div className='copyright_area'>
-                                        © 2024 — Copyright
+                                        © 2024 — SAYNT-AI
                                         </div>
                                     </div>
                                 </Col>

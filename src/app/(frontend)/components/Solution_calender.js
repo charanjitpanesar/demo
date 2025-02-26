@@ -153,7 +153,7 @@ const Solution_calender = ({ id }) => {
                                                         <div className="img_area">
                                                             <Image src={user} alt='...' title='...' fetchPriority='low' priority={false} width={46} height={46} />
                                                         </div>
-                                                        <div className="user_name">Muhammad Aqeel</div>
+                                                        <div className="user_name">Schedule a call with us</div>
                                                         <div className="meet">20 Minutes Meeting</div>
                                                     </div>
                                                     <div className="bottom">
