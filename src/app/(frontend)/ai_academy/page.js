@@ -1,4 +1,5 @@
-import React from 'react'
+'use client'
+import React, { useEffect, useState } from 'react'
 import Ai_Hero from '../components/Ai_Hero'
 import Ai_text_opener from '../components/Ai_text_opener'
 import Ai_chat_banner from '../components/Ai_chat_banner'
@@ -12,15 +13,24 @@ import Ai_newsletter from '../components/Ai_newsletter'
 
 const AiAcedemy = () => {
     const comp = [Ai_Hero,Ai_text_opener, Ai_chat_banner , Ai_why_matter, Ai_key_feature , Parallax_section , Ai_impact, Ai_shapes , Ai_newsletter]
-
+    const [loading, setLoading] = useState(true);
+    
+    useEffect(() => {
+        const timer = setTimeout(() => setLoading(false), 2000); // Simulating a 2s loading time
+        return () => clearTimeout(timer);
+    }, []);
     
     return (
         <>
-            {
-                comp && comp.map((Section, index) => (
+             {loading ? (
+                <div className="page-loader">
+                    <h1>Ai Academy</h1>
+                </div>
+            ) : (
+                comp.map((Section, index) => (
                     <Section id={`section_${index + 1}`} key={index} />
                 ))
-            }
+            )}
 
         </>
     )

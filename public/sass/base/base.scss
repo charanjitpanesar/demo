@@ -8,8 +8,35 @@ body{
 	line-height: inherit;
     background: variable.$secondary_color;
 }
-
-
+.page-loader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background: variable.$secondary_color;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+    h1{
+        background: linear-gradient(90deg, #EAB03D 0%, #9543E5 100%);
+        color: transparent;
+        background-clip: text;
+        font-size: 60px;
+        font-weight: 600;
+        text-align: center;
+        animation: scaleUp .8s ease-in-out infinite alternate;
+    }
+}
+@keyframes scaleUp {
+    0% {
+        transform: scale(1);
+    }
+    100% {
+        transform: scale(1.1);
+    }
+}
 h1,h2,h3,h4,h5,h6{
 	font-weight: 700;
 }
@@ -149,6 +176,11 @@ h1,h2,h3,h4,h5,h6{
     .btn-primary1{
     	font-size: 16px;
     }
+    .page-loader{
+        h1{
+            font-size: 30px;
+        }
+    }
 }
 
 /* Landscape phones and portrait tablets */
@@ -159,6 +191,12 @@ h1,h2,h3,h4,h5,h6{
     .btn-primary1{
     	font-size: 14px;
     }
+
+    .page-loader{
+        h1{
+            font-size: 30px;
+        }
+    }
 }
 
 /* Smaller phones */
@@ -168,6 +206,12 @@ h1,h2,h3,h4,h5,h6{
     }
     .btn-primary1{
     	font-size: 14px;
+    }
+
+    .page-loader{
+        h1{
+            font-size: 30px;
+        }
     }
 }
 
