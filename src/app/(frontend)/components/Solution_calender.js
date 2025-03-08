@@ -150,9 +150,11 @@ const Solution_calender = ({ id }) => {
                                             <Col xxl={3} xl={3} lg={6} md={6} sm={6} xs={12} className='order-sm-1 order-1'>
                                                 <div className="left">
                                                     <div className="top">
-                                                        <div className="img_area">
+                                                        {/*
+                                                        <div className="img_area bg-white">
                                                             <Image src={user} alt='...' title='...' fetchPriority='low' priority={false} width={46} height={46} />
                                                         </div>
+                                                        */}
                                                         <div className="user_name">Schedule a call with us</div>
                                                         <div className="meet">20 Minutes Meeting</div>
                                                     </div>
