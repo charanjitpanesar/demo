@@ -26,10 +26,6 @@ const Header = () => {
             href: "/blogs",
             text:"Blogs"
         },
-        // {
-        //     href: "/pricing",
-        //     text:"Pricing"
-        // },
         {
             href: "/contact",
             text:"Contact Us"
@@ -37,7 +33,11 @@ const Header = () => {
         {
             href: "/careers",
             text:"Careers"
-        }
+        },
+        {
+            href: "/ai_academy",
+            text:"Ai Academy"
+        },
     ]
 
     const pathname = usePathname();
@@ -76,7 +76,7 @@ const Header = () => {
                                    <ul>
                                     { 
                                         navLinks.map((element , index)=>{
-                                        return <li key={index} className={pathname === element.href ? 'active' : ''}>
+                                        return <li key={index} className={`${element.href !== "/ai_academy" &&  pathname === element.href ? 'active' : ''} ${index === navLinks.length - 1 ? 'last_item' : ''}`} >
                                             <Link href={element.href}>{element.text}</Link>
                                         </li>
                                         })
@@ -94,7 +94,7 @@ const Header = () => {
                 <ul>
                     { 
                         navLinks.map((element , index)=>{
-                        return <li key={index} className={pathname === element.href ? 'active' : ''} >
+                        return <li key={index} className={`${element.href !== "/ai_academy" &&  pathname === element.href ? 'active' : ''} ${index === navLinks.length - 1 ? 'last_item' : ''}`} >
                             <Link href={element.href} onClick={handleHeader}>{element.text}</Link>
                         </li>
                         })
