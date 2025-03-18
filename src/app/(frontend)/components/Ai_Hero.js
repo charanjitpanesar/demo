@@ -14,8 +14,8 @@ const Ai_hero = () => {
                             <div className='image_area'>
                                 <Image src={bannerImg} alt='...' priority />
                             </div>
-                            <h4>AI-Powered Learning </h4>
-                            <h2>For Every Student</h2>
+                            <h4 className='animate_up'>AI-Powered Learning </h4>
+                            <h2 className='animate_up' >For Every Student</h2>
                         </div>
                     </Col>
                 </Row>

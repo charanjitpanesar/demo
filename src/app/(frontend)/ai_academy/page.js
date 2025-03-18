@@ -12,13 +12,47 @@ import Ai_newsletter from '../components/Ai_newsletter'
 
 
 const AiAcedemy = () => {
-    const comp = [Ai_Hero,Ai_text_opener, Ai_chat_banner , Ai_why_matter, Ai_key_feature , Parallax_section , Ai_impact, Ai_shapes , Ai_newsletter]
+    const comp = [
+      Ai_Hero,
+      Ai_text_opener,
+      Ai_chat_banner ,
+      Ai_why_matter,
+      Ai_key_feature ,
+      Parallax_section ,
+      Ai_impact, 
+      Ai_shapes ,
+      Ai_newsletter
+    ]
     const [loading, setLoading] = useState(true);
     
     useEffect(() => {
         const timer = setTimeout(() => setLoading(false), 2000); // Simulating a 2s loading time
         return () => clearTimeout(timer);
+        
     }, []);
+
+    useEffect(() => {
+      if (typeof window === "undefined") return; // Prevents errors during SSR
+  
+      const elements = document.querySelectorAll(".animate_up");
+      if (!elements.length) return;
+  
+      const observer = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting && entry.intersectionRatio >= 0.5) {
+              entry.target.classList.add("trigger");
+            }
+          });
+        },
+        { threshold: 0.5 }
+      );
+  
+      elements.forEach((el) => observer.observe(el));
+      return () => observer.disconnect();
+    }, [loading]);
+
+    
     
     return (
         <>

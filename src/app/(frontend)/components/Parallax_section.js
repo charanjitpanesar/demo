@@ -68,15 +68,15 @@ const Parallax_section = () => {
                                 <Row>
                                     <Col xxl={6} xl={6} lg={6} md={6} sm={6} xs={12}>
                                         <div className='left_area'>
-                                            <h3>AI Tutor</h3>
-                                            <p>
+                                            <h3 className='animate_up'>AI Tutor</h3>
+                                            <p className='animate_up'>
                                                 An intelligent system that tailors learning experiences to each student’s progress
                                             </p>
                                         </div>
                                     </Col>
                                     <Col xxl={6} xl={6} lg={6} md={6} sm={6} xs={12}>
                                         <div className='right_area'>
-                                            <div className='image_area'>
+                                            <div className='image_area animate_up'>
                                                 <Image src={bannerImg} alt='...' title='...' priority />
                                             </div>
                                         </div>
@@ -95,15 +95,15 @@ const Parallax_section = () => {
                                 <Row>
                                     <Col xxl={6} xl={6} lg={6} md={6} sm={6} xs={12}>
                                         <div className='right_area'>
-                                            <div className='image_area'>
+                                            <div className='image_area animate_up'>
                                                 <Image src={bannerImg} alt='...' title='...' priority />
                                             </div>
                                         </div>
                                     </Col>
                                     <Col xxl={6} xl={6} lg={6} md={6} sm={6} xs={12}>
                                         <div className='left_area'>
-                                            <h3>Study Room</h3>
-                                            <p>
+                                            <h3 className='animate_up'>Study Room</h3>
+                                            <p className='animate_up'>
                                              A digital space for independent learning with AI-assisted
                                             </p>
                                         </div>
@@ -122,15 +122,15 @@ const Parallax_section = () => {
                                 <Row>
                                     <Col xxl={6} xl={6} lg={6} md={6} sm={6} xs={12}>
                                         <div className='left_area'>
-                                            <h3>AI Planner</h3>
-                                            <p>
+                                            <h3 className='animate_up'>AI Planner</h3>
+                                            <p className='animate_up'>
                                              A tool that structures study schedules and tracks progress based on quiz results.
                                             </p>
                                         </div>
                                     </Col>
                                     <Col xxl={6} xl={6} lg={6} md={6} sm={6} xs={12}>
                                         <div className='right_area'>
-                                            <div className='image_area'>
+                                            <div className='image_area animate_up'>
                                                 <Image src={bannerImg} alt='...' title='...' priority />
                                             </div>
                                         </div>
@@ -149,15 +149,15 @@ const Parallax_section = () => {
                                 <Row>
                                     <Col xxl={6} xl={6} lg={6} md={6} sm={6} xs={12}>
                                         <div className='right_area'>
-                                            <div className='image_area'>
+                                            <div className='image_area animate_up'>
                                                 <Image src={bannerImg} alt='...' title='...' priority />
                                             </div>
                                         </div>
                                     </Col>
                                     <Col xxl={6} xl={6} lg={6} md={6} sm={6} xs={12}>
                                         <div className='left_area'>
-                                            <h3>Interactive Learning</h3>
-                                            <p>
+                                            <h3 className='animate_up'>Interactive Learning</h3>
+                                            <p className='animate_up'>
                                             Features like quizzes, flashcards, and leaderboards enhance retention and engagement                                            </p>
                                         </div>
                                     </Col>

@@ -6,7 +6,7 @@ import newsletterBg from '../../../../public/images/ai_newsletter.png'
 
 const Ai_newsletter = () => {
     return (
-        <section className='ai_newsletter_section'>
+        <section className='ai_newsletter_section animate_up'>
             <Container>
                 <Row>
                     <Col xxl={12} xl={12} lg={12} md={12} sm={12} xs={12}>

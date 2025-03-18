@@ -8,7 +8,7 @@ import bgImgBottom from '../../../../public/images/bottom_img.png'
 
 const Ai_key_feature = () => {
     return (
-        <section className='ai_key_feature_section'>
+        <section className='ai_key_feature_section animate_up'>
             <Container>
                 <Row>
                     <Col xxl={12} xl={12} lg={12} md={12} sm={12} xs={12}>

@@ -2,6 +2,16 @@
 @use "../base/mixins.scss";
 
 
+.animate_up{
+    opacity: 0;
+    transform: translateY(100px);
+    @include mixins.transition(all 0.5s ease-in-out);
+    &.trigger{
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
 body{
 	font-weight: 400;
 	font-size: 14px;

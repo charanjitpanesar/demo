@@ -12,10 +12,10 @@ const Ai_chat_banner = () => {
                 <Row>
                     <Col xxl={12} xl={12} lg={12} md={12} sm={12} xs={12}>
                         <div className='parent_area'>
-                            <div className='image_area'>
+                            <div className='image_area animate_up'>
                                 <Image src={bannerImg} alt='...' title='...' priority />
                             </div>
-                            <h3>Many students lack conceptual understanding due to a system focused solely on exam preparation</h3>
+                            <h3 className='animate_up'>Many students lack conceptual understanding due to a system focused solely on exam preparation</h3>
                         </div>
                     </Col>
                 </Row>
