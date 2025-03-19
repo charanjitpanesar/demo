@@ -444,10 +444,27 @@
             bottom: 50px;
             left: 0;
             right: 0;
-            width: 450px;
             margin: 0 auto;
             form{
+                display: flex;
+                align-items: center;
+                gap: 20px;
+                justify-content: center;
+                .button_area{
+                    .btn-primary{
+                        min-width: auto;
+                        background: #00e0e0;
+                        border-color: #00e0e0;
+                        padding: 10px 20px;
+                        &:hover{
+                            background: #0aacac;
+                            border-color: #0aacac;
+                        }
+                    }
+                }
                 .form-group{
+                    width: 450px;
+                    padding-bottom: 0;
                     .form-control{
                         color: variable.$white;
                         box-shadow: 0px 0px 250px 0px #00E0E080;
@@ -1340,6 +1357,12 @@
             .form_area{
                 width: 350px;
                 bottom: 25px;
+                .form-group{
+                    .form-control{
+                        padding: 9px 15px;
+                        border-radius: 8px;
+                    }
+                }
             }
         }
     }
@@ -1575,6 +1598,12 @@
             .form_area{
                 width: 100%;
                 bottom: -20px;
+                .form-group{
+                    .form-control{
+                        padding: 8px 15px;
+                        border-radius: 8px;
+                    }
+                }
             }
         }
     }
@@ -1802,6 +1831,12 @@
             .form_area{
                 width: 100%;
                 bottom: -20px;
+                .form-group{
+                    .form-control{
+                        padding: 8px 15px;
+                        border-radius: 8px;
+                    }
+                }
             }
         }
     }

@@ -1,6 +1,6 @@
 import React from 'react'
 import '../../../../public/sass/ai_scss/ai.scss'
-import { Col, Container, Form, Row } from 'react-bootstrap'
+import { Button, Col, Container, Form, Row } from 'react-bootstrap'
 import Image from 'next/image'
 import newsletterBg from '../../../../public/images/ai_newsletter.png'
 
@@ -15,6 +15,11 @@ const Ai_newsletter = () => {
                                 <Form>
                                     <div className='form-group'>
                                         <Form.Control type="email" placeholder="Enter your email here" />
+                                    </div>
+                                    <div className='button_area'>
+                                        <Button type='submit'>
+                                            <i className="bi bi-arrow-right"></i>
+                                        </Button>
                                     </div>
                                 </Form>
                             </div>
