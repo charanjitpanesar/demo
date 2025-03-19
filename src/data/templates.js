@@ -44,9 +44,19 @@ const newsletter = {
   `,
 };
 
+const aiAcademy = {
+    subject: "New AI Academy Request",
+    message: `
+    New AI Academy Request!
+    
+    email: {email}
+    `,
+};
+
 export const emailTemplates = {
     bookCall,
     bookAppointment,
     career,
     newsletter,
+    aiAcademy
 }; 
