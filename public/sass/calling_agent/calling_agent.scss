@@ -747,7 +747,142 @@
 
 /* Landscape tablets and ipad */
 @media (min-width: 768px) and (max-width: 991px) {
-	
+	.calling_agent_hero_section{
+        margin-top: 120px;
+        padding: 70px 0;
+        .parent_area{
+            .logo_area{
+                width: 380px;
+            }
+            .content_area{
+                h2{
+                    font-size: 40px;
+                    span{
+                        font-size: 55px;
+                    }
+                }
+                h6{
+                    font-size: 16px;
+                }
+            }
+        }
+    }
+
+    .calling_service_section{
+        padding-top: 40px;
+        .parent_area{
+            h3{
+                font-size: 30px;
+            }
+            .inner_area{
+                padding-top: 40px;
+                .left_area{
+                    h4{
+                        font-size: 28px;
+                    } 
+                    p{
+                        font-size: 18px;
+                    }
+                }
+                .right_area{
+                    .logo_area{
+                        width: 150px;
+                        height: 150px;
+                    }
+                }
+            }
+        }
+    }
+
+
+    .calling_meet_section{
+        .parent_area{
+            .image_area{
+                h2{
+                    font-size: 40px;
+                }
+            }
+        }
+    }
+
+
+    .calling_support_section{
+        padding-top: 40px;
+        .parent_area{
+            h3{
+                font-size: 30px;
+            } 
+            .slider_area{
+                padding-top: 30px;
+                .slide_inner{
+                    .content_area{
+                        font-size: 18px;
+                    }
+                    .image_area{
+                        height: 330px;
+                    }
+                }
+            }
+        }
+    }
+
+
+    .calling_impact_section{
+        padding-top: 40px;
+        .parent_area{
+            h3{
+                font-size: 30px;
+            } 
+            .card_parent{
+                gap: 30px;
+                .card_area{
+                    width: calc((100% - 30px)/2);
+                    .image_area{
+                        height: 150px;
+                        width: 150px;
+                    }
+                    p{
+                        font-size: 20px;
+                        span{
+                            font-size: 25px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    .calling_result_section{
+        padding-top: 40px;
+        .parent_area{
+            .left_area{
+                .content_area{
+                    width: 100%;
+                    padding: 20px 20px;
+                    h3{
+                        font-size: 30px;
+                    }
+                    p{
+                        font-size: 16px;
+                    }
+                }
+            }
+            .right_area{
+                .image_area{
+                    height: 400px;
+                }
+            }
+        }
+    }
+
+    .calling_outreach_section {
+        padding: 150px 0;
+        .parent_area{
+            h3{
+                font-size: 30px;
+            }
+        }
+    }
 }
 
 /* Landscape phones and portrait tablets */
