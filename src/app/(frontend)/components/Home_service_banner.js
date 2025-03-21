@@ -10,7 +10,7 @@ const Home_service_banner = ({id}) => {
                 <Row>
                     <Col xxl={12} xl={12} lg={12} md={12} sm={12} xm={12}>
                         <div className='parent_area'>
-                            <h3>Our Services</h3>
+                            <h3>Who We Help & How We Help</h3>
                         </div>
                     </Col>
                 </Row>

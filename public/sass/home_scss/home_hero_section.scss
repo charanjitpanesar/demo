@@ -8,6 +8,7 @@
     margin-top: 162px;
     overflow-x: clip;
     height: calc(100dvh - 162px);
+
     .parent_area {
         .left_area {
             h3 {
@@ -19,6 +20,12 @@
                 background-clip: text;
                 -webkit-background-clip: text;
                 animation: gradient-move 3s infinite linear;
+            }
+
+            .desc {
+                font-weight: 400;
+                color: variable.$primary_color;
+                font-size: 30px;
             }
 
             p {
@@ -216,7 +223,7 @@
             animation: moveBackground 30s linear infinite;
             position: absolute;
             inset: 0;
-            background: url('../../images/book_call_bg.png') ;
+            background: url('../../images/book_call_bg.png');
             background-size: cover;
             background-repeat: no-repeat;
             background-position: center;
@@ -344,6 +351,7 @@
         padding-top: 40px;
         height: calc(100dvh - 120px);
         align-content: center;
+
         .parent_area {
             .left_area {
                 p {
@@ -353,7 +361,9 @@
                 h3 {
                     font-size: 50px;
                 }
-
+                .desc{
+                    font-size: 26px;
+                }
                 .buttons_area {
                     flex-direction: column;
 
@@ -407,13 +417,16 @@
         margin-top: 90px;
         padding-top: 30px;
         height: 100%;
+
         .parent_area {
             .left_area {
                 h3 {
                     width: 100%;
                     font-size: 35px;
                 }
-
+                .desc{
+                    font-size:16px;
+                }
                 p {
                     font-size: 14px;
                 }
@@ -470,7 +483,8 @@
     .home_hero_section {
         margin-top: 90px;
         padding-top: 25px;
-        height: calc(100dvh - 90px);
+        height: 100%;
+
         .parent_area {
             .left_area {
                 padding-bottom: 20px;
@@ -480,7 +494,9 @@
                     text-align: center;
                     font-size: 30px;
                 }
-
+                .desc{
+                    font-size:16px;
+                }
                 p {
                     font-size: 14px;
                     text-align: center;
@@ -504,6 +520,7 @@
                     padding: 15px;
                     margin: 0;
                     margin-inline: auto;
+
                     .rotate_img {
                         width: 90%;
                         height: 90%;
@@ -539,7 +556,8 @@
     .home_hero_section {
         margin-top: 90px;
         padding-top: 25px;
-        height: calc(100dvh - 90px);
+        height: 100%;
+
         .parent_area {
             .left_area {
                 padding-bottom: 20px;
@@ -548,6 +566,9 @@
                     width: 100%;
                     text-align: center;
                     font-size: 30px;
+                }
+                .desc{
+                    font-size:16px;
                 }
 
                 p {
@@ -573,6 +594,7 @@
                     padding: 15px;
                     margin: 0;
                     margin-inline: auto;
+
                     .rotate_img {
                         width: 90%;
                         height: 90%;

@@ -118,7 +118,7 @@ const Solution_calender = ({ id }) => {
                         <Col xxl={12} xl={12} lg={12} md={12} sm={12} xs={12}>
                             <div className='parent_area'>
                                 <div className='upper_area'>
-                                    <h3>Identify Your Needs</h3>
+                                    <h3>Ready to <span>streamline</span> your <span>operations</span>?</h3>
                                     <p className='green'>Let us know what challenges you’re facing.</p>
                                     <p>Whether it’s fleet optimization, compliance, or cost reduction, we’ll help you pinpoint areas for improvement.
                                         <br></br>Why it matters: You get personalized advice tailored to your business</p>
