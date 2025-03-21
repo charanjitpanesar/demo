@@ -44,8 +44,13 @@
                     position: absolute;
                     background-image: url('../../images/Union.png');
                     background-repeat: no-repeat;
-                    inset: 0;
-                    background-size: cover;
+                    // inset: 0;
+                    // background-size: contain;
+                    top: 53%;
+                    transform: translateY(-49%);
+                    left: 6px;
+                    width: 100%;
+                    height: 100%;
                 }
 
                 .line {
@@ -82,6 +87,7 @@
                         background-repeat: no-repeat;
                         background-size: auto;
                         background-position: center;
+
                     }
 
                     img {
@@ -162,10 +168,70 @@
 @media (min-width: 1680px) and (max-width: 1919px) {}
 
 /* 1600 desktop */
-@media (min-width: 1600px) and (max-width: 1679px) {}
+@media (min-width: 1600px) and (max-width: 1679px) {
+    .home_ai_solutions_section {
+        padding-top: 70px;
+
+        .parent_area {
+            h3 {
+                font-size: 45px;
+                margin-bottom: 70px;
+            }
+
+            .content {
+                .item {
+                    left: 9%;
+
+                    &.item_2 {
+                        right: 0%;
+                        top: 14%;
+
+                        .line {
+                            right: 77%;
+                        }
+                    }
+
+                    &.item_3 {
+                        left: 7%;
+                    }
+                }
+            }
+        }
+    }
+}
 
 /* Above 1400 and Below 1599 Desktop*/
-@media (min-width: 1400px) and (max-width: 1599px) {}
+@media (min-width: 1400px) and (max-width: 1599px) {
+    .home_ai_solutions_section {
+        padding-top: 70px;
+
+        .parent_area {
+            h3 {
+                font-size: 45px;
+                margin-bottom: 70px;
+            }
+
+            .content {
+                .item {
+                    left: 9%;
+
+                    &.item_2 {
+                        right: 0%;
+                        top: 14%;
+
+                        .line {
+                            right: 77%;
+                        }
+                    }
+
+                    &.item_3 {
+                        left: 7%;
+                    }
+                }
+            }
+        }
+    }
+}
 
 /* 1300 desktop only */
 @media (min-width: 1300px) and (max-width: 1399px) {
@@ -352,6 +418,13 @@
                     left: 0;
                     top: 0;
 
+                    &::before {
+                        inset: 0;
+                        height: 100%;
+                        background-size: cover;
+                        transform: unset;
+                    }
+
                     .img_wrapper {
                         width: 60px;
                         height: 60px;
@@ -426,9 +499,18 @@
                     position: relative;
                     left: 0;
                     margin-bottom: 25px;
-                    &:last-child{
+
+                    &::before {
+                        inset: 0;
+                        height: 100%;
+                        background-size: cover;
+                        transform: unset;
+                    }
+
+                    &:last-child {
                         margin-bottom: 0;
                     }
+
                     .img_wrapper {
                         width: 60px;
                         height: 60px;
@@ -502,9 +584,18 @@
                     position: relative;
                     left: 0;
                     margin-bottom: 25px;
-                    &:last-child{
+
+                    &::before {
+                        inset: 0;
+                        height: 100%;
+                        background-size: cover;
+                        transform: unset;
+                    }
+
+                    &:last-child {
                         margin-bottom: 0;
                     }
+
                     .img_wrapper {
                         width: 60px;
                         height: 60px;
