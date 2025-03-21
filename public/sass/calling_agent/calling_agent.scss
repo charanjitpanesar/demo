@@ -887,17 +887,448 @@
 
 /* Landscape phones and portrait tablets */
 @media (min-width: 576px) and (max-width: 767px) {
-	
+	.calling_agent_hero_section{
+        margin-top: 90px;
+        padding: 30px 0;
+        .parent_area{
+            .logo_area{
+                position: relative;
+                top: -50px;
+                width: 280px;
+            }
+            .content_area{
+                h2{
+                    font-size: 30px;
+                    span{
+                        font-size: 40px;
+                    }
+                }
+                h6{
+                    font-size: 14px;
+                }
+            }
+        }
+    }
+
+    .calling_service_section{
+        padding-top: 30px;
+        .parent_area{
+            h3{
+                font-size: 22px;
+            }
+            .inner_area{
+                padding-top: 30px;
+                .left_area{
+                    h4{
+                        font-size: 22px;
+                    } 
+                    p{
+                        font-size: 14px;
+                    }
+                }
+                .right_area{
+                    .logo_area{
+                        width: 120px;
+                        height: 120px;
+                    }
+                }
+            }
+        }
+    }
+
+
+    .calling_meet_section{
+        .parent_area{
+            .image_area{
+                h2{
+                    font-size: 30px;
+                }
+            }
+        }
+    }
+
+
+    .calling_support_section{
+        padding-top: 30px;
+        .parent_area{
+            h3{
+                font-size: 22px;
+            } 
+            .slider_area{
+                padding-top: 30px;
+                .slide_inner{
+                    .content_area{
+                        font-size: 18px;
+                    }
+                    .image_area{
+                        height: 330px;
+                    }
+                }
+            }
+        }
+    }
+
+
+    .calling_impact_section{
+        padding-top: 30px;
+        .parent_area{
+            h3{
+                font-size: 22px;
+            } 
+            .card_parent{
+                gap: 30px;
+                .card_area{
+                    width: calc((100% - 30px)/2);
+                    .image_area{
+                        height: 120px;
+                        width: 120px;
+                    }
+                    p{
+                        font-size: 16px;
+                        span{
+                            font-size: 20px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    .calling_result_section{
+        padding-top: 30px;
+        .parent_area{
+            .left_area{
+                .content_area{
+                    width: 100%;
+                    padding: 20px 20px;
+                    h3{
+                        font-size: 22px;
+                    }
+                    p{
+                        font-size: 14px;
+                        padding-top: 10px;
+                    }
+                }
+            }
+            .right_area{
+                .image_area{
+                    height: 300px;
+                }
+            }
+        }
+    }
+
+    .calling_outreach_section {
+        padding: 80px 0;
+        .parent_area{
+            h3{
+                font-size: 22px;
+            }
+            .button_area{
+                padding-top: 20px;
+            }
+        }
+    }
 }
 
 /* Landscape phones and portrait tablets */
 @media (min-width: 361px) and (max-width: 575px) {
-	
+	.calling_agent_hero_section{
+        margin-top: 90px;
+        padding: 30px 0;
+        .parent_area{
+            .logo_area{
+                position: relative;
+                top: -50px;
+                width: 200px;
+            }
+            .content_area{
+                h2{
+                    font-size: 25px;
+                    span{
+                        font-size: 28px;
+                    }
+                }
+                h6{
+                    font-size: 13px;
+                }
+            }
+        }
+    }
+
+    .calling_service_section{
+        padding-top: 30px;
+        .parent_area{
+            h3{
+                font-size: 20px;
+            }
+            .inner_area{
+                padding-top: 20px;
+                .left_area{
+                    h4{
+                        font-size: 20px;
+                    } 
+                    p{
+                        font-size: 14px;
+                        padding-top: 10px;
+                    }
+                }
+                .right_area{
+                    .logo_area{
+                        width: 120px;
+                        height: 120px;
+                    }
+                }
+            }
+        }
+    }
+
+
+    .calling_meet_section{
+        .parent_area{
+            .image_area{
+                h2{
+                    font-size: 22px;
+                    bottom: 20px;
+                }
+            }
+        }
+    }
+
+
+    .calling_support_section{
+        padding-top: 30px;
+        .parent_area{
+            h3{
+                font-size: 20px;
+            } 
+            .slider_area{
+                padding-top: 30px;
+                .slide_inner{
+                    .content_area{
+                        font-size: 18px;
+                    }
+                    .image_area{
+                        height: 330px;
+                    }
+                }
+            }
+        }
+    }
+
+
+    .calling_impact_section{
+        padding-top: 30px;
+        .parent_area{
+            h3{
+                font-size: 20px;
+            } 
+            .card_parent{
+                gap: 20px;
+                .card_area{
+                    width: 100%;
+                    .image_area{
+                        height: 120px;
+                        width: 120px;
+                    }
+                    p{
+                        font-size: 14px;
+                        span{
+                            font-size: 16px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    .calling_result_section{
+        padding-top: 30px;
+        .parent_area{
+            .left_area{
+                width: 100%;
+                .content_area{
+                    width: 100%;
+                    padding: 20px 20px;
+                    h3{
+                        font-size: 20px;
+                    }
+                    p{
+                        font-size: 14px;
+                        padding-top: 10px;
+                    }
+                }
+            }
+            .right_area{
+                width: 100%;
+                .image_area{
+                    height: 250px;
+                }
+            }
+        }
+    }
+
+    .calling_outreach_section {
+        padding: 60px 0;
+        .parent_area{
+            h3{
+                font-size: 20px;
+            }
+            .button_area{
+                padding-top: 20px;
+            }
+        }
+    }
 }
 
 /* Smaller phones */
 @media (max-width: 360px) {
-	
+	.calling_agent_hero_section{
+        margin-top: 90px;
+        padding: 30px 0;
+        .parent_area{
+            .logo_area{
+                position: relative;
+                top: -50px;
+                width: 200px;
+            }
+            .content_area{
+                h2{
+                    font-size: 25px;
+                    span{
+                        font-size: 28px;
+                    }
+                }
+                h6{
+                    font-size: 13px;
+                }
+            }
+        }
+    }
+
+    .calling_service_section{
+        padding-top: 30px;
+        .parent_area{
+            h3{
+                font-size: 20px;
+            }
+            .inner_area{
+                padding-top: 20px;
+                .left_area{
+                    h4{
+                        font-size: 20px;
+                    } 
+                    p{
+                        font-size: 14px;
+                        padding-top: 10px;
+                    }
+                }
+                .right_area{
+                    .logo_area{
+                        width: 120px;
+                        height: 120px;
+                    }
+                }
+            }
+        }
+    }
+
+
+    .calling_meet_section{
+        .parent_area{
+            .image_area{
+                h2{
+                    font-size: 22px;
+                    bottom: 20px;
+                }
+            }
+        }
+    }
+
+
+    .calling_support_section{
+        padding-top: 30px;
+        .parent_area{
+            h3{
+                font-size: 20px;
+            } 
+            .slider_area{
+                padding-top: 30px;
+                .slide_inner{
+                    .content_area{
+                        font-size: 18px;
+                    }
+                    .image_area{
+                        height: 330px;
+                    }
+                }
+            }
+        }
+    }
+
+
+    .calling_impact_section{
+        padding-top: 30px;
+        .parent_area{
+            h3{
+                font-size: 20px;
+            } 
+            .card_parent{
+                gap: 20px;
+                .card_area{
+                    width: 100%;
+                    .image_area{
+                        height: 120px;
+                        width: 120px;
+                    }
+                    p{
+                        font-size: 14px;
+                        span{
+                            font-size: 16px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    .calling_result_section{
+        padding-top: 30px;
+        .parent_area{
+            .left_area{
+                width: 100%;
+                .content_area{
+                    width: 100%;
+                    padding: 20px 20px;
+                    h3{
+                        font-size: 20px;
+                    }
+                    p{
+                        font-size: 14px;
+                        padding-top: 10px;
+                    }
+                }
+            }
+            .right_area{
+                width: 100%;
+                .image_area{
+                    height: 250px;
+                }
+            }
+        }
+    }
+
+    .calling_outreach_section {
+        padding: 60px 0;
+        .parent_area{
+            h3{
+                font-size: 20px;
+            }
+            .button_area{
+                padding-top: 20px;
+            }
+        }
+    }
 }
 
 /* Smaller phones */
