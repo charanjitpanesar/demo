@@ -62,7 +62,7 @@ const Home_industry = ({ id }) => {
                     <Col xxl={12} xl={12} lg={12} md={12} sm={12} xs={12}>
                         <div className='parent_area'>
                             <div className='upper_area'>
-                                <h3>Industry Affairs and Insights</h3>
+                                <h3>BLOGS</h3>
                                 <div className='btn_text_area'>
                                     <p>
                                         Blogs of Industry affairs, in which decision makers are interested

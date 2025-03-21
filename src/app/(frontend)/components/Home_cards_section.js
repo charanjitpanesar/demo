@@ -38,6 +38,7 @@ const Home_cards_section = ({id}) => {
                 <Row>
                     <Col xxl={12} xl={12} lg={12} md={12} sm={12} xs={12}>
                         <div className='parent_area'>
+                            <h3>Our <strong>Services</strong></h3>
                             <Row>
                             {cardData.map((card, index) => (
                                     <Col key={index} xxl={4} xl={4} lg={4} md={4} sm={6} xs={12}>
