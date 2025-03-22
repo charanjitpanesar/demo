@@ -13,10 +13,11 @@ import Similar_news from './components/similar_news';
 import Solution_calender from './components/Solution_calender';
 import Home_ai_academy from './components/Home_ai_academy';
 import Home_ai_solutions from './components/Home_ai_solutions';
+import Home_Work from './components/Home_Work';
 
 export default function Home() {
     const comp = [
-        Home_hero, Home_service_banner,Home_startup, Home_cards_section, Home_book_call, Home_trust, Home_ai_academy,,Home_ai_solutions, Solution_calender
+        Home_hero, Home_service_banner,Home_startup, Home_cards_section, Home_book_call, Home_trust,Home_Work, Home_ai_academy,Home_ai_solutions, Solution_calender
     ]
     return (
         <>

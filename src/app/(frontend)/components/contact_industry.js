@@ -7,11 +7,11 @@ import round from '../../../../public/images/round.svg';
 
 const Contact_industry = ({id}) => {
     const data = [
-        { title: 'Finance', desc: 'Track market trends and analyze data with our intuitive, user-friendly interface' },
-        { title: 'Healthcare', desc: 'Track market trends and analyze data with our intuitive, user-friendly interface' },
-        { title: 'Healthcare', desc: 'Track market trends and analyze data with our intuitive, user-friendly interface' },
-        { title: 'Healthcare', desc: 'Track market trends and analyze data with our intuitive, user-friendly interface' },
-        { title: 'Education', desc: 'Track market trends and analyze data with our intuitive, user-friendly interface' }
+        { title: 'Get Up and Running—Fast', desc: 'Why replace your system? Our AI integrates seamlessly with your CRM, email, and social channels—no need to change the tools you trust.' },
+        { title: 'Seamless Integration with What You Already Use', desc: 'Why replace your system? Our AI integrates seamlessly with your CRM, email, and social channels—no need to change the tools you trust.' },
+        { title: 'No More Missed Opportunities', desc: 'Why replace your system? Our AI integrates seamlessly with your CRM, email, and social channels—no need to change the tools you trust.' },
+        { title: 'Get Up and Running—Fast', desc: 'Why replace your system? Our AI integrates seamlessly with your CRM, email, and social channels—no need to change the tools you trust.' },
+        { title: 'Seamless Integration with What You Already Use', desc: 'Why replace your system? Our AI integrates seamlessly with your CRM, email, and social channels—no need to change the tools you trust.' }
     ]
     const classArr = ['top_right', 'prev', 'active', 'next', 'bottom_right']
     const slidesRef = useRef([])
@@ -97,7 +97,7 @@ const Contact_industry = ({id}) => {
                                                     data.map((item, i) => (
                                                         <div className='slide' key={i} ref={(el) => slidesRef.current[i] = el}>
                                                             <div className="chip">
-                                                                <div className="title">{item.title}</div>
+                                                                <div className="title"><span>{item.title}</span></div>
                                                                 <div className="desc">{item.desc}</div>
                                                             </div>
                                                         </div>
