@@ -8,13 +8,18 @@ import About_current_work from '../components/About_current_work'
 import About_meet_team from '../components/About_meet_team'
 
 const About_us = () => {
-    const comp = [About_banner, About_what_we_do,Contact_expertise,  About_meet_team, About_work_together]
+    const comp = [About_banner, About_what_we_do, Contact_expertise, About_meet_team, About_work_together]
     return (
         <>
             {
-                comp && comp.map((Section, index) => (
-                    <Section id={`section_${index + 1}`} key={index} />
-                ))
+                comp && comp.map((Section, index) => {
+                    const props = {};
+                    if(Section === Contact_expertise){
+                        props.title = 'Core '
+                        props.subtitle = 'Expertise'
+                    }
+                    return <Section id={`section_${index + 1}`} key={index} {...props} />
+                })
             }
 
         </>

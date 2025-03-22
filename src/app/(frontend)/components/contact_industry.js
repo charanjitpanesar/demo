@@ -5,14 +5,8 @@ import '../../../../public/sass/contact_scss/industry.scss';
 import Image from 'next/image';
 import round from '../../../../public/images/round.svg';
 
-const Contact_industry = ({id}) => {
-    const data = [
-        { title: 'Get Up and Running—Fast', desc: 'Why replace your system? Our AI integrates seamlessly with your CRM, email, and social channels—no need to change the tools you trust.' },
-        { title: 'Seamless Integration with What You Already Use', desc: 'Why replace your system? Our AI integrates seamlessly with your CRM, email, and social channels—no need to change the tools you trust.' },
-        { title: 'No More Missed Opportunities', desc: 'Why replace your system? Our AI integrates seamlessly with your CRM, email, and social channels—no need to change the tools you trust.' },
-        { title: 'Get Up and Running—Fast', desc: 'Why replace your system? Our AI integrates seamlessly with your CRM, email, and social channels—no need to change the tools you trust.' },
-        { title: 'Seamless Integration with What You Already Use', desc: 'Why replace your system? Our AI integrates seamlessly with your CRM, email, and social channels—no need to change the tools you trust.' }
-    ]
+const Contact_industry = ({id, listData}) => {
+    const data = listData
     const classArr = ['top_right', 'prev', 'active', 'next', 'bottom_right']
     const slidesRef = useRef([])
     let interval = 2500

@@ -14,18 +14,35 @@ import SolutionCost from '../components/SolutionCost'
 import SolutionTalkSection from '../components/SolutionTalkSection'
 
 const Solutions = () => {
-    let bannerData={
-        text:"Welcome to Saynt AI’s Hot Solutions—the next frontier in AI-driven productivity, customer engagement, and brand consistency. We believe in handling the mundane tasks so you can focus on what you do best: closing deals, building relationships, and scaling your business. Ready to see what we’ve got cooking?"
+    let bannerData = {
+        text: "Welcome to Saynt AI’s Hot Solutions—the next frontier in AI-driven productivity, customer engagement, and brand consistency. We believe in handling the mundane tasks so you can focus on what you do best: closing deals, building relationships, and scaling your business. Ready to see what we’ve got cooking?"
     }
     const comp = [
-      Contact_banner  , Contact_expertise, Contact_industry, SolutionCost , Contact_deliver, SolutionTalkSection, Solution_calender
+        Contact_banner, Contact_expertise, Contact_industry, SolutionCost, Contact_deliver, SolutionTalkSection, Solution_calender
     ]
     return (
         <>
             {
                 comp && comp.map((Section, index) => {
-                     const props = Section === Contact_banner ? { propsData: bannerData ,  showButtons: false } : {};
-                   return <Section key={index} id={`section_${index + 1}`}  {...props} />
+                    const props = {};
+                    if (Section === Contact_banner) {
+                        props.propsData = bannerData
+                        props.showButtons = false
+                    }
+                    if(Section === Contact_expertise){
+                        props.title = 'Some Hot '
+                        props.subtitle = 'Solutions'
+                    } 
+                    if (Section === Contact_industry){
+                        props.listData = [
+                            { title: 'Get Up and Running—Fast', desc: 'Why replace your system? Our AI integrates seamlessly with your CRM, email, and social channels—no need to change the tools you trust.' },
+                            { title: 'Seamless Integration with What You Already Use', desc: 'Why replace your system? Our AI integrates seamlessly with your CRM, email, and social channels—no need to change the tools you trust.' },
+                            { title: 'No More Missed Opportunities', desc: 'Why replace your system? Our AI integrates seamlessly with your CRM, email, and social channels—no need to change the tools you trust.' },
+                            { title: 'Get Up and Running—Fast', desc: 'Why replace your system? Our AI integrates seamlessly with your CRM, email, and social channels—no need to change the tools you trust.' },
+                            { title: 'Seamless Integration with What You Already Use', desc: 'Why replace your system? Our AI integrates seamlessly with your CRM, email, and social channels—no need to change the tools you trust.' }
+                        ]
+                    }
+                    return <Section key={index} id={`section_${index + 1}`}  {...props} />
                 })
             }
         </>

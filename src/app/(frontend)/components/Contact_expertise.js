@@ -12,7 +12,7 @@ import 'swiper/css';
 import Link from 'next/link';
 import Image from 'next/image';
 
-const Contact_expertise = ({id}) => {
+const Contact_expertise = ({id, title,subtitle}) => {
     return (
         <>
             <section className='contact_expertise_section' id={id}>
@@ -20,7 +20,7 @@ const Contact_expertise = ({id}) => {
                     <Row>
                         <Col xxl={12} xl={12} lg={12} md={12} sm={12} xs={12}>
                             <div className='parent_area'>
-                                <h3>Core <span>Expertise</span></h3>
+                                <h3>{title} <strong>{subtitle}</strong></h3>
                                 <div className='slider_area'>
                                     <Swiper
                                         slidesPerView={3}
