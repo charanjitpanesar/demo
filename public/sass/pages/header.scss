@@ -108,7 +108,9 @@
                             a {
                                 color: variable.$black;
                                 margin-bottom: 16px;
-
+                                &:focus{
+                                    background: transparent;
+                                }
                                 &:last-child {
                                     margin-bottom: 0;
                                 }

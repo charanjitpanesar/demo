@@ -37,7 +37,7 @@ const Header = () => {
         },
         {
             href: "/ai_academy",
-            text: "Ai Academy"
+            text: "AICademy"
         },
     ]
 

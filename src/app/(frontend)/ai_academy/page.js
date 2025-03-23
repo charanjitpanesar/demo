@@ -58,7 +58,7 @@ const AiAcedemy = () => {
         <>
              {loading ? (
                 <div className="page-loader">
-                    <h1>Ai Academy</h1>
+                    <h1>AICademy</h1>
                 </div>
             ) : (
                 comp.map((Section, index) => (
