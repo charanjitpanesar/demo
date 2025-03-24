@@ -12,10 +12,13 @@
         .left {
             flex-grow: 1;
             h3 {
-                font-weight: 700;
+                font-weight: 300;
                 margin-bottom: 35px;
                 font-size: 60px;
                 color: variable.$white;
+                strong{
+                    font-weight: 700;
+                }
             }
 
             p {
@@ -51,7 +54,7 @@
                         border-radius: 8.39px;
                         background-color: variable.$white;
                         margin-bottom: 20px;
-
+                        padding: 5px;
                         img {
                             width: 100%;
                             height: 100%;
@@ -300,7 +303,7 @@
                     font-size: 14px;
                 }
                 ul{
-                    gap: 15px;
+                    gap: 20px;
                     li{
                         width: 100%;
                     }
@@ -315,7 +318,7 @@
             }
         }
         .btn_area{
-            margin-top: 30px;
+            margin-top: 55px;
         }
     }
 }
@@ -337,7 +340,7 @@
                     font-size: 14px;
                 }
                 ul{
-                    gap: 15px;
+                    gap: 20px;
                     li{
                         width: 100%;
                     }
@@ -352,7 +355,7 @@
             }
         }
         .btn_area{
-            margin-top: 25px;
+            margin-top: 55px;
         }
     }
 }
