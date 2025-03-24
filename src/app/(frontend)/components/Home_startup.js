@@ -27,12 +27,12 @@ const Home_startup = ({ id }) => {
                                 <Row className='row-gap-3'>
                                     <Col xxl={6} xl={6} lg={6} md={6} sm={6} xs={12}>
                                         <div className="right">
-                                            <p> We empower fast-growing startups and mid-scale businesses with smart automation and efficiency—<strong>no wasted time, no excess</strong> resources.</p>
+                                            <p>We streamline, automate, and optimize with <strong>AI-driven solutions</strong>—cutting friction, boosting productivity, and driving growth without a<strong> Fortune 500</strong> budget.</p>
                                         </div>
                                     </Col>
                                     <Col xxl={6} xl={6} lg={6} md={6} sm={6} xs={12}>
                                         <div className="left">
-                                            <h3>The Right Kind of Businesses—<span><strong>Startups & Mid-Scale</strong></span> Companies</h3>
+                                            <h3>Workflow Woes <span><strong>Begone</strong></span></h3>
                                         </div>
                                     </Col>
                                 </Row>

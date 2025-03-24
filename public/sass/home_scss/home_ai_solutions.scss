@@ -112,6 +112,7 @@
                         text-overflow: ellipsis;
                         display: block;
                         white-space: nowrap;
+                        margin-bottom: 10px;
                     }
 
                     p {
@@ -498,13 +499,14 @@
                 .item {
                     position: relative;
                     left: 0;
-                    margin-bottom: 25px;
+                    margin-bottom: 15px;
 
                     &::before {
                         inset: 0;
                         height: 100%;
                         background-size: cover;
                         transform: unset;
+                        display: none;
                     }
 
                     &:last-child {
@@ -515,6 +517,10 @@
                         width: 60px;
                         height: 60px;
                         padding: 10px;
+
+                        &::before {
+                            display: none;
+                        }
                     }
 
                     .line {
@@ -527,11 +533,18 @@
                         h3 {
                             font-size: 14.19px;
                             line-height: 15.78px;
+                            overflow: unset;
+                            text-overflow: unset;
+                            white-space: unset;
                         }
 
                         p {
-                            font-size: 11.97px;
-                            line-height: 16.49px;
+                            font-size: 13px;
+                            line-height: 20.49px;
+                            overflow: unset;
+                            text-overflow: unset;
+                            white-space: unset;
+                            display: block;
                         }
                     }
 
@@ -583,13 +596,14 @@
                 .item {
                     position: relative;
                     left: 0;
-                    margin-bottom: 25px;
+                    margin-bottom: 15px;
 
                     &::before {
                         inset: 0;
                         height: 100%;
                         background-size: cover;
                         transform: unset;
+                        display: none;
                     }
 
                     &:last-child {
@@ -600,6 +614,10 @@
                         width: 60px;
                         height: 60px;
                         padding: 10px;
+
+                        &::before {
+                            display: none;
+                        }
                     }
 
                     .line {
@@ -611,12 +629,20 @@
 
                         h3 {
                             font-size: 14.19px;
-                            line-height: 15.78px;
+                            line-height: 18px;
+                            overflow: unset;
+                            text-overflow: unset;
+                            white-space: unset;
+                            display: block;
                         }
 
                         p {
                             font-size: 11.97px;
-                            line-height: 16.49px;
+                            line-height: 19px;
+                            overflow: unset;
+                            text-overflow: unset;
+                            white-space: unset;
+                            display: block;
                         }
                     }
 

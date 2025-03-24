@@ -44,6 +44,7 @@
 
                     span {
                         color: variable.$white;
+                        font-weight: 700;
                     }
                 }
             }
@@ -56,9 +57,12 @@
                 p {
                     font-weight: 300;
                     font-size: 28px;
-                    line-height: 28px;
+                    line-height: 34px;
                     letter-spacing: 0.4px;
                     color: variable.$white;
+                    strong{
+                        font-weight: 700;
+                    }
                 }
             }
         }
