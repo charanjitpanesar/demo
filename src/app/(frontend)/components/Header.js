@@ -36,6 +36,10 @@ const Header = () => {
             text: "Hot Solutions"
         },
         {
+            href: "/calling_agent",
+            text: "Ai Calling Agent"
+        },
+        {
             href: "/ai_academy",
             text: "AICademy"
         },
