@@ -1,7 +1,7 @@
 "use client";
 import { useEffect, useRef, useState } from "react";
 import TableCom from "../../components/table";
-import { formatDate, getApi, getUrl, handleBulkAction, postApi } from "@/frontend/helpers";
+import { bulkAction, formatDate, getApi, getUrl, handleBulkAction, postApi } from "@/frontend/helpers";
 import { Dropdown, Form, InputGroup, Spinner, Table } from "react-bootstrap";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
@@ -110,7 +110,7 @@ const Page = () => {
   };
 
   const handleDelete = async (e, id) => {
-    let res = await bulkAction([id], "delete");
+    let res = await handleBulkAction("/api/blog/bulk-action", [id], "delete", false);
     if (res.status) {
       e.target.closest("tr").remove();
     }
