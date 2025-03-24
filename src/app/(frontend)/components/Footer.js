@@ -40,7 +40,7 @@ const Footer = () => {
         },
         {
             href: "/ai_academy",
-            text:"Ai Academy"
+            text:"AiCademy"
         },
     ]
 

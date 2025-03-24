@@ -5,14 +5,8 @@ import '../../../../public/sass/contact_scss/industry.scss';
 import Image from 'next/image';
 import round from '../../../../public/images/round.svg';
 
-const Contact_industry = ({id}) => {
-    const data = [
-        { title: 'Finance', desc: 'Track market trends and analyze data with our intuitive, user-friendly interface' },
-        { title: 'Healthcare', desc: 'Track market trends and analyze data with our intuitive, user-friendly interface' },
-        { title: 'Healthcare', desc: 'Track market trends and analyze data with our intuitive, user-friendly interface' },
-        { title: 'Healthcare', desc: 'Track market trends and analyze data with our intuitive, user-friendly interface' },
-        { title: 'Education', desc: 'Track market trends and analyze data with our intuitive, user-friendly interface' }
-    ]
+const Contact_industry = ({id, listData}) => {
+    const data = listData
     const classArr = ['top_right', 'prev', 'active', 'next', 'bottom_right']
     const slidesRef = useRef([])
     let interval = 2500
@@ -97,7 +91,7 @@ const Contact_industry = ({id}) => {
                                                     data.map((item, i) => (
                                                         <div className='slide' key={i} ref={(el) => slidesRef.current[i] = el}>
                                                             <div className="chip">
-                                                                <div className="title">{item.title}</div>
+                                                                <div className="title"><span>{item.title}</span></div>
                                                                 <div className="desc">{item.desc}</div>
                                                             </div>
                                                         </div>

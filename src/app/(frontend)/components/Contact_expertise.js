@@ -12,7 +12,7 @@ import 'swiper/css';
 import Link from 'next/link';
 import Image from 'next/image';
 
-const Contact_expertise = ({id}) => {
+const Contact_expertise = ({id, title,subtitle}) => {
     return (
         <>
             <section className='contact_expertise_section' id={id}>
@@ -20,7 +20,7 @@ const Contact_expertise = ({id}) => {
                     <Row>
                         <Col xxl={12} xl={12} lg={12} md={12} sm={12} xs={12}>
                             <div className='parent_area'>
-                                <h3>Core <span>Expertise</span></h3>
+                                <h3>{title} <strong>{subtitle}</strong></h3>
                                 <div className='slider_area'>
                                     <Swiper
                                         slidesPerView={3}
@@ -64,10 +64,10 @@ const Contact_expertise = ({id}) => {
                                                     />
                                                 </div>
                                                 <h3>
-                                                Business Consultancy
+                                                 Multi-Channel Customer Concierge
                                                 </h3>
                                                 <p>
-                                                Empowering Your Business with Strategic Insights and Innovative Solutions
+                                                Overwhelmed by customer messages? Our Concierge unifies everything, providing smart, consistent support
                                                 </p>
                                                 <Link href='/'>Learn More <i className="bi bi-arrow-right"></i></Link>
                                             </div>
@@ -83,10 +83,10 @@ const Contact_expertise = ({id}) => {
                                                     />
                                                 </div>
                                                 <h3>
-                                                    Software Development
+                                                AI Calling Agent
                                                 </h3>
                                                 <p>
-                                                    Full-stack development, scalable architectures, and cloud services.
+                                                Tired of overwhelmed support lines?  Our AI Calling Agent handles the load, ensuring callers get instant, accurate help
                                                 </p>
                                                 <Link href='/'>Learn More <i className="bi bi-arrow-right"></i></Link>
                                             </div>
@@ -102,10 +102,10 @@ const Contact_expertise = ({id}) => {
                                                     />
                                                 </div>
                                                 <h3>
-                                                AI & Machine Learning
+                                                Smart AI Assistant
                                                 </h3>
                                                 <p>
-                                                Predictive analytics, NLP, and AI-powered automation
+                                                Data silos, generic AI, inconsistent messaging, security risks.  Your business deserves a smarter AI assistant
                                                 </p>
                                                 <Link href='/'>Learn More <i className="bi bi-arrow-right"></i></Link>
                                             </div>

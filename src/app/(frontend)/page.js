@@ -5,15 +5,19 @@ import Home_choose from './components/Home_choose';
 import Home_connect from './components/Home_connect';
 // import Home_counter from './components/Home_counter';
 import Home_hero from './components/Home_hero';
-import Home_industry from './components/Home_industry';
+import Home_industry from './components/Home_industry'; // this is blogs section in home page add it bfore solution calender
 import Home_service_banner from './components/Home_service_banner';
+import Home_startup from './components/Home_startup';
 import Home_trust from './components/Home_trust';
 import Similar_news from './components/similar_news';
 import Solution_calender from './components/Solution_calender';
+import Home_ai_academy from './components/Home_ai_academy';
+import Home_ai_solutions from './components/Home_ai_solutions';
+import Home_Work from './components/Home_Work';
 
 export default function Home() {
     const comp = [
-        Home_hero, Home_service_banner, Home_cards_section, Home_book_call, Home_trust, Home_choose, Similar_news, Home_connect, Solution_calender
+        Home_hero, Home_service_banner,Home_startup, Home_cards_section, Home_book_call, Home_trust,Home_Work, Home_ai_academy,Home_ai_solutions, Solution_calender
     ]
     return (
         <>
