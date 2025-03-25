@@ -311,6 +311,11 @@
                 font-weight: 700;
             }
         }
+        form{
+            padding-top: 40px;
+            width: 50%;
+            margin: 0 auto;
+        }
         .button_area{
             padding-top: 40px;
             .btn-primary{
@@ -881,6 +886,9 @@
             h3{
                 font-size: 30px;
             }
+            form{
+                width: 60%;
+            }
         }
     }
 }
@@ -1023,6 +1031,10 @@
         .parent_area{
             h3{
                 font-size: 22px;
+            }
+            form{
+                padding-top: 20px;
+                width: 60%;
             }
             .button_area{
                 padding-top: 20px;
@@ -1174,6 +1186,10 @@
             h3{
                 font-size: 20px;
             }
+            form{
+                padding-top: 20px;
+                width: 100%;
+            }
             .button_area{
                 padding-top: 20px;
             }
@@ -1323,6 +1339,10 @@
         .parent_area{
             h3{
                 font-size: 20px;
+            }
+            form{
+                padding-top: 20px;
+                width: 100%;
             }
             .button_area{
                 padding-top: 20px;
