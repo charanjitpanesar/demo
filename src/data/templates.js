@@ -52,11 +52,20 @@ const aiAcademy = {
     email: {email}
     `,
 };
+const aiAgentDemo = {
+    subject: "New AI Agent Demo Request",
+    message: `
+    New AI Agent Demo Request 
+
+    email: {email}
+    `,
+};
 
 export const emailTemplates = {
     bookCall,
     bookAppointment,
     career,
     newsletter,
-    aiAcademy
+    aiAcademy,
+    aiAgentDemo
 }; 

@@ -1,22 +1,40 @@
 'use client'
 import Link from 'next/link'
 import React, { useState } from 'react'
-import { Button, Col, Container, Form, Row } from 'react-bootstrap'
+import { Button, Col, Container, Form, Row, Spinner } from 'react-bootstrap'
 import '../../../../public/sass/calling_agent/calling_agent.scss'
 import { toast } from 'react-toastify'
+import { postApi } from '@/frontend/helpers'
 
 
 
 const Calling_outreach = () => {
     const [email, setEmail] = useState('');
+    const [formSubmit, setFormSubmit] = useState(false);
 
-    const showToast = (e) => {
+    const showToast = async (e) => {
         e.preventDefault();
+        setFormSubmit(true);
         if (!email.trim()) {
             toast.error("Please enter your email before proceeding.");
             return;
         }
-        toast.success("Thank you! We will reach out to you shortly.");
+
+        let formData = {};
+        formData.email = email;
+
+        let resp = await postApi(`/api/send-mail?type=aiAgentDemo`, formData);
+        if(resp.status)
+        {
+            toast.success("Thank you! We will reach out to you shortly.");
+            setEmail("");
+            setFormSubmit(false);
+        }
+        else
+        {
+            toast.error("Something's Went Wrong!!")
+            setFormSubmit(false);
+        }
     }
     return (
         <>
@@ -36,7 +54,13 @@ const Calling_outreach = () => {
                                     />
                                     </div>
                                     <div className='button_area'>
-                                        <Button onClick={showToast} className='btn-primary btn-dark'>Request an AI Agent Demo</Button>
+                                        <Button onClick={showToast} className='btn-primary btn-dark' disabled={formSubmit}>
+                                            {
+                                                formSubmit ?
+                                                <Spinner animation="border" size="sm" /> :
+                                                "Request an AI Agent Demo"
+                                            }
+                                        </Button>
                                     </div>
                                 </Form>
                             </div>
