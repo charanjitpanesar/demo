@@ -19,13 +19,13 @@ const Calling_Service = () => {
                                 <Row>
                                     <Col xxl={6} xl={6} lg={6} md={6} sm={6} xs={12}>
                                         <div className='left_area'>
-                                            <h4>Overwhelmed <span>Teams</span></h4>
-                                            <p>Endless calls, long hold times, frustrated customers</p>
+                                            <h4 className='animate_up'>Overwhelmed <span>Teams</span></h4>
+                                            <p className='animate_up'>Endless calls, long hold times, frustrated customers</p>
                                         </div>
                                     </Col>
                                     <Col xxl={6} xl={6} lg={6} md={6} sm={6} xs={12}>
                                         <div className='right_area'>
-                                            <div className='logo_area'>
+                                            <div className='logo_area animate_up'>
                                                 <Image src={agentLogo1} alt="..." priority>
                                                 </Image>
                                             </div>
@@ -37,13 +37,13 @@ const Calling_Service = () => {
                                 <Row>
                                     <Col xxl={6} xl={6} lg={6} md={6} sm={6} xs={12}>
                                         <div className='left_area'>
-                                            <h4>Missed  <span> Opportunities</span></h4>
-                                            <p>Dropped calls, forgotten details, inconsistent resolutions</p>
+                                            <h4 className='animate_up'>Missed  <span> Opportunities</span></h4>
+                                            <p className='animate_up'>Dropped calls, forgotten details, inconsistent resolutions</p>
                                         </div>
                                     </Col>
                                     <Col xxl={6} xl={6} lg={6} md={6} sm={6} xs={12}>
                                         <div className='right_area'>
-                                            <div className='logo_area'>
+                                            <div className='logo_area animate_up'>
                                                 <Image src={agentLogo2} alt="..." priority>
                                                 </Image>
                                             </div>
@@ -55,13 +55,13 @@ const Calling_Service = () => {
                                 <Row>
                                     <Col xxl={6} xl={6} lg={6} md={6} sm={6} xs={12}>
                                         <div className='left_area'>
-                                            <h4>High  <span>Operational Costs</span></h4>
-                                            <p>Staffing 24/7 support teams burns budgets</p>
+                                            <h4 className='animate_up'>High  <span>Operational Costs</span></h4>
+                                            <p className='animate_up'>Staffing 24/7 support teams burns budgets</p>
                                         </div>
                                     </Col>
                                     <Col xxl={6} xl={6} lg={6} md={6} sm={6} xs={12}>
                                         <div className='right_area'>
-                                            <div className='logo_area'>
+                                            <div className='logo_area animate_up'>
                                                 <Image src={agentLogo3} alt="..." priority>
                                                 </Image>
                                             </div>
@@ -73,13 +73,13 @@ const Calling_Service = () => {
                                 <Row>
                                     <Col xxl={6} xl={6} lg={6} md={6} sm={6} xs={12}>
                                         <div className='left_area'>
-                                            <h4>Missed  <span> Opportunities</span></h4>
-                                            <p>Dropped calls, forgotten details, inconsistent resolutions</p>
+                                            <h4 className='animate_up'>Missed  <span> Opportunities</span></h4>
+                                            <p className='animate_up'>Dropped calls, forgotten details, inconsistent resolutions</p>
                                         </div>
                                     </Col>
                                     <Col xxl={6} xl={6} lg={6} md={6} sm={6} xs={12}>
                                         <div className='right_area'>
-                                            <div className='logo_area'>
+                                            <div className='logo_area animate_up'>
                                                 <Image src={agentLogo4} alt="..." priority>
                                                 </Image>
                                             </div>

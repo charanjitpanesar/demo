@@ -30,10 +30,10 @@ const Footer = () => {
             text:"Blogs"
         },
         
-        {
-            href: "/contact",
-            text:"Contact Us"
-        },
+        // {
+        //     href: "/contact",
+        //     text:"Contact Us"
+        // },
         {
             href: "/careers",
             text:"Careers"

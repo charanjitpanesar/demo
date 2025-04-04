@@ -73,10 +73,10 @@ const Contact_industry = ({id, listData}) => {
                                     <Col xxl={5} xl={5} lg={5} md={12} sm={12} xs={12}>
                                         <div className="left">
                                             <div className="title">
-                                                <h3>Industry-Specific Expertise</h3>
-                                                <h4>Solving Real Problems Across
+                                                <h3>Why These <span>Solutions</span> Are Absolute Must-Haves</h3>
+                                                {/* <h4>Solving Real Problems Across
                                                     Diverse Industries</h4>
-                                                <p> Turning Industry Challenges into Success Stories with Smart, Tailored Solutions</p>
+                                                <p> Turning Industry Challenges into Success Stories with Smart, Tailored Solutions</p> */}
                                             </div>
                                         </div>
                                     </Col>

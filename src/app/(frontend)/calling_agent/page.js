@@ -1,4 +1,5 @@
-import React from 'react'
+'use client'
+import React, { useEffect, useState } from 'react'
 import CallingAgentHeroSection from '../components/CallingAgentHeroSection'
 import Calling_Service from '../components/Calling_Service'
 import Calling_meet from '../components/Calling_meet'
@@ -17,6 +18,34 @@ const page = () => {
         Calling_result,
         Calling_outreach
     ]
+    const [loading, setLoading] = useState(true);
+
+    useEffect(() => {
+            const timer = setTimeout(() => setLoading(false), 2000); // Simulating a 2s loading time
+            return () => clearTimeout(timer);
+            
+        }, []);
+
+    useEffect(() => {
+          if (typeof window === "undefined") return; // Prevents errors during SSR
+      
+          const elements = document.querySelectorAll(".animate_up");
+          if (!elements.length) return;
+      
+          const observer = new IntersectionObserver(
+            (entries) => {
+              entries.forEach((entry) => {
+                if (entry.isIntersecting && entry.intersectionRatio >= 0.5) {
+                  entry.target.classList.add("trigger");
+                }
+              });
+            },
+            { threshold: 0.5 }
+          );
+      
+          elements.forEach((el) => observer.observe(el));
+          return () => observer.disconnect();
+        }, [loading]);
     return (
 
         <>

@@ -22,9 +22,9 @@ const Ai_key_feature = () => {
                                 </div>
                                 <Image src={bgImg} alt="..." title="..." priority />
                                 <div className='inner_area'>
-                                    <h3>KEY</h3>
-                                    <h4>FEATURES</h4>
-                                    <h5>Smart Learning, Personalized for You</h5>
+                                    <h3 className='animate_up'>KEY</h3>
+                                    <h4 className='animate_up'>FEATURES</h4>
+                                    <h5 >Smart Learning, Personalized for You</h5>
                                     <p>Explore AI-powered tutoring, structured study plans, and interactive tools designed to enhance your learning experience</p>
                                 </div>
                             </div>

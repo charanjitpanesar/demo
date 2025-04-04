@@ -9,6 +9,7 @@ import ai from '@/../public/images/ai.png';
 import line1 from '@/../public/images/line.png';
 import line2 from '@/../public/images/line2.png';
 import line3 from '@/../public/images/line3.png';
+import Link from 'next/link';
 
 const Home_ai_solutions = ({ id }) => {
     return (
@@ -58,6 +59,9 @@ const Home_ai_solutions = ({ id }) => {
                                         <p>Enterprise AI that remembers your business and creates on-brand reports, proposals, and content 5x faster.</p>
                                     </div>
                                 </div>
+                            </div>
+                            <div className='button_area'>
+                                <Link href="/solutions" className='btn-primary btn-green'>Explore Hot AI Solutions</Link>
                             </div>
                         </div>
                     </Col>

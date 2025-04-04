@@ -3,6 +3,7 @@ import { Col, Container, Row } from 'react-bootstrap'
 import '../../../../public/sass/pages/solution_cost.scss'
 import Image from 'next/image'
 import robotImg from '../../../../public/images/robot.png'
+import Link from 'next/link'
 
 const SolutionCost = () => {
     return (
@@ -19,6 +20,9 @@ const SolutionCost = () => {
                                             <p>
                                             Sure You Can Hire an army of human agents. But can they match 24/7 availability, immediate follow-ups, and a 100% on-brand voice every single time?
                                             </p>
+                                            <div className='button_area'>
+                                                <Link href="#section_7" className="btn-primary btn-green">Get in touch</Link>
+                                            </div>
                                         </div>
                                     </Col>
                                     <Col xxl={6} xl={6} lg={6} md={6} sm={6} xs={12}>
