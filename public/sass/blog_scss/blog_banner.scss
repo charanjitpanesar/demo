@@ -283,7 +283,32 @@
 
 /* Above 1400 and Below 1599 Desktop*/
 @media (min-width: 1400px) and (max-width: 1599px){
-    
+    .blog_banner_section{
+        padding-top: 70px;
+        margin-top: 132px;
+        .parent_area{
+            .left_area{
+                .upper_area{
+                    h3{
+                        font-size: 75px;
+                        line-height: normal;
+                    } 
+                }
+                .middle_area{
+                    p{
+                        font-size: 16px;
+                    }
+                }
+                .lower_area{
+                    form{
+                        .form_group{
+                            width: 330px;
+                        }
+                    }
+                }
+            }
+        }
+    }
 }
 
 /* 1300 desktop only */
