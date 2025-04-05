@@ -20,7 +20,7 @@ const CallingAgentHeroSection = () => {
                             </div>
                             <div className='content_area'>
                                 <h2>THE <span>AI Calling</span> Agent</h2>
-                                <h6><span>24/7 AI-powered calling & follow-ups</span> to eliminate cold-call inefficiencies and <span>triple your lead conversions</span></h6>
+                                <h6><span>Optimize Customer Interactions:</span> AI Automating Appointments, Bookings, and Instant Information Delivery                                 </h6>
                             </div>
                         </div>
                     </Col>

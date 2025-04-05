@@ -16,7 +16,7 @@ const Calling_meet = () => {
                                     alt='...'
                                     priority
                                 />
-                                <h2>The <span>AI Calling</span> Agent</h2>
+                                <h2 className='animate_up' >The <span>AI Calling</span> Agent</h2>
                             </div>
                         </div>
                     </Col>

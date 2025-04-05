@@ -2,9 +2,11 @@
 @use "../base/mixins.scss";
 
 .calling_agent_hero_section{
-    margin-top: 162px;
     padding: 90px 0;
     background: url('../../../public/images/calling_agent_bg.png') no-repeat center/cover;
+    padding-top: 0;
+    height: 100vh;
+    align-content: center;
     .parent_area{
         .logo_area{
             margin: 0 auto;
@@ -16,7 +18,7 @@
             }
         }
         .content_area{
-            margin-top: -100px;
+            margin-top: -140px;
             h2{
                 font-weight: 400;
                 font-size: 78px;
@@ -64,6 +66,7 @@
         }
         .inner_area{
             padding-top: 90px;
+            height: 100vh;
             &.even{
                 .row{
                     flex-direction: row-reverse;
@@ -220,8 +223,8 @@
             .card_area{
                 width: calc((100% - 60px)/2);
                 .image_area{
-                    height: 320px;
-                    width: 320px;
+                    height: 220px;
+                    width: 220px;
                     margin: 0 auto;
                     img{
                         height: 100%;
@@ -249,12 +252,15 @@
 
 
 .calling_result_section{
-    padding-top: 90px;
+    // padding-top: 90px;
+    margin-top: 90px;
+    background: linear-gradient(90deg, #073D57 60.5%, rgba(7, 61, 87, 0) 86.5%);
+
     .parent_area{
         display: flex;
         flex-wrap: wrap;
         .left_area{
-            background-color: variable.$sea_green;
+            // background-color: variable.$sea_green;
             width: 60%;
             align-content: center;
             .content_area{
@@ -263,7 +269,7 @@
                 h3{
                     font-weight: 400;
                     font-size: 60px;
-                    color: variable.$black;
+                    color: variable.$white;
                     span{
                         font-weight: 700;
                     }
@@ -271,7 +277,7 @@
                 p{
                     font-weight: 500;
                     font-size: 20px;
-                    color: variable.$black;
+                    color: variable.$white;
                     padding-top: 20px;
                 }
             }
@@ -281,6 +287,8 @@
             .image_area{
                 height: 710px;
                 overflow: hidden;
+                position: relative;
+                z-index: -1;
                 &:hover{
                     img{
                         transform: scale(1.1);
@@ -355,7 +363,7 @@
 /* 1300 desktop only */
 @media (min-width: 1300px) and (max-width: 1399px){
     .calling_agent_hero_section{
-        margin-top: 132px;
+        // margin-top: 132px;
         padding: 130px 0;
         .parent_area{
             .logo_area{
@@ -455,7 +463,8 @@
     }
 
     .calling_result_section{
-        padding-top: 70px;
+        // padding-top: 70px;
+        margin-top: 70px;
         .parent_area{
             .left_area{
                 .content_area{
@@ -486,7 +495,7 @@
 /* 1200 desktop only */
 @media (min-width: 1200px) and (max-width: 1299px){
     .calling_agent_hero_section{
-        margin-top: 132px;
+        // margin-top: 132px;
         padding: 130px 0;
         .parent_area{
             .logo_area{
@@ -586,7 +595,8 @@
     }
 
     .calling_result_section{
-        padding-top: 70px;
+        // padding-top: 70px;
+        margin-top: 70px;
         .parent_area{
             .left_area{
                 .content_area{
@@ -616,7 +626,7 @@
 /* Landscape tablets and medium desktops */
 @media (min-width: 992px) and (max-width: 1199px) {
 	.calling_agent_hero_section{
-        margin-top: 120px;
+        // margin-top: 120px;
         padding: 70px 0;
         .parent_area{
             .logo_area{
@@ -719,7 +729,8 @@
     }
 
     .calling_result_section{
-        padding-top: 50px;
+        // padding-top: 50px;
+        margin-top: 50px;
         .parent_area{
             .left_area{
                 .content_area{
@@ -753,13 +764,15 @@
 /* Landscape tablets and ipad */
 @media (min-width: 768px) and (max-width: 991px) {
 	.calling_agent_hero_section{
-        margin-top: 120px;
+        // margin-top: 120px;
         padding: 70px 0;
+        height: 100%;
         .parent_area{
             .logo_area{
                 width: 380px;
             }
             .content_area{
+                margin-top: -80px;
                 h2{
                     font-size: 40px;
                     span{
@@ -858,7 +871,8 @@
     }
 
     .calling_result_section{
-        padding-top: 40px;
+        // padding-top: 40px;
+        margin-top: 40px;
         .parent_area{
             .left_area{
                 .content_area{
@@ -896,15 +910,16 @@
 /* Landscape phones and portrait tablets */
 @media (min-width: 576px) and (max-width: 767px) {
 	.calling_agent_hero_section{
-        margin-top: 90px;
+        // margin-top: 90px;
         padding: 30px 0;
         .parent_area{
             .logo_area{
                 position: relative;
-                top: -50px;
+                // top: -50px;
                 width: 280px;
             }
             .content_area{
+                margin-top: -80px;
                 h2{
                     font-size: 30px;
                     span{
@@ -1003,7 +1018,8 @@
     }
 
     .calling_result_section{
-        padding-top: 30px;
+        // padding-top: 30px;.
+        margin-top: 30px;
         .parent_area{
             .left_area{
                 .content_area{
@@ -1046,15 +1062,17 @@
 /* Landscape phones and portrait tablets */
 @media (min-width: 361px) and (max-width: 575px) {
 	.calling_agent_hero_section{
-        margin-top: 90px;
-        padding: 30px 0;
+        // margin-top: 90px;
+        padding: 50px 0;
+        height: 100%;
         .parent_area{
             .logo_area{
                 position: relative;
-                top: -50px;
+                // top: -50px;
                 width: 200px;
             }
             .content_area{
+                margin-top: -40px;
                 h2{
                     font-size: 25px;
                     span{
@@ -1155,7 +1173,9 @@
     }
 
     .calling_result_section{
-        padding-top: 30px;
+        // padding-top: 30px;
+        margin-top: 30px;
+        background: transparent;
         .parent_area{
             .left_area{
                 width: 100%;
@@ -1200,15 +1220,17 @@
 /* Smaller phones */
 @media (max-width: 360px) {
 	.calling_agent_hero_section{
-        margin-top: 90px;
-        padding: 30px 0;
+        // margin-top: 90px;
+        padding: 50px 0;
+        height: 100%;
         .parent_area{
             .logo_area{
                 position: relative;
-                top: -50px;
+                // top: -50px;
                 width: 200px;
             }
             .content_area{
+                margin-top: -40px;
                 h2{
                     font-size: 25px;
                     span{
@@ -1309,7 +1331,9 @@
     }
 
     .calling_result_section{
-        padding-top: 30px;
+        // padding-top: 30px;
+        margin-top: 30px;
+        background: transparent;
         .parent_area{
             .left_area{
                 width: 100%;

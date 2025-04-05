@@ -10,10 +10,14 @@
             .title {
                 h3 {
                     font-size: 54px;
-                    font-weight: 600;
+                    font-weight: 300;
                     line-height: 62px;
-                    color: variable.$primary_color;
+                    color: variable.$white;
                     margin-bottom: 15px;
+                    span{
+                        font-weight: 600;
+                        color: variable.$primary_color;
+                    }
                 }
 
                 h4 {

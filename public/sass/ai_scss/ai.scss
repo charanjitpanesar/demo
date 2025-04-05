@@ -247,7 +247,7 @@
             overflow-x: clip;
             h2{
                 font-weight: 700;
-                font-size: 278.96px;
+                font-size: 251.96px;
                 line-height: 100%;
                 letter-spacing: -5%;
                 text-transform: uppercase;
@@ -453,28 +453,28 @@
                 .button_area{
                     .btn-primary{
                         min-width: auto;
-                        background: #00e0e0;
-                        border-color: #00e0e0;
+                        background: transparent;
+                        border-color: white;
                         padding: 10px 20px;
-                        &:hover{
-                            background: #0aacac;
-                            border-color: #0aacac;
-                        }
+                        // &:hover{
+                        //     background: #0aacac;
+                        //     border-color: #0aacac;
+                        // }
                     }
                 }
                 .form-group{
                     width: 450px;
                     padding-bottom: 0;
                     .form-control{
-                        color: variable.$white;
-                        box-shadow: 0px 0px 250px 0px #00E0E080;
-                        background: #00e0e0;
-                        border-color: #00e0e0;
-                        &::placeholder{
-                            color: inherit;
-                            text-align: center;
+                        // color: variable.$white;
+                        // box-shadow: 0px 0px 250px 0px #00E0E080;
+                        // background: #00e0e0;
+                        // border-color: #00e0e0;
+                        // &::placeholder{
+                        //     color: inherit;
+                        //     text-align: center;
 
-                        }
+                        // }
                     }
                 }
             }
@@ -509,7 +509,153 @@
 
 /* Above 1400 and Below 1599 Desktop*/
 @media (min-width: 1400px) and (max-width: 1599px){
+    .ai_hero_section{
+        margin-top: 132px;
+        padding-top: 50px;
+        .parent_area{
+            .image_area{
+                width: 550px;
+                height: auto;
+            }
+            h4{
+                padding-top: 30px;
+                font-size: 30px;
+            }
+            h2{
+                font-size: 55px;
+                line-height: 110px;
+            }
+        }
+    }
+
+
     
+    .text_opener_section{
+        padding-top: 70px;
+        .parent_area{
+            .wrapper{
+                height: 60vh;
+                .wrapper_top{
+                    h1{
+                        font-size: 70px;
+                    }
+                }
+                .wrapper_bottom{
+                    h1{
+                        font-size: 70px;
+                    }
+                }
+                .wrapper_center{
+                    .inner_area{
+                        h4{
+                            font-size: 55px;
+                        }
+                    }
+                }
+
+            }
+        }
+    }
+
+    .ai_chat_banner_section{
+        .parent_area{
+            h3{
+                font-size: 30px;
+            }
+        }
+    }
+
+    .ai_why_matter_section{
+        padding-top: 70px;
+        .parent_area{
+            .upper_area{
+                h3{
+                    font-size: 50px;
+                }
+            }
+            .middle_area{
+                padding-top: 70px;
+                h2{
+                    font-size: 230px;
+                }
+            }
+            .lower_area{
+                padding-top: 70px;
+                .card_inner{
+                    padding: 0;
+                    .image_area{
+                        height: 120px;
+                        width: 120px;
+                    }
+                }
+            }
+        }
+    }
+
+    .ai_key_feature_section{
+        padding-top: 70px;
+        .parent_area{
+            .img_area{
+                width: 900px;
+                .inner_area{
+                    h3{
+                        font-size: 85px;
+                    }
+                    h4{
+                        font-size: 128px;
+                    }
+                    p{
+                        padding-top: 10px;
+                        width: 70%;
+                    }
+                }
+            }
+        }
+    }
+
+    #page1{
+        margin-top: 70px;
+    }
+    .parallax_section{
+        height: 100vh;
+        .parent_area{
+            .left_area{
+                width: 60%;
+                h3{
+                    font-size: 50px;
+                }
+                p{
+                    font-size: 24px;
+                }
+            }
+        }
+    }
+
+    .ai_impact_section{
+        padding-top: 70px;
+        .parent_area{
+            padding: 70px 0;
+            h3{
+                font-size: 55px;
+            }
+        }
+    }
+
+    .ai_shape_section{
+        padding-top: 70px;
+        .parent_area{
+            .left_area{
+                h3{
+                    font-size: 35px;
+                } 
+            }
+        }
+    }
+
+    .ai_newsletter_section{
+        padding: 70px 0;
+    }
+
 }
 
 /* 1300 desktop only */

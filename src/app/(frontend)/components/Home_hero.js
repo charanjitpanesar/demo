@@ -24,7 +24,7 @@ const Home_hero = ({ id }) => {
                                                 Outpace Outperform Outlast
                                             </h3>
                                             <div className='desc'>Say Hello to Smarter Business: AI-Powered Automation for Any Industry</div>
-                                            <p>At <strong>SAYNT AI</strong>, we build custom software, automate workflows, and deliver real-time intelligence so you can focus on the bigger picture. Forget the stress—let us handle the heavy lifting under the hood.</p>
+                                            {/* <p>At <strong>SAYNT AI</strong>, we build custom software, automate workflows, and deliver real-time intelligence so you can focus on the bigger picture. Forget the stress—let us handle the heavy lifting under the hood.</p> */}
                                             <div className='buttons_area'>
                                                 <Link href='https://wa.me/923299346077' className='btn-primary btn-green'>Request a Demo</Link>
                                                 {/* <Link href='/solutions' className='btn-primary btn-light'>Learn More</Link> */}

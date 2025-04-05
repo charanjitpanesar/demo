@@ -3,8 +3,13 @@
 
 
 .home_work_section {
+    padding-top: 90px;
+    position: relative;
     .parent_area {
         h3 {
+            left: 0;
+            right: 0;
+            position: absolute;
             font-weight: 700;
             font-size: 64px;
             color: variable.$white;

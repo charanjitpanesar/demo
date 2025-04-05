@@ -16,45 +16,45 @@ const Calling_impact = () => {
                     <Row>
                         <Col xxl={12} xl={12} lg={12} md={12} sm={12} xs={12}>
                             <div className='parent_area'>
-                                <h3>Impact by the <span>Numbers</span></h3>
+                                <h3 className='animate_up'>Impact by the <span>Numbers</span></h3>
                                 <div className='card_parent'>
                                     <div className='card_area'>
-                                        <div className='image_area'>
+                                        <div className='image_area animate_up'>
                                             <Image src={impactLogo1} alt="..." priority />
                                         </div>
-                                        <p>
+                                        <p className='animate_up'>
                                             <span>90%</span>+ Call Answer Rate - No more missed opportunities
                                         </p>
                                     </div>
                                     <div className='card_area'>
-                                        <div className='image_area'>
+                                        <div className='image_area animate_up'>
                                             <Image src={impactLogo2} alt="..." priority />
                                         </div>
-                                        <p>
+                                        <p className='animate_up'>
                                             <span>60%</span> Cost Reduction - Slash staffing and training overhead
                                         </p>
                                     </div>
                                     <div className='card_area'>
-                                        <div className='image_area'>
+                                        <div className='image_area animate_up'>
                                             <Image src={impactLogo3} alt="..." priority />
                                         </div>
-                                        <p>
+                                        <p className='animate_up'>
                                             <span>2X</span> Faster Resolution -  AI resolves common queries instantly
                                         </p>
                                     </div>
                                     <div className='card_area'>
-                                        <div className='image_area'>
+                                        <div className='image_area animate_up'>
                                             <Image src={impactLogo4} alt="..." priority />
                                         </div>
-                                        <p>
+                                        <p className='animate_up'>
                                             <span>Zero</span>  coffee breaks required (unless you want your AI to sip a digital latte)
                                         </p>
                                     </div>
                                     <div className='card_area'>
-                                        <div className='image_area'>
+                                        <div className='image_area animate_up'>
                                             <Image src={impactLogo5} alt="..." priority />
                                         </div>
-                                        <p>
+                                        <p className='animate_up'>
                                             <span> 30% </span>Higher Satisfaction –  Happy customers = repeat business
                                         </p>
                                     </div>

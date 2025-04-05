@@ -15,10 +15,10 @@ const Calling_result = () => {
                             <div className='parent_area'>
                                 <div className='left_area'>
                                     <div className='content_area'>
-                                        <h3>
+                                        <h3 className='animate_up'>
                                             Fraction of the Cost, <span>100% of the Results</span>
                                         </h3>
-                                        <p>
+                                        <p className='animate_up'>
                                             All the benefits—lightning-fast responses, flawless accuracy, seamless CRM integration—at a fraction of human labor costs. Free your team to tackle complex issues and build deeper customer loyalty
                                         </p>
                                     </div>

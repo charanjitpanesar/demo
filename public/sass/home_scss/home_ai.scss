@@ -134,7 +134,30 @@
 @media (min-width: 1600px) and (max-width: 1679px) {}
 
 /* Above 1400 and Below 1599 Desktop*/
-@media (min-width: 1400px) and (max-width: 1599px) {}
+@media (min-width: 1400px) and (max-width: 1599px) {
+    .home_ai{
+        .parent_area{
+            .left{
+                h3{
+                    margin-bottom: 30px;
+                    font-size: 50px;
+                }
+                p{
+                    margin-bottom: 30px;
+                }
+            }
+            .right{
+                width: 600px;
+                .img_wrapper{
+                    height: 500px;
+                }
+            }
+        }
+        .btn_area{
+            margin-top: 70px;
+        }
+    }
+}
 
 /* 1300 desktop only */
 @media (min-width: 1300px) and (max-width: 1399px) {

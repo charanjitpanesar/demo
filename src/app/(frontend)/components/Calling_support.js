@@ -20,8 +20,8 @@ const Calling_support = () => {
                 <Row>
                     <Col xxl={12} xl={12} lg={12} md={12} sm={12} xs={12}>
                         <div className='parent_area'>
-                            <h3>Our AI <span>Calling</span> Agent is here to <span>revolutionize</span> outreach and support</h3>
-                            <div className='slider_area'>
+                            <h3 className='animate_up'>Our AI <span>Calling</span> Agent is here to <span>revolutionize</span> outreach and support</h3>
+                            <div className='slider_area animate_up'>
                                 <Swiper
                                     slidesPerView={4}
                                     spaceBetween={30}
