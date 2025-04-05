@@ -14,12 +14,12 @@ const Calling_outreach = () => {
 
     const showToast = async (e) => {
         e.preventDefault();
-        setFormSubmit(true);
         if (!email.trim()) {
             toast.error("Please enter your email before proceeding.");
             return;
         }
-
+        
+        setFormSubmit(true);
         let formData = {};
         formData.email = email;
 
