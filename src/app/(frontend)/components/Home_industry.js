@@ -7,7 +7,7 @@ import img1 from '../../../../public/images/home_blog1.jpg'
 import img2 from '../../../../public/images/deepseek.png'
 import img3 from '../../../../public/images/world.webp'
 import Image from 'next/image'
-import { getApi } from '@/frontend/helpers'
+import { getApi, publicPath } from '@/frontend/helpers'
 
 const Home_industry = ({ id }) => {
 //     const cardsData = [
@@ -76,7 +76,7 @@ const Home_industry = ({ id }) => {
                                         <div className="image_area">
                                             <div className="desc">{card.desc}</div>
                                             <Image
-                                                src={publicPath(src)}
+                                                src={publicPath(card.image)}
                                                 alt="..."
                                                 title="..."
                                                 priority
