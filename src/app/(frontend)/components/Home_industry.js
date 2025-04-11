@@ -76,7 +76,7 @@ const Home_industry = ({ id }) => {
                                         <div className="image_area">
                                             <div className="desc">{card.desc}</div>
                                             <Image
-                                                src={`${BASE_URL}${card.image}`}
+                                                src={publicPath(src)}
                                                 alt="..."
                                                 title="..."
                                                 priority
