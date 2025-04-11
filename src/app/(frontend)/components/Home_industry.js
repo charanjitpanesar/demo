@@ -71,7 +71,7 @@ const Home_industry = ({ id }) => {
                                 </div>
                             </div>
                             <div className='cards_area'>
-                                {blogData.map((card, index) => (
+                                {blogData && blogData.map((card, index) => (
                                     <Link href={`blog_detail/${card._id}`} key={index} className={`card_inner card-${index + 1}`}>
                                         <div className="image_area">
                                             <div className="desc">{card.desc}</div>
