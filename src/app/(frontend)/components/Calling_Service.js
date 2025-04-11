@@ -69,24 +69,6 @@ const Calling_Service = () => {
                                     </Col>
                                 </Row>
                             </div>
-                            <div className='inner_area even'>
-                                <Row>
-                                    <Col xxl={6} xl={6} lg={6} md={6} sm={6} xs={12}>
-                                        <div className='left_area'>
-                                            <h4 className='animate_up'>Missed  <span> Opportunities</span></h4>
-                                            <p className='animate_up'>Dropped calls, forgotten details, inconsistent resolutions</p>
-                                        </div>
-                                    </Col>
-                                    <Col xxl={6} xl={6} lg={6} md={6} sm={6} xs={12}>
-                                        <div className='right_area'>
-                                            <div className='logo_area animate_up'>
-                                                <Image src={agentLogo4} alt="..." priority>
-                                                </Image>
-                                            </div>
-                                        </div>
-                                    </Col>
-                                </Row>
-                            </div>
                         </div>
                     </Col>
                 </Row>

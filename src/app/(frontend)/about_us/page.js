@@ -6,9 +6,11 @@ import About_partners from '../components/About_partners'
 import Contact_expertise from '../components/Contact_expertise'
 import About_current_work from '../components/About_current_work'
 import About_meet_team from '../components/About_meet_team'
+import AboutMakeSection from '../components/AboutMakeSection'
+import AboutVision from '../components/AboutVision'
 
 const About_us = () => {
-    const comp = [About_banner, About_what_we_do, Contact_expertise, About_meet_team, About_work_together]
+    const comp = [About_banner, AboutVision, AboutMakeSection , About_what_we_do, Contact_expertise, About_meet_team, About_work_together]
     return (
         <>
             {

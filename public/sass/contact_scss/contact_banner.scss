@@ -88,7 +88,14 @@
 
 /* Above 1400 and Below 1599 Desktop*/
 @media (min-width: 1400px) and (max-width: 1599px){
-    
+    .contact_banner_section{
+        .parent_area{
+            h3{
+                font-size: 85px;
+                line-height: normal;
+            } 
+        }
+    }
 }
 
 /* 1300 desktop only */
