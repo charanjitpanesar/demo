@@ -2,7 +2,10 @@
 import React from 'react'
 import { Col, Container, Row } from 'react-bootstrap'
 import '../../../../public/sass/ai_scss/ai.scss'
-import bannerImg from '../../../../public/images/ai_banner_img2.png'
+import parallaxmg1 from '../../../../public/images/parallax_img1.png'
+import parallaxmg2 from '../../../../public/images/parallax_img2.png'
+import parallaxmg3 from '../../../../public/images/parallax_img3.png'
+import parallaxmg4 from '../../../../public/images/parallax_img1.png'
 import Image from 'next/image'
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
@@ -77,7 +80,7 @@ const Parallax_section = () => {
                                     <Col xxl={6} xl={6} lg={6} md={6} sm={6} xs={12}>
                                         <div className='right_area'>
                                             <div className='image_area animate_up'>
-                                                <Image src={bannerImg} alt='...' title='...' priority />
+                                                <Image src={parallaxmg1} alt='...' title='...' priority />
                                             </div>
                                         </div>
                                     </Col>
@@ -96,7 +99,7 @@ const Parallax_section = () => {
                                     <Col xxl={6} xl={6} lg={6} md={6} sm={6} xs={12}>
                                         <div className='right_area'>
                                             <div className='image_area animate_up'>
-                                                <Image src={bannerImg} alt='...' title='...' priority />
+                                                <Image src={parallaxmg2} alt='...' title='...' priority />
                                             </div>
                                         </div>
                                     </Col>
@@ -131,7 +134,7 @@ const Parallax_section = () => {
                                     <Col xxl={6} xl={6} lg={6} md={6} sm={6} xs={12}>
                                         <div className='right_area'>
                                             <div className='image_area animate_up'>
-                                                <Image src={bannerImg} alt='...' title='...' priority />
+                                                <Image src={parallaxmg3} alt='...' title='...' priority />
                                             </div>
                                         </div>
                                     </Col>
@@ -150,7 +153,7 @@ const Parallax_section = () => {
                                     <Col xxl={6} xl={6} lg={6} md={6} sm={6} xs={12}>
                                         <div className='right_area'>
                                             <div className='image_area animate_up'>
-                                                <Image src={bannerImg} alt='...' title='...' priority />
+                                                <Image src={parallaxmg4} alt='...' title='...' priority />
                                             </div>
                                         </div>
                                     </Col>
