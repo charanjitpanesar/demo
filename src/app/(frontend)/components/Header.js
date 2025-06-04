@@ -16,6 +16,18 @@ const Header = () => {
             text: "Home"
         },
         {
+            href: "/solutions",
+            text: "Hot Solutions"
+        },
+        {
+            href: "/calling_agent",
+            text: "Ai Calling Agent"
+        },
+        {
+            href: "/ai_academy",
+            text: "AICademy"
+        },
+        {
             href: "/about_us",
             text: "About Us"
         },
@@ -30,18 +42,6 @@ const Header = () => {
         {
             href: "/careers",
             text: "Careers"
-        },
-        {
-            href: "/solutions",
-            text: "Hot Solutions"
-        },
-        {
-            href: "/calling_agent",
-            text: "Ai Calling Agent"
-        },
-        {
-            href: "/ai_academy",
-            text: "AICademy"
         },
     ]
 
@@ -81,7 +81,7 @@ const Header = () => {
                                     <ul>
                                         {
                                             navLinks.map((element, index) => {
-                                                return <li key={index} className={`${element.href !== "/ai_academy" && pathname === element.href ? 'active' : ''} ${index === navLinks.length - 1 ? 'last_item' : ''}`} >
+                                                return <li key={index} className={`${element.href !== "/ai_academy" && pathname === element.href ? 'active' : ''} ${index === navLinks.length - 4 ? 'last_item' : ''}`} >
                                                     {/* <Link href={element.href}>{element.text}
                                                     </Link> */}
                                                     {

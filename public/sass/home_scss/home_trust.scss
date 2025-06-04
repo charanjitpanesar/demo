@@ -37,7 +37,7 @@
 
             ul {
                 li {
-                    font-weight: 700;
+                    font-weight: 400;
                     color: variable.$white;
                     font-size: 15.36px;
                     margin-bottom: 55px;
@@ -45,6 +45,7 @@
                             margin-bottom: 0;
                         }
                     span {
+                        font-weight: 700;
                         color: variable.$primary_color;
                     }
                 }

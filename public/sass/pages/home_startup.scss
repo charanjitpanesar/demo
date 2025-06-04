@@ -7,10 +7,10 @@
 
     .parent_area {
         .wide_card {
-            padding: 90px 74px;
+            padding: 60px 74px;
             background-color: variable.$wide_card_bg;
             border-radius: 32px;
-            margin-bottom: 70px;
+            margin-bottom: 50px;
             background-image: url('../../images/round_bg.png');
             background-position: left center;
             background-repeat: no-repeat;
@@ -83,7 +83,20 @@
 @media (min-width: 1600px) and (max-width: 1679px) {}
 
 /* Above 1400 and Below 1599 Desktop*/
-@media (min-width: 1400px) and (max-width: 1599px) {}
+@media (min-width: 1400px) and (max-width: 1599px) {
+    .home_startup_section{
+        .parent_area{
+            .wide_card{
+                .left{
+                    h3{
+                        font-size: 35px;
+                        line-height: 40.68px;
+                    }
+                }
+            }
+        }
+    }
+}
 
 /* 1300 desktop only */
 @media (min-width: 1300px) and (max-width: 1399px) {

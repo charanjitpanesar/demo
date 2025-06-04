@@ -10,7 +10,7 @@ import AboutMakeSection from '../components/AboutMakeSection'
 import AboutVision from '../components/AboutVision'
 
 const About_us = () => {
-    const comp = [About_banner, AboutVision, AboutMakeSection , About_what_we_do, Contact_expertise, About_meet_team, About_work_together]
+    const comp = [About_banner, AboutMakeSection, AboutVision  , About_what_we_do, About_meet_team, About_work_together]
     return (
         <>
             {

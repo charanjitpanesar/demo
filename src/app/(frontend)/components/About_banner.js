@@ -27,7 +27,8 @@ const About_banner = ({id}) => {
                                 </Link> */}
                             </div>
                             <h3>OutSpace Competition with breakthrough Technology 
-                            It is what we do</h3>
+                           </h3>
+                            <h4>It is what we do</h4>
                             <p>Cost-efficient, compliant, and tailored AI tools for your business.</p>
                             {/* <div className='intro_btn'>
                                 <Link href="/">

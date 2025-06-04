@@ -6,12 +6,23 @@
     height: 700px;
     background: url('../../images/about_banner_bg.png') no-repeat top left / 60%;
     height: 100dvh;
+    position: relative;
+    z-index: 1;
+    &::after{
+        content: '';
+        inset: 0;
+        background: url('../../images/about_banner_bg2.png') no-repeat center / 100% 100%;
+        position: absolute;
+        height: 100%;
+        width: 100%;
+        z-index: -1;
+    }
     .parent_area{
         height: 100%;
         align-content: center;
         width: 673px;
         max-width: 100%;
-        margin-left: auto;
+        // margin-left: auto;
         .button_area{
             a{
                 padding: 8px 16px;
@@ -46,19 +57,24 @@
         h3{
             padding-top: 10px;
             background: linear-gradient(90.4deg, #FEFEFE 0.35%, #45FFD0 145.96%);
-            font-size: 48.33px;
+            font-size: 50.33px;
             font-weight: 500;
-            text-align: right;
+            // text-align: right;
             color: transparent;
             background-size: 300% 300%; 
             background-clip: text;
             -webkit-background-clip: text; 
             animation: gradient-move 3s infinite linear; 
         }
+        h4{
+            font-weight: 500;
+            font-size: 38px;
+            color: variable.$white;
+        }
         p{
             font-size: 16px;
             font-weight: 400;
-            text-align: right;
+            // text-align: right;
             color: variable.$white2;
             padding-top: 8px;
         }
@@ -138,6 +154,9 @@
             h3{
                 font-size: 40px;
             }
+            h4{
+                font-size: 28px;
+            }
             .intro_btn{
                 padding-top: 40px;
             }
@@ -154,6 +173,9 @@
             width: 557px;
             h3{
                 font-size: 40px;
+            }
+            h4{
+                font-size: 28px;
             }
             .intro_btn{
                 padding-top: 40px;
@@ -177,6 +199,9 @@
             h3{
                 font-size: 35px;
             }
+            h4{
+                font-size: 28px;
+            }
             .intro_btn{
                 padding-top: 40px;
             }
@@ -198,6 +223,9 @@
             }
             h3{
                 font-size: 35px;
+            }
+            h4{
+                font-size: 28px;
             }
             .intro_btn{
                 padding-top: 40px;
@@ -224,6 +252,11 @@
             }
             h3{
                 font-size: 28px;
+                text-align: center;
+            }
+            h4{
+                font-size: 22px;
+                padding-top: 5px;
                 text-align: center;
             }
             p{
@@ -267,6 +300,11 @@
                 font-size: 22px;
                 text-align: center;
             }
+            h4{
+                font-size: 20px;
+                padding-top: 5px;
+                text-align: center;
+            }
             p{
                 font-size: 14px;
                 text-align: center;
@@ -306,6 +344,11 @@
             }
             h3{
                 font-size: 22px;
+                text-align: center;
+            }
+            h4{
+                font-size: 20px;
+                padding-top: 5px;
                 text-align: center;
             }
             p{

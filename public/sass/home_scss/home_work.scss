@@ -259,7 +259,33 @@
 @media (min-width: 1600px) and (max-width: 1679px) {}
 
 /* Above 1400 and Below 1599 Desktop*/
-@media (min-width: 1400px) and (max-width: 1599px) {}
+@media (min-width: 1400px) and (max-width: 1599px) {
+    .home_work_section{
+        .parent_area{
+            h3{
+                font-size: 50px;
+            }
+            .work_area{
+                .slider_area{
+                    .swiper{
+                        .swiper-slide{
+                            .item{
+                                p{
+                                    &.txt{
+                                        right: 5%;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+                .pagination_area{
+                    margin-bottom: 30px;
+                }
+            }
+        }
+    }
+}
 
 /* 1300 desktop only */
 @media (min-width: 1300px) and (max-width: 1399px) {

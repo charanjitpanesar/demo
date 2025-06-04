@@ -34,7 +34,7 @@ const Home_Work = () => {
                         <div className="parent_area">
                             <h3>How we <span>Work</span></h3>
                             <div className="work_area">
-                                <div className="pagination_area">
+                                <div className="pagination_area opacity-0">
                                     <span>{current}</span>/ <span>{length}</span>
                                 </div>
                                 <ul className="list" ref={ref}>

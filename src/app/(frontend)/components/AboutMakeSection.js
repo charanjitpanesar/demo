@@ -7,7 +7,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import slideImg1 from '../../../../public/images/slide_bg_img1.png'
 import slideImg2 from '../../../../public/images/slide_bg_img2.png'
 import slideImg3 from '../../../../public/images/slide_bg_img3.png'
-import { Thumbs } from 'swiper/modules';
+import { Autoplay, Thumbs } from 'swiper/modules';
 
 // Import Swiper styles
 import "swiper/css";
@@ -26,7 +26,12 @@ const AboutMakeSection = (props) => {
                             <div className='slider_area'>
                                 <Swiper className="mySwiper"
                                      thumbs={{ swiper: thumbsSwiper }}
-                                     modules={[ Thumbs]}
+                                     modules={[ Thumbs, Autoplay]}
+                                     speed={4000} 
+                                      autoplay={{
+                                        delay: 3000, // 3 seconds
+                                        disableOnInteraction: false,
+                                    }}
                                 >
                                     <SwiperSlide>
                                         <div className='slide_inner'>
