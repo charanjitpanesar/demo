@@ -41,6 +41,7 @@ const Home_hero = ({ id }) => {
                                                     priority
                                                 />
                                             </div> */}
+                                            <div className="logo_grd"></div>
                                             <div className="outer_circle">
                                                 <div className="rotate_img first">
                                                     <Image src={container} alt='...' title='...' fetchPriority='low' priority={false} />

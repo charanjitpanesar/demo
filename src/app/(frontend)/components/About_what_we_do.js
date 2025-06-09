@@ -4,7 +4,7 @@ import Card from './Card';
 import '../../../../public/sass/home_scss/home_cards_section.scss'
 
 
-const About_what_we_do = ({id}) => {
+const About_what_we_do = ({ id }) => {
 
     const cardData = [
         {
@@ -41,11 +41,11 @@ const About_what_we_do = ({id}) => {
                             <div className='parent_area'>
                                 <h3>What We <span>Do</span></h3>
                                 <Row>
-                                {cardData.map((card, index) => (
+                                    {cardData.map((card, index) => (
                                         <Col key={index} xxl={4} xl={4} lg={4} md={4} sm={6} xs={12}>
-                                            <Card 
-                                                heading={card.heading} 
-                                                description={card.description} 
+                                            <Card
+                                                heading={card.heading}
+                                                description={card.description}
                                                 className={`card_${index + 1}`}
                                             />
                                         </Col>
@@ -55,6 +55,7 @@ const About_what_we_do = ({id}) => {
                         </Col>
                     </Row>
                 </Container>
+                <div className="gradient"></div>
             </section>
         </>
     )

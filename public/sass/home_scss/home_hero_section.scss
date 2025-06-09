@@ -44,6 +44,7 @@
 
         .right_area {
             padding-right: 50px;
+            position: relative;
 
             .outer_circle {
                 border: 1.5px solid variable.$border_color4;
@@ -114,6 +115,16 @@
                         }
                     }
                 }
+            }
+
+            .logo_grd {
+                position: absolute;
+                filter: blur(200px);
+                background: linear-gradient(204.29deg, #ECECEC 85.04%, #080808 85.04%);
+                width: min(30%, 600px);
+                aspect-ratio: 2/1;
+                bottom: 0;
+                left: 200px;
             }
         }
     }
@@ -267,13 +278,15 @@
         margin-top: 132px;
         padding-top: 70px;
         height: calc(100dvh - 132px);
-        .parent_area{
-            .left_area{
-                h3{
+
+        .parent_area {
+            .left_area {
+                h3 {
                     font-size: 80px;
                 }
             }
         }
+
         // .parent_area{
         //     .right_area{
         //         .logo_area{
@@ -285,7 +298,7 @@
 }
 
 /* 1300 desktop only */
-@media (min-width: 1300px) and (max-width: 1399px)  {
+@media (min-width: 1300px) and (max-width: 1399px) {
     .home_hero_section {
         margin-top: 132px;
         padding-top: 70px;
@@ -382,9 +395,11 @@
                 h3 {
                     font-size: 50px;
                 }
-                .desc{
+
+                .desc {
                     font-size: 26px;
                 }
+
                 .buttons_area {
                     flex-direction: column;
 
@@ -445,9 +460,11 @@
                     width: 100%;
                     font-size: 35px;
                 }
-                .desc{
-                    font-size:16px;
+
+                .desc {
+                    font-size: 16px;
                 }
+
                 p {
                     font-size: 14px;
                 }
@@ -515,9 +532,11 @@
                     text-align: center;
                     font-size: 30px;
                 }
-                .desc{
-                    font-size:16px;
+
+                .desc {
+                    font-size: 16px;
                 }
+
                 p {
                     font-size: 14px;
                     text-align: center;
@@ -588,8 +607,9 @@
                     text-align: center;
                     font-size: 30px;
                 }
-                .desc{
-                    font-size:16px;
+
+                .desc {
+                    font-size: 16px;
                 }
 
                 p {
