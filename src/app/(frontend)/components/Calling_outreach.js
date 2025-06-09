@@ -18,20 +18,18 @@ const Calling_outreach = () => {
             toast.error("Please enter your email before proceeding.");
             return;
         }
-        
+
         setFormSubmit(true);
         let formData = {};
         formData.email = email;
 
         let resp = await postApi(`/api/send-mail?type=aiAgentDemo`, formData);
-        if(resp.status)
-        {
+        if (resp.status) {
             toast.success("Thank you! We will reach out to you shortly.");
             setEmail("");
             setFormSubmit(false);
         }
-        else
-        {
+        else {
             toast.error("Something's Went Wrong!!")
             setFormSubmit(false);
         }
@@ -39,6 +37,7 @@ const Calling_outreach = () => {
     return (
         <>
             <section className='calling_outreach_section animate_up' >
+                <div className="contact_gradient"></div>
                 <Container>
                     <Row>
                         <Col xxl={12} xl={12} lg={12} md={12} sm={12} xs={12}>
@@ -46,19 +45,19 @@ const Calling_outreach = () => {
                                 <h3>Ready to Transform Your Outreach?</h3>
                                 <Form>
                                     <div className='form-group'>
-                                    <Form.Control 
-                                        type="email" 
-                                        placeholder='Enter your email' 
-                                        value={email} 
-                                        onChange={(e) => setEmail(e.target.value)}
-                                    />
+                                        <Form.Control
+                                            type="email"
+                                            placeholder='Enter your email'
+                                            value={email}
+                                            onChange={(e) => setEmail(e.target.value)}
+                                        />
                                     </div>
                                     <div className='button_area'>
                                         <Button onClick={showToast} className='btn-primary btn-dark' disabled={formSubmit}>
                                             {
                                                 formSubmit ?
-                                                <Spinner animation="border" size="sm" /> :
-                                                "Request an AI Agent Demo"
+                                                    <Spinner animation="border" size="sm" /> :
+                                                    "Request an AI Agent Demo"
                                             }
                                         </Button>
                                     </div>

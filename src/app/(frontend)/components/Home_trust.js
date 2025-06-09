@@ -6,7 +6,7 @@ import Image from 'next/image'
 import skullImg from '../../../../public/images/skull_img.png'
 import Home_counter from './Home_counter'
 
-const Home_trust = ({id}) => {
+const Home_trust = ({ id }) => {
     return (
         <section className='home_trust_section' id={id}>
             <Container>
@@ -55,7 +55,8 @@ const Home_trust = ({id}) => {
                     </Col>
                 </Row>
             </Container>
-        </section> 
+            <div className="gradient"></div>
+        </section>
     )
 }
 

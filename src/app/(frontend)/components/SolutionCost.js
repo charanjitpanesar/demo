@@ -37,6 +37,7 @@ const SolutionCost = () => {
                         </Col>
                     </Row>
                 </Container>
+                <div className="contact_gradient"></div>
             </section>
         </>
     )

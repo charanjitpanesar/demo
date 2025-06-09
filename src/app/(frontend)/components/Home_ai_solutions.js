@@ -23,6 +23,7 @@ const Home_ai_solutions = ({ id }) => {
                                 <div className="img_wrapper">
                                     <Image src={logo} alt='...' title='...' fetchPriority='low' />
                                 </div>
+                                <div className="logo_gradient"></div>
                                 <div className="item">
                                     <div className="line">
                                         <Image src={line1} alt='...' title='...' fetchPriority='low' />

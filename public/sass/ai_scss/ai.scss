@@ -1,31 +1,34 @@
 @use "../base/variable.scss";
 @use "../base/mixins.scss";
 
-.ai_hero_section{
+.ai_hero_section {
     margin-top: 162px;
     padding-top: 90px;
-    .parent_area{
-        .image_area{
+
+    .parent_area {
+        .image_area {
             width: 900px;
             margin: 0 auto;
             box-shadow: 0 0 10px #F7BA2B, 0 0 20px #F7BA2B, 0 0 30px #F7BA2B,
-            0 0 40px #F7BA2B;
+                0 0 40px #F7BA2B;
             animation: glow 1.5s infinite alternate;
             border-radius: 10px;
             overflow: hidden;
             height: 618px;
-            img{
+
+            img {
                 height: 100%;
                 width: 100%;
                 object-fit: cover;
             }
         }
-        h4{
+
+        h4 {
             color: transparent;
             background: linear-gradient(270.01deg, #8B2FFC 7.11%, #EBB13E 79.4%);
-            background-size: 100% 100%; 
+            background-size: 100% 100%;
             background-clip: text;
-            -webkit-background-clip: text; 
+            -webkit-background-clip: text;
             // animation: gradient-move 3s infinite linear; 
             font-family: Poppins;
             font-weight: 500;
@@ -33,7 +36,8 @@
             text-align: center;
             padding-top: 60px;
         }
-        h2{
+
+        h2 {
             font-weight: 900;
             font-size: 80px;
             line-height: 125.63px;
@@ -41,9 +45,9 @@
             text-align: center;
             color: transparent;
             background: linear-gradient(270.01deg, #EBB13E 7.11%, #8B2FFC 79.4%);
-            background-size: 100% 100%; 
+            background-size: 100% 100%;
             background-clip: text;
-            -webkit-background-clip: text; 
+            -webkit-background-clip: text;
             margin-top: -25px;
         }
     }
@@ -53,26 +57,35 @@
 @keyframes glow {
     from {
         box-shadow: 0 0 10px #F7BA2B, 0 0 20px #F7BA2B, 0 0 30px #F7BA2B,
-        0 0 40px #F7BA2B;
+            0 0 40px #F7BA2B;
     }
+
     to {
-      box-shadow: 0 0 15px #775AFF, 0 0 15px #775AFF, 0 0 15px #775AFF,
-        0 0 15px #775AFF;
+        box-shadow: 0 0 15px #775AFF, 0 0 15px #775AFF, 0 0 15px #775AFF,
+            0 0 15px #775AFF;
     }
-   }
+}
 
 
 
-.text_opener_section{
+.text_opener_section {
     padding-top: 90px;
-    .parent_area{
-        .wrapper{
+    position: relative;
+
+    .academy_gradient {
+        top: 0;
+        right: 0;
+    }
+
+    .parent_area {
+        .wrapper {
             position: relative;
             // z-index: 3;
             // background-color: aliceblue;
-            height:80vh;
+            height: 80vh;
             overflow: hidden;
-            .wrapper_top{
+
+            .wrapper_top {
                 position: absolute;
                 top: 0;
                 width: 100%;
@@ -81,7 +94,8 @@
                 overflow: hidden;
                 z-index: 1;
                 align-content: end;
-                h1{
+
+                h1 {
                     font-weight: 700;
                     font-size: 80px;
                     line-height: 100px;
@@ -89,13 +103,14 @@
                     text-align: center;
                     color: transparent;
                     background: linear-gradient(277.37deg, #EBA219 -4.23%, #000000 110.89%);
-                    background-size: 100% 100%; 
+                    background-size: 100% 100%;
                     background-clip: text;
-                    -webkit-background-clip: text; 
+                    -webkit-background-clip: text;
                     text-transform: uppercase;
                 }
             }
-            .wrapper_bottom{
+
+            .wrapper_bottom {
                 position: absolute;
                 bottom: 0;
                 width: 100%;
@@ -103,7 +118,8 @@
                 background: rgb(231, 231, 231);
                 overflow: hidden;
                 z-index: 1;
-                h1{
+
+                h1 {
                     font-weight: 700;
                     font-size: 80px;
                     line-height: 100px;
@@ -111,53 +127,58 @@
                     text-align: center;
                     color: transparent;
                     background: linear-gradient(277.37deg, #EBA219 -4.23%, #000000 110.89%);
-                    background-size: 100% 100%; 
+                    background-size: 100% 100%;
                     background-clip: text;
-                    -webkit-background-clip: text; 
+                    -webkit-background-clip: text;
                     text-transform: uppercase;
                 }
             }
-            .wrapper_center{
+
+            .wrapper_center {
                 height: 100%;
                 align-content: end;
-                .inner_area{
-                    h4{
+
+                .inner_area {
+                    h4 {
                         font-weight: 400;
                         font-size: 64px;
                         line-height: 52px;
                         color: transparent;
                         background: linear-gradient(90deg, #775AFF 0%, #FFFFFF 100%);
-                        background-size: 100% 100%; 
+                        background-size: 100% 100%;
                         background-clip: text;
-                        -webkit-background-clip: text; 
+                        -webkit-background-clip: text;
                     }
                 }
-                p{
+
+                p {
                     font-weight: 500;
                     font-size: 25px;
                     line-height: 30px;
                     color: variable.$white;
                 }
-                }
+            }
         }
     }
 }
 
 
 
-.ai_chat_banner_section{
-    .parent_area{
-        .image_area{
+.ai_chat_banner_section {
+    .parent_area {
+        .image_area {
             width: 60%;
             margin: 0 auto;
             height: auto;
-            img{
+
+            img {
                 height: 100%;
                 width: 100%;
                 object-fit: cover;
             }
         }
-        h3{
+
+        h3 {
             padding-top: 30px;
             font-weight: 500;
             font-size: 32px;
@@ -167,48 +188,57 @@
     }
 }
 
-#page1{
+#page1 {
     margin-top: 90px;
 }
-#page2{
+
+#page2 {
     background: #FDB52A;
 }
-#page3{
+
+#page3 {
     background: #0E43FB;
 }
-#page4{
+
+#page4 {
     background: #21C3FC;
 }
-.parallax_section{
+
+.parallax_section {
     padding: 90px 0;
     background-color: variable.$parallax_bg1;
     height: 100vh;
-    &.even_section{
-        .parent_area{
-            .left_area{
+
+    &.even_section {
+        .parent_area {
+            .left_area {
                 padding-left: 50px;
             }
         }
     }
-    .parent_area{
-        .left_area{
+
+    .parent_area {
+        .left_area {
             width: 50%;
-            h3{
+
+            h3 {
                 font-weight: 900;
                 font-size: 60px;
                 color: variable.$white;
             }
-            p{
+
+            p {
                 font-weight: 500;
                 font-size: 28px;
                 color: variable.$white;
                 padding-top: 10px;
             }
         }
-        .right_area{
-            .image_area{
 
-                img{
+        .right_area {
+            .image_area {
+
+                img {
                     height: 100%;
                     width: 100%;
                     object-fit: cover;
@@ -219,22 +249,30 @@
 }
 
 
-.ai_why_matter_section{
+.ai_why_matter_section {
     padding-top: 90px;
-    .parent_area{
-        .upper_area{
+
+    .parent_area {
+        .upper_area {
             width: 70%;
-            h3{
+            position: relative;
+
+            .academy_gradient {
+                aspect-ratio: 2/1;
+            }
+
+            h3 {
                 font-weight: 400;
                 font-size: 64px;
                 line-height: 52px;
                 color: transparent;
                 background: linear-gradient(90deg, #775AFF 0%, #FFFFFF 100%);
-                background-size: 100% 100%; 
+                background-size: 100% 100%;
                 background-clip: text;
-                -webkit-background-clip: text; 
+                -webkit-background-clip: text;
             }
-            p{
+
+            p {
                 padding-top: 15px;
                 font-weight: 500;
                 font-size: 20px;
@@ -242,10 +280,12 @@
                 color: variable.$white;
             }
         }
-        .middle_area{
+
+        .middle_area {
             padding-top: 90px;
             overflow-x: clip;
-            h2{
+
+            h2 {
                 font-weight: 700;
                 font-size: 251.96px;
                 line-height: 100%;
@@ -255,28 +295,40 @@
                 white-space: nowrap;
             }
         }
-        .lower_area{
+
+        .lower_area {
             padding-top: 90px;
-            .card_inner{
+            position: relative;
+
+            .academy_gradient {
+                top: 0;
+                right: 0;
+            }
+
+            .card_inner {
                 padding: 0 80px;
-                .image_area{
+
+                .image_area {
                     height: 160px;
                     width: 160px;
                     margin: 0 auto;
-                    img{
+
+                    img {
                         height: 100%;
                         width: 100%;
                         object-fit: contain;
                     }
                 }
-                h6{
+
+                h6 {
                     font-weight: 700;
                     font-size: 16px;
                     color: variable.$white;
                     padding-top: 20px;
                     text-align: center;
                 }
-                p{
+
+                p {
                     font-weight: 500;
                     font-size: 16px;
                     text-align: center;
@@ -289,42 +341,49 @@
     }
 }
 
-.ai_key_feature_section{
+.ai_key_feature_section {
     padding-top: 90px;
-    .parent_area{
-        .img_area{
+
+    .parent_area {
+        .img_area {
             width: 1052px;
             height: auto;
             position: relative;
             margin: 0 auto;
-            .top_img{
+
+            .top_img {
                 position: absolute;
                 top: -10%;
                 right: 0;
                 height: 100px;
-                img{
+
+                img {
                     height: 100%;
                     width: 100%;
                     object-fit: cover;
                 }
             }
-            .bottom_img{
+
+            .bottom_img {
                 position: absolute;
                 bottom: 5%;
                 left: 0;
                 height: 50px;
-                img{
+
+                img {
                     height: 100%;
                     width: 100%;
                     object-fit: cover;
                 }
             }
-            img{
+
+            img {
                 height: 100%;
                 width: 100%;
                 object-fit: cover;
             }
-            .inner_area{
+
+            .inner_area {
                 position: absolute;
                 top: 0;
                 left: 0;
@@ -333,7 +392,8 @@
                 height: fit-content;
                 width: fit-content;
                 margin: auto;
-                h3{
+
+                h3 {
                     font-weight: 700;
                     font-size: 108.64px;
                     line-height: 100%;
@@ -343,25 +403,29 @@
                     position: relative;
                     z-index: 2;
                 }
-                h4{
+
+                h4 {
                     line-height: 105px;
                     margin-top: -25px;
                     font-weight: 700;
                     font-size: 158.47px;
                     text-align: center;
                     text-transform: uppercase;
-                    -webkit-text-fill-color: transparent; /* Will override color (regardless of order) */
+                    -webkit-text-fill-color: transparent;
+                    /* Will override color (regardless of order) */
                     -webkit-text-stroke-width: 1px;
                     -webkit-text-stroke-color: variable.$ai_text;
                 }
-                h5{
+
+                h5 {
                     padding-top: 20px;
                     font-weight: 500;
                     font-size: 24px;
                     color: variable.$white;
                     text-align: center;
                 }
-                p{
+
+                p {
                     font-weight: 500;
                     font-size: 16px;
                     text-align: center;
@@ -376,12 +440,14 @@
 }
 
 
-.ai_impact_section{
+.ai_impact_section {
     padding-top: 90px;
-    .parent_area{
+
+    .parent_area {
         padding: 90px 0;
         background: url('../../images/bg_shadow.png') no-repeat center/100% 100%;
-        h3{
+
+        h3 {
             width: 30%;
             margin: 0 auto;
             font-weight: 300;
@@ -389,7 +455,8 @@
             text-align: center;
             color: variable.$white;
         }
-        p{
+
+        p {
             font-weight: 400;
             font-size: 16px;
             text-align: center;
@@ -399,21 +466,24 @@
     }
 }
 
-.ai_shape_section{
+.ai_shape_section {
     padding-top: 90px;
-    .parent_area{
-        .left_area{
+
+    .parent_area {
+        .left_area {
             width: 80%;
-            h3{
+
+            h3 {
                 font-weight: 400;
                 font-size: 40px;
                 color: transparent;
                 background: linear-gradient(90deg, #775AFF 0%, #FFFFFF 100%);
-                background-size: 100% 100%; 
+                background-size: 100% 100%;
                 background-clip: text;
-                -webkit-background-clip: text; 
+                -webkit-background-clip: text;
             }
-            p{
+
+            p {
                 font-weight: 500;
                 font-size: 20px;
                 color: variable.$white;
@@ -421,11 +491,13 @@
                 border-bottom: 1px solid variable.$white;
             }
         }
-        .right_area{
-            .image_area{
+
+        .right_area {
+            .image_area {
                 width: 70%;
                 margin: 0 auto;
-                img{
+
+                img {
                     height: 100%;
                     width: 100%;
                     object-fit: cover;
@@ -435,23 +507,27 @@
     }
 }
 
-.ai_newsletter_section{
+.ai_newsletter_section {
     padding: 90px 0;
-    .parent_area{
+
+    .parent_area {
         position: relative;
-        .form_area{
+
+        .form_area {
             position: absolute;
             bottom: 50px;
             left: 0;
             right: 0;
             margin: 0 auto;
-            form{
+
+            form {
                 display: flex;
                 align-items: center;
                 gap: 20px;
                 justify-content: center;
-                .button_area{
-                    .btn-primary{
+
+                .button_area {
+                    .btn-primary {
                         min-width: auto;
                         background: transparent;
                         border-color: white;
@@ -462,10 +538,12 @@
                         // }
                     }
                 }
-                .form-group{
+
+                .form-group {
                     width: 450px;
                     padding-bottom: 0;
-                    .form-control{
+
+                    .form-control {
                         // color: variable.$white;
                         // box-shadow: 0px 0px 250px 0px #00E0E080;
                         // background: #00e0e0;
@@ -479,10 +557,12 @@
                 }
             }
         }
-        .image_area{
+
+        .image_area {
             width: 80%;
             margin: 0 auto;
-            img{
+
+            img {
                 height: 100%;
                 width: 100%;
                 object-fit: cover;
@@ -493,35 +573,32 @@
 
 
 /* Above 1920 desktop */
-@media (min-width: 1920px){
-    
-}
+@media (min-width: 1920px) {}
 
 /* 1680 desktop */
-@media (min-width: 1680px) and (max-width: 1919px){
-    
-}
+@media (min-width: 1680px) and (max-width: 1919px) {}
 
 /* 1600 desktop */
-@media (min-width: 1600px) and (max-width: 1679px){
-    
-}
+@media (min-width: 1600px) and (max-width: 1679px) {}
 
 /* Above 1400 and Below 1599 Desktop*/
-@media (min-width: 1400px) and (max-width: 1599px){
-    .ai_hero_section{
+@media (min-width: 1400px) and (max-width: 1599px) {
+    .ai_hero_section {
         margin-top: 132px;
         padding-top: 50px;
-        .parent_area{
-            .image_area{
+
+        .parent_area {
+            .image_area {
                 width: 550px;
                 height: auto;
             }
-            h4{
+
+            h4 {
                 padding-top: 30px;
                 font-size: 30px;
             }
-            h2{
+
+            h2 {
                 font-size: 55px;
                 line-height: 110px;
             }
@@ -529,25 +606,29 @@
     }
 
 
-    
-    .text_opener_section{
+
+    .text_opener_section {
         padding-top: 70px;
-        .parent_area{
-            .wrapper{
+
+        .parent_area {
+            .wrapper {
                 height: 60vh;
-                .wrapper_top{
-                    h1{
+
+                .wrapper_top {
+                    h1 {
                         font-size: 70px;
                     }
                 }
-                .wrapper_bottom{
-                    h1{
+
+                .wrapper_bottom {
+                    h1 {
                         font-size: 70px;
                     }
                 }
-                .wrapper_center{
-                    .inner_area{
-                        h4{
+
+                .wrapper_center {
+                    .inner_area {
+                        h4 {
                             font-size: 55px;
                         }
                     }
@@ -557,33 +638,39 @@
         }
     }
 
-    .ai_chat_banner_section{
-        .parent_area{
-            h3{
+    .ai_chat_banner_section {
+        .parent_area {
+            h3 {
                 font-size: 30px;
             }
         }
     }
 
-    .ai_why_matter_section{
+    .ai_why_matter_section {
         padding-top: 70px;
-        .parent_area{
-            .upper_area{
-                h3{
+
+        .parent_area {
+            .upper_area {
+                h3 {
                     font-size: 50px;
                 }
             }
-            .middle_area{
+
+            .middle_area {
                 padding-top: 70px;
-                h2{
+
+                h2 {
                     font-size: 230px;
                 }
             }
-            .lower_area{
+
+            .lower_area {
                 padding-top: 70px;
-                .card_inner{
+
+                .card_inner {
                     padding: 0;
-                    .image_area{
+
+                    .image_area {
                         height: 120px;
                         width: 120px;
                     }
@@ -592,19 +679,23 @@
         }
     }
 
-    .ai_key_feature_section{
+    .ai_key_feature_section {
         padding-top: 70px;
-        .parent_area{
-            .img_area{
+
+        .parent_area {
+            .img_area {
                 width: 900px;
-                .inner_area{
-                    h3{
+
+                .inner_area {
+                    h3 {
                         font-size: 85px;
                     }
-                    h4{
+
+                    h4 {
                         font-size: 128px;
                     }
-                    p{
+
+                    p {
                         padding-top: 10px;
                         width: 70%;
                     }
@@ -613,89 +704,103 @@
         }
     }
 
-    #page1{
+    #page1 {
         margin-top: 70px;
     }
-    .parallax_section{
+
+    .parallax_section {
         height: 100vh;
-        .parent_area{
-            .left_area{
+
+        .parent_area {
+            .left_area {
                 width: 60%;
-                h3{
+
+                h3 {
                     font-size: 50px;
                 }
-                p{
+
+                p {
                     font-size: 24px;
                 }
             }
         }
     }
 
-    .ai_impact_section{
+    .ai_impact_section {
         padding-top: 70px;
-        .parent_area{
+
+        .parent_area {
             padding: 70px 0;
-            h3{
+
+            h3 {
                 font-size: 55px;
             }
         }
     }
 
-    .ai_shape_section{
+    .ai_shape_section {
         padding-top: 70px;
-        .parent_area{
-            .left_area{
-                h3{
+
+        .parent_area {
+            .left_area {
+                h3 {
                     font-size: 35px;
-                } 
+                }
             }
         }
     }
 
-    .ai_newsletter_section{
+    .ai_newsletter_section {
         padding: 70px 0;
     }
 
 }
 
 /* 1300 desktop only */
-@media (min-width: 1300px) and (max-width: 1399px){
-    .ai_hero_section{
+@media (min-width: 1300px) and (max-width: 1399px) {
+    .ai_hero_section {
         margin-top: 132px;
-        .parent_area{
-            .image_area{
+
+        .parent_area {
+            .image_area {
                 width: 850px;
                 height: 603px;
             }
-            h4{
+
+            h4 {
                 padding-top: 30px;
                 font-size: 40px;
             }
-            h2{
+
+            h2 {
                 font-size: 70px;
                 line-height: 110px;
             }
         }
     }
 
-    .text_opener_section{
+    .text_opener_section {
         padding-top: 70px;
-        .parent_area{
-            .wrapper{
+
+        .parent_area {
+            .wrapper {
                 height: 60vh;
-                .wrapper_top{
-                    h1{
+
+                .wrapper_top {
+                    h1 {
                         font-size: 70px;
                     }
                 }
-                .wrapper_bottom{
-                    h1{
+
+                .wrapper_bottom {
+                    h1 {
                         font-size: 70px;
                     }
                 }
-                .wrapper_center{
-                    .inner_area{
-                        h4{
+
+                .wrapper_center {
+                    .inner_area {
+                        h4 {
                             font-size: 55px;
                         }
                     }
@@ -705,33 +810,39 @@
         }
     }
 
-    .ai_chat_banner_section{
-        .parent_area{
-            h3{
+    .ai_chat_banner_section {
+        .parent_area {
+            h3 {
                 font-size: 30px;
             }
         }
     }
 
-    .ai_why_matter_section{
+    .ai_why_matter_section {
         padding-top: 70px;
-        .parent_area{
-            .upper_area{
-                h3{
+
+        .parent_area {
+            .upper_area {
+                h3 {
                     font-size: 50px;
                 }
             }
-            .middle_area{
+
+            .middle_area {
                 padding-top: 70px;
-                h2{
+
+                h2 {
                     font-size: 220px;
                 }
             }
-            .lower_area{
+
+            .lower_area {
                 padding-top: 70px;
-                .card_inner{
+
+                .card_inner {
                     padding: 0;
-                    .image_area{
+
+                    .image_area {
                         height: 120px;
                         width: 120px;
                     }
@@ -740,19 +851,23 @@
         }
     }
 
-    .ai_key_feature_section{
+    .ai_key_feature_section {
         padding-top: 70px;
-        .parent_area{
-            .img_area{
+
+        .parent_area {
+            .img_area {
                 width: 900px;
-                .inner_area{
-                    h3{
+
+                .inner_area {
+                    h3 {
                         font-size: 85px;
                     }
-                    h4{
+
+                    h4 {
                         font-size: 128px;
                     }
-                    p{
+
+                    p {
                         padding-top: 10px;
                         width: 70%;
                     }
@@ -761,90 +876,104 @@
         }
     }
 
-    #page1{
+    #page1 {
         margin-top: 70px;
     }
-    .parallax_section{
+
+    .parallax_section {
         height: 70vh;
-        .parent_area{
-            .left_area{
+
+        .parent_area {
+            .left_area {
                 width: 60%;
-                h3{
+
+                h3 {
                     font-size: 50px;
                 }
-                p{
+
+                p {
                     font-size: 24px;
                 }
             }
         }
     }
 
-    .ai_impact_section{
+    .ai_impact_section {
         padding-top: 70px;
-        .parent_area{
+
+        .parent_area {
             padding: 70px 0;
-            h3{
+
+            h3 {
                 font-size: 55px;
             }
         }
     }
 
-    .ai_shape_section{
+    .ai_shape_section {
         padding-top: 70px;
-        .parent_area{
-            .left_area{
-                h3{
+
+        .parent_area {
+            .left_area {
+                h3 {
                     font-size: 35px;
-                } 
+                }
             }
         }
     }
 
-    .ai_newsletter_section{
+    .ai_newsletter_section {
         padding: 70px 0;
     }
 
-        
+
 }
 
 /* 1200 desktop only */
-@media (min-width: 1200px) and (max-width: 1299px){
-    .ai_hero_section{
+@media (min-width: 1200px) and (max-width: 1299px) {
+    .ai_hero_section {
         margin-top: 132px;
-        .parent_area{
-            .image_area{
+
+        .parent_area {
+            .image_area {
                 width: 850px;
                 height: 603px;
             }
-            h4{
+
+            h4 {
                 padding-top: 30px;
                 font-size: 40px;
             }
-            h2{
+
+            h2 {
                 font-size: 70px;
                 line-height: 110px;
             }
         }
     }
 
-    .text_opener_section{
+    .text_opener_section {
         padding-top: 70px;
-        .parent_area{
-            .wrapper{
+
+        .parent_area {
+            .wrapper {
                 height: 60vh;
-                .wrapper_top{
-                    h1{
+
+                .wrapper_top {
+                    h1 {
                         font-size: 70px;
                     }
                 }
-                .wrapper_bottom{
-                    h1{
+
+                .wrapper_bottom {
+                    h1 {
                         font-size: 70px;
                     }
                 }
-                .wrapper_center{
-                    .inner_area{
-                        h4{
+
+                .wrapper_center {
+                    .inner_area {
+                        h4 {
                             font-size: 55px;
                         }
                     }
@@ -854,33 +983,39 @@
         }
     }
 
-    .ai_chat_banner_section{
-        .parent_area{
-            h3{
+    .ai_chat_banner_section {
+        .parent_area {
+            h3 {
                 font-size: 30px;
             }
         }
     }
 
-    .ai_why_matter_section{
+    .ai_why_matter_section {
         padding-top: 70px;
-        .parent_area{
-            .upper_area{
-                h3{
+
+        .parent_area {
+            .upper_area {
+                h3 {
                     font-size: 50px;
                 }
             }
-            .middle_area{
+
+            .middle_area {
                 padding-top: 70px;
-                h2{
+
+                h2 {
                     font-size: 220px;
                 }
             }
-            .lower_area{
+
+            .lower_area {
                 padding-top: 70px;
-                .card_inner{
+
+                .card_inner {
                     padding: 0;
-                    .image_area{
+
+                    .image_area {
                         height: 120px;
                         width: 120px;
                     }
@@ -889,19 +1024,23 @@
         }
     }
 
-    .ai_key_feature_section{
+    .ai_key_feature_section {
         padding-top: 70px;
-        .parent_area{
-            .img_area{
+
+        .parent_area {
+            .img_area {
                 width: 900px;
-                .inner_area{
-                    h3{
+
+                .inner_area {
+                    h3 {
                         font-size: 85px;
                     }
-                    h4{
+
+                    h4 {
                         font-size: 128px;
                     }
-                    p{
+
+                    p {
                         padding-top: 10px;
                         width: 70%;
                     }
@@ -910,93 +1049,109 @@
         }
     }
 
-    #page1{
+    #page1 {
         margin-top: 70px;
     }
-    .parallax_section{
+
+    .parallax_section {
         height: 70vh;
-        .parent_area{
-            .left_area{
+
+        .parent_area {
+            .left_area {
                 width: 60%;
-                h3{
+
+                h3 {
                     font-size: 50px;
                 }
-                p{
+
+                p {
                     font-size: 24px;
                 }
             }
         }
     }
 
-    .ai_impact_section{
+    .ai_impact_section {
         padding-top: 70px;
-        .parent_area{
+
+        .parent_area {
             padding: 70px 0;
-            h3{
+
+            h3 {
                 font-size: 55px;
             }
         }
     }
 
-    .ai_shape_section{
+    .ai_shape_section {
         padding-top: 70px;
-        .parent_area{
-            .left_area{
-                h3{
+
+        .parent_area {
+            .left_area {
+                h3 {
                     font-size: 35px;
-                } 
+                }
             }
         }
     }
 
-    .ai_newsletter_section{
+    .ai_newsletter_section {
         padding: 70px 0;
     }
 }
 
 /* Landscape tablets and medium desktops */
 @media (min-width: 992px) and (max-width: 1199px) {
-	.ai_hero_section{
+    .ai_hero_section {
         margin-top: 120px;
         padding-top: 50px;
-        .parent_area{
-            .image_area{
+
+        .parent_area {
+            .image_area {
                 width: 80%;
                 height: 568px;
             }
-            h4{
+
+            h4 {
                 padding-top: 30px;
                 font-size: 35px;
             }
-            h2{
+
+            h2 {
                 font-size: 60px;
                 line-height: 100px;
             }
         }
     }
 
-    .text_opener_section{
+    .text_opener_section {
         padding-top: 50px;
-        .parent_area{
-            .wrapper{
+
+        .parent_area {
+            .wrapper {
                 height: 60vh;
-                .wrapper_top{
-                    h1{
+
+                .wrapper_top {
+                    h1 {
                         font-size: 70px;
                     }
                 }
-                .wrapper_bottom{
-                    h1{
+
+                .wrapper_bottom {
+                    h1 {
                         font-size: 70px;
                     }
                 }
-                .wrapper_center{
-                    .inner_area{
+
+                .wrapper_center {
+                    .inner_area {
                         margin-top: 360px;
-                        h4{
+
+                        h4 {
                             font-size: 45px;
                         }
-                        p{
+
+                        p {
                             font-size: 20px;
                         }
                     }
@@ -1006,38 +1161,45 @@
         }
     }
 
-    .ai_chat_banner_section{
-        .parent_area{
-            h3{
+    .ai_chat_banner_section {
+        .parent_area {
+            h3 {
                 font-size: 28px;
                 width: 60%;
             }
         }
     }
 
-    .ai_why_matter_section{
+    .ai_why_matter_section {
         padding-top: 50px;
-        .parent_area{
-            .upper_area{
-                h3{
+
+        .parent_area {
+            .upper_area {
+                h3 {
                     font-size: 40px;
                     line-height: 40px;
                 }
-                p{
+
+                p {
                     font-size: 18px;
                 }
             }
-            .middle_area{
+
+            .middle_area {
                 padding-top: 50px;
-                h2{
+
+                h2 {
                     font-size: 175px;
                 }
             }
-            .lower_area{
+
+            .lower_area {
                 padding-top: 50px;
-                .card_inner{
+
+                .card_inner {
                     padding: 0;
-                    .image_area{
+
+                    .image_area {
                         height: 100px;
                         width: 100px;
                     }
@@ -1046,22 +1208,27 @@
         }
     }
 
-    .ai_key_feature_section{
+    .ai_key_feature_section {
         padding-top: 50px;
-        .parent_area{
-            .img_area{
+
+        .parent_area {
+            .img_area {
                 width: 800px;
-                .inner_area{
-                    h3{
+
+                .inner_area {
+                    h3 {
                         font-size: 75px;
                     }
-                    h4{
+
+                    h4 {
                         font-size: 110px;
                     }
-                    h5{
+
+                    h5 {
                         font-size: 20px;
                     }
-                    p{
+
+                    p {
                         padding-top: 10px;
                         width: 70%;
                     }
@@ -1070,44 +1237,53 @@
         }
     }
 
-    #page1{
+    #page1 {
         margin-top: 50px;
     }
-    .parallax_section{
+
+    .parallax_section {
         height: 70vh;
-        .parent_area{
-            .left_area{
+
+        .parent_area {
+            .left_area {
                 width: 80%;
-                h3{
+
+                h3 {
                     font-size: 40px;
                 }
-                p{
+
+                p {
                     font-size: 20px;
                 }
             }
         }
     }
 
-    .ai_impact_section{
+    .ai_impact_section {
         padding-top: 50px;
-        .parent_area{
+
+        .parent_area {
             padding: 50px 0;
-            h3{
+
+            h3 {
                 font-size: 40px;
                 width: 40%;
             }
         }
     }
 
-    .ai_shape_section{
+    .ai_shape_section {
         padding-top: 50px;
-        .parent_area{
-            .left_area{
+
+        .parent_area {
+            .left_area {
                 width: 100%;
-                h3{
+
+                h3 {
                     font-size: 30px;
-                } 
-                p{
+                }
+
+                p {
                     padding: 20px 0;
                     font-size: 16px;
                 }
@@ -1115,10 +1291,11 @@
         }
     }
 
-    .ai_newsletter_section{
+    .ai_newsletter_section {
         padding: 50px 0;
-        .parent_area{
-            .form_area{
+
+        .parent_area {
+            .form_area {
                 width: 400px;
                 bottom: 25px;
             }
@@ -1129,49 +1306,58 @@
 
 /* Landscape tablets and ipad */
 @media (min-width: 768px) and (max-width: 991px) {
-	.ai_hero_section{
+    .ai_hero_section {
         margin-top: 120px;
         padding-top: 40px;
-        .parent_area{
-            .image_area{
+
+        .parent_area {
+            .image_area {
                 width: 80%;
                 height: 422px;
             }
-            h4{
+
+            h4 {
                 padding-top: 30px;
                 font-size: 30px;
             }
-            h2{
+
+            h2 {
                 font-size: 50px;
                 line-height: 80px;
             }
         }
     }
 
-    .text_opener_section{
+    .text_opener_section {
         padding-top: 40px;
-        .parent_area{
-            .wrapper{
+
+        .parent_area {
+            .wrapper {
                 height: 40vh;
-                .wrapper_top{
-                    h1{
+
+                .wrapper_top {
+                    h1 {
                         font-size: 50px;
                         line-height: 50px;
                     }
                 }
-                .wrapper_bottom{
-                    h1{
+
+                .wrapper_bottom {
+                    h1 {
                         font-size: 50px;
                         line-height: 50px;
                     }
                 }
-                .wrapper_center{
-                    .inner_area{
+
+                .wrapper_center {
+                    .inner_area {
                         margin-top: 360px;
-                        h4{
+
+                        h4 {
                             font-size: 35px;
                         }
-                        p{
+
+                        p {
                             font-size: 18px;
                         }
                     }
@@ -1180,42 +1366,50 @@
         }
     }
 
-    .ai_chat_banner_section{
-        .parent_area{
-            h3{
+    .ai_chat_banner_section {
+        .parent_area {
+            h3 {
                 font-size: 25px;
                 width: 70%;
             }
         }
     }
 
-    .ai_why_matter_section{
+    .ai_why_matter_section {
         padding-top: 40px;
-        .parent_area{
-            .upper_area{
-                h3{
+
+        .parent_area {
+            .upper_area {
+                h3 {
                     font-size: 30px;
                     line-height: 30px;
                 }
-                p{
+
+                p {
                     font-size: 16px;
                 }
             }
-            .middle_area{
+
+            .middle_area {
                 padding-top: 40px;
-                h2{
+
+                h2 {
                     font-size: 132px;
                 }
             }
-            .lower_area{
+
+            .lower_area {
                 padding-top: 40px;
-                .card_inner{
+
+                .card_inner {
                     padding: 0;
-                    .image_area{
+
+                    .image_area {
                         height: 80px;
                         width: 80px;
                     }
-                    p{
+
+                    p {
                         font-size: 14px;
                     }
                 }
@@ -1223,27 +1417,33 @@
         }
     }
 
-    .ai_key_feature_section{
+    .ai_key_feature_section {
         padding-top: 40px;
-        .parent_area{
-            .img_area{
+
+        .parent_area {
+            .img_area {
                 width: 100%;
-                .top_img{
+
+                .top_img {
                     top: -8%;
                     right: 10px;
                     height: 60px;
                 }
-                .inner_area{
-                    h3{
+
+                .inner_area {
+                    h3 {
                         font-size: 65px;
                     }
-                    h4{
+
+                    h4 {
                         font-size: 100px;
                     }
-                    h5{
+
+                    h5 {
                         font-size: 20px;
                     }
-                    p{
+
+                    p {
                         padding-top: 10px;
                         font-size: 14px;
                         width: 70%;
@@ -1253,45 +1453,54 @@
         }
     }
 
-    #page1{
+    #page1 {
         margin-top: 40px;
     }
-    .parallax_section{
+
+    .parallax_section {
         height: 70vh;
         padding: 50px 0;
-        .parent_area{
-            .left_area{
+
+        .parent_area {
+            .left_area {
                 width: 100%;
-                h3{
+
+                h3 {
                     font-size: 30px;
                 }
-                p{
+
+                p {
                     font-size: 16px;
                 }
             }
         }
     }
 
-    .ai_impact_section{
+    .ai_impact_section {
         padding-top: 40px;
-        .parent_area{
+
+        .parent_area {
             padding: 40px 0;
-            h3{
+
+            h3 {
                 font-size: 35px;
                 width: 40%;
             }
         }
     }
 
-    .ai_shape_section{
+    .ai_shape_section {
         padding-top: 40px;
-        .parent_area{
-            .left_area{
+
+        .parent_area {
+            .left_area {
                 width: 100%;
-                h3{
+
+                h3 {
                     font-size: 25px;
-                } 
-                p{
+                }
+
+                p {
                     padding: 20px 0;
                     font-size: 14px;
                 }
@@ -1299,10 +1508,11 @@
         }
     }
 
-    .ai_newsletter_section{
+    .ai_newsletter_section {
         padding: 40px 0;
-        .parent_area{
-            .form_area{
+
+        .parent_area {
+            .form_area {
                 width: 350px;
                 bottom: 25px;
             }
@@ -1312,50 +1522,59 @@
 
 /* Landscape phones and portrait tablets */
 @media (min-width: 576px) and (max-width: 767px) {
-	.ai_hero_section{
+    .ai_hero_section {
         margin-top: 90px;
         padding-top: 30px;
-        .parent_area{
-            .image_area{
+
+        .parent_area {
+            .image_area {
                 width: 80%;
                 height: 365px;
             }
-            h4{
+
+            h4 {
                 padding-top: 20px;
                 font-size: 25px;
             }
-            h2{
+
+            h2 {
                 font-size: 40px;
                 line-height: 70px;
             }
         }
     }
 
-    .text_opener_section{
+    .text_opener_section {
         padding-top: 30px;
-        .parent_area{
-            .wrapper{
+
+        .parent_area {
+            .wrapper {
                 height: 80vh;
-                .wrapper_top{
-                    h1{
+
+                .wrapper_top {
+                    h1 {
                         font-size: 40px;
                         line-height: 40px;
                     }
                 }
-                .wrapper_bottom{
-                    h1{
+
+                .wrapper_bottom {
+                    h1 {
                         font-size: 40px;
                         line-height: 40px;
                     }
                 }
-                .wrapper_center{
-                    .inner_area{
+
+                .wrapper_center {
+                    .inner_area {
                         margin-top: 260px;
-                        h4{
+
+                        h4 {
                             font-size: 28px;
                             line-height: 28px;
                         }
-                        p{
+
+                        p {
                             font-size: 16px;
                             line-height: 26px;
                         }
@@ -1366,12 +1585,13 @@
         }
     }
 
-    .ai_chat_banner_section{
-        .parent_area{
-            .image_area{
+    .ai_chat_banner_section {
+        .parent_area {
+            .image_area {
                 width: 70%;
             }
-            h3{
+
+            h3 {
                 padding-top: 20px;
                 font-size: 20px;
                 width: 100%;
@@ -1379,37 +1599,47 @@
         }
     }
 
-    .ai_why_matter_section{
+    .ai_why_matter_section {
         padding-top: 30px;
-        .parent_area{
-            .upper_area{
+
+        .parent_area {
+            .upper_area {
                 width: 100%;
-                h3{
+
+                h3 {
                     font-size: 25px;
                     line-height: 26px;
                 }
-                p{
+
+                p {
                     font-size: 14px;
                 }
             }
-            .middle_area{
+
+            .middle_area {
                 padding-top: 40px;
-                h2{
+
+                h2 {
                     font-size: 115px;
                 }
             }
-            .lower_area{
+
+            .lower_area {
                 padding-top: 30px;
-                .card_inner{
+
+                .card_inner {
                     padding: 0;
-                    .image_area{
+
+                    .image_area {
                         height: 80px;
                         width: 80px;
                     }
-                    h6{
+
+                    h6 {
                         font-size: 14px;
                     }
-                    p{
+
+                    p {
                         font-size: 14px;
                     }
                 }
@@ -1417,28 +1647,34 @@
         }
     }
 
-    .ai_key_feature_section{
+    .ai_key_feature_section {
         padding-top: 30px;
-        .parent_area{
-            .img_area{
+
+        .parent_area {
+            .img_area {
                 width: 100%;
-                .top_img{
+
+                .top_img {
                     top: -8%;
                     right: 10px;
                     height: 60px;
                 }
-                .inner_area{
-                    h3{
+
+                .inner_area {
+                    h3 {
                         font-size: 60px;
                     }
-                    h4{
+
+                    h4 {
                         font-size: 90px;
                     }
-                    h5{
+
+                    h5 {
                         padding-top: 10px;
                         font-size: 18px;
                     }
-                    p{
+
+                    p {
                         padding-top: 10px;
                         font-size: 14px;
                         width: 80%;
@@ -1448,48 +1684,58 @@
         }
     }
 
-    #page1{
+    #page1 {
         margin-top: 30px;
     }
-    .parallax_section{
+
+    .parallax_section {
         height: 100vh;
         padding: 30px 0;
-        .parent_area{
-            .left_area{
+
+        .parent_area {
+            .left_area {
                 width: 100%;
-                h3{
+
+                h3 {
                     font-size: 25px;
                 }
-                p{
+
+                p {
                     font-size: 14px;
                 }
             }
         }
     }
 
-    .ai_impact_section{
+    .ai_impact_section {
         padding-top: 30px;
-        .parent_area{
+
+        .parent_area {
             padding: 30px 0;
-            h3{
+
+            h3 {
                 font-size: 28px;
                 width: 60%;
             }
-            p{
+
+            p {
                 font-size: 14px;
             }
         }
     }
 
-    .ai_shape_section{
+    .ai_shape_section {
         padding-top: 30px;
-        .parent_area{
-            .left_area{
+
+        .parent_area {
+            .left_area {
                 width: 100%;
-                h3{
+
+                h3 {
                     font-size: 22px;
-                } 
-                p{
+                }
+
+                p {
                     padding: 20px 0;
                     font-size: 14px;
                 }
@@ -1497,14 +1743,16 @@
         }
     }
 
-    .ai_newsletter_section{
+    .ai_newsletter_section {
         padding: 40px 0;
-        .parent_area{
-            .form_area{
+
+        .parent_area {
+            .form_area {
                 width: 350px;
                 bottom: 25px;
-                .form-group{
-                    .form-control{
+
+                .form-group {
+                    .form-control {
                         padding: 9px 15px;
                         border-radius: 8px;
                     }
@@ -1516,60 +1764,71 @@
 
 /* Landscape phones and portrait tablets */
 @media (min-width: 361px) and (max-width: 575px) {
-	.ai_hero_section{
+    .ai_hero_section {
         margin-top: 90px;
         padding-top: 30px;
-        .parent_area{
-            .image_area{
+
+        .parent_area {
+            .image_area {
                 width: 100%;
                 height: 250px;
             }
-            h4{
+
+            h4 {
                 padding-top: 20px;
                 font-size: 20px;
             }
-            h2{
+
+            h2 {
                 font-size: 30px;
                 line-height: 70px;
             }
         }
     }
+
     @keyframes glow {
         from {
             box-shadow: 0 0 5px #F7BA2B, 0 0 10px #F7BA2B, 0 0 15px #F7BA2B,
-            0 0 20px #F7BA2B;
+                0 0 20px #F7BA2B;
         }
+
         to {
-          box-shadow: 0 0 5px #775AFF, 0 0 5px #775AFF, 0 0 5px #775AFF,
-            0 0 5px #775AFF;
+            box-shadow: 0 0 5px #775AFF, 0 0 5px #775AFF, 0 0 5px #775AFF,
+                0 0 5px #775AFF;
         }
     }
 
-    .text_opener_section{
+    .text_opener_section {
         padding-top: 25px;
-        .parent_area{
-            .wrapper{
+
+        .parent_area {
+            .wrapper {
                 height: 80vh;
-                .wrapper_top{
-                    h1{
+
+                .wrapper_top {
+                    h1 {
                         font-size: 40px;
                         line-height: 40px;
                     }
                 }
-                .wrapper_bottom{
-                    h1{
+
+                .wrapper_bottom {
+                    h1 {
                         font-size: 40px;
                         line-height: 40px;
                     }
                 }
-                .wrapper_center{
-                    .inner_area{
+
+                .wrapper_center {
+                    .inner_area {
                         margin-top: 260px;
-                        h4{
+
+                        h4 {
                             font-size: 25px;
                             line-height: 25px;
                         }
-                        p{
+
+                        p {
                             font-size: 14px;
                             line-height: 26px;
                         }
@@ -1580,12 +1839,13 @@
         }
     }
 
-    .ai_chat_banner_section{
-        .parent_area{
-            .image_area{
+    .ai_chat_banner_section {
+        .parent_area {
+            .image_area {
                 width: 100%;
             }
-            h3{
+
+            h3 {
                 padding-top: 20px;
                 font-size: 16px;
                 width: 100%;
@@ -1593,40 +1853,51 @@
         }
     }
 
-    .ai_why_matter_section{
+    .ai_why_matter_section {
         padding-top: 25px;
-        .parent_area{
-            .upper_area{
+
+        .parent_area {
+            .upper_area {
                 width: 100%;
-                h3{
+
+                h3 {
                     font-size: 25px;
                     line-height: 26px;
                 }
-                p{
+
+                p {
                     font-size: 14px;
                 }
             }
-            .middle_area{
+
+            .middle_area {
                 padding-top: 25px;
-                h2{
+
+                h2 {
                     font-size: 60px;
                 }
             }
-            .lower_area{
+
+            .lower_area {
                 padding-top: 25px;
-                .row{
+
+                .row {
                     gap: 20px;
                 }
-                .card_inner{
+
+                .card_inner {
                     padding: 0;
-                    .image_area{
+
+                    .image_area {
                         height: 80px;
                         width: 80px;
                     }
-                    h6{
+
+                    h6 {
                         font-size: 14px;
                     }
-                    p{
+
+                    p {
                         font-size: 14px;
                     }
                 }
@@ -1634,32 +1905,39 @@
         }
     }
 
-    .ai_key_feature_section{
+    .ai_key_feature_section {
         padding-top: 25px;
-        .parent_area{
-            .img_area{
+
+        .parent_area {
+            .img_area {
                 width: 100%;
-                .bottom_img{
+
+                .bottom_img {
                     height: 30px;
                 }
-                .top_img{
+
+                .top_img {
                     top: -8%;
                     right: 10px;
                     height: 40px;
                 }
-                .inner_area{
-                    h3{
+
+                .inner_area {
+                    h3 {
                         font-size: 40px;
                     }
-                    h4{
+
+                    h4 {
                         font-size: 60px;
                         line-height: 75px;
                     }
-                    h5{
+
+                    h5 {
                         padding-top: 10px;
                         font-size: 16px;
                     }
-                    p{
+
+                    p {
                         padding-top: 10px;
                         font-size: 14px;
                         width: 100%;
@@ -1669,65 +1947,78 @@
         }
     }
 
-    #page1{
+    #page1 {
         margin-top: 30px;
     }
-    .parallax_section{
+
+    .parallax_section {
         height: 80vh;
         padding: 30px 0;
-        &.even_section{
-            .parent_area{
-                .left_area{
+
+        &.even_section {
+            .parent_area {
+                .left_area {
                     padding-left: 0;
                 }
             }
         }
-        .parent_area{
-            .row{
+
+        .parent_area {
+            .row {
                 gap: 30px;
             }
-            .left_area{
+
+            .left_area {
                 width: 100%;
-                h3{
+
+                h3 {
                     font-size: 22px;
                 }
-                p{
+
+                p {
                     font-size: 14px;
                 }
             }
         }
     }
 
-    .ai_impact_section{
+    .ai_impact_section {
         padding-top: 25px;
-        .parent_area{
+
+        .parent_area {
             padding: 25px 0;
-            h3{
+
+            h3 {
                 font-size: 25px;
                 width: 100%;
             }
-            p{
+
+            p {
                 font-size: 14px;
             }
         }
     }
 
-    .ai_shape_section{
+    .ai_shape_section {
         padding-top: 25px;
-        &.even_section{
-            .parent_area{
-                .row{
+
+        &.even_section {
+            .parent_area {
+                .row {
                     flex-direction: column-reverse;
                 }
             }
         }
-        .parent_area{
-            .left_area{
+
+        .parent_area {
+            .left_area {
                 width: 100%;
-                h3{
+
+                h3 {
                     font-size: 22px;
-                } 
-                p{
+                }
+
+                p {
                     padding: 15px 0;
                     font-size: 14px;
                 }
@@ -1735,17 +2026,20 @@
         }
     }
 
-    .ai_newsletter_section{
+    .ai_newsletter_section {
         padding: 40px 0;
-        .parent_area{
-            .image_area{
+
+        .parent_area {
+            .image_area {
                 width: 100%;
             }
-            .form_area{
+
+            .form_area {
                 width: 100%;
                 bottom: -20px;
-                .form-group{
-                    .form-control{
+
+                .form-group {
+                    .form-control {
                         padding: 8px 15px;
                         border-radius: 8px;
                     }
@@ -1758,50 +2052,59 @@
 
 /* Smaller phones */
 @media (max-width: 360px) {
-	.ai_hero_section{
+    .ai_hero_section {
         margin-top: 90px;
         padding-top: 30px;
-        .parent_area{
-            .image_area{
+
+        .parent_area {
+            .image_area {
                 width: 100%;
                 height: 250px;
             }
-            h4{
+
+            h4 {
                 padding-top: 20px;
                 font-size: 20px;
             }
-            h2{
+
+            h2 {
                 font-size: 30px;
                 line-height: 70px;
             }
         }
     }
 
-    .text_opener_section{
+    .text_opener_section {
         padding-top: 25px;
-        .parent_area{
-            .wrapper{
+
+        .parent_area {
+            .wrapper {
                 height: 80vh;
-                .wrapper_top{
-                    h1{
+
+                .wrapper_top {
+                    h1 {
                         font-size: 40px;
                         line-height: 40px;
                     }
                 }
-                .wrapper_bottom{
-                    h1{
+
+                .wrapper_bottom {
+                    h1 {
                         font-size: 40px;
                         line-height: 40px;
                     }
                 }
-                .wrapper_center{
-                    .inner_area{
+
+                .wrapper_center {
+                    .inner_area {
                         margin-top: 260px;
-                        h4{
+
+                        h4 {
                             font-size: 25px;
                             line-height: 25px;
                         }
-                        p{
+
+                        p {
                             font-size: 14px;
                             line-height: 26px;
                         }
@@ -1812,12 +2115,13 @@
         }
     }
 
-    .ai_chat_banner_section{
-        .parent_area{
-            .image_area{
+    .ai_chat_banner_section {
+        .parent_area {
+            .image_area {
                 width: 100%;
             }
-            h3{
+
+            h3 {
                 padding-top: 20px;
                 font-size: 16px;
                 width: 100%;
@@ -1826,40 +2130,51 @@
     }
 
 
-    .ai_why_matter_section{
+    .ai_why_matter_section {
         padding-top: 25px;
-        .parent_area{
-            .upper_area{
+
+        .parent_area {
+            .upper_area {
                 width: 100%;
-                h3{
+
+                h3 {
                     font-size: 25px;
                     line-height: 26px;
                 }
-                p{
+
+                p {
                     font-size: 14px;
                 }
             }
-            .middle_area{
+
+            .middle_area {
                 padding-top: 25px;
-                h2{
+
+                h2 {
                     font-size: 60px;
                 }
             }
-            .lower_area{
+
+            .lower_area {
                 padding-top: 25px;
-                .row{
+
+                .row {
                     gap: 20px;
                 }
-                .card_inner{
+
+                .card_inner {
                     padding: 0;
-                    .image_area{
+
+                    .image_area {
                         height: 80px;
                         width: 80px;
                     }
-                    h6{
+
+                    h6 {
                         font-size: 14px;
                     }
-                    p{
+
+                    p {
                         font-size: 14px;
                     }
                 }
@@ -1867,32 +2182,39 @@
         }
     }
 
-    .ai_key_feature_section{
+    .ai_key_feature_section {
         padding-top: 25px;
-        .parent_area{
-            .img_area{
+
+        .parent_area {
+            .img_area {
                 width: 100%;
-                .bottom_img{
+
+                .bottom_img {
                     height: 30px;
                 }
-                .top_img{
+
+                .top_img {
                     top: -8%;
                     right: 10px;
                     height: 40px;
                 }
-                .inner_area{
-                    h3{
+
+                .inner_area {
+                    h3 {
                         font-size: 40px;
                     }
-                    h4{
+
+                    h4 {
                         font-size: 60px;
                         line-height: 75px;
                     }
-                    h5{
+
+                    h5 {
                         padding-top: 10px;
                         font-size: 16px;
                     }
-                    p{
+
+                    p {
                         padding-top: 10px;
                         font-size: 14px;
                         width: 100%;
@@ -1902,65 +2224,78 @@
         }
     }
 
-    #page1{
+    #page1 {
         margin-top: 30px;
     }
-    .parallax_section{
+
+    .parallax_section {
         height: 80vh;
         padding: 30px 0;
-        &.even_section{
-            .parent_area{
-                .left_area{
+
+        &.even_section {
+            .parent_area {
+                .left_area {
                     padding-left: 0;
                 }
             }
         }
-        .parent_area{
-            .row{
+
+        .parent_area {
+            .row {
                 gap: 30px;
             }
-            .left_area{
+
+            .left_area {
                 width: 100%;
-                h3{
+
+                h3 {
                     font-size: 22px;
                 }
-                p{
+
+                p {
                     font-size: 14px;
                 }
             }
         }
     }
 
-    .ai_impact_section{
+    .ai_impact_section {
         padding-top: 25px;
-        .parent_area{
+
+        .parent_area {
             padding: 25px 0;
-            h3{
+
+            h3 {
                 font-size: 25px;
                 width: 100%;
             }
-            p{
+
+            p {
                 font-size: 14px;
             }
         }
     }
 
-    .ai_shape_section{
+    .ai_shape_section {
         padding-top: 25px;
-        &.even_section{
-            .parent_area{
-                .row{
+
+        &.even_section {
+            .parent_area {
+                .row {
                     flex-direction: column-reverse;
                 }
             }
         }
-        .parent_area{
-            .left_area{
+
+        .parent_area {
+            .left_area {
                 width: 100%;
-                h3{
+
+                h3 {
                     font-size: 22px;
-                } 
-                p{
+                }
+
+                p {
                     padding: 15px 0;
                     font-size: 14px;
                 }
@@ -1968,17 +2303,20 @@
         }
     }
 
-    .ai_newsletter_section{
+    .ai_newsletter_section {
         padding: 40px 0;
-        .parent_area{
-            .image_area{
+
+        .parent_area {
+            .image_area {
                 width: 100%;
             }
-            .form_area{
+
+            .form_area {
                 width: 100%;
                 bottom: -20px;
-                .form-group{
-                    .form-control{
+
+                .form-group {
+                    .form-control {
                         padding: 8px 15px;
                         border-radius: 8px;
                     }
@@ -1991,30 +2329,25 @@
 @keyframes glow {
     from {
         box-shadow: 0 0 5px #F7BA2B, 0 0 10px #F7BA2B, 0 0 15px #F7BA2B,
-        0 0 20px #F7BA2B;
+            0 0 20px #F7BA2B;
     }
-    to {
-      box-shadow: 0 0 5px #775AFF, 0 0 5px #775AFF, 0 0 5px #775AFF,
-        0 0 5px #775AFF;
-    }
-   }
 
-   
+    to {
+        box-shadow: 0 0 5px #775AFF, 0 0 5px #775AFF, 0 0 5px #775AFF,
+            0 0 5px #775AFF;
+    }
+}
+
+
 
 /* Smaller phones */
-@media (max-width: 320px) {
-    
-}
+@media (max-width: 320px) {}
 
 
 
 
 /* Add CSS styles for Portrait orientation */
-@media screen and (orientation: portrait) {
-    
-}
+@media screen and (orientation: portrait) {}
 
 /* Add CSS styles for Landscape orientation */
-@media screen and (orientation: landscape) {
-    
-}
+@media screen and (orientation: landscape) {}

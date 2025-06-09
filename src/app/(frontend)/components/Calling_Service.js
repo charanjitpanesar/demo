@@ -16,6 +16,7 @@ const Calling_Service = () => {
                         <div className='parent_area'>
                             <h3>The <span className='bg'>Challenge</span> with <span>Traditional</span> Sales & <span>Customer</span> Service</h3>
                             <div className='inner_area'>
+                                <div className="gradient"></div>
                                 <Row>
                                     <Col xxl={6} xl={6} lg={6} md={6} sm={6} xs={12}>
                                         <div className='left_area'>
@@ -52,6 +53,7 @@ const Calling_Service = () => {
                                 </Row>
                             </div>
                             <div className='inner_area'>
+                                <div className="contact_gradient"></div>
                                 <Row>
                                     <Col xxl={6} xl={6} lg={6} md={6} sm={6} xs={12}>
                                         <div className='left_area'>

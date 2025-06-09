@@ -3,7 +3,7 @@ import { Col, Container, Row } from 'react-bootstrap'
 import Card from './Card'
 import '../../../../public/sass/home_scss/home_cards_section.scss'
 
-const Home_cards_section = ({id}) => {
+const Home_cards_section = ({ id }) => {
 
     const cardData = [
         {
@@ -32,7 +32,7 @@ const Home_cards_section = ({id}) => {
         },
     ];
     return (
-        
+
         <section className='home_cards_section' id={id}>
             <Container>
                 <Row>
@@ -40,11 +40,11 @@ const Home_cards_section = ({id}) => {
                         <div className='parent_area'>
                             <h3>Our <strong>Services</strong></h3>
                             <Row>
-                            {cardData.map((card, index) => (
+                                {cardData.map((card, index) => (
                                     <Col key={index} xxl={4} xl={4} lg={4} md={4} sm={6} xs={12}>
-                                        <Card 
-                                            heading={card.heading} 
-                                            description={card.description} 
+                                        <Card
+                                            heading={card.heading}
+                                            description={card.description}
                                             className={`card_${index + 1}`}
                                         />
                                     </Col>
@@ -54,7 +54,8 @@ const Home_cards_section = ({id}) => {
                     </Col>
                 </Row>
             </Container>
-        </section> 
+            <div className="gradient"></div>
+        </section>
     )
 }
 

@@ -9,35 +9,36 @@ gsap.registerPlugin(ScrollTrigger);
 
 
 const Ai_text_opener = () => {
-    
+
     const wrapperRef = useRef(null);
-    
-        useGSAP(() => {
-            let tl2 = gsap.timeline({
-                scrollTrigger: {
-                    trigger: wrapperRef.current,
-                    start: "center center",
-                    end: "bottom center",
-                    scrub: 1,
-                    pin: true,
-                    // markers: true,
-                    // pinSpacing: false
-                }
-            });
-    
-            tl2.to(".wrapper .wrapper_top", {
-                y: '-100%'
-            }, "b")
+
+    useGSAP(() => {
+        let tl2 = gsap.timeline({
+            scrollTrigger: {
+                trigger: wrapperRef.current,
+                start: "center center",
+                end: "bottom center",
+                scrub: 1,
+                pin: true,
+                // markers: true,
+                // pinSpacing: false
+            }
+        });
+
+        tl2.to(".wrapper .wrapper_top", {
+            y: '-100%'
+        }, "b")
             .to(".wrapper .wrapper_bottom", {
                 bottom: '-50%'
             }, "b")
             .to(".wrapper .wrapper_center .inner_area", {
                 y: '-150%'
             }, "b");
-    
-        }, []);
+
+    }, []);
     return (
         <section className='text_opener_section'>
+            <div className="academy_gradient"></div>
             <Container>
                 <Row>
                     <Col xxl={12} xl={12} lg={12} md={12} sm={12} xs={12}>

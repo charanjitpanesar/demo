@@ -3,9 +3,10 @@ import { Col, Container, Row } from 'react-bootstrap'
 import '../../../../public/sass/contact_scss/contact_banner.scss'
 import Link from 'next/link'
 
-const Contact_banner = ({id , propsData, showButtons = true  }) => {
+const Contact_banner = ({ id, propsData, showButtons = true }) => {
     return (
         <section className='contact_banner_section' id={id}>
+            <div className="contact_gradient"></div>
             <Container>
                 <Row>
                     <Col xxl={12} xl={12} lg={12} md={12} sm={12} xs={12}>
@@ -28,7 +29,7 @@ const Contact_banner = ({id , propsData, showButtons = true  }) => {
                     </Col>
                 </Row>
             </Container>
-        </section> 
+        </section>
     )
 }
 

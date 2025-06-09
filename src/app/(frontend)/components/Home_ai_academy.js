@@ -12,6 +12,7 @@ import Link from 'next/link';
 const Home_ai_academy = ({ id }) => {
     return (
         <section className='home_ai' id={id}>
+            <div className="gradient_big"></div>
             <Container>
                 <Row>
                     <Col xxl={12} xl={12} lg={12} md={12} sm={12} xs={12}>

@@ -6,6 +6,7 @@ import { Col, Container, Row } from 'react-bootstrap'
 const Calling_meet = () => {
     return (
         <section className='calling_meet_section'>
+            <div className="gradient"></div>
             <Container>
                 <Row>
                     <Col xxl={12} xl={12} lg={12} md={12} sm={12} xs={12}>

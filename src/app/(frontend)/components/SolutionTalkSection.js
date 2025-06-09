@@ -15,8 +15,8 @@ const SolutionTalkSection = () => {
                                     <Col xxl={6} xl={6} lg={6} md={6} sm={6} xs={12}>
                                         <div className='left_area'>
                                             <h3>Lets <span>Talk</span></h3>
-                                            <h4>See It in <strong>Action </strong> 
-                                             No Jargon, <span>Just Results</span></h4>
+                                            <h4>See It in <strong>Action </strong>
+                                                No Jargon, <span>Just Results</span></h4>
                                             <div className='button_area'>
                                                 <Link href="/" className='btn-primary btn-black'>BOOK A CALL</Link>
                                             </div>
@@ -25,7 +25,7 @@ const SolutionTalkSection = () => {
                                     <Col xxl={6} xl={6} lg={6} md={6} sm={6} xs={12}>
                                         <div className='right_area'>
                                             <p>
-                                            Curious about a better way?  We'll show you, without the tech talk.  Discover solutions designed for your success.
+                                                Curious how these solutions will fit your organization like a glove? We’re happy to show you around. We promise not to bore you with endless tech jargon or complicated setups. Instead, we’ll demo the goods, highlight how each solution can streamline your workflows, and help you unleash your team’s true productivity.
 
                                             </p>
                                         </div>
@@ -35,6 +35,7 @@ const SolutionTalkSection = () => {
                         </Col>
                     </Row>
                 </Container>
+                <div className="contact_gradient"></div>
             </section>
         </>
     )

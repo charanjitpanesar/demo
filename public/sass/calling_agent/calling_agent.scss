@@ -1,36 +1,42 @@
 @use "../base/variable.scss";
 @use "../base/mixins.scss";
 
-.calling_agent_hero_section{
+.calling_agent_hero_section {
     padding: 90px 0;
     background: url('../../../public/images/calling_agent_bg.png') no-repeat center/cover;
     padding-top: 0;
     height: 100vh;
     align-content: center;
-    .parent_area{
-        .logo_area{
+
+    .parent_area {
+        .logo_area {
             margin: 0 auto;
             width: 600px;
-            img{
+
+            img {
                 height: 100%;
                 width: 100%;
                 object-fit: cover;
             }
         }
-        .content_area{
+
+        .content_area {
             margin-top: -140px;
-            h2{
+
+            h2 {
                 font-weight: 400;
                 font-size: 78px;
                 text-align: center;
                 text-transform: uppercase;
                 color: variable.$white;
-                span{
+
+                span {
                     font-weight: 700;
                     font-size: 100px;
                 }
             }
-            h6{
+
+            h6 {
                 width: 876px;
                 max-width: 100%;
                 font-weight: 400;
@@ -39,7 +45,8 @@
                 text-align: center;
                 text-transform: uppercase;
                 color: variable.$white;
-                span{
+
+                span {
                     font-weight: 700;
                 }
             }
@@ -48,61 +55,88 @@
 }
 
 
-.calling_service_section{
+.calling_service_section {
     padding-top: 90px;
-    .parent_area{
-        h3{
+
+    .parent_area {
+        h3 {
             font-weight: 400;
             font-size: 64px;
             text-align: center;
             text-transform: uppercase;
             color: variable.$white;
-            span{
+
+            span {
                 font-weight: 700;
-                &.bg{
+
+                &.bg {
                     background: #00FFD233;
                 }
             }
         }
-        .inner_area{
+
+        .inner_area {
             padding-top: 90px;
             height: 100vh;
-            &.even{
-                .row{
+            position: relative;
+
+            .gradient {
+                top: 50%;
+                transform: translateY(-50%);
+                left: -120px;
+            }
+
+            .contact_gradient {
+                left: 50%;
+                transform: translate(-50%, -50%);
+                top: 50%;
+                filter: blur(300px);
+            }
+
+            &.even {
+                .row {
                     flex-direction: row-reverse;
                 }
-                .left_area{
+
+                .left_area {
                     margin-left: auto;
                 }
-                .right_area{
-                    .logo_area{
+
+                .right_area {
+                    .logo_area {
                         margin: 0;
                     }
                 }
             }
-            .left_area{
+
+            .left_area {
                 width: 62%;
-                h4{
+
+                h4 {
                     font-weight: 400;
                     font-size: 54px;
                     color: variable.$white;
-                    span{
+
+                    span {
                         font-weight: 700;
                     }
                 }
-                p{
+
+                p {
                     font-weight: 400;
                     font-size: 34px;
                     color: variable.$white;
                     padding-top: 20px;
                 }
             }
-            .right_area{
-                .logo_area{
+
+            .right_area {
+                .logo_area {
                     height: 320px;
                     width: 320px;
                     margin-left: auto;
-                    img{
+
+                    img {
                         height: 100%;
                         width: 100%;
                         object-fit: contain;
@@ -115,19 +149,28 @@
 
 
 
-.calling_meet_section{
-    .parent_area{
-        .image_area{
+.calling_meet_section {
+    position: relative;
+
+    .gradient {
+        bottom: 0;
+        left: -200px;
+    }
+
+    .parent_area {
+        .image_area {
             width: 1440px;
             max-width: 100%;
             margin: 0 auto;
             position: relative;
-            img{
+
+            img {
                 height: 100%;
                 width: 100%;
                 object-fit: cover;
             }
-            h2{
+
+            h2 {
                 position: absolute;
                 bottom: 60px;
                 left: 0;
@@ -136,7 +179,8 @@
                 font-size: 96px;
                 text-align: center;
                 color: variable.$white;
-                span{
+
+                span {
                     font-weight: 700;
                 }
             }
@@ -146,31 +190,38 @@
 
 
 
-.calling_support_section{
+.calling_support_section {
     padding-top: 90px;
-    .parent_area{
-        h3{
+
+    .parent_area {
+        h3 {
             font-weight: 275;
             font-size: 64px;
             text-align: center;
             color: variable.$white;
-            span{
+
+            span {
                 font-weight: 700;
             }
         }
-        .slider_area{
+
+        .slider_area {
             padding-top: 70px;
-            .slide_inner{
+
+            .slide_inner {
                 position: relative;
-                &:hover{
+
+                &:hover {
                     box-shadow: 0px 0px 0.59px 0px #0A3D58;
-                    .image_area{
-                        img{
+
+                    .image_area {
+                        img {
                             transform: scale(1.1);
                         }
                     }
                 }
-                .content_area{
+
+                .content_area {
                     padding: 24px 15px;
                     position: absolute;
                     bottom: 0;
@@ -180,15 +231,18 @@
                     font-size: 32px;
                     z-index: 2;
                     color: variable.$white;
-                    span{
+
+                    span {
                         color: variable.$sea_green;
                     }
                 }
-                .image_area{
+
+                .image_area {
                     border-radius: 10px;
                     overflow: hidden;
                     height: 555px;
-                    img{
+
+                    img {
                         filter: brightness(0.5);
                         @include mixins.transition(all 0.5s ease-in-out);
                         height: 100%;
@@ -202,44 +256,52 @@
 }
 
 
-.calling_impact_section{
+.calling_impact_section {
     padding-top: 90px;
-    .parent_area{
-        h3{
+
+    .parent_area {
+        h3 {
             font-weight: 300;
             font-size: 64px;
             text-align: center;
             color: variable.$white;
-            span{
+
+            span {
                 font-weight: 700;
             }
         }
-        .card_parent{
+
+        .card_parent {
             padding-top: 90px;
             display: flex;
             gap: 60px;
             flex-wrap: wrap;
             justify-content: center;
-            .card_area{
+
+            .card_area {
                 width: calc((100% - 60px)/2);
-                .image_area{
+
+                .image_area {
                     height: 220px;
                     width: 220px;
                     margin: 0 auto;
-                    img{
+
+                    img {
                         height: 100%;
                         width: 100%;
                         object-fit: contain;
                     }
                 }
-                p{
+
+                p {
                     width: 80%;
                     margin: 0 auto;
                     font-weight: 300;
                     font-size: 40px;
                     text-align: center;
                     color: #C4C4C4;
-                    span{
+
+                    span {
                         font-weight: 700;
                         font-size: 64px;
                     }
@@ -251,30 +313,35 @@
 
 
 
-.calling_result_section{
+.calling_result_section {
     // padding-top: 90px;
     margin-top: 90px;
     background: linear-gradient(90deg, #073D57 60.5%, rgba(7, 61, 87, 0) 86.5%);
 
-    .parent_area{
+    .parent_area {
         display: flex;
         flex-wrap: wrap;
-        .left_area{
+
+        .left_area {
             // background-color: variable.$sea_green;
             width: 60%;
             align-content: center;
-            .content_area{
+
+            .content_area {
                 padding: 20px 60px;
                 width: 75%;
-                h3{
+
+                h3 {
                     font-weight: 400;
                     font-size: 60px;
                     color: variable.$white;
-                    span{
+
+                    span {
                         font-weight: 700;
                     }
                 }
-                p{
+
+                p {
                     font-weight: 500;
                     font-size: 20px;
                     color: variable.$white;
@@ -282,19 +349,23 @@
                 }
             }
         }
-        .right_area{
+
+        .right_area {
             width: calc(100% - 60%);
-            .image_area{
+
+            .image_area {
                 height: 710px;
                 overflow: hidden;
                 position: relative;
                 z-index: -1;
-                &:hover{
-                    img{
+
+                &:hover {
+                    img {
                         transform: scale(1.1);
                     }
                 }
-                img{
+
+                img {
                     @include mixins.transition(all 0.3s ease);
                     height: 100%;
                     width: 100%;
@@ -306,31 +377,45 @@
 }
 
 
-.calling_outreach_section{
+.calling_outreach_section {
     padding: 300px 0;
     background: url('../../../public/images/bluer_layer.png') no-repeat center/contain;
-    .parent_area{
-        h3{
+    position: relative;
+
+    .contact_gradient {
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        filter: blur(400px);
+    }
+
+    .parent_area {
+        h3 {
             font-weight: 400;
             font-size: 60px;
             text-align: center;
             color: variable.$white;
-            span{
+
+            span {
                 font-weight: 700;
             }
         }
-        form{
+
+        form {
             padding-top: 40px;
             width: 50%;
             margin: 0 auto;
         }
-        .button_area{
+
+        .button_area {
             padding-top: 40px;
-            .btn-primary{
+
+            .btn-primary {
                 width: fit-content;
                 margin: 0 auto;
                 border-radius: 60px;
-                &.btn-dark{
+
+                &.btn-dark {
                     box-shadow: 0 0px 15px #e6e6e6fa, 0 -1px 2px #8fb6ff40;
                 }
             }
@@ -340,39 +425,33 @@
 
 
 /* Above 1920 desktop */
-@media (min-width: 1920px){
-    
-}
+@media (min-width: 1920px) {}
 
 /* 1680 desktop */
-@media (min-width: 1680px) and (max-width: 1919px){
-    
-}
+@media (min-width: 1680px) and (max-width: 1919px) {}
 
 /* 1600 desktop */
-@media (min-width: 1600px) and (max-width: 1679px){
-    
-}
+@media (min-width: 1600px) and (max-width: 1679px) {}
 
 /* Above 1400 and Below 1599 Desktop*/
-@media (min-width: 1400px) and (max-width: 1599px){
-    
-
-}
+@media (min-width: 1400px) and (max-width: 1599px) {}
 
 /* 1300 desktop only */
-@media (min-width: 1300px) and (max-width: 1399px){
-    .calling_agent_hero_section{
+@media (min-width: 1300px) and (max-width: 1399px) {
+    .calling_agent_hero_section {
         // margin-top: 132px;
         padding: 130px 0;
-        .parent_area{
-            .logo_area{
+
+        .parent_area {
+            .logo_area {
                 width: 550px;
             }
-            .content_area{
-                h2{
+
+            .content_area {
+                h2 {
                     font-size: 65px;
-                    span{
+
+                    span {
                         font-size: 90px;
                     }
                 }
@@ -380,24 +459,29 @@
         }
     }
 
-    .calling_service_section{
+    .calling_service_section {
         padding-top: 70px;
-        .parent_area{
-            h3{
+
+        .parent_area {
+            h3 {
                 font-size: 50px;
             }
-            .inner_area{
+
+            .inner_area {
                 padding-top: 70px;
-                .left_area{
-                    h4{
+
+                .left_area {
+                    h4 {
                         font-size: 45px;
-                    } 
-                    p{
+                    }
+
+                    p {
                         font-size: 28px;
                     }
                 }
-                .right_area{
-                    .logo_area{
+
+                .right_area {
+                    .logo_area {
                         width: 250px;
                         height: 250px;
                     }
@@ -407,10 +491,10 @@
     }
 
 
-    .calling_meet_section{
-        .parent_area{
-            .image_area{
-                h2{
+    .calling_meet_section {
+        .parent_area {
+            .image_area {
+                h2 {
                     font-size: 75px;
                 }
             }
@@ -418,19 +502,23 @@
     }
 
 
-    .calling_support_section{
+    .calling_support_section {
         padding-top: 70px;
-        .parent_area{
-            h3{
+
+        .parent_area {
+            h3 {
                 font-size: 50px;
-            } 
-            .slider_area{
+            }
+
+            .slider_area {
                 padding-top: 50px;
-                .slide_inner{
-                    .content_area{
+
+                .slide_inner {
+                    .content_area {
                         font-size: 24px;
                     }
-                    .image_area{
+
+                    .image_area {
                         height: 467px;
                     }
                 }
@@ -439,21 +527,25 @@
     }
 
 
-    .calling_impact_section{
+    .calling_impact_section {
         padding-top: 70px;
-        .parent_area{
-            h3{
+
+        .parent_area {
+            h3 {
                 font-size: 55px;
-            } 
-            .card_parent{
-                .card_area{
-                    .image_area{
+            }
+
+            .card_parent {
+                .card_area {
+                    .image_area {
                         height: 250px;
                         width: 250px;
                     }
-                    p{
+
+                    p {
                         font-size: 30px;
-                        span{
+
+                        span {
                             font-size: 45px;
                         }
                     }
@@ -462,19 +554,21 @@
         }
     }
 
-    .calling_result_section{
+    .calling_result_section {
         // padding-top: 70px;
         margin-top: 70px;
-        .parent_area{
-            .left_area{
-                .content_area{
-                    h3{
+
+        .parent_area {
+            .left_area {
+                .content_area {
+                    h3 {
                         font-size: 50px;
                     }
                 }
             }
-            .right_area{
-                .image_area{
+
+            .right_area {
+                .image_area {
                     height: 588px;
                 }
             }
@@ -483,8 +577,9 @@
 
     .calling_outreach_section {
         padding: 220px 0;
-        .parent_area{
-            h3{
+
+        .parent_area {
+            h3 {
                 font-size: 50px;
             }
         }
@@ -493,18 +588,21 @@
 }
 
 /* 1200 desktop only */
-@media (min-width: 1200px) and (max-width: 1299px){
-    .calling_agent_hero_section{
+@media (min-width: 1200px) and (max-width: 1299px) {
+    .calling_agent_hero_section {
         // margin-top: 132px;
         padding: 130px 0;
-        .parent_area{
-            .logo_area{
+
+        .parent_area {
+            .logo_area {
                 width: 550px;
             }
-            .content_area{
-                h2{
+
+            .content_area {
+                h2 {
                     font-size: 65px;
-                    span{
+
+                    span {
                         font-size: 90px;
                     }
                 }
@@ -512,24 +610,29 @@
         }
     }
 
-    .calling_service_section{
+    .calling_service_section {
         padding-top: 70px;
-        .parent_area{
-            h3{
+
+        .parent_area {
+            h3 {
                 font-size: 50px;
             }
-            .inner_area{
+
+            .inner_area {
                 padding-top: 70px;
-                .left_area{
-                    h4{
+
+                .left_area {
+                    h4 {
                         font-size: 45px;
-                    } 
-                    p{
+                    }
+
+                    p {
                         font-size: 28px;
                     }
                 }
-                .right_area{
-                    .logo_area{
+
+                .right_area {
+                    .logo_area {
                         width: 250px;
                         height: 250px;
                     }
@@ -539,10 +642,10 @@
     }
 
 
-    .calling_meet_section{
-        .parent_area{
-            .image_area{
-                h2{
+    .calling_meet_section {
+        .parent_area {
+            .image_area {
+                h2 {
                     font-size: 75px;
                 }
             }
@@ -550,19 +653,23 @@
     }
 
 
-    .calling_support_section{
+    .calling_support_section {
         padding-top: 70px;
-        .parent_area{
-            h3{
+
+        .parent_area {
+            h3 {
                 font-size: 50px;
-            } 
-            .slider_area{
+            }
+
+            .slider_area {
                 padding-top: 50px;
-                .slide_inner{
-                    .content_area{
+
+                .slide_inner {
+                    .content_area {
                         font-size: 24px;
                     }
-                    .image_area{
+
+                    .image_area {
                         height: 467px;
                     }
                 }
@@ -571,21 +678,25 @@
     }
 
 
-    .calling_impact_section{
+    .calling_impact_section {
         padding-top: 70px;
-        .parent_area{
-            h3{
+
+        .parent_area {
+            h3 {
                 font-size: 55px;
-            } 
-            .card_parent{
-                .card_area{
-                    .image_area{
+            }
+
+            .card_parent {
+                .card_area {
+                    .image_area {
                         height: 250px;
                         width: 250px;
                     }
-                    p{
+
+                    p {
                         font-size: 30px;
-                        span{
+
+                        span {
                             font-size: 45px;
                         }
                     }
@@ -594,19 +705,21 @@
         }
     }
 
-    .calling_result_section{
+    .calling_result_section {
         // padding-top: 70px;
         margin-top: 70px;
-        .parent_area{
-            .left_area{
-                .content_area{
-                    h3{
+
+        .parent_area {
+            .left_area {
+                .content_area {
+                    h3 {
                         font-size: 50px;
                     }
                 }
             }
-            .right_area{
-                .image_area{
+
+            .right_area {
+                .image_area {
                     height: 588px;
                 }
             }
@@ -615,8 +728,9 @@
 
     .calling_outreach_section {
         padding: 220px 0;
-        .parent_area{
-            h3{
+
+        .parent_area {
+            h3 {
                 font-size: 50px;
             }
         }
@@ -625,45 +739,54 @@
 
 /* Landscape tablets and medium desktops */
 @media (min-width: 992px) and (max-width: 1199px) {
-	.calling_agent_hero_section{
+    .calling_agent_hero_section {
         // margin-top: 120px;
         padding: 70px 0;
-        .parent_area{
-            .logo_area{
+
+        .parent_area {
+            .logo_area {
                 width: 480px;
             }
-            .content_area{
-                h2{
+
+            .content_area {
+                h2 {
                     font-size: 50px;
-                    span{
+
+                    span {
                         font-size: 75px;
                     }
                 }
-                h6{
+
+                h6 {
                     font-size: 18px;
                 }
             }
         }
     }
 
-    .calling_service_section{
+    .calling_service_section {
         padding-top: 50px;
-        .parent_area{
-            h3{
+
+        .parent_area {
+            h3 {
                 font-size: 40px;
             }
-            .inner_area{
+
+            .inner_area {
                 padding-top: 50px;
-                .left_area{
-                    h4{
+
+                .left_area {
+                    h4 {
                         font-size: 35px;
-                    } 
-                    p{
+                    }
+
+                    p {
                         font-size: 22px;
                     }
                 }
-                .right_area{
-                    .logo_area{
+
+                .right_area {
+                    .logo_area {
                         width: 200px;
                         height: 200px;
                     }
@@ -673,10 +796,10 @@
     }
 
 
-    .calling_meet_section{
-        .parent_area{
-            .image_area{
-                h2{
+    .calling_meet_section {
+        .parent_area {
+            .image_area {
+                h2 {
                     font-size: 55px;
                 }
             }
@@ -684,19 +807,23 @@
     }
 
 
-    .calling_support_section{
+    .calling_support_section {
         padding-top: 50px;
-        .parent_area{
-            h3{
+
+        .parent_area {
+            h3 {
                 font-size: 40px;
-            } 
-            .slider_area{
+            }
+
+            .slider_area {
                 padding-top: 50px;
-                .slide_inner{
-                    .content_area{
+
+                .slide_inner {
+                    .content_area {
                         font-size: 20px;
                     }
-                    .image_area{
+
+                    .image_area {
                         height: 400px;
                     }
                 }
@@ -705,21 +832,25 @@
     }
 
 
-    .calling_impact_section{
+    .calling_impact_section {
         padding-top: 50px;
-        .parent_area{
-            h3{
+
+        .parent_area {
+            h3 {
                 font-size: 40px;
-            } 
-            .card_parent{
-                .card_area{
-                    .image_area{
+            }
+
+            .card_parent {
+                .card_area {
+                    .image_area {
                         height: 200px;
                         width: 200px;
                     }
-                    p{
+
+                    p {
                         font-size: 25px;
-                        span{
+
+                        span {
                             font-size: 35px;
                         }
                     }
@@ -728,23 +859,27 @@
         }
     }
 
-    .calling_result_section{
+    .calling_result_section {
         // padding-top: 50px;
         margin-top: 50px;
-        .parent_area{
-            .left_area{
-                .content_area{
+
+        .parent_area {
+            .left_area {
+                .content_area {
                     width: 90%;
-                    h3{
+
+                    h3 {
                         font-size: 40px;
                     }
-                    p{
+
+                    p {
                         font-size: 18px;
                     }
                 }
             }
-            .right_area{
-                .image_area{
+
+            .right_area {
+                .image_area {
                     height: 500px;
                 }
             }
@@ -753,8 +888,9 @@
 
     .calling_outreach_section {
         padding: 180px 0;
-        .parent_area{
-            h3{
+
+        .parent_area {
+            h3 {
                 font-size: 40px;
             }
         }
@@ -763,47 +899,57 @@
 
 /* Landscape tablets and ipad */
 @media (min-width: 768px) and (max-width: 991px) {
-	.calling_agent_hero_section{
+    .calling_agent_hero_section {
         // margin-top: 120px;
         padding: 70px 0;
         height: 100%;
-        .parent_area{
-            .logo_area{
+
+        .parent_area {
+            .logo_area {
                 width: 380px;
             }
-            .content_area{
+
+            .content_area {
                 margin-top: -80px;
-                h2{
+
+                h2 {
                     font-size: 40px;
-                    span{
+
+                    span {
                         font-size: 55px;
                     }
                 }
-                h6{
+
+                h6 {
                     font-size: 16px;
                 }
             }
         }
     }
 
-    .calling_service_section{
+    .calling_service_section {
         padding-top: 40px;
-        .parent_area{
-            h3{
+
+        .parent_area {
+            h3 {
                 font-size: 30px;
             }
-            .inner_area{
+
+            .inner_area {
                 padding-top: 40px;
-                .left_area{
-                    h4{
+
+                .left_area {
+                    h4 {
                         font-size: 28px;
-                    } 
-                    p{
+                    }
+
+                    p {
                         font-size: 18px;
                     }
                 }
-                .right_area{
-                    .logo_area{
+
+                .right_area {
+                    .logo_area {
                         width: 150px;
                         height: 150px;
                     }
@@ -813,10 +959,10 @@
     }
 
 
-    .calling_meet_section{
-        .parent_area{
-            .image_area{
-                h2{
+    .calling_meet_section {
+        .parent_area {
+            .image_area {
+                h2 {
                     font-size: 40px;
                 }
             }
@@ -824,19 +970,23 @@
     }
 
 
-    .calling_support_section{
+    .calling_support_section {
         padding-top: 40px;
-        .parent_area{
-            h3{
+
+        .parent_area {
+            h3 {
                 font-size: 30px;
-            } 
-            .slider_area{
+            }
+
+            .slider_area {
                 padding-top: 30px;
-                .slide_inner{
-                    .content_area{
+
+                .slide_inner {
+                    .content_area {
                         font-size: 18px;
                     }
-                    .image_area{
+
+                    .image_area {
                         height: 330px;
                     }
                 }
@@ -845,23 +995,29 @@
     }
 
 
-    .calling_impact_section{
+    .calling_impact_section {
         padding-top: 40px;
-        .parent_area{
-            h3{
+
+        .parent_area {
+            h3 {
                 font-size: 30px;
-            } 
-            .card_parent{
+            }
+
+            .card_parent {
                 gap: 30px;
-                .card_area{
+
+                .card_area {
                     width: calc((100% - 30px)/2);
-                    .image_area{
+
+                    .image_area {
                         height: 150px;
                         width: 150px;
                     }
-                    p{
+
+                    p {
                         font-size: 20px;
-                        span{
+
+                        span {
                             font-size: 25px;
                         }
                     }
@@ -870,24 +1026,28 @@
         }
     }
 
-    .calling_result_section{
+    .calling_result_section {
         // padding-top: 40px;
         margin-top: 40px;
-        .parent_area{
-            .left_area{
-                .content_area{
+
+        .parent_area {
+            .left_area {
+                .content_area {
                     width: 100%;
                     padding: 20px 20px;
-                    h3{
+
+                    h3 {
                         font-size: 30px;
                     }
-                    p{
+
+                    p {
                         font-size: 16px;
                     }
                 }
             }
-            .right_area{
-                .image_area{
+
+            .right_area {
+                .image_area {
                     height: 400px;
                 }
             }
@@ -896,11 +1056,13 @@
 
     .calling_outreach_section {
         padding: 150px 0;
-        .parent_area{
-            h3{
+
+        .parent_area {
+            h3 {
                 font-size: 30px;
             }
-            form{
+
+            form {
                 width: 60%;
             }
         }
@@ -909,48 +1071,58 @@
 
 /* Landscape phones and portrait tablets */
 @media (min-width: 576px) and (max-width: 767px) {
-	.calling_agent_hero_section{
+    .calling_agent_hero_section {
         // margin-top: 90px;
         padding: 30px 0;
-        .parent_area{
-            .logo_area{
+
+        .parent_area {
+            .logo_area {
                 position: relative;
                 // top: -50px;
                 width: 280px;
             }
-            .content_area{
+
+            .content_area {
                 margin-top: -80px;
-                h2{
+
+                h2 {
                     font-size: 30px;
-                    span{
+
+                    span {
                         font-size: 40px;
                     }
                 }
-                h6{
+
+                h6 {
                     font-size: 14px;
                 }
             }
         }
     }
 
-    .calling_service_section{
+    .calling_service_section {
         padding-top: 30px;
-        .parent_area{
-            h3{
+
+        .parent_area {
+            h3 {
                 font-size: 22px;
             }
-            .inner_area{
+
+            .inner_area {
                 padding-top: 30px;
-                .left_area{
-                    h4{
+
+                .left_area {
+                    h4 {
                         font-size: 22px;
-                    } 
-                    p{
+                    }
+
+                    p {
                         font-size: 14px;
                     }
                 }
-                .right_area{
-                    .logo_area{
+
+                .right_area {
+                    .logo_area {
                         width: 120px;
                         height: 120px;
                     }
@@ -960,10 +1132,10 @@
     }
 
 
-    .calling_meet_section{
-        .parent_area{
-            .image_area{
-                h2{
+    .calling_meet_section {
+        .parent_area {
+            .image_area {
+                h2 {
                     font-size: 30px;
                 }
             }
@@ -971,19 +1143,23 @@
     }
 
 
-    .calling_support_section{
+    .calling_support_section {
         padding-top: 30px;
-        .parent_area{
-            h3{
+
+        .parent_area {
+            h3 {
                 font-size: 22px;
-            } 
-            .slider_area{
+            }
+
+            .slider_area {
                 padding-top: 30px;
-                .slide_inner{
-                    .content_area{
+
+                .slide_inner {
+                    .content_area {
                         font-size: 18px;
                     }
-                    .image_area{
+
+                    .image_area {
                         height: 330px;
                     }
                 }
@@ -992,23 +1168,29 @@
     }
 
 
-    .calling_impact_section{
+    .calling_impact_section {
         padding-top: 30px;
-        .parent_area{
-            h3{
+
+        .parent_area {
+            h3 {
                 font-size: 22px;
-            } 
-            .card_parent{
+            }
+
+            .card_parent {
                 gap: 30px;
-                .card_area{
+
+                .card_area {
                     width: calc((100% - 30px)/2);
-                    .image_area{
+
+                    .image_area {
                         height: 120px;
                         width: 120px;
                     }
-                    p{
+
+                    p {
                         font-size: 16px;
-                        span{
+
+                        span {
                             font-size: 20px;
                         }
                     }
@@ -1017,25 +1199,29 @@
         }
     }
 
-    .calling_result_section{
+    .calling_result_section {
         // padding-top: 30px;.
         margin-top: 30px;
-        .parent_area{
-            .left_area{
-                .content_area{
+
+        .parent_area {
+            .left_area {
+                .content_area {
                     width: 100%;
                     padding: 20px 20px;
-                    h3{
+
+                    h3 {
                         font-size: 22px;
                     }
-                    p{
+
+                    p {
                         font-size: 14px;
                         padding-top: 10px;
                     }
                 }
             }
-            .right_area{
-                .image_area{
+
+            .right_area {
+                .image_area {
                     height: 300px;
                 }
             }
@@ -1044,15 +1230,18 @@
 
     .calling_outreach_section {
         padding: 80px 0;
-        .parent_area{
-            h3{
+
+        .parent_area {
+            h3 {
                 font-size: 22px;
             }
-            form{
+
+            form {
                 padding-top: 20px;
                 width: 60%;
             }
-            .button_area{
+
+            .button_area {
                 padding-top: 20px;
             }
         }
@@ -1061,50 +1250,60 @@
 
 /* Landscape phones and portrait tablets */
 @media (min-width: 361px) and (max-width: 575px) {
-	.calling_agent_hero_section{
+    .calling_agent_hero_section {
         // margin-top: 90px;
         padding: 50px 0;
         height: 100%;
-        .parent_area{
-            .logo_area{
+
+        .parent_area {
+            .logo_area {
                 position: relative;
                 // top: -50px;
                 width: 200px;
             }
-            .content_area{
+
+            .content_area {
                 margin-top: -40px;
-                h2{
+
+                h2 {
                     font-size: 25px;
-                    span{
+
+                    span {
                         font-size: 28px;
                     }
                 }
-                h6{
+
+                h6 {
                     font-size: 13px;
                 }
             }
         }
     }
 
-    .calling_service_section{
+    .calling_service_section {
         padding-top: 30px;
-        .parent_area{
-            h3{
+
+        .parent_area {
+            h3 {
                 font-size: 20px;
             }
-            .inner_area{
+
+            .inner_area {
                 padding-top: 20px;
-                .left_area{
-                    h4{
+
+                .left_area {
+                    h4 {
                         font-size: 20px;
-                    } 
-                    p{
+                    }
+
+                    p {
                         font-size: 14px;
                         padding-top: 10px;
                     }
                 }
-                .right_area{
-                    .logo_area{
+
+                .right_area {
+                    .logo_area {
                         width: 120px;
                         height: 120px;
                     }
@@ -1114,10 +1313,10 @@
     }
 
 
-    .calling_meet_section{
-        .parent_area{
-            .image_area{
-                h2{
+    .calling_meet_section {
+        .parent_area {
+            .image_area {
+                h2 {
                     font-size: 22px;
                     bottom: 20px;
                 }
@@ -1126,19 +1325,23 @@
     }
 
 
-    .calling_support_section{
+    .calling_support_section {
         padding-top: 30px;
-        .parent_area{
-            h3{
+
+        .parent_area {
+            h3 {
                 font-size: 20px;
-            } 
-            .slider_area{
+            }
+
+            .slider_area {
                 padding-top: 30px;
-                .slide_inner{
-                    .content_area{
+
+                .slide_inner {
+                    .content_area {
                         font-size: 18px;
                     }
-                    .image_area{
+
+                    .image_area {
                         height: 330px;
                     }
                 }
@@ -1147,23 +1350,29 @@
     }
 
 
-    .calling_impact_section{
+    .calling_impact_section {
         padding-top: 30px;
-        .parent_area{
-            h3{
+
+        .parent_area {
+            h3 {
                 font-size: 20px;
-            } 
-            .card_parent{
+            }
+
+            .card_parent {
                 gap: 20px;
-                .card_area{
+
+                .card_area {
                     width: 100%;
-                    .image_area{
+
+                    .image_area {
                         height: 120px;
                         width: 120px;
                     }
-                    p{
+
+                    p {
                         font-size: 14px;
-                        span{
+
+                        span {
                             font-size: 16px;
                         }
                     }
@@ -1172,28 +1381,34 @@
         }
     }
 
-    .calling_result_section{
+    .calling_result_section {
         // padding-top: 30px;
         margin-top: 30px;
         background: transparent;
-        .parent_area{
-            .left_area{
+
+        .parent_area {
+            .left_area {
                 width: 100%;
-                .content_area{
+
+                .content_area {
                     width: 100%;
                     padding: 20px 20px;
-                    h3{
+
+                    h3 {
                         font-size: 20px;
                     }
-                    p{
+
+                    p {
                         font-size: 14px;
                         padding-top: 10px;
                     }
                 }
             }
-            .right_area{
+
+            .right_area {
                 width: 100%;
-                .image_area{
+
+                .image_area {
                     height: 250px;
                 }
             }
@@ -1202,15 +1417,18 @@
 
     .calling_outreach_section {
         padding: 60px 0;
-        .parent_area{
-            h3{
+
+        .parent_area {
+            h3 {
                 font-size: 20px;
             }
-            form{
+
+            form {
                 padding-top: 20px;
                 width: 100%;
             }
-            .button_area{
+
+            .button_area {
                 padding-top: 20px;
             }
         }
@@ -1219,50 +1437,60 @@
 
 /* Smaller phones */
 @media (max-width: 360px) {
-	.calling_agent_hero_section{
+    .calling_agent_hero_section {
         // margin-top: 90px;
         padding: 50px 0;
         height: 100%;
-        .parent_area{
-            .logo_area{
+
+        .parent_area {
+            .logo_area {
                 position: relative;
                 // top: -50px;
                 width: 200px;
             }
-            .content_area{
+
+            .content_area {
                 margin-top: -40px;
-                h2{
+
+                h2 {
                     font-size: 25px;
-                    span{
+
+                    span {
                         font-size: 28px;
                     }
                 }
-                h6{
+
+                h6 {
                     font-size: 13px;
                 }
             }
         }
     }
 
-    .calling_service_section{
+    .calling_service_section {
         padding-top: 30px;
-        .parent_area{
-            h3{
+
+        .parent_area {
+            h3 {
                 font-size: 20px;
             }
-            .inner_area{
+
+            .inner_area {
                 padding-top: 20px;
-                .left_area{
-                    h4{
+
+                .left_area {
+                    h4 {
                         font-size: 20px;
-                    } 
-                    p{
+                    }
+
+                    p {
                         font-size: 14px;
                         padding-top: 10px;
                     }
                 }
-                .right_area{
-                    .logo_area{
+
+                .right_area {
+                    .logo_area {
                         width: 120px;
                         height: 120px;
                     }
@@ -1272,10 +1500,10 @@
     }
 
 
-    .calling_meet_section{
-        .parent_area{
-            .image_area{
-                h2{
+    .calling_meet_section {
+        .parent_area {
+            .image_area {
+                h2 {
                     font-size: 22px;
                     bottom: 20px;
                 }
@@ -1284,19 +1512,23 @@
     }
 
 
-    .calling_support_section{
+    .calling_support_section {
         padding-top: 30px;
-        .parent_area{
-            h3{
+
+        .parent_area {
+            h3 {
                 font-size: 20px;
-            } 
-            .slider_area{
+            }
+
+            .slider_area {
                 padding-top: 30px;
-                .slide_inner{
-                    .content_area{
+
+                .slide_inner {
+                    .content_area {
                         font-size: 18px;
                     }
-                    .image_area{
+
+                    .image_area {
                         height: 330px;
                     }
                 }
@@ -1305,23 +1537,29 @@
     }
 
 
-    .calling_impact_section{
+    .calling_impact_section {
         padding-top: 30px;
-        .parent_area{
-            h3{
+
+        .parent_area {
+            h3 {
                 font-size: 20px;
-            } 
-            .card_parent{
+            }
+
+            .card_parent {
                 gap: 20px;
-                .card_area{
+
+                .card_area {
                     width: 100%;
-                    .image_area{
+
+                    .image_area {
                         height: 120px;
                         width: 120px;
                     }
-                    p{
+
+                    p {
                         font-size: 14px;
-                        span{
+
+                        span {
                             font-size: 16px;
                         }
                     }
@@ -1330,28 +1568,34 @@
         }
     }
 
-    .calling_result_section{
+    .calling_result_section {
         // padding-top: 30px;
         margin-top: 30px;
         background: transparent;
-        .parent_area{
-            .left_area{
+
+        .parent_area {
+            .left_area {
                 width: 100%;
-                .content_area{
+
+                .content_area {
                     width: 100%;
                     padding: 20px 20px;
-                    h3{
+
+                    h3 {
                         font-size: 20px;
                     }
-                    p{
+
+                    p {
                         font-size: 14px;
                         padding-top: 10px;
                     }
                 }
             }
-            .right_area{
+
+            .right_area {
                 width: 100%;
-                .image_area{
+
+                .image_area {
                     height: 250px;
                 }
             }
@@ -1360,15 +1604,18 @@
 
     .calling_outreach_section {
         padding: 60px 0;
-        .parent_area{
-            h3{
+
+        .parent_area {
+            h3 {
                 font-size: 20px;
             }
-            form{
+
+            form {
                 padding-top: 20px;
                 width: 100%;
             }
-            .button_area{
+
+            .button_area {
                 padding-top: 20px;
             }
         }
@@ -1376,19 +1623,13 @@
 }
 
 /* Smaller phones */
-@media (max-width: 320px) {
-    
-}
+@media (max-width: 320px) {}
 
 
 
 
 /* Add CSS styles for Portrait orientation */
-@media screen and (orientation: portrait) {
-    
-}
+@media screen and (orientation: portrait) {}
 
 /* Add CSS styles for Landscape orientation */
-@media screen and (orientation: landscape) {
-    
-}
+@media screen and (orientation: landscape) {}

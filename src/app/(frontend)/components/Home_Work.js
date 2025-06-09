@@ -8,7 +8,7 @@ import layer from '../../../../public/images/layer.png'
 import Image from 'next/image'
 import '@/../public/sass/home_scss/home_work.scss';
 import { Swiper, SwiperSlide } from 'swiper/react'
-import { Navigation } from 'swiper/modules'
+import { Navigation, Mousewheel } from 'swiper/modules'
 import 'swiper/css/navigation'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faChevronLeft, faChevronRight } from '@fortawesome/free-solid-svg-icons'
@@ -46,7 +46,8 @@ const Home_Work = () => {
                                     <Swiper
                                         onAfterInit={(e) => { setCurrent(e.realIndex + 1) }}
                                         onSlideChange={(e) => setCurrent(e.realIndex + 1)}
-                                        modules={[Navigation]}
+                                        modules={[Mousewheel, Navigation]}
+                                        mousewheel={{ releaseOnEdges: true }}
                                         navigation={{ nextEl: '.next', prevEl: '.prev' }}
                                     >
                                         <SwiperSlide>
@@ -136,16 +137,15 @@ const Home_Work = () => {
                                             </div>
                                         </SwiperSlide>
                                     </Swiper>
-                                    <div className="btns">
+                                    {/* <div className="btns">
                                         <div className="slide_btn prev">
                                             <FontAwesomeIcon icon={faChevronLeft} />
                                         </div>
                                         <div className="slide_btn next">
                                             <FontAwesomeIcon icon={faChevronRight} />
                                         </div>
-                                    </div>
+                                    </div> */}
                                 </div>
-
                             </div>
                         </div>
                     </Col>

@@ -14,7 +14,8 @@
                 text-align: center;
                 color: variable.$white;
                 margin-bottom: 20px;
-                span{
+
+                span {
                     color: variable.$primary_color;
                 }
             }
@@ -37,6 +38,12 @@
             flex-direction: column;
             gap: 80px;
             position: relative;
+
+            .gradient {
+                top: 50%;
+                right: 0;
+                transform: translateY(-50%);
+            }
 
             .arrow_img1 {
                 position: absolute;
@@ -514,7 +521,8 @@
                                         outline: none;
                                     }
                                 }
-                                button{
+
+                                button {
                                     display: none;
                                 }
                             }

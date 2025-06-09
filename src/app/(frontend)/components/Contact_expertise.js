@@ -12,7 +12,7 @@ import 'swiper/css';
 import Link from 'next/link';
 import Image from 'next/image';
 
-const Contact_expertise = ({id, title,subtitle}) => {
+const Contact_expertise = ({ id, title, subtitle }) => {
     return (
         <>
             <section className='contact_expertise_section' id={id}>
@@ -28,30 +28,30 @@ const Contact_expertise = ({id, title,subtitle}) => {
                                         centeredSlides={true}
                                         loop={true}
                                         autoplay={{
-                                            delay: 2000, 
-                                            disableOnInteraction: false, 
-                                          }}
+                                            delay: 2000,
+                                            disableOnInteraction: false,
+                                        }}
                                         speed={500}
                                         modules={[Autoplay]}
                                         pagination={{
-                                        clickable: true,
+                                            clickable: true,
                                         }}
                                         className="mySwiper"
                                         breakpoints={{
                                             0: {
-                                              slidesPerView: 1,
-                                              centeredSlides: true,
-                                                spaceBetween:20,
+                                                slidesPerView: 1,
+                                                centeredSlides: true,
+                                                spaceBetween: 20,
                                             },
                                             556: {
-                                                slidesPerView: 3, 
-                                                spaceBetween:0,
-                                              },
-                                            768: {
-                                              slidesPerView: 3, 
-                                              spaceBetween:0,
+                                                slidesPerView: 3,
+                                                spaceBetween: 0,
                                             },
-                                          }}
+                                            768: {
+                                                slidesPerView: 3,
+                                                spaceBetween: 0,
+                                            },
+                                        }}
                                     >
                                         <SwiperSlide>
                                             <div className='slide_inner'>
@@ -64,12 +64,12 @@ const Contact_expertise = ({id, title,subtitle}) => {
                                                     />
                                                 </div>
                                                 <h3>
-                                                 Multi-Channel Customer Concierge
+                                                    Multi-Channel Customer Concierge
                                                 </h3>
                                                 <p>
-                                                Overwhelmed by customer messages? Our Concierge unifies everything, providing smart, consistent support
+                                                    Overwhelmed by customer messages? Our Concierge unifies everything, providing smart, consistent support
                                                 </p>
-                                                <Link href='/'>Learn More <i className="bi bi-arrow-right"></i></Link>
+                                                <Link href='/' className='btn-primary btn-green'>Learn More <i className="bi bi-arrow-right"></i></Link>
                                             </div>
                                         </SwiperSlide>
                                         <SwiperSlide>
@@ -83,12 +83,12 @@ const Contact_expertise = ({id, title,subtitle}) => {
                                                     />
                                                 </div>
                                                 <h3>
-                                                AI Calling Agent
+                                                    AI Calling Agent
                                                 </h3>
                                                 <p>
-                                                Tired of overwhelmed support lines?  Our AI Calling Agent handles the load, ensuring callers get instant, accurate help
+                                                    Tired of overwhelmed support lines?  Our AI Calling Agent handles the load, ensuring callers get instant, accurate help
                                                 </p>
-                                                <Link href='/'>Learn More <i className="bi bi-arrow-right"></i></Link>
+                                                <Link href='/' className='btn-primary btn-green'>Learn More <i className="bi bi-arrow-right"></i></Link>
                                             </div>
                                         </SwiperSlide>
                                         <SwiperSlide>
@@ -102,12 +102,12 @@ const Contact_expertise = ({id, title,subtitle}) => {
                                                     />
                                                 </div>
                                                 <h3>
-                                                Smart AI Assistant
+                                                    Smart AI Assistant
                                                 </h3>
                                                 <p>
-                                                Data silos, generic AI, inconsistent messaging, security risks.  Your business deserves a smarter AI assistant
+                                                    Data silos, generic AI, inconsistent messaging, security risks.  Your business deserves a smarter AI assistant
                                                 </p>
-                                                <Link href='/'>Learn More <i className="bi bi-arrow-right"></i></Link>
+                                                <Link href='/' className='btn-primary btn-green'>Learn More <i className="bi bi-arrow-right"></i></Link>
                                             </div>
                                         </SwiperSlide>
                                         <SwiperSlide>
@@ -126,7 +126,7 @@ const Contact_expertise = ({id, title,subtitle}) => {
                                                 <p>
                                                     Full-stack development, scalable architectures, and cloud services.
                                                 </p>
-                                                <Link href='/'>Learn More <i className="bi bi-arrow-right"></i></Link>
+                                                <Link href='/' className='btn-primary btn-green'>Learn More <i className="bi bi-arrow-right"></i></Link>
                                             </div>
                                         </SwiperSlide>
                                     </Swiper>
@@ -135,7 +135,8 @@ const Contact_expertise = ({id, title,subtitle}) => {
                         </Col>
                     </Row>
                 </Container>
-            </section> 
+                <div className="contact_gradient"></div>
+            </section>
         </>
     )
 }

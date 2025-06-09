@@ -26,9 +26,9 @@ const Solution_calender = ({ id }) => {
     const [active, setActive] = useState(0);
     const [val, setVal] = useState('');
     const [modalShow, setModalShow] = useState(false);
-    
+
     const todayDate = new Date();
-    
+
     const [appointment, setAppointment] = useState(todayDate);
     const [show, setShow] = useState(false);
 
@@ -77,12 +77,10 @@ const Solution_calender = ({ id }) => {
     const handleStartedClick = (e) => {
         e.preventDefault();
         let todayDate = new Date();
-        if(todayDate >= appointment)
-        {
+        if (todayDate >= appointment) {
             toast.error("Please select an upcoming time!")
         }
-        else
-        {
+        else {
             setShow(true);
         }
     }
@@ -124,6 +122,7 @@ const Solution_calender = ({ id }) => {
                                         <br></br>Why it matters: You get personalized advice tailored to your business</p>
                                 </div>
                                 <div className='cards_area'>
+                                    <div className="gradient"></div>
                                     <div className='arrow_img1'>
                                         <Image src={arrowDown1} alt='...' title="..." priority></Image>
                                     </div>
@@ -191,7 +190,7 @@ const Solution_calender = ({ id }) => {
                                                 <div className="right ">
                                                     <div className='inner_right'>
                                                         <div className="top">
-                                                            <div className="left_clock">{appointment.toLocaleDateString('en-US', { weekday: 'short', month: 'short'})} <span>{appointment.getDate()}</span></div>
+                                                            <div className="left_clock">{appointment.toLocaleDateString('en-US', { weekday: 'short', month: 'short' })} <span>{appointment.getDate()}</span></div>
                                                             <div className="right_clock">
                                                                 <div className="format">
                                                                     {
@@ -232,7 +231,7 @@ const Solution_calender = ({ id }) => {
                     </Row>
                 </Container>
             </section>
-            <Main_modal show={show} setShow={setShow} type="bookAppointment" appointment={appointment}/>
+            <Main_modal show={show} setShow={setShow} type="bookAppointment" appointment={appointment} />
         </>
     )
 }
