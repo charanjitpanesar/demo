@@ -21,10 +21,11 @@
     }
 
     .parent_area {
-        height: 100%;
+        height: 70%;
         align-content: center;
-        width: 673px;
-        max-width: 100%;
+        display: flex;
+        // width: 673px;
+        // max-width: 100%;
 
         // margin-left: auto;
         .button_area {
@@ -62,60 +63,72 @@
             }
         }
 
-        h3 {
-            padding-top: 10px;
-            background: linear-gradient(90.4deg, #FEFEFE 0.35%, #45FFD0 145.96%);
-            font-size: 50.33px;
-            font-weight: 500;
-            // text-align: right;
-            color: transparent;
-            background-size: 300% 300%;
-            background-clip: text;
-            -webkit-background-clip: text;
-            animation: gradient-move 3s infinite linear;
+        .left {
+            width: 673px;
+            max-width: 100%;
+            align-content: end;
+            flex-shrink: 0;
+
+            h3 {
+                padding-top: 10px;
+                background: linear-gradient(90.4deg, #FEFEFE 0.35%, #45FFD0 145.96%);
+                font-size: 50.33px;
+                font-weight: 500;
+                // text-align: right;
+                color: transparent;
+                background-size: 300% 300%;
+                background-clip: text;
+                -webkit-background-clip: text;
+                animation: gradient-move 3s infinite linear;
+            }
+
+            h4 {
+                font-weight: 500;
+                font-size: 38px;
+                color: variable.$white;
+            }
         }
 
-        h4 {
-            font-weight: 500;
-            font-size: 38px;
-            color: variable.$white;
-        }
+        .right {
+            flex-grow: 1;
+            align-content: flex-end;
 
-        p {
-            font-size: 16px;
-            font-weight: 400;
-            // text-align: right;
-            color: variable.$white2;
-            padding-top: 8px;
-        }
-
-        .intro_btn {
-            display: flex;
-            justify-content: center;
-            padding-top: 60px;
-
-            a {
-                display: inline-block;
+            p {
                 font-size: 16px;
                 font-weight: 400;
-                color: variable.$btn_white_color;
-                background-color: variable.$primary_color;
-                padding: 14px 55px;
-                border-radius: 60px;
-                position: relative;
+                text-align: right;
+                color: variable.$white2;
+                padding-top: 8px;
+            }
 
-                .icon_area {
-                    position: absolute;
-                    background-color: variable.$white2;
-                    height: 45px;
-                    width: 45px;
-                    border-radius: 50%;
-                    right: 4px;
-                    top: 4px;
+            .intro_btn {
+                display: flex;
+                justify-content: flex-end;
+                padding-top: 10px;
+
+                a {
+                    display: inline-block;
+                    font-size: 16px;
+                    font-weight: 400;
                     color: variable.$btn_white_color;
-                    display: flex;
-                    align-items: center;
-                    justify-content: center;
+                    background-color: variable.$primary_color;
+                    padding: 14px 55px;
+                    border-radius: 60px;
+                    position: relative;
+
+                    .icon_area {
+                        position: absolute;
+                        background-color: variable.$white2;
+                        height: 45px;
+                        width: 45px;
+                        border-radius: 50%;
+                        right: 4px;
+                        top: 4px;
+                        color: variable.$btn_white_color;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                    }
                 }
             }
         }
@@ -158,18 +171,17 @@
 
         .parent_area {
             padding-top: 100px;
-            width: 557px;
 
-            h3 {
-                font-size: 40px;
-            }
+            .left {
+                width: 500px;
 
-            h4 {
-                font-size: 28px;
-            }
+                h3 {
+                    font-size: 40px;
+                }
 
-            .intro_btn {
-                padding-top: 40px;
+                h4 {
+                    font-size: 28px;
+                }
             }
         }
     }
@@ -182,18 +194,17 @@
 
         .parent_area {
             padding-top: 100px;
-            width: 557px;
 
-            h3 {
-                font-size: 40px;
-            }
+            .left {
+                width: 500px;
 
-            h4 {
-                font-size: 28px;
-            }
+                h3 {
+                    font-size: 40px;
+                }
 
-            .intro_btn {
-                padding-top: 40px;
+                h4 {
+                    font-size: 28px;
+                }
             }
         }
     }
@@ -206,7 +217,6 @@
 
         .parent_area {
             padding-top: 80px;
-            width: 488px;
 
             .button_area {
                 a {
@@ -214,16 +224,16 @@
                 }
             }
 
-            h3 {
-                font-size: 35px;
-            }
+            .left {
+                width: 420px;
 
-            h4 {
-                font-size: 28px;
-            }
+                h3 {
+                    font-size: 35px;
+                }
 
-            .intro_btn {
-                padding-top: 40px;
+                h4 {
+                    font-size: 28px;
+                }
             }
         }
     }
@@ -236,7 +246,7 @@
 
         .parent_area {
             padding-top: 80px;
-            width: 488px;
+            height: 80%;
 
             .button_area {
                 a {
@@ -244,16 +254,16 @@
                 }
             }
 
-            h3 {
-                font-size: 35px;
-            }
+            .left {
+                width: 380px;
 
-            h4 {
-                font-size: 28px;
-            }
+                h3 {
+                    font-size: 35px;
+                }
 
-            .intro_btn {
-                padding-top: 40px;
+                h4 {
+                    font-size: 28px;
+                }
             }
         }
     }
@@ -266,7 +276,9 @@
 
         .parent_area {
             padding-top: 60px;
-            width: 100%;
+            flex-direction: column;
+            justify-content: center;
+            height: 100%;
 
             .button_area {
                 a {
@@ -279,33 +291,42 @@
                 }
             }
 
-            h3 {
-                font-size: 28px;
-                text-align: center;
+            .left {
+
+                width: 100%;
+
+                h3 {
+                    font-size: 28px;
+                    text-align: center;
+                }
+
+                h4 {
+                    font-size: 22px;
+                    padding-top: 5px;
+                    text-align: center;
+                }
             }
 
-            h4 {
-                font-size: 22px;
-                padding-top: 5px;
-                text-align: center;
-            }
+            .right {
+                flex-grow: unset;
 
-            p {
-                font-size: 14px;
-                text-align: center;
-            }
-
-            .intro_btn {
-                padding-top: 30px;
-
-                a {
+                p {
                     font-size: 14px;
-                    padding: 12px 48px;
+                    text-align: center;
+                }
 
-                    .icon_area {
-                        height: 38px;
-                        width: 38px;
-                        top: 3px;
+                .intro_btn {
+                    justify-content: center;
+
+                    a {
+                        font-size: 14px;
+                        padding: 12px 48px;
+
+                        .icon_area {
+                            height: 38px;
+                            width: 38px;
+                            top: 3px;
+                        }
                     }
                 }
             }
@@ -321,7 +342,9 @@
 
         .parent_area {
             padding-top: 100px;
-            width: 100%;
+            flex-direction: column;
+            justify-content: center;
+            height: 100%;
 
             .button_area {
                 a {
@@ -334,33 +357,39 @@
                 }
             }
 
-            h3 {
-                font-size: 22px;
-                text-align: center;
+            .left {
+                width: 100%;
+
+                h3 {
+                    font-size: 22px;
+                    text-align: center;
+                }
+
+                h4 {
+                    font-size: 20px;
+                    padding-top: 5px;
+                    text-align: center;
+                }
             }
 
-            h4 {
-                font-size: 20px;
-                padding-top: 5px;
-                text-align: center;
-            }
-
-            p {
-                font-size: 14px;
-                text-align: center;
-            }
-
-            .intro_btn {
-                padding-top: 20px;
-
-                a {
+            .right {
+                p {
                     font-size: 14px;
-                    padding: 12px 48px;
+                    text-align: center;
+                }
 
-                    .icon_area {
-                        height: 38px;
-                        width: 38px;
-                        top: 3px;
+                .intro_btn {
+                    justify-content: center;
+
+                    a {
+                        font-size: 14px;
+                        padding: 12px 48px;
+
+                        .icon_area {
+                            height: 38px;
+                            width: 38px;
+                            top: 3px;
+                        }
                     }
                 }
             }
@@ -376,7 +405,9 @@
 
         .parent_area {
             padding-top: 100px;
-            width: 100%;
+            flex-direction: column;
+            justify-content: center;
+            height: 100%;
 
             .button_area {
                 a {
@@ -389,33 +420,39 @@
                 }
             }
 
-            h3 {
-                font-size: 22px;
-                text-align: center;
+            .left {
+                width: 100%;
+
+                h3 {
+                    font-size: 22px;
+                    text-align: center;
+                }
+
+                h4 {
+                    font-size: 20px;
+                    padding-top: 5px;
+                    text-align: center;
+                }
             }
 
-            h4 {
-                font-size: 20px;
-                padding-top: 5px;
-                text-align: center;
-            }
-
-            p {
-                font-size: 14px;
-                text-align: center;
-            }
-
-            .intro_btn {
-                padding-top: 20px;
-
-                a {
+            .right {
+                p {
                     font-size: 14px;
-                    padding: 12px 48px;
+                    text-align: center;
+                }
 
-                    .icon_area {
-                        height: 38px;
-                        width: 38px;
-                        top: 3px;
+                .intro_btn {
+                    justify-content: center;
+
+                    a {
+                        font-size: 14px;
+                        padding: 12px 48px;
+
+                        .icon_area {
+                            height: 38px;
+                            width: 38px;
+                            top: 3px;
+                        }
                     }
                 }
             }

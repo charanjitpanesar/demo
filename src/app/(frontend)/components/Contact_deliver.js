@@ -2,7 +2,7 @@ import React from 'react'
 import { Col, Container, Row } from 'react-bootstrap'
 import '../../../../public/sass/contact_scss/contact_expertise.scss'
 
-const Contact_deliver = ({id}) => {
+const Contact_deliver = ({ id }) => {
     return (
         <>
             <section className='contact_deliver_section' id={id}>
@@ -12,9 +12,9 @@ const Contact_deliver = ({id}) => {
                             <div className='parent_area'>
                                 <div className='upper_area'>
                                     <h3>How We <span>Deliver</span></h3>
-                                    <p>
+                                    {/* <p>
                                     Your assets are protected with state-of-the-art security protocols. With encrypted transactions, secure wallets, and stringent compliance,your peace of mind is our priority
-                                    </p>
+                                    </p> */}
                                 </div>
                                 <div className='cards_area'>
                                     <div className='card_inner '>

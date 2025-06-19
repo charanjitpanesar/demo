@@ -5,7 +5,7 @@ import '../../../../public/sass/contact_scss/industry.scss';
 import Image from 'next/image';
 import round from '../../../../public/images/round.svg';
 
-const Contact_industry = ({id, listData}) => {
+const Contact_industry = ({ id, listData }) => {
     const data = listData
     const classArr = ['top_right', 'prev', 'active', 'next', 'bottom_right']
     const slidesRef = useRef([])
@@ -40,12 +40,12 @@ const Contact_industry = ({id, listData}) => {
                             observer.observe(desc);
 
                             resizeObservers.current.forEach((obs) => obs.disconnect());
-                            resizeObservers.current = [observer]; 
+                            resizeObservers.current = [observer];
                         }
                     } else {
                         let chip = slide.querySelector('.chip');
                         if (chip) {
-                            chip.style.height = ''; 
+                            chip.style.height = '';
                         }
                     }
                 }
@@ -55,10 +55,10 @@ const Contact_industry = ({id, listData}) => {
         const intervalId = setInterval(updateClasses, interval);
 
         return () => {
-            clearInterval(intervalId); 
+            clearInterval(intervalId);
 
             resizeObservers.current.forEach((observer) => observer.disconnect());
-            resizeObservers.current = []; 
+            resizeObservers.current = [];
         };
     }, [classArr, interval]);
 
@@ -69,7 +69,7 @@ const Contact_industry = ({id, listData}) => {
                     <Row>
                         <Col xxl={12} xl={12} lg={12} md={12} sm={12} xs={12}>
                             <div className="parent_area">
-                                <Row className='row-gap-3'>
+                                <Row className='row-gap-3 align-items-center'>
                                     <Col xxl={5} xl={5} lg={5} md={12} sm={12} xs={12}>
                                         <div className="left">
                                             <div className="title">

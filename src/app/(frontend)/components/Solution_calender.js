@@ -35,20 +35,37 @@ const Solution_calender = ({ id }) => {
     const cardData = [
         {
             step: 'Step 1',
-            title: 'Schedule Some Time',
-            description: 'Choose a time that suits you best',
+            title: 'Book a Time That Works for You',
+            description: "Pick a time that suits your schedule — we're flexible!",
         },
         {
             step: 'Step 2',
-            title: 'Meeting Preperation',
-            description: 'Few Questions and Answers to find what you need',
+            title: 'Help Us Understand You',
+            description: "We’ll ask a few quick questions so we come prepared with ideas tailored to your goals.",
         },
         {
             step: 'Step 3',
-            title: '20 Mintue Intro Call',
-            description: 'Let’s Know each other and discuss how we can integrate AI into your business!',
+            title: 'Jump on a Quick 20-Minute Call',
+            description: "Let’s connect, explore your vision, and see how we can bring AI into your business journey.",
         },
     ];
+    // const cardData = [
+    //     {
+    //         step: 'Step 1',
+    //         title: 'Schedule Some Time',
+    //         description: 'Choose a time that suits you best',
+    //     },
+    //     {
+    //         step: 'Step 2',
+    //         title: 'Meeting Preparation',
+    //         description: 'Few Questions and Answers to find what you need',
+    //     },
+    //     {
+    //         step: 'Step 3',
+    //         title: '20 Minute Intro Call',
+    //         description: 'Let’s Know each other and discuss how we can integrate AI into your business!',
+    //     },
+    // ];
 
     const meet = [
         { src: world_clock, txt: '20m' },
@@ -116,7 +133,7 @@ const Solution_calender = ({ id }) => {
                         <Col xxl={12} xl={12} lg={12} md={12} sm={12} xs={12}>
                             <div className='parent_area'>
                                 <div className='upper_area'>
-                                    <h3>Ready to <span>streamline</span> your <span>operations</span>?</h3>
+                                    <h3>Ready to <span style={{ fontWeight: 700 }}>streamline</span> your <span style={{ fontWeight: 700 }}>operations</span>?</h3>
                                     <p className='green'>Let us know what challenges you’re facing.</p>
                                     <p>Whether it’s fleet optimization, compliance, or cost reduction, we’ll help you pinpoint areas for improvement.
                                         <br></br>Why it matters: You get personalized advice tailored to your business</p>
@@ -124,10 +141,10 @@ const Solution_calender = ({ id }) => {
                                 <div className='cards_area'>
                                     <div className="gradient"></div>
                                     <div className='arrow_img1'>
-                                        <Image src={arrowDown1} alt='...' title="..." priority></Image>
+                                        <Image src={arrowDown1} alt='...' title="..." priority />
                                     </div>
                                     <div className='arrow_img2'>
-                                        <Image src={arrowDown2} alt='...' title="..." priority></Image>
+                                        <Image src={arrowDown2} alt='...' title="..." priority />
                                     </div>
                                     {cardData.map((card, index) => (
                                         <div

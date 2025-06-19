@@ -8,9 +8,10 @@ import About_current_work from '../components/About_current_work'
 import About_meet_team from '../components/About_meet_team'
 import AboutMakeSection from '../components/AboutMakeSection'
 import AboutVision from '../components/AboutVision'
+import AboutVideo from '../components/AboutVideo'
 
 const About_us = () => {
-    const comp = [About_banner, AboutMakeSection, AboutVision  , About_what_we_do, About_meet_team, About_work_together]
+    const comp = [About_banner, AboutVideo, AboutMakeSection, AboutVision  , About_what_we_do, About_meet_team, About_work_together]
     return (
         <>
             {
