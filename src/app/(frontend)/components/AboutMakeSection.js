@@ -50,8 +50,8 @@ const AboutMakeSection = (props) => {
                                                 <Image src={slideImg2} alt='...' title='...' priority/>
                                             </div>
                                             <div className='content_area'>
-                                                <h4>Human-Centered Approach</h4>
-                                                <h5>We believe in understanding you first, then  designing solutions that truly fit your needs</h5>
+                                                <h4>Tech Wizards, Business Brains</h4>
+                                                <h5>Our team merges deep technical expertise with real-world business acumen, ensuring we build solutions that actually move the needle</h5>
                                             </div>
                                         </div>
                                     </SwiperSlide>
@@ -61,8 +61,8 @@ const AboutMakeSection = (props) => {
                                                 <Image src={slideImg3} alt='...' title='...' priority/>
                                             </div>
                                             <div className='content_area'>
-                                                <h4>Human-Centered Approach</h4>
-                                                <h5>We believe in understanding you first, then  designing solutions that truly fit your needs</h5>
+                                                <h4>Obsessed with Value</h4>
+                                                <h5>Everything we create, from quick prototypes to enterprise-grade solutions, is measured against one question: “Is this delivering serious value to our client?”</h5>
                                             </div>
                                         </div>
                                     </SwiperSlide>
