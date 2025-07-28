@@ -82,9 +82,9 @@ const Header = () => {
                                         {
                                             navLinks.map((element, index) => {
                                                 return <li key={index} className={`${element.href !== "/ai_academy" && pathname === element.href ? 'active' : ''} ${index === navLinks.length - 4 ? 'last_item' : ''}`} >
-                                                    {/* <Link href={element.href}>{element.text}
-                                                    </Link> */}
-                                                    {
+                                                    <Link href={element.href}>{element.text}
+                                                    </Link>
+                                                    {/* {
                                                         element.href == '/solutions' ?
                                                             <Dropdown className='show' show>
                                                                 <Dropdown.Toggle  href={element.href} id="dropdown-basic" aria-expanded="false" className="dropdown-toggle show">{element.text}
@@ -97,7 +97,7 @@ const Header = () => {
                                                             :
                                                             <Link href={element.href}>{element.text}
                                                             </Link>
-                                                    }
+                                                    } */}
                                                 </li>
                                             })
                                         }

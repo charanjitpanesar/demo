@@ -15,7 +15,7 @@ const AboutVideo = ({ id }) => {
                         <div className='content'>
                             <div className='top'>One chilly evening in Karachi, a few friends (<span>fueled by chai and big dreams</span>) realized that businesses everywhere were struggling to adopt modern tech in a seamless way.</div>
                             <div className="box">
-                                <div className="icon"><i class="bi bi-play-fill"></i></div>
+                                <div className="icon"><i className="bi bi-play-fill"></i></div>
                             </div>
                             <div className='top bottom'>The next day, <span>SAYNT AI was born</span>, founded on the simple idea that technology should empower business owners, not overwhelm them.
                             </div>

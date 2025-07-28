@@ -78,7 +78,7 @@ const Calling_support = () => {
                                     <SwiperSlide>
                                         <div className='slide_inner'>
                                             <div className='content_area'>
-                                                <p>Handle Surges with Easec</p>
+                                                <p>Handle Surges with Ease</p>
                                             </div>
                                             <div className='image_area'>
                                                 <Image

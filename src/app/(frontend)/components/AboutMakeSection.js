@@ -27,7 +27,7 @@ const AboutMakeSection = (props) => {
                                 <Swiper className="mySwiper"
                                      thumbs={{ swiper: thumbsSwiper }}
                                      modules={[ Thumbs, Autoplay]}
-                                     speed={4000} 
+                                     speed={2000} 
                                       autoplay={{
                                         delay: 3000, // 3 seconds
                                         disableOnInteraction: false,

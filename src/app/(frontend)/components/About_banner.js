@@ -34,7 +34,7 @@ const About_banner = ({ id }) => {
                             <div className="right">
                                 <p>Cost-efficient, compliant, and tailored AI tools for your business.</p>
                                 <div className='intro_btn'>
-                                    <Link href="/">
+                                    <Link href="/about_us">
                                         <span>About Us</span>
                                         <div className='icon_area'>
                                             <i className="bi bi-play-fill"></i>

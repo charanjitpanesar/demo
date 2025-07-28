@@ -35,11 +35,11 @@ const Solutions = () => {
                     } 
                     if (Section === Contact_industry){
                         props.listData = [
-                            { title: 'Get Up and Running—Fast', desc: 'Why replace your system? Our AI integrates seamlessly with your CRM, email, and social channels—no need to change the tools you trust.' },
+                            { title: 'Get Up and Running—Fast', desc: 'Optimized for quick deployment, our solutions cut down setup time and eliminate bottlenecks. Start building value right out of the gate.' },
                             { title: 'Seamless Integration with What You Already Use', desc: 'Why replace your system? Our AI integrates seamlessly with your CRM, email, and social channels—no need to change the tools you trust.' },
-                            { title: 'No More Missed Opportunities', desc: 'Why replace your system? Our AI integrates seamlessly with your CRM, email, and social channels—no need to change the tools you trust.' },
-                            { title: 'Get Up and Running—Fast', desc: 'Why replace your system? Our AI integrates seamlessly with your CRM, email, and social channels—no need to change the tools you trust.' },
-                            { title: 'Seamless Integration with What You Already Use', desc: 'Why replace your system? Our AI integrates seamlessly with your CRM, email, and social channels—no need to change the tools you trust.' }
+                            { title: 'No More Missed Opportunities', desc: 'Stay ahead of the curve with tools that help you act fast and smart. Never miss a lead, a sale, or a growth opportunity again.' },
+                            { title: 'Get Up and Running—Fast', desc: 'Optimized for quick deployment, our solutions cut down setup time and eliminate bottlenecks. Start building value right out of the gate.' },
+                            { title: 'Seamless Integration with What You Already Use', desc: 'Our AI integrates seamlessly with your existing CRM, email, and social channels—no need to change the tools you trust.' }
                         ]
                     }
                     return <Section key={index} id={`section_${index + 1}`}  {...props} />
